@@ -36,7 +36,6 @@ const enlaces = [
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center text-center">
-      {/* Banner de portada */}
       <div className="relative w-full h-40 overflow-hidden">
         <Image
           src="/banner.jpg"
@@ -57,7 +56,7 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center flex-1 px-6">
-        <div className="relative w-32 h-32 -mt-16 mb-4">
+        <div className="relative w-32 h-32 -mt-16 mb-5">
           <div
             className="absolute inset-0 bg-[var(--color-hueso)]"
             style={{
@@ -76,12 +75,8 @@ export default function Home() {
           </div>
         </div>
 
-        <h1
-          className="text-2xl tracking-wide text-[var(--color-papel)] uppercase mb-2"
-          style={{ fontFamily: "var(--font-display)", fontWeight: 600 }}
-        >
-          Alexander&apos;s Moda
-        </h1>
+        {/* h1 oculto visualmente, solo para SEO/lectores de pantalla (el logo ya muestra el nombre) */}
+        <h1 className="sr-only">Alexander&apos;s Moda</h1>
 
         <p className="text-[11px] tracking-[0.15em] uppercase text-[var(--color-hueso)]/70 mb-1">
           Uniformes Institucionales · Confección a Medida
