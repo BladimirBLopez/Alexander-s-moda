@@ -8,9 +8,6 @@ const WHATSAPP_NUMERO = "59177974868";
 const MENSAJE_PEDIDO = encodeURIComponent(
   "Hola, quiero información sobre uniformes escolares"
 );
-const MENSAJE_PROFORMA = encodeURIComponent(
-  "Hola, quisiera solicitar una proforma"
-);
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 const TIKTOK_DESTACADO = "https://vt.tiktok.com/ZSVR8auCq/";
 
@@ -18,18 +15,22 @@ const enlaces = [
   {
     label: "Ver catálogo",
     href: "/catalogo",
+    externo: false,
   },
   {
-    label: "Solicitar proforma",
-    href: `https://wa.me/${WHATSAPP_NUMERO}?text=${MENSAJE_PROFORMA}`,
+    label: "Proforma",
+    href: "/proforma.pdf",
+    externo: true,
   },
   {
     label: "WhatsApp",
     href: `https://wa.me/${WHATSAPP_NUMERO}?text=${MENSAJE_PEDIDO}`,
+    externo: false,
   },
   {
     label: "Ubicación",
     href: UBICACION_URL,
+    externo: false,
   },
 ];
 
@@ -82,6 +83,8 @@ export default function Home() {
             <Link
               key={enlace.label}
               href={enlace.href}
+              target={enlace.externo ? "_blank" : undefined}
+              rel={enlace.externo ? "noopener noreferrer" : undefined}
               className="boton-tactil w-full py-4 px-5 rounded-full bg-[var(--color-hueso)] text-[var(--color-bordo-oscuro)] font-medium tracking-wide text-sm transition-colors hover:bg-[var(--color-bronce)] hover:text-[var(--color-papel)]"
             >
               {enlace.label}
