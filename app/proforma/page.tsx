@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function ProformaPage() {
   return (
-    <main className="h-screen flex flex-col bg-[var(--color-papel)] overflow-hidden">
-      <div className="w-full flex items-center justify-between px-4 py-3 bg-[var(--color-bordo)] shrink-0">
+    <main className="min-h-screen flex flex-col bg-[var(--color-papel)]">
+      <div className="w-full flex items-center justify-between px-4 py-3 bg-[var(--color-bordo)] shrink-0 sticky top-0 z-10">
         <Link
           href="/"
           className="text-sm text-[var(--color-hueso)] flex items-center gap-1.5"
@@ -25,16 +25,15 @@ export default function ProformaPage() {
           Descargar
         </a>
       </div>
-      <div className="flex-1 flex justify-center items-center py-2 px-2 min-h-0">
-        <div className="relative h-full w-full max-w-2xl">
-          <Image
-            src="/proforma-preview.png"
-            alt="Proforma Alexander's Moda"
-            fill
-            className="object-contain rounded-sm shadow-md"
-            priority
-          />
-        </div>
+      <div className="flex justify-center py-3 px-2">
+        <Image
+          src="/proforma-preview.png"
+          alt="Proforma Alexander's Moda"
+          width={1700}
+          height={2200}
+          className="w-full max-w-xl h-auto rounded-sm shadow-md"
+          priority
+        />
       </div>
     </main>
   );
