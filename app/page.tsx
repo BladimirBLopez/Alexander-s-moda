@@ -28,13 +28,13 @@ const enlaces = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center px-6 py-10 text-center">
-      <div className="w-full max-w-sm flex justify-end mb-4">
+    <main className="min-h-screen flex flex-col items-center px-6 py-4 text-center">
+      <div className="w-full max-w-sm flex justify-end mb-2">
         <BotonCompartir />
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center flex-1">
-        <div className="relative w-36 h-36 mb-5">
+        <div className="relative w-32 h-32 mb-4">
           <div
             className="absolute inset-0 bg-[var(--color-hueso)]"
             style={{
@@ -62,15 +62,15 @@ export default function Home() {
         <p className="text-[11px] tracking-[0.15em] uppercase text-[var(--color-hueso)]/70 mb-1">
           Uniformes Institucionales · Confección a Medida
         </p>
-        <p className="text-[var(--color-hueso)]/50 text-xs mb-6">
+        <p className="text-[var(--color-hueso)]/50 text-xs mb-4">
           @alexanders.moda
         </p>
 
-        <div className="mb-10">
+        <div className="mb-6">
           <RedesSociales />
         </div>
 
-        <div className="w-full flex flex-col gap-3.5 mb-14">
+        <div className="w-full flex flex-col gap-3.5 mb-10">
           {enlaces.map((enlace) => (
             <Link
               key={enlace.label}
@@ -87,7 +87,7 @@ export default function Home() {
         </div>
       </div>
 
-      <p className="text-[var(--color-hueso)]/40 text-[11px] tracking-wide mt-12">
+      <p className="text-[var(--color-hueso)]/40 text-[11px] tracking-wide mt-8">
         Hecho a medida · Santa Cruz, Bolivia
       </p>
     </main>
