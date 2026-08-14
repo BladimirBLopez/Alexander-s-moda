@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type OEmbedResponse = {
   embed_product_id: string;
 };
@@ -33,8 +35,15 @@ export default async function VideoTikTok({ url }: { url: string }) {
           allow="encrypted-media;"
           allowFullScreen
           loading="lazy"
+          scrolling="no"
         />
       </div>
+      <Link
+        href={url}
+        className="mt-3 text-xs text-[var(--color-hueso)]/70 underline underline-offset-4 hover:text-[var(--color-hueso)]"
+      >
+        Ver en TikTok
+      </Link>
     </div>
   );
 }
