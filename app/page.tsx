@@ -66,15 +66,11 @@ export default function Home() {
           @alexanders.moda
         </p>
 
-        <div className="mb-8">
+        <div className="mb-10">
           <RedesSociales />
         </div>
 
-        <div className="w-full mb-10">
-          <VideoTikTok url={TIKTOK_DESTACADO} />
-        </div>
-
-        <div className="w-full flex flex-col gap-3.5">
+        <div className="w-full flex flex-col gap-3.5 mb-14">
           {enlaces.map((enlace) => (
             <Link
               key={enlace.label}
@@ -84,6 +80,10 @@ export default function Home() {
               {enlace.label}
             </Link>
           ))}
+        </div>
+
+        <div className="w-full">
+          <VideoTikTok url={TIKTOK_DESTACADO} />
         </div>
       </div>
 
