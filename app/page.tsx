@@ -75,15 +75,22 @@ export default function Home() {
           </div>
         </div>
 
-        {/* h1 oculto visualmente, solo para SEO/lectores de pantalla (el logo ya muestra el nombre) */}
         <h1 className="sr-only">Alexander&apos;s Moda</h1>
 
         <p className="text-[13px] tracking-[0.15em] uppercase text-[var(--color-papel)] font-medium mb-1">
           Uniformes Institucionales · Confección a Medida
         </p>
-        <p className="text-[var(--color-hueso)]/50 text-xs mb-6">
+        <p className="text-[var(--color-hueso)]/50 text-xs mb-2">
           @alexanders.moda
         </p>
+
+        <div className="flex items-center gap-1.5 text-[var(--color-hueso)]/70 text-xs mb-6">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0">
+            <path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z" strokeLinejoin="round" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+          <span>Centro Comercial Norte, Pasillo 11, Local #357</span>
+        </div>
 
         <div className="mb-8">
           <RedesSociales />
