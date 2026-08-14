@@ -78,7 +78,7 @@ export default function Home() {
         {/* h1 oculto visualmente, solo para SEO/lectores de pantalla (el logo ya muestra el nombre) */}
         <h1 className="sr-only">Alexander&apos;s Moda</h1>
 
-        <p className="text-[11px] tracking-[0.15em] uppercase text-[var(--color-hueso)]/70 mb-1">
+        <p className="text-[13px] tracking-[0.15em] uppercase text-[var(--color-papel)] font-medium mb-1">
           Uniformes Institucionales · Confección a Medida
         </p>
         <p className="text-[var(--color-hueso)]/50 text-xs mb-6">
