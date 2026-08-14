@@ -47,7 +47,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(180deg, color-mix(in oklab, var(--color-bordo-oscuro) 30%, transparent) 0%, var(--color-bordo) 100%)",
+            background: "linear-gradient(180deg, transparent 0%, transparent 55%, var(--color-bordo) 100%)",
           }}
         />
         <div className="absolute top-3 right-4">
