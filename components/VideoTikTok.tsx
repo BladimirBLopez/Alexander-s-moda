@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const VIDEO_URL = "https://res.cloudinary.com/dkq95jus0/video/upload/juan-santiago/Video-uniforme.mp4";
+const VIDEO_URL = "https://res.cloudinary.com/dkq95jus0/video/upload/v1786745176/Video-uniforme.mp4";
 const CUENTA_TIKTOK = "https://www.tiktok.com/@alexanders.moda";
 
 export default function VideoTikTok() {
