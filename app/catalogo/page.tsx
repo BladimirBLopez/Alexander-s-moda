@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { productos } from "@/lib/productos";
 
-const WHATSAPP_NUMERO = "59177373235";
+const WHATSAPP_NUMERO = "59177974868";
 
 export default function CatalogoPage() {
   return (
@@ -15,10 +15,7 @@ export default function CatalogoPage() {
           ← Volver
         </Link>
 
-        <h1
-          className="text-3xl text-[var(--color-bordo)] text-center mb-1"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
+        <h1 className="text-3xl text-[var(--color-bordo)] text-center mb-1" style={{ fontFamily: "var(--font-display)" }}>
           Catálogo
         </h1>
         <p className="text-xs text-[var(--color-bordo)]/60 text-center mb-8">
@@ -31,11 +28,7 @@ export default function CatalogoPage() {
               `Hola, me interesa el ${producto.nombre}`
             );
             return (
-              <article
-                key={producto.id}
-                className="pespunte-hueso pt-8 first:border-t-0 first:pt-0"
-              >
-                {/* Título tipo ficha, centrado y compacto */}
+              <article key={producto.id} className="pespunte-hueso pt-8 first:border-t-0 first:pt-0">
                 <div className="text-center mb-5">
                   <h2
                     className="text-2xl uppercase tracking-wide text-[var(--color-bordo)]"
@@ -53,53 +46,33 @@ export default function CatalogoPage() {
                   </p>
                 </div>
 
-                {/* Fotos mujer / hombre lado a lado */}
                 <div className="grid grid-cols-2 gap-2 mb-6">
                   <div className="relative aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-bordo)]">
-                    <Image
-                      src={producto.fotoMujer}
-                      alt={`${producto.nombre} mujer`}
-                      fill
-                      unoptimized
-                      className="object-cover"
-                    />
+                    <Image src={producto.fotoMujer} alt={`${producto.nombre} mujer`} fill unoptimized className="object-cover" />
                     <span className="absolute bottom-1.5 left-0 right-0 text-center text-[9px] uppercase tracking-[0.15em] text-[var(--color-hueso)]">
                       Uniforme mujer
                     </span>
                   </div>
                   <div className="relative aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-bordo)]">
-                    <Image
-                      src={producto.fotoHombre}
-                      alt={`${producto.nombre} hombre`}
-                      fill
-                      unoptimized
-                      className="object-cover"
-                    />
+                    <Image src={producto.fotoHombre} alt={`${producto.nombre} hombre`} fill unoptimized className="object-cover" />
                     <span className="absolute bottom-1.5 left-0 right-0 text-center text-[9px] uppercase tracking-[0.15em] text-[var(--color-hueso)]">
                       Uniforme hombre
                     </span>
                   </div>
                 </div>
 
-                {/* Paleta de colores */}
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bordo)]/50 mb-2 text-center">
                   Paleta de colores
                 </p>
                 <div className="flex gap-6 justify-center mb-5">
                   {producto.colores.map((color) => (
                     <div key={color.nombre} className="flex flex-col items-center gap-1">
-                      <div
-                        className="w-9 h-9 rounded-full border border-[var(--color-bordo)]/20"
-                        style={{ backgroundColor: color.hex }}
-                      />
-                      <span className="text-[10px] text-[var(--color-bordo)]/70">
-                        {color.nombre}
-                      </span>
+                      <div className="w-9 h-9 rounded-full border border-[var(--color-bordo)]/20" style={{ backgroundColor: color.hex }} />
+                      <span className="text-[10px] text-[var(--color-bordo)]/70">{color.nombre}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* Tipografía */}
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bordo)]/50 mb-1 text-center">
                   Tipografía del bordado
                 </p>
@@ -107,7 +80,6 @@ export default function CatalogoPage() {
                   {producto.tipografia}
                 </p>
 
-                {/* Descripción y bullets */}
                 <p className="text-sm text-[var(--color-bordo)]/80 mb-2 leading-relaxed">
                   {producto.descripcion}
                 </p>

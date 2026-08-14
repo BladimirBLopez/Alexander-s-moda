@@ -4,21 +4,28 @@ import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
 import VideoTikTok from "@/components/VideoTikTok";
 
-const WHATSAPP_NUMERO = "59177373235";
-const WHATSAPP_MENSAJE = encodeURIComponent(
+const WHATSAPP_NUMERO = "59177974868";
+const MENSAJE_PEDIDO = encodeURIComponent(
   "Hola, quiero información sobre uniformes escolares"
+);
+const MENSAJE_PROFORMA = encodeURIComponent(
+  "Hola, quisiera solicitar una proforma"
 );
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 const TIKTOK_DESTACADO = "https://vt.tiktok.com/ZSVR8auCq/";
 
 const enlaces = [
   {
-    label: "Pedir por WhatsApp",
-    href: `https://wa.me/${WHATSAPP_NUMERO}?text=${WHATSAPP_MENSAJE}`,
-  },
-  {
     label: "Ver catálogo",
     href: "/catalogo",
+  },
+  {
+    label: "Solicitar proforma",
+    href: `https://wa.me/${WHATSAPP_NUMERO}?text=${MENSAJE_PROFORMA}`,
+  },
+  {
+    label: "Pedir por WhatsApp",
+    href: `https://wa.me/${WHATSAPP_NUMERO}?text=${MENSAJE_PEDIDO}`,
   },
   {
     label: "Ubicación · CC Norte, pasillo 11",
