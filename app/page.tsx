@@ -12,7 +12,7 @@ const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 
 const enlaces = [
   {
-    label: "Ver Catálogo",
+    label: "Catálogo",
     href: "/catalogo",
     externo: false,
   },
@@ -99,7 +99,7 @@ export default function Home() {
               href={enlace.href}
               target={enlace.externo ? "_blank" : undefined}
               rel={enlace.externo ? "noopener noreferrer" : undefined}
-              className="boton-tactil w-full py-4 px-5 rounded-full bg-[var(--color-papel)] text-[var(--color-bordo-oscuro)] text-[15px] font-medium text-center shadow-md shadow-black/20 hover:bg-white"
+              className="boton-tactil w-full py-4 px-5 rounded-full bg-[var(--color-papel)] text-[var(--color-bordo-oscuro)] text-[17px] font-bold text-center shadow-md shadow-black/20 hover:bg-white"
             >
               {enlace.label}
             </Link>
