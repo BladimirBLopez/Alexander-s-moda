@@ -24,11 +24,11 @@ const enlaces = [
     href: `https://wa.me/${WHATSAPP_NUMERO}?text=${MENSAJE_PROFORMA}`,
   },
   {
-    label: "Pedir por WhatsApp",
+    label: "WhatsApp",
     href: `https://wa.me/${WHATSAPP_NUMERO}?text=${MENSAJE_PEDIDO}`,
   },
   {
-    label: "Ubicación · CC Norte, pasillo 11",
+    label: "Ubicación",
     href: UBICACION_URL,
   },
 ];
