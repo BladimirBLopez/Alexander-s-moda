@@ -1,6 +1,6 @@
 import Link from "next/link";
+import BotonCompartir from "@/components/BotonCompartir";
 
-// TODO: actualizar cuando llegue el logo PNG y mas redes
 const WHATSAPP_NUMERO = "59177373235";
 const WHATSAPP_MENSAJE = encodeURIComponent(
   "Hola, quiero información sobre uniformes escolares"
@@ -32,7 +32,11 @@ const enlaces = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center px-6 py-16 text-center">
+    <main className="min-h-screen flex flex-col items-center px-6 py-10 text-center">
+      <div className="w-full max-w-sm flex justify-end mb-6">
+        <BotonCompartir />
+      </div>
+
       <div className="w-full max-w-sm flex flex-col items-center">
         <h1
           className="text-6xl text-[var(--color-hueso)] mb-1"
