@@ -87,7 +87,7 @@ export default function Home() {
               href={enlace.href}
               target={enlace.externo ? "_blank" : undefined}
               rel={enlace.externo ? "noopener noreferrer" : undefined}
-              className="boton-tactil w-full py-4 px-5 rounded-md text-[var(--color-bordo-oscuro)] uppercase tracking-[0.15em] text-[13px] text-center shadow-lg shadow-black/40 hover:brightness-105"
+              className="boton-tactil w-full py-4 px-5 rounded-full text-[var(--color-bordo-oscuro)] uppercase tracking-[0.15em] text-[13px] text-center shadow-lg shadow-black/40 hover:brightness-105"
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 600,
