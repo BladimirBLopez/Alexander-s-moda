@@ -77,10 +77,10 @@ export default function Home() {
 
         <h1 className="sr-only">Alexander&apos;s Moda</h1>
 
-        <p className="text-[13px] tracking-[0.15em] uppercase text-[var(--color-papel)] font-medium mb-2">
+        <p className="text-[13px] tracking-[0.15em] uppercase text-[var(--color-papel)] font-medium mb-3">
           Uniformes Institucionales · Confección a Medida
         </p>
-        <div className="flex items-center gap-1.5 text-[var(--color-hueso)]/70 text-xs mb-6">
+        <div className="flex items-center gap-1.5 text-[var(--color-hueso)]/70 text-xs mb-10">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0">
             <path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z" strokeLinejoin="round" />
             <circle cx="12" cy="10" r="2.5" />
@@ -88,11 +88,11 @@ export default function Home() {
           <span>Centro Comercial Norte, Pasillo 11, Local #357</span>
         </div>
 
-        <div className="mb-8">
+        <div className="mb-12">
           <RedesSociales />
         </div>
 
-        <div className="w-full flex flex-col gap-3.5 mb-10">
+        <div className="w-full flex flex-col gap-4 mb-10">
           {enlaces.map((enlace) => (
             <Link
               key={enlace.label}
