@@ -15,14 +15,22 @@ const enlaces = [
   {
     label: "Ver catálogo",
     href: "/catalogo",
+    externo: false,
+  },
+  {
+    label: "Proforma",
+    href: "/proforma.pdf",
+    externo: true,
   },
   {
     label: "WhatsApp",
     href: `https://wa.me/${WHATSAPP_NUMERO}?text=${MENSAJE_PEDIDO}`,
+    externo: false,
   },
   {
     label: "Ubicación",
     href: UBICACION_URL,
+    externo: false,
   },
 ];
 
@@ -70,34 +78,18 @@ export default function Home() {
           <RedesSociales />
         </div>
 
-        <div className="w-full flex flex-col gap-3.5 mb-5">
+        <div className="w-full flex flex-col gap-3.5 mb-10">
           {enlaces.map((enlace) => (
             <Link
               key={enlace.label}
               href={enlace.href}
+              target={enlace.externo ? "_blank" : undefined}
+              rel={enlace.externo ? "noopener noreferrer" : undefined}
               className="boton-tactil w-full py-4 px-5 rounded-full bg-[var(--color-hueso)] text-[var(--color-bordo-oscuro)] font-medium tracking-wide text-sm transition-colors hover:bg-[var(--color-bronce)] hover:text-[var(--color-papel)]"
             >
               {enlace.label}
             </Link>
           ))}
-        </div>
-
-        <div className="w-full flex gap-3.5 mb-10">
-          <Link
-            href="/proforma.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="boton-tactil flex-1 py-3.5 px-4 rounded-full border border-[var(--color-hueso)]/50 text-[var(--color-hueso)] text-sm font-medium tracking-wide text-center transition-colors hover:border-[var(--color-hueso)] hover:bg-[var(--color-hueso)]/10"
-          >
-            Ver proforma
-          </Link>
-          <a
-            href="/proforma.pdf"
-            download="proforma-alexanders-moda.pdf"
-            className="boton-tactil flex-1 py-3.5 px-4 rounded-full border border-[var(--color-hueso)]/50 text-[var(--color-hueso)] text-sm font-medium tracking-wide text-center transition-colors hover:border-[var(--color-hueso)] hover:bg-[var(--color-hueso)]/10"
-          >
-            Descargar
-          </a>
         </div>
 
         <div className="w-full">
