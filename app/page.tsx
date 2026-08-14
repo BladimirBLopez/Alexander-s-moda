@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
 
@@ -34,19 +35,14 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center">
-        <div className="w-32 h-32 rounded-full bg-[var(--color-bordo-oscuro)] border-2 border-[var(--color-hueso)]/60 flex flex-col items-center justify-center mb-6">
-          <span
-            className="text-2xl text-[var(--color-hueso)] leading-none"
-            style={{ fontFamily: "var(--font-script)" }}
-          >
-            Alexander&apos;s
-          </span>
-          <span
-            className="text-[10px] tracking-[0.25em] text-[var(--color-hueso)] uppercase mt-1"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Moda
-          </span>
+        <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-[var(--color-hueso)]/60 mb-6">
+          <Image
+            src="/alexanders-moda-logo.png"
+            alt="Alexander's Moda"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         <p className="text-[var(--color-papel)]/80 text-sm leading-relaxed mb-1">
