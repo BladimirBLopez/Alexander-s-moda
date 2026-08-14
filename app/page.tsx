@@ -42,7 +42,10 @@ export default function Home() {
           />
         </div>
 
-        <h1 className="text-2xl font-semibold tracking-wide text-[var(--color-papel)] uppercase mb-1">
+        <h1
+          className="text-2xl tracking-wide text-[var(--color-papel)] uppercase mb-1"
+          style={{ fontFamily: "var(--font-display)", fontWeight: 600 }}
+        >
           Alexander&apos;s Moda
         </h1>
         <p className="text-[11px] tracking-[0.15em] uppercase text-[var(--color-hueso)]/70 mb-1">
