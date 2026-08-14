@@ -58,7 +58,7 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center flex-1">
-        <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-[var(--color-hueso)]/60 shadow-lg shadow-black/30 mb-6">
+        <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-[var(--color-hueso)]/60 shadow-lg shadow-black/30 mb-5">
           <Image
             src="/alexanders-moda-logo.png"
             alt="Alexander's Moda"
@@ -68,16 +68,16 @@ export default function Home() {
           />
         </div>
 
-        <p
-          className="text-lg text-[var(--color-hueso)] mb-1"
-          style={{ fontFamily: "var(--font-display)" }}
+        <h1
+          className="text-2xl tracking-wide text-[var(--color-hueso)] uppercase mb-1"
+          style={{ fontFamily: "var(--font-display)", fontWeight: 600 }}
         >
-          Uniformes que representan tu institución
+          Alexander&apos;s Moda
+        </h1>
+        <p className="text-[11px] tracking-[0.15em] uppercase text-[var(--color-hueso)]/70 mb-1">
+          Uniformes Institucionales · Confección a Medida
         </p>
-        <p className="text-[var(--color-papel)]/60 text-xs leading-relaxed mb-1">
-          Empresa de confección de uniformes institucionales
-        </p>
-        <p className="text-[var(--color-hueso)]/60 text-xs mb-6">
+        <p className="text-[var(--color-hueso)]/50 text-xs mb-6">
           @alexanders.moda
         </p>
 
