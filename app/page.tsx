@@ -67,12 +67,6 @@ export default function Home() {
           Alexander&apos;s Moda
         </h1>
 
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="w-6 h-px bg-[var(--color-hueso)]/50" />
-          <span className="text-[10px] text-[var(--color-hueso)]">✦</span>
-          <span className="w-6 h-px bg-[var(--color-hueso)]/50" />
-        </div>
-
         <p className="text-[11px] tracking-[0.15em] uppercase text-[var(--color-hueso)]/70 mb-1">
           Uniformes Institucionales · Confección a Medida
         </p>
