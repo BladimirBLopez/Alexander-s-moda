@@ -18,8 +18,8 @@ const enlaces = [
   },
   {
     label: "Proforma",
-    href: "/proforma.pdf",
-    externo: true,
+    href: "/proforma",
+    externo: false,
   },
   {
     label: "WhatsApp",
