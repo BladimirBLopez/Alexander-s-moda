@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BotonCompartir from "@/components/BotonCompartir";
+import RedesSociales from "@/components/RedesSociales";
 
 const WHATSAPP_NUMERO = "59177373235";
 const WHATSAPP_MENSAJE = encodeURIComponent(
@@ -23,17 +24,12 @@ const enlaces = [
     href: UBICACION_URL,
     destacado: false,
   },
-  {
-    label: "TikTok",
-    href: "https://www.tiktok.com/@alexanders.moda",
-    destacado: false,
-  },
 ];
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center px-6 py-10 text-center">
-      <div className="w-full max-w-sm flex justify-end mb-6">
+      <div className="w-full max-w-sm flex justify-end mb-4">
         <BotonCompartir />
       </div>
 
@@ -53,9 +49,13 @@ export default function Home() {
 
         <div className="pespunte w-24 my-6" />
 
-        <p className="text-[var(--color-papel)]/80 text-sm leading-relaxed mb-10">
+        <p className="text-[var(--color-papel)]/80 text-sm leading-relaxed mb-6">
           Uniformes escolares y moda colegial a medida en Bolivia
         </p>
+
+        <div className="mb-10">
+          <RedesSociales />
+        </div>
 
         <div className="w-full flex flex-col gap-4">
           {enlaces.map((enlace) => (
