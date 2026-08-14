@@ -35,13 +35,29 @@ const enlaces = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center px-6 py-4 text-center">
-      <div className="w-full max-w-sm flex justify-end mb-2">
-        <BotonCompartir />
+    <main className="min-h-screen flex flex-col items-center text-center">
+      {/* Banner de portada */}
+      <div className="relative w-full h-40 overflow-hidden">
+        <Image
+          src="/banner.jpg"
+          alt="Alexander's Moda"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(180deg, color-mix(in oklab, var(--color-bordo-oscuro) 30%, transparent) 0%, var(--color-bordo) 100%)",
+          }}
+        />
+        <div className="absolute top-3 right-4">
+          <BotonCompartir />
+        </div>
       </div>
 
-      <div className="w-full max-w-sm flex flex-col items-center flex-1">
-        <div className="relative w-32 h-32 mb-4">
+      <div className="w-full max-w-sm flex flex-col items-center flex-1 px-6">
+        <div className="relative w-32 h-32 -mt-16 mb-4">
           <div
             className="absolute inset-0 bg-[var(--color-hueso)]"
             style={{
@@ -102,7 +118,7 @@ export default function Home() {
         </div>
       </div>
 
-      <p className="text-[var(--color-hueso)]/40 text-[11px] tracking-wide mt-8">
+      <p className="text-[var(--color-hueso)]/40 text-[11px] tracking-wide mt-8 mb-6">
         Hecho a medida · Santa Cruz, Bolivia
       </p>
     </main>
