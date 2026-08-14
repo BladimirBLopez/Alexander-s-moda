@@ -40,7 +40,7 @@ export default function RedesSociales() {
           key={red.label}
           href={red.href}
           aria-label={red.label}
-          className="w-11 h-11 rounded-full bg-[var(--color-hueso)]/15 border border-[var(--color-hueso)]/40 flex items-center justify-center text-[var(--color-hueso)] hover:bg-[var(--color-hueso)]/25 transition"
+          className="w-11 h-11 rounded-full bg-[var(--color-hueso)]/15 border border-[var(--color-hueso)]/40 flex items-center justify-center text-[var(--color-papel)] hover:bg-[var(--color-hueso)]/25 transition"
         >
           {red.icon}
         </Link>
