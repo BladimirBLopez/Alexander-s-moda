@@ -1,13 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
+import VideoTikTok from "@/components/VideoTikTok";
 
 const WHATSAPP_NUMERO = "59177373235";
 const WHATSAPP_MENSAJE = encodeURIComponent(
   "Hola, quiero información sobre uniformes escolares"
 );
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
+const TIKTOK_DESTACADO = "https://vt.tiktok.com/ZSVR8auCq/";
 
 const enlaces = [
   {
@@ -32,7 +35,6 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center flex-1">
-        {/* Forma organica solo de fondo, circulo perfecto encima con la foto */}
         <div className="relative w-36 h-36 mb-5">
           <div
             className="absolute inset-0 bg-[var(--color-hueso)]"
@@ -65,8 +67,12 @@ export default function Home() {
           @alexanders.moda
         </p>
 
-        <div className="mb-10">
+        <div className="mb-8">
           <RedesSociales />
+        </div>
+
+        <div className="w-full mb-10">
+          <VideoTikTok url={TIKTOK_DESTACADO} />
         </div>
 
         <div className="w-full flex flex-col gap-3.5">
@@ -85,6 +91,8 @@ export default function Home() {
       <p className="text-[var(--color-hueso)]/40 text-[11px] tracking-wide mt-12">
         Hecho a medida · Santa Cruz, Bolivia
       </p>
+
+      <Script src="https://www.tiktok.com/embed.js" strategy="lazyOnload" />
     </main>
   );
 }
