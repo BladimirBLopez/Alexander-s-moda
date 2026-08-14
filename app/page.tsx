@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
 import VideoTikTok from "@/components/VideoTikTok";
@@ -91,8 +90,6 @@ export default function Home() {
       <p className="text-[var(--color-hueso)]/40 text-[11px] tracking-wide mt-12">
         Hecho a medida · Santa Cruz, Bolivia
       </p>
-
-      <Script src="https://www.tiktok.com/embed.js" strategy="lazyOnload" />
     </main>
   );
 }
