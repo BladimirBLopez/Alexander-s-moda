@@ -32,21 +32,16 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center flex-1">
-        {/* Forma organica tipo "blob" con la foto encima, imitando la referencia */}
+        {/* Forma organica solo de fondo, circulo perfecto encima con la foto */}
         <div className="relative w-36 h-36 mb-5">
           <div
             className="absolute inset-0 bg-[var(--color-hueso)]"
             style={{
               borderRadius: "62% 38% 35% 65% / 58% 32% 68% 42%",
-              transform: "rotate(-6deg)",
+              transform: "rotate(-8deg)",
             }}
           />
-          <div
-            className="absolute inset-2 overflow-hidden shadow-lg shadow-black/30"
-            style={{
-              borderRadius: "58% 42% 40% 60% / 55% 38% 62% 45%",
-            }}
-          >
+          <div className="absolute inset-2 rounded-full overflow-hidden shadow-lg shadow-black/30">
             <Image
               src="/alexanders-moda-logo.png"
               alt="Alexander's Moda"
