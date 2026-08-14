@@ -34,7 +34,6 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center">
-        {/* Logo dentro de circulo tipo avatar. TODO: reemplazar contenido por <Image> con el PNG cuando llegue */}
         <div className="w-32 h-32 rounded-full bg-[var(--color-bordo-oscuro)] border-2 border-[var(--color-hueso)]/60 flex flex-col items-center justify-center mb-6">
           <span
             className="text-2xl text-[var(--color-hueso)] leading-none"
@@ -50,8 +49,11 @@ export default function Home() {
           </span>
         </div>
 
-        <p className="text-[var(--color-papel)]/80 text-sm leading-relaxed mb-6">
-          Uniformes escolares y moda colegial a medida en Bolivia
+        <p className="text-[var(--color-papel)]/80 text-sm leading-relaxed mb-1">
+          Empresa de confección de uniformes institucionales
+        </p>
+        <p className="text-[var(--color-hueso)]/70 text-xs mb-6">
+          @alexanders.moda
         </p>
 
         <div className="mb-10">
