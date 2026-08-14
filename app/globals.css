@@ -5,15 +5,14 @@
   --font-script: "Alex Brush", cursive;
   --font-sans: "Work Sans", sans-serif;
 
-  --color-bordo: #59141b;
-  --color-bordo-oscuro: #3d0c0f;
+  --color-bordo: #511014;
+  --color-bordo-oscuro: #350a0d;
   --color-carbon: #1a1010;
-  --color-hueso: #e8d2a6;
+  --color-hueso: #ddb779;
   --color-bronce: #b8874a;
   --color-papel: #f7f1e6;
 }
 
-/* Textura de tejido sutil - reemplazar por foto real cuando el cliente la pase */
 body {
   background-color: var(--color-bordo);
   background-image:
