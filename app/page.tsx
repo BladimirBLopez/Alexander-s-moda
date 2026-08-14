@@ -55,7 +55,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full max-w-sm flex flex-col items-center flex-1 px-6">
+      <div className="w-full max-w-sm flex flex-col items-center flex-1 px-3">
         <div className="relative w-32 h-32 -mt-16 mb-5">
           <div
             className="absolute inset-0 bg-[var(--color-hueso)]"
