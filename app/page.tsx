@@ -80,18 +80,18 @@ export default function Home() {
           @alexanders.moda
         </p>
 
-        <div className="w-full flex flex-col gap-3 mb-10">
+        <div className="w-full flex flex-col gap-3.5 mb-10">
           {enlaces.map((enlace) => (
             <Link
               key={enlace.label}
               href={enlace.href}
               target={enlace.externo ? "_blank" : undefined}
               rel={enlace.externo ? "noopener noreferrer" : undefined}
-              className="boton-tactil w-full py-3.5 px-5 rounded-md border border-[var(--color-hueso)] text-[var(--color-hueso)] uppercase tracking-[0.15em] text-[13px] text-center transition-all hover:bg-[var(--color-hueso)] hover:text-[var(--color-bordo-oscuro)]"
+              className="boton-tactil w-full py-4 px-5 rounded-md text-[var(--color-bordo-oscuro)] uppercase tracking-[0.15em] text-[13px] text-center shadow-lg shadow-black/40 hover:brightness-105"
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 600,
-                background: "linear-gradient(180deg, transparent 0%, color-mix(in oklab, var(--color-hueso) 8%, transparent) 100%)",
+                background: "linear-gradient(180deg, var(--color-hueso) 0%, var(--color-bronce) 100%)",
               }}
             >
               {enlace.label}
