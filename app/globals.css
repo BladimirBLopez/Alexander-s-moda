@@ -13,13 +13,30 @@
   --color-papel: #f7f1e6;
 }
 
+/* Textura de tejido sutil - reemplazar por foto real cuando el cliente la pase */
 body {
-  background: radial-gradient(
-    circle at 50% 15%,
-    color-mix(in oklab, var(--color-bordo) 90%, white 10%) 0%,
-    var(--color-bordo) 40%,
-    var(--color-bordo-oscuro) 100%
-  );
+  background-color: var(--color-bordo);
+  background-image:
+    radial-gradient(
+      circle at 50% 15%,
+      color-mix(in oklab, var(--color-bordo) 90%, white 10%) 0%,
+      var(--color-bordo) 45%,
+      var(--color-bordo-oscuro) 100%
+    ),
+    repeating-linear-gradient(
+      45deg,
+      color-mix(in oklab, var(--color-hueso) 4%, transparent) 0px,
+      color-mix(in oklab, var(--color-hueso) 4%, transparent) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      color-mix(in oklab, var(--color-hueso) 3%, transparent) 0px,
+      color-mix(in oklab, var(--color-hueso) 3%, transparent) 1px,
+      transparent 1px,
+      transparent 5px
+    );
   min-height: 100vh;
   font-family: var(--font-sans);
 }
