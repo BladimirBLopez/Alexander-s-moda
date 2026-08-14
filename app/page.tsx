@@ -9,7 +9,6 @@ const MENSAJE_PEDIDO = encodeURIComponent(
   "Hola, quiero información sobre uniformes escolares"
 );
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
-const TIKTOK_DESTACADO = "https://vt.tiktok.com/ZSVR8auCq/";
 
 const enlaces = [
   {
@@ -99,7 +98,7 @@ export default function Home() {
         </div>
 
         <div className="w-full">
-          <VideoTikTok url={TIKTOK_DESTACADO} />
+          <VideoTikTok />
         </div>
       </div>
 
