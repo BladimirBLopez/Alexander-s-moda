@@ -34,20 +34,21 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center">
-        <h1
-          className="text-6xl text-[var(--color-hueso)] mb-1"
-          style={{ fontFamily: "var(--font-script)" }}
-        >
-          Alexander&apos;s
-        </h1>
-        <p
-          className="text-2xl tracking-[0.3em] text-[var(--color-hueso)] uppercase"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          Moda
-        </p>
-
-        <div className="pespunte w-24 my-6" />
+        {/* Logo dentro de circulo tipo avatar. TODO: reemplazar contenido por <Image> con el PNG cuando llegue */}
+        <div className="w-32 h-32 rounded-full bg-[var(--color-bordo-oscuro)] border-2 border-[var(--color-hueso)]/60 flex flex-col items-center justify-center mb-6">
+          <span
+            className="text-2xl text-[var(--color-hueso)] leading-none"
+            style={{ fontFamily: "var(--font-script)" }}
+          >
+            Alexander&apos;s
+          </span>
+          <span
+            className="text-[10px] tracking-[0.25em] text-[var(--color-hueso)] uppercase mt-1"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Moda
+          </span>
+        </div>
 
         <p className="text-[var(--color-papel)]/80 text-sm leading-relaxed mb-6">
           Uniformes escolares y moda colegial a medida en Bolivia
