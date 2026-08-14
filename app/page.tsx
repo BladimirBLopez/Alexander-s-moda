@@ -1,10 +1,11 @@
 import Link from "next/link";
 
-// TODO: actualizar local/redes extra cuando el cliente pase mas datos
+// TODO: actualizar cuando llegue el logo PNG y mas redes
 const WHATSAPP_NUMERO = "59177373235";
 const WHATSAPP_MENSAJE = encodeURIComponent(
   "Hola, quiero información sobre uniformes escolares"
 );
+const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 
 const enlaces = [
   {
@@ -15,6 +16,11 @@ const enlaces = [
   {
     label: "Ver catálogo",
     href: "/catalogo",
+    destacado: false,
+  },
+  {
+    label: "Ubicación · CC Norte, planta alta, pasillo 11",
+    href: UBICACION_URL,
     destacado: false,
   },
   {
@@ -55,7 +61,7 @@ export default function Home() {
               className={
                 enlace.destacado
                   ? "w-full py-4 rounded-full bg-[var(--color-hueso)] text-[var(--color-bordo-oscuro)] font-medium tracking-wide transition hover:bg-[var(--color-bronce)] hover:text-[var(--color-papel)]"
-                  : "w-full py-4 rounded-full border border-[var(--color-hueso)]/50 text-[var(--color-hueso)] font-medium tracking-wide transition hover:border-[var(--color-hueso)] hover:bg-[var(--color-hueso)]/10"
+                  : "w-full py-4 px-4 rounded-full border border-[var(--color-hueso)]/50 text-[var(--color-hueso)] text-sm font-medium tracking-wide transition hover:border-[var(--color-hueso)] hover:bg-[var(--color-hueso)]/10"
               }
             >
               {enlace.label}
