@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import BotonCompartir from "@/components/BotonCompartir";
+import RedesSociales from "@/components/RedesSociales";
 import VideoTikTok from "@/components/VideoTikTok";
 
 const WHATSAPP_NUMERO = "59177974868";
@@ -70,9 +71,13 @@ export default function Home() {
         <p className="text-[11px] tracking-[0.15em] uppercase text-[var(--color-hueso)]/70 mb-1">
           Uniformes Institucionales · Confección a Medida
         </p>
-        <p className="text-[var(--color-hueso)]/50 text-xs mb-8">
+        <p className="text-[var(--color-hueso)]/50 text-xs mb-6">
           @alexanders.moda
         </p>
+
+        <div className="mb-8">
+          <RedesSociales />
+        </div>
 
         <div className="w-full flex flex-col gap-3.5 mb-10">
           {enlaces.map((enlace) => (
