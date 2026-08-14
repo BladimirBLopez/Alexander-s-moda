@@ -12,7 +12,7 @@ const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 
 const enlaces = [
   {
-    label: "Ver catálogo",
+    label: "Ver Catálogo",
     href: "/catalogo",
     externo: false,
   },
@@ -99,12 +99,7 @@ export default function Home() {
               href={enlace.href}
               target={enlace.externo ? "_blank" : undefined}
               rel={enlace.externo ? "noopener noreferrer" : undefined}
-              className="boton-tactil w-full py-4 px-5 rounded-full text-[var(--color-bordo-oscuro)] uppercase tracking-[0.15em] text-[13px] text-center shadow-lg shadow-black/40 hover:brightness-105"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 600,
-                background: "linear-gradient(180deg, var(--color-hueso) 0%, var(--color-bronce) 100%)",
-              }}
+              className="boton-tactil w-full py-4 px-5 rounded-full bg-[var(--color-papel)] text-[var(--color-bordo-oscuro)] text-[15px] font-medium text-center shadow-md shadow-black/20 hover:bg-white"
             >
               {enlace.label}
             </Link>
