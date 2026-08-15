@@ -241,10 +241,10 @@ export default function CatalogoPage() {
                   bullets={producto.bulletsMujer}
                   colores={producto.colores}
                 />
-                <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-8">
+                <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-8">
                   <div className="bg-[var(--color-bordo)] px-3 py-2">
                     <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
-                      Tipografía del bordado: <span className="text-white font-bold">{producto.tipografia}</span>
+                      Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
                     </p>
                   </div>
                   <p className="text-[9px] text-[var(--color-bordo)]/80 text-center px-3 py-2 leading-relaxed">
@@ -267,10 +267,10 @@ export default function CatalogoPage() {
                     <span className="text-xs text-[var(--color-bronce)] leading-none">❧</span>
                     <span className="flex-1 border-t border-dashed border-[var(--color-hueso)]/60" />
                   </div>
-                  <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
+                  <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-3">
                     <div className="bg-[var(--color-bordo)] px-4 py-3">
                       <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        Tipografía del bordado: <span className="text-white font-bold">{producto.tipografia}</span>
+                        Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
                       </p>
                     </div>
                     <p className="text-[9px] text-[var(--color-bordo)]/80 text-center px-5 py-4 leading-relaxed">
