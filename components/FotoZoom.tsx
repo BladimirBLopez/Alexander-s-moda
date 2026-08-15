@@ -36,6 +36,7 @@ export default function FotoZoom({ src, alt }: { src: string; alt: string }) {
             width={800}
             height={1120}
             className="max-w-full max-h-full w-auto h-auto object-contain"
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}
