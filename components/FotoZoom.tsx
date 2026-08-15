@@ -19,14 +19,14 @@ export default function FotoZoom({ src, alt }: { src: string; alt: string }) {
 
       {abierto && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-6"
+          className="fixed inset-0 z-50 bg-white flex items-center justify-center p-6"
           onClick={() => setAbierto(false)}
         >
           <button
             type="button"
             onClick={() => setAbierto(false)}
             aria-label="Cerrar"
-            className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center text-lg"
+            className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] flex items-center justify-center text-lg shadow-md"
           >
             ✕
           </button>
