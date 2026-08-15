@@ -363,7 +363,7 @@ export default function CatalogoPage() {
                     <span className="text-xs text-[var(--color-bronce)] leading-none">❧</span>
                     <span className="flex-1 border-t border-dashed border-[var(--color-hueso)]/60" />
                   </div>
-                  <div className="grid grid-cols-[1.5fr_0.5fr_1.5fr] gap-2">
+                  <div className="grid grid-cols-[1.7fr_46px_1.7fr] gap-2">
                     <div>
                       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
                         {producto.fotoMujerFuera ? (
