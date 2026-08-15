@@ -132,7 +132,7 @@ function SeccionGenero({
           <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
             <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
           </p>
-          <ul className="text-[11px] text-[var(--color-bordo)]/80 space-y-1.5">
+          <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
             {bullets.map((b) => (
               <li key={b} className="flex gap-1">
                 <span className="shrink-0">•</span>
