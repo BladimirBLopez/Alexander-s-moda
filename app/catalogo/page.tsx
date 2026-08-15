@@ -262,13 +262,20 @@ export default function CatalogoPage() {
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
                 <div className="mt-8 pt-6">
-                  <div className="flex items-center justify-center gap-1.5 mb-6">
-                    <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-                    <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-                    <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
-                    <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-                    <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-                  </div>
+                  <svg
+                    viewBox="0 0 400 60"
+                    className="w-full h-8 mb-6 text-[var(--color-bronce)]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  >
+                    <path d="M200 32 C 178 14, 150 14, 128 30 C 118 37, 100 42, 82 34 C 68 28, 58 16, 62 8" />
+                    <path d="M62 8 C 66 2, 76 2, 76 10 C 76 16, 68 18, 64 14" />
+                    <path d="M200 32 C 222 14, 250 14, 272 30 C 282 37, 300 42, 318 34 C 332 28, 342 16, 338 8" />
+                    <path d="M338 8 C 334 2, 324 2, 324 10 C 324 16, 332 18, 336 14" />
+                    <path d="M200 32 C 196 22, 196 12, 200 6 C 204 12, 204 22, 200 32 Z" fill="currentColor" stroke="none" />
+                  </svg>
                   <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-3">
                     <div className="bg-[var(--color-bordo)] px-4 py-1.5">
                       <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
@@ -360,13 +367,20 @@ export default function CatalogoPage() {
 
                 {/* Nueva seccion adicional: 3 columnas Mujer | centro | Varon, estilo referencia */}
                 <div className="mt-8 pt-6">
-                  <div className="flex items-center justify-center gap-1.5 mb-6">
-                    <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-                    <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-                    <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
-                    <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-                    <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-                  </div>
+                  <svg
+                    viewBox="0 0 400 60"
+                    className="w-full h-8 mb-6 text-[var(--color-bronce)]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  >
+                    <path d="M200 32 C 178 14, 150 14, 128 30 C 118 37, 100 42, 82 34 C 68 28, 58 16, 62 8" />
+                    <path d="M62 8 C 66 2, 76 2, 76 10 C 76 16, 68 18, 64 14" />
+                    <path d="M200 32 C 222 14, 250 14, 272 30 C 282 37, 300 42, 318 34 C 332 28, 342 16, 338 8" />
+                    <path d="M338 8 C 334 2, 324 2, 324 10 C 324 16, 332 18, 336 14" />
+                    <path d="M200 32 C 196 22, 196 12, 200 6 C 204 12, 204 22, 200 32 Z" fill="currentColor" stroke="none" />
+                  </svg>
                   <div className="grid grid-cols-[1.5fr_0.5fr_1.5fr] gap-2">
                     <div>
                       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
