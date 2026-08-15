@@ -86,7 +86,7 @@ export default function CatalogoPage() {
           {productos.map((producto) => {
             const mensaje = encodeURIComponent(`Hola, me interesa el ${producto.nombre}`);
             return (
-              <article key={producto.id} className="pespunte-hueso pt-8 first:border-t-0 first:pt-0">
+              <article key={producto.id} className="[&:not(:first-child)]:pespunte-hueso [&:not(:first-child)]:pt-8">
                 <SeccionGenero
                   titulo="Uniforme Mujer"
                   fotoDentro={producto.fotoMujerDentro}
