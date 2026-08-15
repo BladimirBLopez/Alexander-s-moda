@@ -39,7 +39,7 @@ function SeccionGenero({
       <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-bordo)] font-semibold mb-3 text-center">
         {titulo}
       </p>
-      <div className="grid grid-cols-2 gap-2 mb-4">
+      <div className="grid grid-cols-2 gap-1 mb-4 max-w-[340px] mx-auto">
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} label="Camisa por dentro" />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} label="Camisa por fuera" />
       </div>
