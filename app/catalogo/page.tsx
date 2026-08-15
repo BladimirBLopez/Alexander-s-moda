@@ -142,7 +142,7 @@ function SeccionGenero({
       <div className="space-y-1 mb-3">
         {colores.map((color) => (
           <div key={color.nombre} className="flex items-center gap-1">
-            <span className="w-3 h-3 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: color.hex }} />
+            <span className="w-6 h-6 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: color.hex }} />
             <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
           </div>
         ))}
@@ -331,7 +331,7 @@ export default function CatalogoPage() {
                       <div className="space-y-1.5">
                         {producto.colores.map((color) => (
                           <div key={color.nombre} className="flex items-center gap-1">
-                            <span className="w-4 h-4 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: color.hex }} />
+                            <span className="w-6 h-6 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: color.hex }} />
                             <span className="text-[7px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
                           </div>
                         ))}
