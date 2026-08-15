@@ -261,7 +261,12 @@ export default function CatalogoPage() {
                 />
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
-                <div className="mt-10 pt-8 border-t border-dashed border-[var(--color-hueso)]/50">
+                <div className="relative mt-10 pt-8">
+                  <div className="absolute top-0 left-0 right-0 flex items-center gap-2">
+                    <span className="flex-1 border-t border-dashed border-[var(--color-hueso)]/60" />
+                    <span className="text-xs text-[var(--color-bronce)] leading-none">❧</span>
+                    <span className="flex-1 border-t border-dashed border-[var(--color-hueso)]/60" />
+                  </div>
                   <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
                     <div className="bg-[var(--color-bordo)] px-4 py-3">
                       <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
@@ -352,7 +357,12 @@ export default function CatalogoPage() {
                 </div>
 
                 {/* Nueva seccion adicional: 3 columnas Mujer | centro | Varon, estilo referencia */}
-                <div className="mt-10 pt-8 border-t border-dashed border-[var(--color-hueso)]/50">
+                <div className="relative mt-10 pt-8">
+                  <div className="absolute top-0 left-0 right-0 flex items-center gap-2">
+                    <span className="flex-1 border-t border-dashed border-[var(--color-hueso)]/60" />
+                    <span className="text-xs text-[var(--color-bronce)] leading-none">❧</span>
+                    <span className="flex-1 border-t border-dashed border-[var(--color-hueso)]/60" />
+                  </div>
                   <div className="grid grid-cols-[1.5fr_0.5fr_1.5fr] gap-2">
                     <div>
                       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
