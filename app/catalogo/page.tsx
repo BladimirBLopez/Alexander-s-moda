@@ -34,7 +34,7 @@ function ColumnaGenero2({
 }) {
   return (
     <div>
-      <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
+      <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
         {foto ? (
           <Image src={foto} alt={titulo} fill className="object-contain" />
         ) : (
@@ -45,7 +45,7 @@ function ColumnaGenero2({
           </div>
         )}
       </div>
-      <div className="grid grid-cols-2 gap-2 mt-3">
+      <div className="grid grid-cols-2 gap-2 mt-3 px-3">
         <div>
           <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5 border-b border-[var(--color-bordo)]/20 pb-1">
             Descripción
@@ -239,7 +239,7 @@ export default function CatalogoPage() {
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
-                  <div className="grid grid-cols-2 rounded-t-lg overflow-hidden bg-[var(--color-bordo)]">
+                  <div className="grid grid-cols-2 -mx-6 bg-[var(--color-bordo)]">
                     <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2 border-r border-[var(--color-hueso)]/20">
                       Uniforme Femenino
                     </p>
@@ -248,7 +248,7 @@ export default function CatalogoPage() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 border border-[var(--color-bordo)]/20 border-t-0 rounded-b-lg p-3 mb-4">
+                  <div className="grid grid-cols-2 gap-0 -mx-6 mb-4">
                     <ColumnaGenero2
                       titulo={`${producto.nombre} - femenino`}
                       foto={producto.fotoMujerFuera}
