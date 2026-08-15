@@ -220,13 +220,6 @@ export default function CatalogoPage() {
                   colores={producto.colores}
                 />
 
-                <Link
-                  href={`https://wa.me/${WHATSAPP_NUMERO}?text=${mensaje}`}
-                  className="block w-full text-center py-3 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] text-sm font-medium hover:bg-[var(--color-bordo-oscuro)] transition"
-                >
-                  Pedir este diseño
-                </Link>
-
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
                   <div className="grid grid-cols-2 -mx-6 bg-[var(--color-bordo)]">
