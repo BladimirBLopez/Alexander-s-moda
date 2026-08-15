@@ -170,66 +170,73 @@ export default function CatalogoPage() {
             const mensaje = encodeURIComponent(`Hola, me interesa el ${producto.nombre}`);
             return (
               <article key={producto.id} className="[&:not(:first-child)]:pespunte-hueso [&:not(:first-child)]:pt-8">
-                <SeccionGenero
-                  titulo="Uniforme Mujer"
-                  fotoDentro={producto.fotoMujerDentro}
-                  fotoFuera={producto.fotoMujerFuera}
-                  bullets={producto.bulletsMujer}
-                />
-                <SeccionGenero
-                  titulo="Uniforme Varón"
-                  fotoDentro={producto.fotoHombreDentro}
-                  fotoFuera={producto.fotoHombreFuera}
-                  bullets={producto.bulletsHombre}
-                />
-
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
-                    <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-3">
-                      <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40 text-center">
-                        Foto pendiente
-                      </span>
-                    </div>
-                    <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center py-2 border-t border-[var(--color-bordo)]/15">
-                      Bordado
-                    </p>
+                <div className="grid grid-cols-3 gap-2 mb-6">
+                  {/* Columna Mujer */}
+                  <div>
+                    <FotoOPlaceholder src={producto.fotoMujerFuera} alt="Uniforme mujer" label="Uniforme Mujer" />
+                    <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2">
+                      {producto.bulletsMujer.map((b) => (
+                        <li key={b} className="flex gap-1">
+                          <span className="shrink-0">•</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
-                    <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-3">
-                      <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40 text-center">
-                        Foto pendiente
-                      </span>
-                    </div>
-                    <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center py-2 border-t border-[var(--color-bordo)]/15">
-                      Detalle Corbata
-                    </p>
-                  </div>
-                </div>
 
-                <div className="border border-[var(--color-bordo)]/25 rounded-lg py-5 px-4 mb-6">
-                  <p className="text-xs uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center mb-4">
-                    Paleta de colores
-                  </p>
-                  <div className="flex gap-6 justify-center">
-                    {producto.colores.map((color) => (
-                      <div key={color.nombre} className="flex flex-col items-center gap-2 max-w-[120px]">
-                        <div className="w-16 h-16 rounded-sm border border-[var(--color-bordo)]/20" style={{ backgroundColor: color.hex }} />
-                        <div className="text-center">
-                          <p className="text-xs uppercase font-semibold text-[var(--color-bordo)]">{color.nombre}</p>
-                          <p className="text-[10px] text-[var(--color-bordo)]/60">({color.uso})</p>
-                        </div>
+                  {/* Columna central */}
+                  <div className="flex flex-col gap-2">
+                    <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
+                      <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
+                        <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
                       </div>
-                    ))}
+                      <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15">
+                        Bordado
+                      </p>
+                    </div>
+                    <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
+                      <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
+                        <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
+                      </div>
+                      <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15">
+                        Corbata
+                      </p>
+                    </div>
+                    <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2">
+                      <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center mb-1.5">
+                        Paleta
+                      </p>
+                      <div className="flex gap-1.5 justify-center">
+                        {producto.colores.map((color) => (
+                          <div key={color.nombre} className="flex flex-col items-center gap-0.5">
+                            <div className="w-6 h-6 rounded-sm border border-[var(--color-bordo)]/20" style={{ backgroundColor: color.hex }} />
+                            <span className="text-[6px] text-[var(--color-bordo)]/60 text-center leading-none max-w-[36px]">{color.nombre}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2 text-center">
+                      <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-0.5">
+                        Tipografía
+                      </p>
+                      <p className="text-[9px] text-[var(--color-bordo)]" style={{ fontFamily: "var(--font-display)" }}>
+                        {producto.tipografia}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="border border-[var(--color-bordo)]/25 rounded-lg py-5 px-4 mb-6 text-center">
-                  <p className="text-xs uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 mb-1">
-                    Tipografía utilizada
-                  </p>
-                  <p className="text-lg text-[var(--color-bordo)]" style={{ fontFamily: "var(--font-display)" }}>
-                    {producto.tipografia}
-                  </p>
+                  {/* Columna Varón */}
+                  <div>
+                    <FotoOPlaceholder src={producto.fotoHombreFuera} alt="Uniforme varón" label="Uniforme Varón" />
+                    <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2">
+                      {producto.bulletsHombre.map((b) => (
+                        <li key={b} className="flex gap-1">
+                          <span className="shrink-0">•</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
                 <Link
