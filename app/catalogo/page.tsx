@@ -58,7 +58,7 @@ function SeccionGenero({
 export default function CatalogoPage() {
   return (
     <main className="min-h-screen bg-[var(--color-papel)]">
-      <div className="sticky top-0 z-10 bg-[var(--color-papel)]/95 backdrop-blur-sm px-6 py-3 border-b border-[var(--color-bordo)]/10">
+      <div className="sticky top-0 z-10 px-6 py-3">
         <Link href="/" className="text-sm text-[var(--color-bordo)]/70 hover:text-[var(--color-bordo)] inline-flex items-center gap-1.5">
           ← Volver
         </Link>
