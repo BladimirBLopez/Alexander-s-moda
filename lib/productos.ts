@@ -31,10 +31,10 @@ export const productos: Producto[] = [
       "Polera en tela Piqué peruano con derecho a dos bordados institucionales",
     ],
     bulletsHombre: [
-      "Camisa manga corta color a elección",
-      "Corte clásico",
-      "Corbata con bordado de escudo propio",
-      "Pantalón a juego",
+      "Camisa manga corta en telas Oxford, Fil a fil, Pic a pic, Dobi y Popelina brasilera con un bordado institucional",
+      "Corbata en tela gabardina brasilera 100% algodón con un bordado institucional",
+      "Pantalón en tela brasilera 100% algodón",
+      "Polera en tela Piqué peruano con derecho a dos bordados institucionales",
     ],
     // TODO: reemplazar por fotos reales de "por dentro" y "por fuera" cuando esten disponibles
     fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png",
