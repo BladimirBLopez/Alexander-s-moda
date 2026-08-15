@@ -4,6 +4,75 @@ import { productos } from "@/lib/productos";
 
 const WHATSAPP_NUMERO = "59177974868";
 
+const IconoCamisa2 = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <path d="M8 4L4 7v3l2-1v11h12V9l2 1V7l-4-3-3 2h-2L8 4z" strokeLinejoin="round" />
+  </svg>
+);
+const IconoCorbata2 = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <path d="M9 3h6l1 4-4 2-4-2 1-4z" strokeLinejoin="round" />
+    <path d="M10 9l-2 9 4 3 4-3-2-9" strokeLinejoin="round" />
+  </svg>
+);
+const IconoFalda2 = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <path d="M9 4h6l1 6 3 10H5l3-10 1-6z" strokeLinejoin="round" />
+  </svg>
+);
+
+function ColumnaGenero2({
+  titulo,
+  foto,
+  bullets,
+  detalles,
+}: {
+  titulo: string;
+  foto?: string;
+  bullets: string[];
+  detalles: { icono: React.ReactNode; texto: string }[];
+}) {
+  return (
+    <div>
+      <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
+        {foto ? (
+          <Image src={foto} alt={titulo} fill className="object-contain" />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-center px-2">
+            <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
+              Foto pendiente
+            </span>
+          </div>
+        )}
+      </div>
+      <p className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mt-3 mb-1.5 border-b border-[var(--color-bordo)]/20 pb-1">
+        Descripción
+      </p>
+      <ul className="text-[11px] text-[var(--color-bordo)]/80 space-y-1 mb-3">
+        {bullets.map((b) => (
+          <li key={b} className="flex gap-1">
+            <span className="shrink-0">•</span>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5 border-b border-[var(--color-bordo)]/20 pb-1">
+        Detalles
+      </p>
+      <div className="space-y-1.5">
+        {detalles.map((d, i) => (
+          <div key={i} className="flex items-center gap-1.5">
+            <span className="w-6 h-6 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] flex items-center justify-center shrink-0">
+              {d.icono}
+            </span>
+            <span className="text-[10px] text-[var(--color-bordo)]/70 leading-tight">{d.texto}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function FotoOPlaceholder({ src, alt, label }: { src?: string; alt: string; label: string }) {
   return (
     <div className="flex flex-col items-center">
@@ -161,6 +230,81 @@ export default function CatalogoPage() {
                 >
                   Pedir este diseño
                 </Link>
+
+                {/* Seccion adicional: vista tipo ficha tecnica combinada */}
+                <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
+                  <div className="grid grid-cols-2 rounded-t-lg overflow-hidden bg-[var(--color-bordo)]">
+                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2 border-r border-[var(--color-hueso)]/20">
+                      Uniforme Femenino
+                    </p>
+                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2">
+                      Uniforme Masculino
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 border border-[var(--color-bordo)]/20 border-t-0 rounded-b-lg p-3 mb-4">
+                    <ColumnaGenero2
+                      titulo={`${producto.nombre} - femenino`}
+                      foto={producto.fotoMujerFuera}
+                      bullets={producto.bulletsMujer}
+                      detalles={[
+                        { icono: <IconoCamisa2 />, texto: "Camisa clásica femenina" },
+                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado" },
+                        { icono: <IconoFalda2 />, texto: "Falda cómoda" },
+                      ]}
+                    />
+                    <ColumnaGenero2
+                      titulo={`${producto.nombre} - masculino`}
+                      foto={producto.fotoHombreFuera}
+                      bullets={producto.bulletsHombre}
+                      detalles={[
+                        { icono: <IconoCamisa2 />, texto: "Camisa clásica masculina" },
+                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado" },
+                        { icono: <IconoFalda2 />, texto: "Pantalón cómodo" },
+                      ]}
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="border border-[var(--color-bordo)]/20 rounded-lg p-2.5">
+                      <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-2 text-center border-b border-[var(--color-bordo)]/15 pb-1.5">
+                        Colores
+                      </p>
+                      <div className="space-y-2">
+                        {producto.colores.map((color) => (
+                          <div key={color.nombre} className="flex items-center gap-1.5">
+                            <span className="w-5 h-5 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
+                            <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="border border-[var(--color-bordo)]/20 rounded-lg p-2.5 flex flex-col">
+                      <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-2 text-center border-b border-[var(--color-bordo)]/15 pb-1.5">
+                        Tela / Textura
+                      </p>
+                      <div className="flex-1 flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+                        <span className="text-[8px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+                      </div>
+                    </div>
+
+                    <div className="border border-[var(--color-bordo)]/20 rounded-lg p-2.5 flex flex-col">
+                      <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-2 text-center border-b border-[var(--color-bordo)]/15 pb-1.5">
+                        Bordados
+                      </p>
+                      <div className="flex-1 grid grid-cols-2 gap-1">
+                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+                          <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+                        </div>
+                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+                          <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+                        </div>
+                      </div>
+                      <p className="text-[7px] text-[var(--color-bordo)]/50 text-center mt-1.5">{producto.tipografia}</p>
+                    </div>
+                  </div>
+                </div>
               </article>
             );
           })}
