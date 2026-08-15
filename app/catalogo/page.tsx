@@ -285,43 +285,43 @@ export default function CatalogoPage() {
                   </div>
 
                   <div className="grid grid-cols-2 -mx-6 border-t border-b border-[var(--color-bordo)]/25">
-                    <div className="border-r border-[var(--color-bordo)]/25 divide-y divide-[var(--color-bordo)]/25">
-                      <div className="p-3">
-                        <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-2 text-center border-b border-[var(--color-bordo)]/15 pb-1.5">
+                    <div className="grid grid-cols-2 divide-x divide-[var(--color-bordo)]/25 border-r border-[var(--color-bordo)]/25">
+                      <div className="p-2">
+                        <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center border-b border-[var(--color-bordo)]/15 pb-1">
                           Colores
                         </p>
-                        <div className="space-y-2">
+                        <div className="space-y-1.5">
                           {producto.colores.map((color) => (
-                            <div key={color.nombre} className="flex items-center gap-1.5">
-                              <span className="w-5 h-5 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
-                              <span className="text-[9px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
+                            <div key={color.nombre} className="flex items-center gap-1">
+                              <span className="w-4 h-4 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
+                              <span className="text-[7px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
                             </div>
                           ))}
                         </div>
                       </div>
-                      <div className="p-3">
-                        <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-2 text-center border-b border-[var(--color-bordo)]/15 pb-1.5">
-                          Tela / Textura
+                      <div className="p-2">
+                        <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center border-b border-[var(--color-bordo)]/15 pb-1">
+                          Tela
                         </p>
-                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-video">
-                          <span className="text-[8px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+                          <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="p-3 flex flex-col">
-                      <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-2 text-center border-b border-[var(--color-bordo)]/15 pb-1.5">
+                    <div className="p-2 flex flex-col">
+                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center border-b border-[var(--color-bordo)]/15 pb-1">
                         Bordados
                       </p>
                       <div className="flex-1 grid grid-cols-2 gap-1">
                         <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
-                          <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+                          <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
                         </div>
                         <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
-                          <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+                          <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
                         </div>
                       </div>
-                      <p className="text-[8px] text-[var(--color-bordo)]/50 text-center mt-2">{producto.tipografia}</p>
+                      <p className="text-[6px] text-[var(--color-bordo)]/50 text-center mt-1">{producto.tipografia}</p>
                     </div>
                   </div>
                 </div>
