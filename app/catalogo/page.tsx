@@ -268,44 +268,35 @@ export default function CatalogoPage() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-2 -mx-6 border-t border-b border-[var(--color-bordo)]/25">
-                    <div className="grid grid-cols-2 divide-x divide-[var(--color-bordo)]/25 border-r border-[var(--color-bordo)]/25">
-                      <div className="pt-0.5 px-2 pb-2">
-                        <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
-          <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
-        </p>
-                        <div className="space-y-1.5">
-                          {producto.colores.map((color) => (
-                            <div key={color.nombre} className="flex items-center gap-1">
-                              <span className="w-4 h-4 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
-                              <span className="text-[7px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="pt-0.5 px-2 pb-2">
-                        <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
-          <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Tela</span>
-        </p>
-                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
-                          <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-                        </div>
+                  <div className="grid grid-cols-3 divide-x divide-[var(--color-bordo)]/25 -mx-6 border-t border-b border-[var(--color-bordo)]/25">
+                    <div className="pt-0.5 px-2 pb-2">
+                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+                        <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
+                      </p>
+                      <div className="space-y-1.5">
+                        {producto.colores.map((color) => (
+                          <div key={color.nombre} className="flex items-center gap-1">
+                            <span className="w-4 h-4 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
+                            <span className="text-[7px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
-
-                    <div className="pt-0.5 px-2 pb-2 flex flex-col">
+                    <div className="pt-0.5 px-2 pb-2">
                       <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
-          <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Bordados</span>
-        </p>
-                      <div className="flex-1 grid grid-cols-2 gap-1">
-                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
-                          <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-                        </div>
-                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/2]">
-                          <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-                        </div>
+                        <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Tela</span>
+                      </p>
+                      <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
+                        <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
                       </div>
-                      <p className="text-[6px] text-[var(--color-bordo)]/50 text-center mt-1">{producto.tipografia}</p>
+                    </div>
+                    <div className="pt-0.5 px-2 pb-2">
+                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+                        <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Bordados</span>
+                      </p>
+                      <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
+                        <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+                      </div>
                     </div>
                   </div>
                 </div>
