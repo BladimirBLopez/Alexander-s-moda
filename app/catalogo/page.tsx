@@ -185,12 +185,12 @@ export default function CatalogoPage() {
       <div className="max-w-md mx-auto px-6 pb-8 pt-1">
         <div className="text-center mb-6">
           <h1
-            className="text-3xl uppercase tracking-wide text-[var(--color-bordo)]"
+            className="text-3xl uppercase tracking-wide text-[var(--color-bordo-oscuro)]"
             style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}
           >
             Alexander&apos;s Moda
           </h1>
-          <p className="text-sm uppercase tracking-[0.15em] text-[var(--color-bordo)]/70 mt-1">
+          <p className="text-sm uppercase tracking-[0.15em] text-[var(--color-bronce)] mt-1">
             Uniformes de Promoción 2027
           </p>
           <div className="flex items-center justify-center gap-1.5 mt-1.5">
