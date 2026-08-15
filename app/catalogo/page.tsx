@@ -153,17 +153,23 @@ function SeccionGenero({
               </div>
             ))}
           </div>
-          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-            <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Tela</span>
-          </p>
-          <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/2] mb-3">
-            <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-          </div>
-          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-            <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Bordado</span>
-          </p>
-          <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/2]">
-            <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+          <div className="border-t border-[var(--color-bordo)]/15 pt-2 grid grid-cols-2 gap-1.5">
+            <div>
+              <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
+                Tela
+              </p>
+              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+              </div>
+            </div>
+            <div>
+              <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
+                Bordado
+              </p>
+              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
