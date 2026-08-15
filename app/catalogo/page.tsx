@@ -425,10 +425,10 @@ export default function CatalogoPage() {
                         </div>
                       </div>
                       <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2 text-center">
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-0.5" style={{ fontFamily: "var(--font-display)" }}>
+                        <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-0.5" style={{ fontFamily: "var(--font-display)" }}>
                           Tipografía
                         </p>
-                        <p className="text-[9px] text-[var(--color-bordo)]" style={{ fontFamily: "var(--font-display)" }}>
+                        <p className="text-[10px] text-[var(--color-bordo)]" style={{ fontFamily: "var(--font-display)" }}>
                           {producto.tipografia}
                         </p>
                       </div>
