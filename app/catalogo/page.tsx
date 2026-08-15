@@ -183,55 +183,6 @@ export default function CatalogoPage() {
                   bullets={producto.bulletsHombre}
                 />
 
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
-                    <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-3">
-                      <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40 text-center">
-                        Foto pendiente
-                      </span>
-                    </div>
-                    <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center py-2 border-t border-[var(--color-bordo)]/15">
-                      Bordado
-                    </p>
-                  </div>
-                  <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
-                    <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-3">
-                      <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40 text-center">
-                        Foto pendiente
-                      </span>
-                    </div>
-                    <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center py-2 border-t border-[var(--color-bordo)]/15">
-                      Detalle Corbata
-                    </p>
-                  </div>
-                </div>
-
-                <div className="border border-[var(--color-bordo)]/25 rounded-lg py-5 px-4 mb-6">
-                  <p className="text-xs uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center mb-4">
-                    Paleta de colores
-                  </p>
-                  <div className="flex gap-6 justify-center">
-                    {producto.colores.map((color) => (
-                      <div key={color.nombre} className="flex flex-col items-center gap-2 max-w-[120px]">
-                        <div className="w-16 h-16 rounded-sm border border-[var(--color-bordo)]/20" style={{ backgroundColor: color.hex }} />
-                        <div className="text-center">
-                          <p className="text-xs uppercase font-semibold text-[var(--color-bordo)]">{color.nombre}</p>
-                          <p className="text-[10px] text-[var(--color-bordo)]/60">({color.uso})</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="border border-[var(--color-bordo)]/25 rounded-lg py-5 px-4 mb-6 text-center">
-                  <p className="text-xs uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 mb-1">
-                    Tipografía utilizada
-                  </p>
-                  <p className="text-lg text-[var(--color-bordo)]" style={{ fontFamily: "var(--font-display)" }}>
-                    {producto.tipografia}
-                  </p>
-                </div>
-
                 <Link
                   href={`https://wa.me/${WHATSAPP_NUMERO}?text=${mensaje}`}
                   className="block w-full text-center py-3 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] text-sm font-medium hover:bg-[var(--color-bordo-oscuro)] transition"
