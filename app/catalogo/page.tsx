@@ -51,7 +51,7 @@ function ColumnaGenero2({
       <div className="grid grid-cols-2 gap-2 mt-3 px-3">
         <div>
           <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Descripción</span>
+          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
         </p>
           <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
             {bullets.map((b) => (
@@ -64,7 +64,7 @@ function ColumnaGenero2({
         </div>
         <div>
           <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Detalles</span>
+          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Detalles</span>
         </p>
           <div className="space-y-1.5">
             {detalles.map((d, i) => (
@@ -121,7 +121,7 @@ function SeccionGenero({
   const descripcionBlock = (
     <div>
       <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Descripción</span>
+        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
       </p>
       <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
         {bullets.map((b) => (
@@ -137,7 +137,7 @@ function SeccionGenero({
   const coloresBlock = (
     <div>
       <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Colores</span>
+        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
       </p>
       <div className="space-y-1 mb-3">
         {colores.map((color) => (
@@ -326,7 +326,7 @@ export default function CatalogoPage() {
                   <div className="grid grid-cols-3 divide-x divide-[var(--color-hueso)]/50 -mx-6 border-t border-b border-[var(--color-hueso)]/50">
                     <div className="pt-0.5 px-2 pb-2">
                       <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Colores</span>
+                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
                       </p>
                       <div className="space-y-1.5">
                         {producto.colores.map((color) => (
@@ -339,7 +339,7 @@ export default function CatalogoPage() {
                     </div>
                     <div className="pt-0.5 px-2 pb-2">
                       <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Tela</span>
+                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Tela</span>
                       </p>
                       <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
                         <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
@@ -347,7 +347,7 @@ export default function CatalogoPage() {
                     </div>
                     <div className="pt-0.5 px-2 pb-2">
                       <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Bordados</span>
+                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Bordados</span>
                       </p>
                       <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
                         <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
