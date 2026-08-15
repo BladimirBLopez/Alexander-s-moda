@@ -214,6 +214,16 @@ export default function CatalogoPage() {
                   bullets={producto.bulletsMujer}
                   colores={producto.colores}
                 />
+                <div className="border border-[var(--color-bronce)]/50 rounded-lg overflow-hidden mb-8">
+                  <div className="bg-[var(--color-bordo)] px-3 py-2">
+                    <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-hueso)] text-center" style={{ fontFamily: "var(--font-display)" }}>
+                      Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
+                    </p>
+                  </div>
+                  <p className="text-[9px] text-[var(--color-bordo)]/80 text-center px-3 py-2 leading-relaxed">
+                    La tipografía utilizada en todos los bordados es {producto.tipografia}, garantizando uniformidad, elegancia y una identidad institucional sólida.
+                  </p>
+                </div>
                 <SeccionGenero
                   titulo="Uniforme Varón"
                   fotoDentro={producto.fotoHombreDentro}
