@@ -57,13 +57,14 @@ function SeccionGenero({
 
 export default function CatalogoPage() {
   return (
-    <main className="min-h-screen px-6 py-12 bg-[var(--color-papel)]">
-      <div className="max-w-md mx-auto">
-        <Link href="/" className="text-sm text-[var(--color-bordo)]/70 hover:text-[var(--color-bordo)] mb-6 inline-block">
+    <main className="min-h-screen bg-[var(--color-papel)]">
+      <div className="sticky top-0 z-10 bg-[var(--color-papel)]/95 backdrop-blur-sm px-6 py-3 border-b border-[var(--color-bordo)]/10">
+        <Link href="/" className="text-sm text-[var(--color-bordo)]/70 hover:text-[var(--color-bordo)] inline-flex items-center gap-1.5">
           ← Volver
         </Link>
-
-        <div className="text-center mb-10">
+      </div>
+      <div className="max-w-md mx-auto px-6 pb-12 pt-4">
+        <div className="text-center mb-8">
           <h1
             className="text-3xl uppercase tracking-wide text-[var(--color-bordo)]"
             style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}
