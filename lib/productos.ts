@@ -37,9 +37,9 @@ export const productos: Producto[] = [
       "Pantalón a juego",
     ],
     // TODO: reemplazar por fotos reales de "por dentro" y "por fuera" cuando esten disponibles
-    fotoMujerDentro: "/catalogo/promo-mujer.png",
-    fotoMujerFuera: "/catalogo/promo-mujer.png",
-    fotoHombreDentro: "/catalogo/promo-hombre.png",
-    fotoHombreFuera: "/catalogo/promo-hombre.png",
+    fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1786755139/promo-mujer_1.png",
+    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1786755139/promo-mujer_1.png",
+    fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1786755139/promo-hombre_1.png",
+    fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1786755139/promo-hombre_1.png",
   },
 ];
