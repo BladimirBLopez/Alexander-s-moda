@@ -141,7 +141,7 @@ function SeccionGenero({
             ))}
           </ul>
         </div>
-        <div className={`pl-3 ${invertido ? "order-1" : "border-l border-[var(--color-bordo)]/15"}`}>
+        <div className={invertido ? "order-1 pr-3" : "border-l border-[var(--color-bordo)]/15 pl-3"}>
           <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
             <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
           </p>
