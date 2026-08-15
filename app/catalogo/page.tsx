@@ -332,7 +332,7 @@ export default function CatalogoPage() {
                         {producto.colores.map((color) => (
                           <div key={color.nombre} className="flex items-center gap-1">
                             <span className="w-6 h-6 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: color.hex }} />
-                            <span className="text-[7px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
+                            <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
                           </div>
                         ))}
                       </div>
@@ -419,7 +419,7 @@ export default function CatalogoPage() {
                           {producto.colores.map((color) => (
                             <div key={color.nombre} className="flex flex-col items-center gap-0.5">
                               <div className="w-6 h-6 rounded-sm border border-[var(--color-hueso)]/50" style={{ backgroundColor: color.hex }} />
-                              <span className="text-[6px] text-[var(--color-bordo)]/60 text-center leading-none max-w-[36px]">{color.nombre}</span>
+                              <span className="text-[7px] text-[var(--color-bordo)]/60 text-center leading-none max-w-[36px]">{color.nombre}</span>
                             </div>
                           ))}
                         </div>
