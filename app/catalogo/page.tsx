@@ -103,6 +103,29 @@ export default function CatalogoPage() {
                   bullets={producto.bulletsHombre}
                 />
 
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
+                    <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-3">
+                      <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40 text-center">
+                        Foto pendiente
+                      </span>
+                    </div>
+                    <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center py-2 border-t border-[var(--color-bordo)]/15">
+                      Bordado
+                    </p>
+                  </div>
+                  <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
+                    <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-3">
+                      <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40 text-center">
+                        Foto pendiente
+                      </span>
+                    </div>
+                    <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center py-2 border-t border-[var(--color-bordo)]/15">
+                      Detalle Corbata
+                    </p>
+                  </div>
+                </div>
+
                 <div className="border border-[var(--color-bordo)]/25 rounded-lg py-5 px-4 mb-6">
                   <p className="text-xs uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center mb-4">
                     Paleta de colores
@@ -118,6 +141,15 @@ export default function CatalogoPage() {
                       </div>
                     ))}
                   </div>
+                </div>
+
+                <div className="border border-[var(--color-bordo)]/25 rounded-lg py-5 px-4 mb-6 text-center">
+                  <p className="text-xs uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 mb-1">
+                    Tipografía utilizada
+                  </p>
+                  <p className="text-lg text-[var(--color-bordo)]" style={{ fontFamily: "var(--font-display)" }}>
+                    {producto.tipografia}
+                  </p>
                 </div>
 
                 <Link
