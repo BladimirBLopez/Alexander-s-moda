@@ -115,7 +115,7 @@ function SeccionGenero({
 }) {
   return (
     <div className="mb-8">
-      <p className="text-base uppercase tracking-[0.2em] text-[var(--color-bordo)] mt-6 mb-4 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+      <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-bordo)] mt-4 mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
         {titulo}
       </p>
       <div className="grid grid-cols-2 gap-1 mb-4 max-w-[340px] mx-auto">
