@@ -254,7 +254,12 @@ export default function CatalogoPage() {
                     <ColumnaGenero2
                       titulo={`${producto.nombre} - femenino`}
                       foto={producto.fotoMujerFuera}
-                      bullets={producto.bulletsMujer}
+                      bullets={[
+                        "Camisa con bordado institucional",
+                        "Corbata en gabardina con bordado",
+                        "Falda 100% algodón",
+                        "Polera con dos bordados",
+                      ]}
                       detalles={[
                         { icono: <IconoCamisa2 />, texto: "Camisa clásica femenina" },
                         { icono: <IconoCorbata2 />, texto: "Corbata con bordado" },
@@ -265,7 +270,12 @@ export default function CatalogoPage() {
                     <ColumnaGenero2
                       titulo={`${producto.nombre} - masculino`}
                       foto={producto.fotoHombreFuera}
-                      bullets={producto.bulletsHombre}
+                      bullets={[
+                        "Camisa con bordado institucional",
+                        "Corbata en gabardina con bordado",
+                        "Pantalón 100% algodón",
+                        "Polera con dos bordados",
+                      ]}
                       detalles={[
                         { icono: <IconoCamisa2 />, texto: "Camisa clásica masculina" },
                         { icono: <IconoCorbata2 />, texto: "Corbata con bordado" },
