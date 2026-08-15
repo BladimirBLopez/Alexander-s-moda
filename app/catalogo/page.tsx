@@ -281,20 +281,33 @@ export default function CatalogoPage() {
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
                   <div className="grid grid-cols-[1fr_0.7fr_1fr] gap-2">
                     <div>
-                      <FotoOPlaceholder src={producto.fotoMujerFuera} alt="Uniforme mujer" label="Uniforme Mujer" />
-                      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2 border border-[var(--color-bordo)]/20 rounded-lg p-2">
-                        {[
-                          "Camisa manga corta verde musgo",
-                          "Corbata con bordado institucional",
-                          "Falda color hueso/arena",
-                          "Tipografía: " + producto.tipografia,
-                        ].map((b) => (
-                          <li key={`m-${b}`} className="flex gap-1">
-                            <span className="shrink-0">•</span>
-                            <span>{b}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
+                        {producto.fotoMujerFuera ? (
+                          <Image src={producto.fotoMujerFuera} alt="Uniforme mujer" fill className="object-contain" />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-center px-2">
+                            <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">Foto pendiente</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="border border-[var(--color-bordo)]/20 rounded-b-lg p-2 -mt-px">
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5">
+                          Uniforme Mujer
+                        </p>
+                        <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
+                          {[
+                            "Camisa manga corta verde musgo",
+                            "Corbata con bordado institucional",
+                            "Falda color hueso/arena",
+                            "Tipografía: " + producto.tipografia,
+                          ].map((b) => (
+                            <li key={`m-${b}`} className="flex gap-1">
+                              <span className="shrink-0">•</span>
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
 
                     <div className="flex flex-col gap-2">
@@ -338,20 +351,33 @@ export default function CatalogoPage() {
                     </div>
 
                     <div>
-                      <FotoOPlaceholder src={producto.fotoHombreFuera} alt="Uniforme varón" label="Uniforme Varón" />
-                      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2 border border-[var(--color-bordo)]/20 rounded-lg p-2">
-                        {[
-                          "Camisa manga corta verde musgo",
-                          "Corbata con bordado institucional",
-                          "Pantalón color hueso",
-                          "Tipografía: " + producto.tipografia,
-                        ].map((b) => (
-                          <li key={`h-${b}`} className="flex gap-1">
-                            <span className="shrink-0">•</span>
-                            <span>{b}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
+                        {producto.fotoHombreFuera ? (
+                          <Image src={producto.fotoHombreFuera} alt="Uniforme varón" fill className="object-contain" />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-center px-2">
+                            <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">Foto pendiente</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="border border-[var(--color-bordo)]/20 rounded-b-lg p-2 -mt-px">
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5">
+                          Uniforme Varón
+                        </p>
+                        <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
+                          {[
+                            "Camisa manga corta verde musgo",
+                            "Corbata con bordado institucional",
+                            "Pantalón color hueso",
+                            "Tipografía: " + producto.tipografia,
+                          ].map((b) => (
+                            <li key={`h-${b}`} className="flex gap-1">
+                              <span className="shrink-0">•</span>
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
