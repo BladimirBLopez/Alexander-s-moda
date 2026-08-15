@@ -237,7 +237,7 @@ export default function CatalogoPage() {
 
                   <div className="grid grid-cols-2 -mx-6 border-t border-b border-[var(--color-bordo)]/25">
                     <div className="grid grid-cols-2 divide-x divide-[var(--color-bordo)]/25 border-r border-[var(--color-bordo)]/25">
-                      <div className="p-2">
+                      <div className="pt-0.5 px-2 pb-2">
                         <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
           <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
         </p>
