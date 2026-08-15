@@ -108,11 +108,13 @@ function SeccionGenero({
   fotoDentro,
   fotoFuera,
   bullets,
+  colores,
 }: {
   titulo: string;
   fotoDentro?: string;
   fotoFuera?: string;
   bullets: string[];
+  colores: { nombre: string; hex: string; uso: string }[];
 }) {
   return (
     <div className="mb-8">
@@ -123,14 +125,46 @@ function SeccionGenero({
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} label="Camisa por dentro" />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} label="Camisa por fuera" />
       </div>
-      <ul className="text-sm text-[var(--color-bordo)]/80 space-y-2.5 border border-[var(--color-bordo)]/20 rounded-lg p-4">
-        {bullets.map((b) => (
-          <li key={b} className="flex gap-2">
-            <span className="shrink-0">•</span>
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="grid grid-cols-[1.4fr_1fr] gap-3 border border-[var(--color-bordo)]/20 rounded-lg p-4">
+        <div>
+          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5">
+            <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
+          </p>
+          <ul className="text-[11px] text-[var(--color-bordo)]/80 space-y-1.5">
+            {bullets.map((b) => (
+              <li key={b} className="flex gap-1">
+                <span className="shrink-0">•</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="border-l border-[var(--color-bordo)]/15 pl-3">
+          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+            <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
+          </p>
+          <div className="space-y-1 mb-3">
+            {colores.map((color) => (
+              <div key={color.nombre} className="flex items-center gap-1">
+                <span className="w-3 h-3 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
+                <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+            <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Tela</span>
+          </p>
+          <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/2] mb-3">
+            <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+          </div>
+          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+            <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Bordado</span>
+          </p>
+          <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/2]">
+            <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -176,12 +210,14 @@ export default function CatalogoPage() {
                   fotoDentro={producto.fotoMujerDentro}
                   fotoFuera={producto.fotoMujerFuera}
                   bullets={producto.bulletsMujer}
+                  colores={producto.colores}
                 />
                 <SeccionGenero
                   titulo="Uniforme Varón"
                   fotoDentro={producto.fotoHombreDentro}
                   fotoFuera={producto.fotoHombreFuera}
                   bullets={producto.bulletsHombre}
+                  colores={producto.colores}
                 />
 
                 <Link
