@@ -315,7 +315,7 @@ export default function CatalogoPage() {
                       />
                     </div>
 
-                    <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-[var(--color-bronce)]/40 pointer-events-none" />
+                    <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-[var(--color-hueso)]/50 pointer-events-none" />
                   </div>
 
                   <div className="grid grid-cols-3 divide-x divide-[var(--color-hueso)]/50 -mx-6 border-t border-b border-[var(--color-hueso)]/50">
