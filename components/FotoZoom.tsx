@@ -14,9 +14,10 @@ export default function FotoZoom({ src, alt }: { src: string; alt: string }) {
           type="button"
           onClick={() => setAbierto(true)}
           aria-label={`Ampliar ${alt}`}
-          className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-white/70 text-[var(--color-bordo)]/70 flex items-center justify-center shadow-sm"
+          className="absolute bottom-2 right-2 w-5 h-5 flex items-center justify-center text-white"
+          style={{ filter: "drop-shadow(0 1px 3px rgba(0,0,0,0.6))" }}
         >
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" strokeLinejoin="round" />
             <circle cx="12" cy="12" r="3" />
           </svg>
