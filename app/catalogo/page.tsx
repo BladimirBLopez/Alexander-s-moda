@@ -193,12 +193,12 @@ export default function CatalogoPage() {
           <p className="text-sm uppercase tracking-[0.15em] text-[var(--color-bordo)]/70 mt-1">
             Uniformes de Promoción 2027
           </p>
-          <div className="flex items-center justify-center gap-3 mt-3">
-            <span className="text-[9px] text-[var(--color-bronce)]">◆</span>
-            <span className="w-10 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-lg text-[var(--color-bronce)] leading-none">❧</span>
-            <span className="w-10 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-[9px] text-[var(--color-bronce)]">◆</span>
+          <div className="flex items-center justify-center gap-1.5 mt-3">
+            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
+            <span className="w-5 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
+            <span className="w-5 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
           </div>
         </div>
 
