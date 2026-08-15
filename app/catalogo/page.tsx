@@ -245,47 +245,50 @@ export default function CatalogoPage() {
                       La tipografía utilizada en todos los bordados es {producto.tipografia}, garantizando uniformidad, elegancia y una identidad institucional sólida.
                     </p>
                   </div>
-                  <div className="grid grid-cols-2 -mx-6 bg-[var(--color-bordo)] mt-3">
-                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5 border-r border-[var(--color-hueso)]/20" style={{ fontFamily: "var(--font-display)" }}>
-                      Uniforme Femenino
-                    </p>
-                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
-                      Uniforme Masculino
-                    </p>
-                  </div>
+                  <div className="relative -mx-6">
+                    <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
+                      <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                        Uniforme Femenino
+                      </p>
+                      <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                        Uniforme Masculino
+                      </p>
+                    </div>
 
-                  <div className="grid grid-cols-2 gap-0 -mx-6 mb-4 mt-4">
-                    <ColumnaGenero2
-                      titulo={`${producto.nombre} - femenino`}
-                      foto={producto.fotoMujerFuera}
-                      bullets={[
-                        "Camisa con bordado institucional",
-                        "Corbata en gabardina con bordado",
-                        "Falda 100% algodón",
-                        "Polera con dos bordados",
-                      ]}
-                      detalles={[
-                        { icono: <IconoCamisa2 />, texto: "Camisa clásica femenina" },
-                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado" },
-                        { icono: <IconoFalda2 />, texto: "Falda cómoda" },
-                      ]}
-                      bordeDerecho
-                    />
-                    <ColumnaGenero2
-                      titulo={`${producto.nombre} - masculino`}
-                      foto={producto.fotoHombreFuera}
-                      bullets={[
-                        "Camisa con bordado institucional",
-                        "Corbata en gabardina con bordado",
-                        "Pantalón 100% algodón",
-                        "Polera con dos bordados",
-                      ]}
-                      detalles={[
-                        { icono: <IconoCamisa2 />, texto: "Camisa clásica masculina" },
-                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado" },
-                        { icono: <IconoFalda2 />, texto: "Pantalón cómodo" },
-                      ]}
-                    />
+                    <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
+                      <ColumnaGenero2
+                        titulo={`${producto.nombre} - femenino`}
+                        foto={producto.fotoMujerFuera}
+                        bullets={[
+                          "Camisa con bordado institucional",
+                          "Corbata en gabardina con bordado",
+                          "Falda 100% algodón",
+                          "Polera con dos bordados",
+                        ]}
+                        detalles={[
+                          { icono: <IconoCamisa2 />, texto: "Camisa clásica femenina" },
+                          { icono: <IconoCorbata2 />, texto: "Corbata con bordado" },
+                          { icono: <IconoFalda2 />, texto: "Falda cómoda" },
+                        ]}
+                      />
+                      <ColumnaGenero2
+                        titulo={`${producto.nombre} - masculino`}
+                        foto={producto.fotoHombreFuera}
+                        bullets={[
+                          "Camisa con bordado institucional",
+                          "Corbata en gabardina con bordado",
+                          "Pantalón 100% algodón",
+                          "Polera con dos bordados",
+                        ]}
+                        detalles={[
+                          { icono: <IconoCamisa2 />, texto: "Camisa clásica masculina" },
+                          { icono: <IconoCorbata2 />, texto: "Corbata con bordado" },
+                          { icono: <IconoFalda2 />, texto: "Pantalón cómodo" },
+                        ]}
+                      />
+                    </div>
+
+                    <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-[var(--color-bronce)]/40 pointer-events-none" />
                   </div>
 
                   <div className="grid grid-cols-3 divide-x divide-[var(--color-bordo)]/25 -mx-6 border-t border-b border-[var(--color-bordo)]/25">
