@@ -285,7 +285,7 @@ export default function CatalogoPage() {
                   </div>
 
                   <div className="grid grid-cols-3 gap-2">
-                    <div className="border border-[var(--color-bordo)]/20 rounded-lg p-2.5">
+                    <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2.5">
                       <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-2 text-center border-b border-[var(--color-bordo)]/15 pb-1.5">
                         Colores
                       </p>
@@ -299,7 +299,7 @@ export default function CatalogoPage() {
                       </div>
                     </div>
 
-                    <div className="border border-[var(--color-bordo)]/20 rounded-lg p-2.5 flex flex-col">
+                    <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2.5 flex flex-col">
                       <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-2 text-center border-b border-[var(--color-bordo)]/15 pb-1.5">
                         Tela / Textura
                       </p>
@@ -308,7 +308,7 @@ export default function CatalogoPage() {
                       </div>
                     </div>
 
-                    <div className="border border-[var(--color-bordo)]/20 rounded-lg p-2.5 flex flex-col">
+                    <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2.5 flex flex-col">
                       <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-2 text-center border-b border-[var(--color-bordo)]/15 pb-1.5">
                         Bordados
                       </p>
