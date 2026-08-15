@@ -242,12 +242,12 @@ export default function CatalogoPage() {
                   colores={producto.colores}
                 />
                 <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-8">
-                  <div className="bg-[var(--color-bordo)] px-4 py-4">
+                  <div className="bg-[var(--color-bordo)] px-4 py-1.5">
                     <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
                       Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
                     </p>
                   </div>
-                  <p className="text-[10px] text-[var(--color-bordo)]/80 text-center px-5 py-5 leading-relaxed">
+                  <p className="text-[10px] text-[var(--color-bordo)]/80 text-center px-5 py-3 leading-relaxed">
                     La tipografía utilizada en todos los bordados es {producto.tipografia}, garantizando uniformidad, elegancia y una identidad institucional sólida.
                   </p>
                 </div>
@@ -268,12 +268,12 @@ export default function CatalogoPage() {
                     <span className="flex-1 border-t border-dashed border-[var(--color-hueso)]/60" />
                   </div>
                   <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-3">
-                    <div className="bg-[var(--color-bordo)] px-4 py-4">
+                    <div className="bg-[var(--color-bordo)] px-4 py-1.5">
                       <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
                         Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
                       </p>
                     </div>
-                    <p className="text-[10px] text-[var(--color-bordo)]/80 text-center px-5 py-5 leading-relaxed">
+                    <p className="text-[10px] text-[var(--color-bordo)]/80 text-center px-5 py-3 leading-relaxed">
                       La tipografía utilizada en todos los bordados es {producto.tipografia}, garantizando uniformidad, elegancia y una identidad institucional sólida.
                     </p>
                   </div>
