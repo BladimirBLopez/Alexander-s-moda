@@ -36,7 +36,7 @@ function ColumnaGenero2({
   bordeDerecho?: boolean;
 }) {
   return (
-    <div className={bordeDerecho ? "border-r border-[var(--color-bordo)]/20" : ""}>
+    <div className={bordeDerecho ? "border-r border-[var(--color-hueso)]/50" : ""}>
       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
         {foto ? (
           <FotoZoom src={foto} alt={titulo} />
@@ -51,7 +51,7 @@ function ColumnaGenero2({
       <div className="grid grid-cols-2 gap-2 mt-3 px-3">
         <div>
           <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-          <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
+          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Descripción</span>
         </p>
           <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
             {bullets.map((b) => (
@@ -64,7 +64,7 @@ function ColumnaGenero2({
         </div>
         <div>
           <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-          <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Detalles</span>
+          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Detalles</span>
         </p>
           <div className="space-y-1.5">
             {detalles.map((d, i) => (
@@ -121,7 +121,7 @@ function SeccionGenero({
   const descripcionBlock = (
     <div>
       <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-        <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
+        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Descripción</span>
       </p>
       <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
         {bullets.map((b) => (
@@ -137,17 +137,17 @@ function SeccionGenero({
   const coloresBlock = (
     <div>
       <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-        <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
+        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Colores</span>
       </p>
       <div className="space-y-1 mb-3">
         {colores.map((color) => (
           <div key={color.nombre} className="flex items-center gap-1">
-            <span className="w-3 h-3 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
+            <span className="w-3 h-3 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: color.hex }} />
             <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
           </div>
         ))}
       </div>
-      <div className="border-t border-[var(--color-bordo)]/15 pt-2 grid grid-cols-2 gap-1.5">
+      <div className="border-t border-[var(--color-hueso)]/50 pt-2 grid grid-cols-2 gap-1.5">
         <div>
           <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
             Tela
@@ -179,7 +179,7 @@ function SeccionGenero({
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} label="Camisa por dentro" />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} label="Camisa por fuera" />
       </div>
-      <div className={`grid gap-3 border border-[var(--color-bordo)]/20 rounded-lg p-4 ${invertido ? "grid-cols-[1fr_auto_1.4fr]" : "grid-cols-[1.4fr_auto_1fr]"}`}>
+      <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-lg p-4 ${invertido ? "grid-cols-[1fr_auto_1.4fr]" : "grid-cols-[1.4fr_auto_1fr]"}`}>
         {invertido ? (
           <>
             {coloresBlock}
@@ -241,7 +241,7 @@ export default function CatalogoPage() {
                   bullets={producto.bulletsMujer}
                   colores={producto.colores}
                 />
-                <div className="border border-[var(--color-bronce)]/50 rounded-lg overflow-hidden mb-8">
+                <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-8">
                   <div className="bg-[var(--color-bordo)] px-3 py-2">
                     <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
                       Tipografía del bordado: <span className="text-white font-bold">{producto.tipografia}</span>
@@ -261,8 +261,8 @@ export default function CatalogoPage() {
                 />
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
-                <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
-                  <div className="border border-[var(--color-bronce)]/50 rounded-lg overflow-hidden mb-3">
+                <div className="mt-10 pt-8 border-t border-dashed border-[var(--color-hueso)]/50">
+                  <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
                     <div className="bg-[var(--color-bordo)] px-4 py-3">
                       <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
                         Tipografía del bordado: <span className="text-white font-bold">{producto.tipografia}</span>
@@ -318,15 +318,15 @@ export default function CatalogoPage() {
                     <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-[var(--color-bronce)]/40 pointer-events-none" />
                   </div>
 
-                  <div className="grid grid-cols-3 divide-x divide-[var(--color-bordo)]/25 -mx-6 border-t border-b border-[var(--color-bordo)]/25">
+                  <div className="grid grid-cols-3 divide-x divide-[var(--color-hueso)]/50 -mx-6 border-t border-b border-[var(--color-hueso)]/50">
                     <div className="pt-0.5 px-2 pb-2">
                       <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
+                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Colores</span>
                       </p>
                       <div className="space-y-1.5">
                         {producto.colores.map((color) => (
                           <div key={color.nombre} className="flex items-center gap-1">
-                            <span className="w-4 h-4 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
+                            <span className="w-4 h-4 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: color.hex }} />
                             <span className="text-[7px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
                           </div>
                         ))}
@@ -334,7 +334,7 @@ export default function CatalogoPage() {
                     </div>
                     <div className="pt-0.5 px-2 pb-2">
                       <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Tela</span>
+                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Tela</span>
                       </p>
                       <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
                         <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
@@ -342,7 +342,7 @@ export default function CatalogoPage() {
                     </div>
                     <div className="pt-0.5 px-2 pb-2">
                       <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Bordados</span>
+                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-1">Bordados</span>
                       </p>
                       <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
                         <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
@@ -352,7 +352,7 @@ export default function CatalogoPage() {
                 </div>
 
                 {/* Nueva seccion adicional: 3 columnas Mujer | centro | Varon, estilo referencia */}
-                <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
+                <div className="mt-10 pt-8 border-t border-dashed border-[var(--color-hueso)]/50">
                   <div className="grid grid-cols-[1.3fr_0.6fr_1.3fr] gap-2">
                     <div>
                       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
@@ -364,7 +364,7 @@ export default function CatalogoPage() {
                           </div>
                         )}
                       </div>
-                      <div className="border border-[var(--color-bordo)]/40 rounded-b-lg p-2">
+                      <div className="border border-[var(--color-hueso)]/50 rounded-b-lg p-2">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           Uniforme Mujer
                         </p>
@@ -385,36 +385,36 @@ export default function CatalogoPage() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
+                      <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
                         <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
                           <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
                         </div>
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15" style={{ fontFamily: "var(--font-display)" }}>
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-hueso)]/50" style={{ fontFamily: "var(--font-display)" }}>
                           Bordado
                         </p>
                       </div>
-                      <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
+                      <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
                         <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
                           <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
                         </div>
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15" style={{ fontFamily: "var(--font-display)" }}>
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-hueso)]/50" style={{ fontFamily: "var(--font-display)" }}>
                           Corbata
                         </p>
                       </div>
-                      <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2">
+                      <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2">
                         <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           Paleta
                         </p>
                         <div className="flex gap-1.5 justify-center">
                           {producto.colores.map((color) => (
                             <div key={color.nombre} className="flex flex-col items-center gap-0.5">
-                              <div className="w-6 h-6 rounded-sm border border-[var(--color-bordo)]/20" style={{ backgroundColor: color.hex }} />
+                              <div className="w-6 h-6 rounded-sm border border-[var(--color-hueso)]/50" style={{ backgroundColor: color.hex }} />
                               <span className="text-[6px] text-[var(--color-bordo)]/60 text-center leading-none max-w-[36px]">{color.nombre}</span>
                             </div>
                           ))}
                         </div>
                       </div>
-                      <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2 text-center">
+                      <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2 text-center">
                         <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-0.5" style={{ fontFamily: "var(--font-display)" }}>
                           Tipografía
                         </p>
@@ -434,7 +434,7 @@ export default function CatalogoPage() {
                           </div>
                         )}
                       </div>
-                      <div className="border border-[var(--color-bordo)]/40 rounded-b-lg p-2">
+                      <div className="border border-[var(--color-hueso)]/50 rounded-b-lg p-2">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           Uniforme Varón
                         </p>
