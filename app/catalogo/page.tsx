@@ -53,7 +53,7 @@ function ColumnaGenero2({
           <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
           <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
         </p>
-          <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
+          <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
             {bullets.map((b) => (
               <li key={b} className="flex gap-1">
                 <span className="shrink-0">•</span>
@@ -382,7 +382,7 @@ export default function CatalogoPage() {
                         <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           Uniforme Mujer
                         </p>
-                        <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
+                        <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
                           {[
                             "Camisa manga corta verde musgo",
                             "Corbata con bordado institucional",
@@ -401,22 +401,22 @@ export default function CatalogoPage() {
                     <div className="flex flex-col gap-2">
                       <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
                         <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
-                          <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
+                          <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
                         </div>
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-hueso)]/50" style={{ fontFamily: "var(--font-display)" }}>
+                        <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-hueso)]/50" style={{ fontFamily: "var(--font-display)" }}>
                           Bordado
                         </p>
                       </div>
                       <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
                         <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
-                          <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
+                          <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
                         </div>
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-hueso)]/50" style={{ fontFamily: "var(--font-display)" }}>
+                        <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-hueso)]/50" style={{ fontFamily: "var(--font-display)" }}>
                           Corbata
                         </p>
                       </div>
                       <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2">
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                        <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           Paleta
                         </p>
                         <div className="flex gap-1.5 justify-center">
@@ -452,7 +452,7 @@ export default function CatalogoPage() {
                         <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           Uniforme Varón
                         </p>
-                        <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
+                        <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
                           {[
                             "Camisa manga corta verde musgo",
                             "Corbata con bordado institucional",
