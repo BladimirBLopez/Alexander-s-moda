@@ -200,28 +200,7 @@ function SeccionGenero({
 
 export default function CatalogoPage() {
   return (
-    <main
-      className="min-h-screen"
-      style={{
-        backgroundColor: "var(--color-papel)",
-        backgroundImage: `
-          repeating-linear-gradient(
-            45deg,
-            color-mix(in oklab, var(--color-bordo) 3%, transparent) 0px,
-            color-mix(in oklab, var(--color-bordo) 3%, transparent) 1px,
-            transparent 1px,
-            transparent 5px
-          ),
-          repeating-linear-gradient(
-            -45deg,
-            color-mix(in oklab, var(--color-bordo) 2%, transparent) 0px,
-            color-mix(in oklab, var(--color-bordo) 2%, transparent) 1px,
-            transparent 1px,
-            transparent 5px
-          )
-        `,
-      }}
-    >
+    <main className="min-h-screen bg-[var(--color-papel)]">
       <div className="sticky top-0 z-10 px-3 py-2">
         <Link
           href="/"
