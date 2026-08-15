@@ -223,15 +223,15 @@ export default function CatalogoPage() {
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
                   <div className="grid grid-cols-2 -mx-6 bg-[var(--color-bordo)]">
-                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2 border-r border-[var(--color-hueso)]/20">
+                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-4 border-r border-[var(--color-hueso)]/20">
                       Uniforme Femenino
                     </p>
-                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2">
+                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-4">
                       Uniforme Masculino
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-0 -mx-6 mb-4">
+                  <div className="grid grid-cols-2 gap-0 -mx-6 mb-4 mt-4">
                     <ColumnaGenero2
                       titulo={`${producto.nombre} - femenino`}
                       foto={producto.fotoMujerFuera}
