@@ -290,7 +290,7 @@ export default function CatalogoPage() {
                           </div>
                         )}
                       </div>
-                      <div className="border-2 border-[var(--color-bordo)]/40 rounded-b-lg p-2">
+                      <div className="border border-[var(--color-bordo)]/40 rounded-b-lg p-2">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5">
                           Uniforme Mujer
                         </p>
@@ -360,7 +360,7 @@ export default function CatalogoPage() {
                           </div>
                         )}
                       </div>
-                      <div className="border-2 border-[var(--color-bordo)]/40 rounded-b-lg p-2">
+                      <div className="border border-[var(--color-bordo)]/40 rounded-b-lg p-2">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5">
                           Uniforme Varón
                         </p>
