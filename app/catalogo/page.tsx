@@ -247,7 +247,7 @@ export default function CatalogoPage() {
                       Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
                     </p>
                   </div>
-                  <p className="text-[10px] text-[var(--color-bordo)]/80 text-center px-5 leading-relaxed">
+                  <p className="text-[10px] text-[var(--color-bordo)]/80 text-center px-2 leading-relaxed">
                     La tipografía utilizada en todos los bordados es {producto.tipografia}, garantizando uniformidad, elegancia y una identidad institucional sólida.
                   </p>
                 </div>
@@ -273,7 +273,7 @@ export default function CatalogoPage() {
                         Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
                       </p>
                     </div>
-                    <p className="text-[10px] text-[var(--color-bordo)]/80 text-center px-5 leading-relaxed">
+                    <p className="text-[10px] text-[var(--color-bordo)]/80 text-center px-2 leading-relaxed">
                       La tipografía utilizada en todos los bordados es {producto.tipografia}, garantizando uniformidad, elegancia y una identidad institucional sólida.
                     </p>
                   </div>
