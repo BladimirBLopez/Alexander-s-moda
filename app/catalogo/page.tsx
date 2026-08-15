@@ -26,14 +26,16 @@ function ColumnaGenero2({
   foto,
   bullets,
   detalles,
+  bordeDerecho,
 }: {
   titulo: string;
   foto?: string;
   bullets: string[];
   detalles: { icono: React.ReactNode; texto: string }[];
+  bordeDerecho?: boolean;
 }) {
   return (
-    <div>
+    <div className={bordeDerecho ? "border-r border-[var(--color-bordo)]/20" : ""}>
       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
         {foto ? (
           <Image src={foto} alt={titulo} fill className="object-contain" />
@@ -258,6 +260,7 @@ export default function CatalogoPage() {
                         { icono: <IconoCorbata2 />, texto: "Corbata con bordado" },
                         { icono: <IconoFalda2 />, texto: "Falda cómoda" },
                       ]}
+                      bordeDerecho
                     />
                     <ColumnaGenero2
                       titulo={`${producto.nombre} - masculino`}
