@@ -226,10 +226,10 @@ export default function CatalogoPage() {
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
                   <div className="grid grid-cols-2 -mx-6 bg-[var(--color-bordo)]">
-                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5 border-r border-[var(--color-hueso)]/20">
+                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5 border-r border-[var(--color-hueso)]/20" style={{ fontFamily: "var(--font-display)" }}>
                       Uniforme Femenino
                     </p>
-                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5">
+                    <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
                       Uniforme Masculino
                     </p>
                   </div>
@@ -315,7 +315,7 @@ export default function CatalogoPage() {
                         )}
                       </div>
                       <div className="border border-[var(--color-bordo)]/40 rounded-b-lg p-2">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5">
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           Uniforme Mujer
                         </p>
                         <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
@@ -339,7 +339,7 @@ export default function CatalogoPage() {
                         <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
                           <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
                         </div>
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15">
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15" style={{ fontFamily: "var(--font-display)" }}>
                           Bordado
                         </p>
                       </div>
@@ -347,12 +347,12 @@ export default function CatalogoPage() {
                         <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
                           <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
                         </div>
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15">
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15" style={{ fontFamily: "var(--font-display)" }}>
                           Corbata
                         </p>
                       </div>
                       <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2">
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center mb-1.5">
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           Paleta
                         </p>
                         <div className="flex gap-1.5 justify-center">
@@ -365,7 +365,7 @@ export default function CatalogoPage() {
                         </div>
                       </div>
                       <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2 text-center">
-                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-0.5">
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-0.5" style={{ fontFamily: "var(--font-display)" }}>
                           Tipografía
                         </p>
                         <p className="text-[9px] text-[var(--color-bordo)]" style={{ fontFamily: "var(--font-display)" }}>
@@ -385,7 +385,7 @@ export default function CatalogoPage() {
                         )}
                       </div>
                       <div className="border border-[var(--color-bordo)]/40 rounded-b-lg p-2">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5">
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                           Uniforme Varón
                         </p>
                         <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
