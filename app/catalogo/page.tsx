@@ -235,7 +235,7 @@ export default function CatalogoPage() {
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
-                  <div className="border border-[var(--color-bronce)]/50 rounded-lg overflow-hidden mb-6">
+                  <div className="border border-[var(--color-bronce)]/50 rounded-lg overflow-hidden mb-3">
                     <div className="bg-[var(--color-bordo)] px-4 py-3">
                       <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-hueso)] text-center" style={{ fontFamily: "var(--font-display)" }}>
                         Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
