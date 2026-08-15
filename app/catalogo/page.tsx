@@ -353,7 +353,7 @@ export default function CatalogoPage() {
 
                 {/* Nueva seccion adicional: 3 columnas Mujer | centro | Varon, estilo referencia */}
                 <div className="mt-10 pt-8 border-t border-dashed border-[var(--color-hueso)]/50">
-                  <div className="grid grid-cols-[1.3fr_0.6fr_1.3fr] gap-2">
+                  <div className="grid grid-cols-[1.5fr_0.5fr_1.5fr] gap-2">
                     <div>
                       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
                         {producto.fotoMujerFuera ? (
