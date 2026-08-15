@@ -290,7 +290,7 @@ export default function CatalogoPage() {
                     <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
                       <ColumnaGenero2
                         titulo={`${producto.nombre} - femenino`}
-                        foto={producto.fotoMujerFuera}
+                        foto={producto.fotoMujerSeccion2}
                         bullets={[
                           "Camisa con bordado institucional",
                           "Corbata en gabardina con bordado",
@@ -305,7 +305,7 @@ export default function CatalogoPage() {
                       />
                       <ColumnaGenero2
                         titulo={`${producto.nombre} - masculino`}
-                        foto={producto.fotoHombreFuera}
+                        foto={producto.fotoHombreSeccion2}
                         bullets={[
                           "Camisa con bordado institucional",
                           "Corbata en gabardina con bordado",

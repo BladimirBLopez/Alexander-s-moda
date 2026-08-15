@@ -11,6 +11,8 @@ export type Producto = {
   fotoMujerFuera?: string;
   fotoHombreDentro?: string;
   fotoHombreFuera?: string;
+  fotoMujerSeccion2?: string;
+  fotoHombreSeccion2?: string;
 };
 
 export const productos: Producto[] = [
@@ -41,5 +43,7 @@ export const productos: Producto[] = [
     fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png",
+    fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_2.png",
+    fotoHombreSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_2.png",
   },
 ];
