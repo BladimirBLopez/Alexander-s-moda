@@ -15,12 +15,24 @@ export default function CatalogoPage() {
           ← Volver
         </Link>
 
-        <h1 className="text-3xl text-[var(--color-bordo)] text-center mb-1" style={{ fontFamily: "var(--font-display)" }}>
-          Catálogo
-        </h1>
-        <p className="text-xs text-[var(--color-bordo)]/60 text-center mb-8">
-          Diseños disponibles para tu colegio o promoción
-        </p>
+        <div className="text-center mb-10">
+          <h1
+            className="text-3xl uppercase tracking-wide text-[var(--color-bordo)]"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}
+          >
+            Alexander&apos;s Moda
+          </h1>
+          <p className="text-sm uppercase tracking-[0.15em] text-[var(--color-bordo)]/70 mt-1">
+            Uniformes de Promoción 2027
+          </p>
+          <div className="flex items-center justify-center gap-3 mt-3">
+            <span className="text-[9px] text-[var(--color-bronce)]">◆</span>
+            <span className="w-10 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-lg text-[var(--color-bronce)] leading-none">❧</span>
+            <span className="w-10 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-[9px] text-[var(--color-bronce)]">◆</span>
+          </div>
+        </div>
 
         <div className="flex flex-col gap-14">
           {productos.map((producto) => {
