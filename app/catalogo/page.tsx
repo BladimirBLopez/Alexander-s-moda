@@ -50,7 +50,7 @@ function ColumnaGenero2({
       </div>
       <div className="grid grid-cols-2 gap-2 mt-3 px-3">
         <div>
-          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5">
+          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
           <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
         </p>
           <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1">
@@ -63,7 +63,7 @@ function ColumnaGenero2({
           </ul>
         </div>
         <div>
-          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5">
+          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
           <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Detalles</span>
         </p>
           <div className="space-y-1.5">
@@ -129,7 +129,7 @@ function SeccionGenero({
       </div>
       <div className={`grid gap-3 border border-[var(--color-bordo)]/20 rounded-lg p-4 ${invertido ? "grid-cols-[1fr_1.4fr]" : "grid-cols-[1.4fr_1fr]"}`}>
         <div className={invertido ? "order-2 border-l border-[var(--color-bordo)]/15 pl-3" : ""}>
-          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5">
+          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
             <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
           </p>
           <ul className="text-[11px] text-[var(--color-bordo)]/80 space-y-1.5">
@@ -142,7 +142,7 @@ function SeccionGenero({
           </ul>
         </div>
         <div className={invertido ? "order-1" : "border-l border-[var(--color-bordo)]/15 pl-3"}>
-          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
             <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
           </p>
           <div className="space-y-1 mb-3">
@@ -153,13 +153,13 @@ function SeccionGenero({
               </div>
             ))}
           </div>
-          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
             <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Tela</span>
           </p>
           <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/2] mb-3">
             <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
           </div>
-          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
             <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Bordado</span>
           </p>
           <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/2]">
@@ -270,7 +270,7 @@ export default function CatalogoPage() {
 
                   <div className="grid grid-cols-3 divide-x divide-[var(--color-bordo)]/25 -mx-6 border-t border-b border-[var(--color-bordo)]/25">
                     <div className="pt-0.5 px-2 pb-2">
-                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
                         <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
                       </p>
                       <div className="space-y-1.5">
@@ -283,7 +283,7 @@ export default function CatalogoPage() {
                       </div>
                     </div>
                     <div className="pt-0.5 px-2 pb-2">
-                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
                         <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Tela</span>
                       </p>
                       <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
@@ -291,7 +291,7 @@ export default function CatalogoPage() {
                       </div>
                     </div>
                     <div className="pt-0.5 px-2 pb-2">
-                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
+                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
                         <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Bordados</span>
                       </p>
                       <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
