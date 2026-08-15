@@ -128,7 +128,7 @@ function SeccionGenero({
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} label="Camisa por fuera" />
       </div>
       <div className={`grid gap-3 border border-[var(--color-bordo)]/20 rounded-lg p-4 ${invertido ? "grid-cols-[1fr_1.4fr]" : "grid-cols-[1.4fr_1fr]"}`}>
-        <div className={invertido ? "order-2 border-l border-[var(--color-bordo)]/15 pl-3" : ""}>
+        <div className={invertido ? "order-2 border-l border-[var(--color-bordo)]/15" : ""}>
           <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
             <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
           </p>
@@ -141,7 +141,7 @@ function SeccionGenero({
             ))}
           </ul>
         </div>
-        <div className={invertido ? "order-1 pr-3" : "border-l border-[var(--color-bordo)]/15 pl-3"}>
+        <div className={invertido ? "order-1" : "border-l border-[var(--color-bordo)]/15"}>
           <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
             <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
           </p>
