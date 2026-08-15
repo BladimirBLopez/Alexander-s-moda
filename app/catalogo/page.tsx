@@ -171,7 +171,7 @@ function SeccionGenero({
   const divider = <div className="self-stretch w-px h-full bg-[var(--color-bordo)]/15" />;
 
   return (
-    <div className="mb-8">
+    <div className="mb-6">
       <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mt-4 mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
         {titulo}
       </p>
@@ -241,7 +241,7 @@ export default function CatalogoPage() {
                   bullets={producto.bulletsMujer}
                   colores={producto.colores}
                 />
-                <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-8">
+                <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-6">
                   <div className="bg-[var(--color-bordo)] px-4 py-1.5">
                     <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
                       Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
@@ -261,7 +261,7 @@ export default function CatalogoPage() {
                 />
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
-                <div className="relative mt-10 pt-8">
+                <div className="relative mt-6 pt-6">
                   <div className="absolute top-0 left-0 right-0 flex items-center gap-2">
                     <span className="flex-1 border-t border-dashed border-[var(--color-hueso)]/60" />
                     <span className="text-xs text-[var(--color-bronce)] leading-none">❧</span>
@@ -357,7 +357,7 @@ export default function CatalogoPage() {
                 </div>
 
                 {/* Nueva seccion adicional: 3 columnas Mujer | centro | Varon, estilo referencia */}
-                <div className="relative mt-10 pt-8">
+                <div className="relative mt-6 pt-6">
                   <div className="absolute top-0 left-0 right-0 flex items-center gap-2">
                     <span className="flex-1 border-t border-dashed border-[var(--color-hueso)]/60" />
                     <span className="text-xs text-[var(--color-bronce)] leading-none">❧</span>
