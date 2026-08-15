@@ -225,6 +225,11 @@ export default function CatalogoPage() {
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
+                  <div className="-mx-6 px-4 py-2.5 bg-[var(--color-bordo)] border-b border-[var(--color-hueso)]/20">
+                    <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-hueso)] text-center" style={{ fontFamily: "var(--font-display)" }}>
+                      Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
+                    </p>
+                  </div>
                   <div className="grid grid-cols-2 -mx-6 bg-[var(--color-bordo)]">
                     <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5 border-r border-[var(--color-hueso)]/20" style={{ fontFamily: "var(--font-display)" }}>
                       Uniforme Femenino
@@ -268,7 +273,7 @@ export default function CatalogoPage() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-4 divide-x divide-[var(--color-bordo)]/25 -mx-6 border-t border-b border-[var(--color-bordo)]/25">
+                  <div className="grid grid-cols-3 divide-x divide-[var(--color-bordo)]/25 -mx-6 border-t border-b border-[var(--color-bordo)]/25">
                     <div className="pt-0.5 px-2 pb-2">
                       <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
                         <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
@@ -296,14 +301,6 @@ export default function CatalogoPage() {
                       </p>
                       <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
                         <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-                      </div>
-                    </div>
-                    <div className="pt-0.5 px-2 pb-2">
-                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Tipografía</span>
-                      </p>
-                      <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3] px-1">
-                        <span className="text-[7px] text-[var(--color-bordo)]/70 text-center" style={{ fontFamily: "var(--font-display)" }}>{producto.tipografia}</span>
                       </div>
                     </div>
                   </div>
