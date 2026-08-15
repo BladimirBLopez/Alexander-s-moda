@@ -6,17 +6,19 @@ const WHATSAPP_NUMERO = "59177974868";
 
 function FotoOPlaceholder({ src, alt, label }: { src?: string; alt: string; label: string }) {
   return (
-    <div className="relative aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
-      {src ? (
-        <Image src={src} alt={alt} fill className="object-contain" />
-      ) : (
-        <div className="w-full h-full flex items-center justify-center text-center px-2">
-          <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
-            Foto pendiente
-          </span>
-        </div>
-      )}
-      <span className="absolute bottom-1.5 left-0 right-0 text-center text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/60">
+    <div className="flex flex-col items-center">
+      <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
+        {src ? (
+          <Image src={src} alt={alt} fill className="object-contain" />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-center px-2">
+            <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
+              Foto pendiente
+            </span>
+          </div>
+        )}
+      </div>
+      <span className="mt-1.5 text-center text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/60">
         {label}
       </span>
     </div>
