@@ -7,14 +7,11 @@ export type Producto = {
   colores: { nombre: string; hex: string }[];
   bulletsMujer: string[];
   bulletsHombre: string[];
-  fotoMujerDentro: string;
-  fotoMujerFuera: string;
-  fotoHombreDentro: string;
-  fotoHombreFuera: string;
+  fotoMujerDentro?: string;
+  fotoMujerFuera?: string;
+  fotoHombreDentro?: string;
+  fotoHombreFuera?: string;
 };
-
-const PLACEHOLDER = (label: string) =>
-  `https://placehold.co/500x700/511014/ddb779?text=${encodeURIComponent(label)}`;
 
 export const productos: Producto[] = [
   {
@@ -39,9 +36,10 @@ export const productos: Producto[] = [
       "Corbata con bordado de escudo propio",
       "Pantalón a juego",
     ],
-    fotoMujerDentro: PLACEHOLDER("Mujer - camisa dentro"),
-    fotoMujerFuera: PLACEHOLDER("Mujer - camisa fuera"),
-    fotoHombreDentro: PLACEHOLDER("Hombre - camisa dentro"),
-    fotoHombreFuera: PLACEHOLDER("Hombre - camisa fuera"),
+    // TODO: reemplazar por fotos reales de "por dentro" y "por fuera" cuando esten disponibles
+    fotoMujerDentro: "/catalogo/promo-mujer.png",
+    fotoMujerFuera: "/catalogo/promo-mujer.png",
+    fotoHombreDentro: "/catalogo/promo-hombre.png",
+    fotoHombreFuera: "/catalogo/promo-hombre.png",
   },
 ];

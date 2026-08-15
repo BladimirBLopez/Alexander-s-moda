@@ -4,6 +4,25 @@ import { productos } from "@/lib/productos";
 
 const WHATSAPP_NUMERO = "59177974868";
 
+function FotoOPlaceholder({ src, alt, label }: { src?: string; alt: string; label: string }) {
+  return (
+    <div className="relative aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-bordo)]/15">
+      {src ? (
+        <Image src={src} alt={alt} fill className="object-contain" />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center text-center px-2">
+          <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
+            Foto pendiente
+          </span>
+        </div>
+      )}
+      <span className="absolute bottom-1.5 left-0 right-0 text-center text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/60">
+        {label}
+      </span>
+    </div>
+  );
+}
+
 function SeccionGenero({
   titulo,
   fotoDentro,
@@ -11,8 +30,8 @@ function SeccionGenero({
   bullets,
 }: {
   titulo: string;
-  fotoDentro: string;
-  fotoFuera: string;
+  fotoDentro?: string;
+  fotoFuera?: string;
   bullets: string[];
 }) {
   return (
@@ -21,18 +40,8 @@ function SeccionGenero({
         {titulo}
       </p>
       <div className="grid grid-cols-2 gap-2 mb-4">
-        <div className="relative aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-bordo)]/15">
-          <Image src={fotoDentro} alt={`${titulo} - camisa por dentro`} fill unoptimized className="object-contain" />
-          <span className="absolute bottom-1.5 left-0 right-0 text-center text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/60">
-            Camisa por dentro
-          </span>
-        </div>
-        <div className="relative aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-bordo)]/15">
-          <Image src={fotoFuera} alt={`${titulo} - camisa por fuera`} fill unoptimized className="object-contain" />
-          <span className="absolute bottom-1.5 left-0 right-0 text-center text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/60">
-            Camisa por fuera
-          </span>
-        </div>
+        <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} label="Camisa por dentro" />
+        <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} label="Camisa por fuera" />
       </div>
       <ul className="text-sm text-[var(--color-bordo)]/80 space-y-0.5">
         {bullets.map((b) => (
