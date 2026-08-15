@@ -174,10 +174,10 @@ function SeccionGenero({
 export default function CatalogoPage() {
   return (
     <main className="min-h-screen bg-[var(--color-papel)]">
-      <div className="sticky top-0 z-10 px-6 py-3">
+      <div className="sticky top-0 z-10 px-3 py-2">
         <Link
           href="/"
-          className="text-sm font-medium text-[var(--color-hueso)] bg-[var(--color-bordo)] hover:bg-[var(--color-bordo-oscuro)] inline-flex items-center gap-1.5 px-4 py-2 rounded-full shadow-md"
+          className="text-xs font-medium text-[var(--color-hueso)] bg-[var(--color-bordo)] hover:bg-[var(--color-bordo-oscuro)] inline-flex items-center gap-1 px-3 py-1.5 rounded-full shadow-md"
         >
           ← Volver
         </Link>
