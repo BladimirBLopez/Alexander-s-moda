@@ -279,11 +279,16 @@ export default function CatalogoPage() {
 
                 {/* Nueva seccion adicional: 3 columnas Mujer | centro | Varon, estilo referencia */}
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-[1fr_0.7fr_1fr] gap-2">
                     <div>
                       <FotoOPlaceholder src={producto.fotoMujerFuera} alt="Uniforme mujer" label="Uniforme Mujer" />
-                      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2">
-                        {producto.bulletsMujer.map((b) => (
+                      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2 border border-[var(--color-bordo)]/20 rounded-lg p-2">
+                        {[
+                          "Camisa manga corta verde musgo",
+                          "Corbata con bordado institucional",
+                          "Falda color hueso/arena",
+                          "Tipografía: " + producto.tipografia,
+                        ].map((b) => (
                           <li key={`m-${b}`} className="flex gap-1">
                             <span className="shrink-0">•</span>
                             <span>{b}</span>
@@ -334,8 +339,13 @@ export default function CatalogoPage() {
 
                     <div>
                       <FotoOPlaceholder src={producto.fotoHombreFuera} alt="Uniforme varón" label="Uniforme Varón" />
-                      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2">
-                        {producto.bulletsHombre.map((b) => (
+                      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2 border border-[var(--color-bordo)]/20 rounded-lg p-2">
+                        {[
+                          "Camisa manga corta verde musgo",
+                          "Corbata con bordado institucional",
+                          "Pantalón color hueso",
+                          "Tipografía: " + producto.tipografia,
+                        ].map((b) => (
                           <li key={`h-${b}`} className="flex gap-1">
                             <span className="shrink-0">•</span>
                             <span>{b}</span>
