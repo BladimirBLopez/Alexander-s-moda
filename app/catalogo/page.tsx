@@ -61,12 +61,15 @@ export default function CatalogoPage() {
   return (
     <main className="min-h-screen bg-[var(--color-papel)]">
       <div className="sticky top-0 z-10 px-6 py-3">
-        <Link href="/" className="text-sm text-[var(--color-bordo)]/70 hover:text-[var(--color-bordo)] inline-flex items-center gap-1.5">
+        <Link
+          href="/"
+          className="text-sm font-medium text-[var(--color-hueso)] bg-[var(--color-bordo)] hover:bg-[var(--color-bordo-oscuro)] inline-flex items-center gap-1.5 px-4 py-2 rounded-full shadow-md"
+        >
           ← Volver
         </Link>
       </div>
-      <div className="max-w-md mx-auto px-6 pb-12 pt-4">
-        <div className="text-center mb-8">
+      <div className="max-w-md mx-auto px-6 pb-8 pt-1">
+        <div className="text-center mb-6">
           <h1
             className="text-3xl uppercase tracking-wide text-[var(--color-bordo)]"
             style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}
