@@ -261,23 +261,13 @@ export default function CatalogoPage() {
                 />
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
-                <div className="relative mt-8 pt-8">
-                  <svg
-                    className="absolute top-0 left-0 w-full h-3 text-[var(--color-bronce)]/60"
-                    viewBox="0 0 200 12"
-                    preserveAspectRatio="none"
-                  >
-                    <path
-                      d="M0 6 Q 12.5 0 25 6 T 50 6 T 75 6 T 100 6 T 125 6 T 150 6 T 175 6 T 200 6"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    />
-                  </svg>
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-papel)] px-3 flex items-center gap-2">
-                    <span className="text-[7px] text-[var(--color-bronce)]">◆</span>
+                <div className="mt-8 pt-6">
+                  <div className="flex items-center justify-center gap-1.5 mb-6">
+                    <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
+                    <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
                     <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
-                    <span className="text-[7px] text-[var(--color-bronce)]">◆</span>
+                    <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
+                    <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
                   </div>
                   <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-3">
                     <div className="bg-[var(--color-bordo)] px-4 py-1.5">
@@ -369,23 +359,13 @@ export default function CatalogoPage() {
                 </div>
 
                 {/* Nueva seccion adicional: 3 columnas Mujer | centro | Varon, estilo referencia */}
-                <div className="relative mt-8 pt-8">
-                  <svg
-                    className="absolute top-0 left-0 w-full h-3 text-[var(--color-bronce)]/60"
-                    viewBox="0 0 200 12"
-                    preserveAspectRatio="none"
-                  >
-                    <path
-                      d="M0 6 Q 12.5 0 25 6 T 50 6 T 75 6 T 100 6 T 125 6 T 150 6 T 175 6 T 200 6"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    />
-                  </svg>
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-papel)] px-3 flex items-center gap-2">
-                    <span className="text-[7px] text-[var(--color-bronce)]">◆</span>
+                <div className="mt-8 pt-6">
+                  <div className="flex items-center justify-center gap-1.5 mb-6">
+                    <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
+                    <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
                     <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
-                    <span className="text-[7px] text-[var(--color-bronce)]">◆</span>
+                    <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
+                    <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
                   </div>
                   <div className="grid grid-cols-[1.5fr_0.5fr_1.5fr] gap-2">
                     <div>
