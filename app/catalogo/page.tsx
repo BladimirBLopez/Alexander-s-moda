@@ -216,8 +216,8 @@ export default function CatalogoPage() {
                 />
                 <div className="border border-[var(--color-bronce)]/50 rounded-lg overflow-hidden mb-8">
                   <div className="bg-[var(--color-bordo)] px-3 py-2">
-                    <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-hueso)] text-center" style={{ fontFamily: "var(--font-display)" }}>
-                      Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
+                    <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
+                      Tipografía del bordado: <span className="text-white font-bold">{producto.tipografia}</span>
                     </p>
                   </div>
                   <p className="text-[9px] text-[var(--color-bordo)]/80 text-center px-3 py-2 leading-relaxed">
@@ -237,8 +237,8 @@ export default function CatalogoPage() {
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
                   <div className="border border-[var(--color-bronce)]/50 rounded-lg overflow-hidden mb-3">
                     <div className="bg-[var(--color-bordo)] px-4 py-3">
-                      <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-hueso)] text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
+                      <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
+                        Tipografía del bordado: <span className="text-white font-bold">{producto.tipografia}</span>
                       </p>
                     </div>
                     <p className="text-[9px] text-[var(--color-bordo)]/80 text-center px-5 py-4 leading-relaxed">
@@ -247,10 +247,10 @@ export default function CatalogoPage() {
                   </div>
                   <div className="relative -mx-6">
                     <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
-                      <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                      <p className="text-center text-[11px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
                         Uniforme Femenino
                       </p>
-                      <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                      <p className="text-center text-[11px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
                         Uniforme Masculino
                       </p>
                     </div>
