@@ -5,10 +5,16 @@ export type Producto = {
   descripcion: string;
   tipografia: string;
   colores: { nombre: string; hex: string }[];
-  bullets: string[];
-  fotoMujer: string;
-  fotoHombre: string;
+  bulletsMujer: string[];
+  bulletsHombre: string[];
+  fotoMujerDentro: string;
+  fotoMujerFuera: string;
+  fotoHombreDentro: string;
+  fotoHombreFuera: string;
 };
+
+const PLACEHOLDER = (label: string) =>
+  `https://placehold.co/500x700/511014/ddb779?text=${encodeURIComponent(label)}`;
 
 export const productos: Producto[] = [
   {
@@ -21,30 +27,21 @@ export const productos: Producto[] = [
       { nombre: "Verde musgo", hex: "#4a5a3f" },
       { nombre: "Hueso / arena", hex: "#c9b896" },
     ],
-    bullets: [
+    bulletsMujer: [
       "Camisa manga corta color a elección",
+      "Corte femenino entallado",
       "Corbata con bordado de escudo propio",
-      "Falda o pantalón a juego",
+      "Falda a juego",
     ],
-    fotoMujer: "/catalogo/promo-mujer.png",
-    fotoHombre: "/catalogo/promo-hombre.png",
-  },
-  {
-    id: "uniforme-basico",
-    nombre: "Uniforme Escolar Básico",
-    subtitulo: "Uso diario",
-    descripcion: "Uniforme diario para colegio, a medida según diseño institucional.",
-    tipografia: "Times New Roman",
-    colores: [
-      { nombre: "Azul marino", hex: "#1e2a4a" },
-      { nombre: "Blanco", hex: "#f7f1e6" },
+    bulletsHombre: [
+      "Camisa manga corta color a elección",
+      "Corte clásico",
+      "Corbata con bordado de escudo propio",
+      "Pantalón a juego",
     ],
-    bullets: [
-      "Camisa/blusa manga corta o larga",
-      "Pantalón o falda según diseño",
-      "Bordado de escudo institucional",
-    ],
-    fotoMujer: "https://placehold.co/500x700/511014/ddb779?text=Foto+mujer",
-    fotoHombre: "https://placehold.co/500x700/511014/ddb779?text=Foto+hombre",
+    fotoMujerDentro: PLACEHOLDER("Mujer - camisa dentro"),
+    fotoMujerFuera: PLACEHOLDER("Mujer - camisa fuera"),
+    fotoHombreDentro: PLACEHOLDER("Hombre - camisa dentro"),
+    fotoHombreFuera: PLACEHOLDER("Hombre - camisa fuera"),
   },
 ];
