@@ -325,6 +325,75 @@ export default function CatalogoPage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Nueva seccion adicional: 3 columnas Mujer | centro | Varon, estilo referencia */}
+                <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
+                  <div className="grid grid-cols-3 gap-2">
+                    <div>
+                      <FotoOPlaceholder src={producto.fotoMujerFuera} alt="Uniforme mujer" label="Uniforme Mujer" />
+                      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2">
+                        {producto.bulletsMujer.map((b) => (
+                          <li key={`m-${b}`} className="flex gap-1">
+                            <span className="shrink-0">•</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                      <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
+                        <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
+                          <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
+                        </div>
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15">
+                          Bordado
+                        </p>
+                      </div>
+                      <div className="border border-[var(--color-bordo)]/25 rounded-lg overflow-hidden">
+                        <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
+                          <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
+                        </div>
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-bordo)]/15">
+                          Corbata
+                        </p>
+                      </div>
+                      <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2">
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center mb-1.5">
+                          Paleta
+                        </p>
+                        <div className="flex gap-1.5 justify-center">
+                          {producto.colores.map((color) => (
+                            <div key={color.nombre} className="flex flex-col items-center gap-0.5">
+                              <div className="w-6 h-6 rounded-sm border border-[var(--color-bordo)]/20" style={{ backgroundColor: color.hex }} />
+                              <span className="text-[6px] text-[var(--color-bordo)]/60 text-center leading-none max-w-[36px]">{color.nombre}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="border border-[var(--color-bordo)]/25 rounded-lg p-2 text-center">
+                        <p className="text-[7px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-0.5">
+                          Tipografía
+                        </p>
+                        <p className="text-[9px] text-[var(--color-bordo)]" style={{ fontFamily: "var(--font-display)" }}>
+                          {producto.tipografia}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <FotoOPlaceholder src={producto.fotoHombreFuera} alt="Uniforme varón" label="Uniforme Varón" />
+                      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1 mt-2">
+                        {producto.bulletsHombre.map((b) => (
+                          <li key={`h-${b}`} className="flex gap-1">
+                            <span className="shrink-0">•</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </article>
             );
           })}
