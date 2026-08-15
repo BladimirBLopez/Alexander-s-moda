@@ -299,25 +299,25 @@ export default function CatalogoPage() {
                           ))}
                         </div>
                       </div>
-                      <div className="p-2">
+                      <div className="pt-0.5 px-2 pb-2">
                         <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center border-b border-[var(--color-bordo)]/15 pb-1">
                           Tela
                         </p>
-                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
                           <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="p-2 flex flex-col">
+                    <div className="pt-0.5 px-2 pb-2 flex flex-col">
                       <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center border-b border-[var(--color-bordo)]/15 pb-1">
                         Bordados
                       </p>
                       <div className="flex-1 grid grid-cols-2 gap-1">
-                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
                           <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
                         </div>
-                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+                        <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/2]">
                           <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
                         </div>
                       </div>
