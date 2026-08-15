@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { productos } from "@/lib/productos";
+import FotoZoom from "@/components/FotoZoom";
 
 const WHATSAPP_NUMERO = "59177974868";
 
@@ -38,7 +39,7 @@ function ColumnaGenero2({
     <div className={bordeDerecho ? "border-r border-[var(--color-bordo)]/20" : ""}>
       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
         {foto ? (
-          <Image src={foto} alt={titulo} fill className="object-contain" />
+          <FotoZoom src={foto} alt={titulo} />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-center px-2">
             <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
@@ -86,7 +87,7 @@ function FotoOPlaceholder({ src, alt, label }: { src?: string; alt: string; labe
     <div className="flex flex-col items-center">
       <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
         {src ? (
-          <Image src={src} alt={alt} fill className="object-contain" />
+          <FotoZoom src={src} alt={alt} />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-center px-2">
             <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
@@ -283,7 +284,7 @@ export default function CatalogoPage() {
                     <div>
                       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
                         {producto.fotoMujerFuera ? (
-                          <Image src={producto.fotoMujerFuera} alt="Uniforme mujer" fill className="object-contain" />
+                          <FotoZoom src={producto.fotoMujerFuera} alt="Uniforme mujer" />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-center px-2">
                             <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">Foto pendiente</span>
@@ -353,7 +354,7 @@ export default function CatalogoPage() {
                     <div>
                       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
                         {producto.fotoHombreFuera ? (
-                          <Image src={producto.fotoHombreFuera} alt="Uniforme varón" fill className="object-contain" />
+                          <FotoZoom src={producto.fotoHombreFuera} alt="Uniforme varón" />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-center px-2">
                             <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">Foto pendiente</span>
