@@ -4,7 +4,7 @@ export type Producto = {
   subtitulo: string;
   descripcion: string;
   tipografia: string;
-  colores: { nombre: string; hex: string }[];
+  colores: { nombre: string; hex: string; uso: string }[];
   bulletsMujer: string[];
   bulletsHombre: string[];
   fotoMujerDentro?: string;
@@ -21,8 +21,8 @@ export const productos: Producto[] = [
     descripcion: "Diseño exclusivo a medida para el curso de graduación.",
     tipografia: "A definir según diseño",
     colores: [
-      { nombre: "Verde musgo", hex: "#4a5a3f" },
-      { nombre: "Hueso / arena", hex: "#c9b896" },
+      { nombre: "Verde musgo", hex: "#4a5a3f", uso: "Camisa" },
+      { nombre: "Hueso / arena", hex: "#c9b896", uso: "Corbata, falda y pantalón" },
     ],
     bulletsMujer: [
       "Camisa manga corta en telas Oxford, Fil a fil, Pic a pic, Dobi y Popelina brasilera con un bordado institucional",

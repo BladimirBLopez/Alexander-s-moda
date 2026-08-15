@@ -103,16 +103,21 @@ export default function CatalogoPage() {
                   bullets={producto.bulletsHombre}
                 />
 
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bordo)]/50 mb-2 text-center mt-6">
-                  Paleta de colores
-                </p>
-                <div className="flex gap-6 justify-center mb-6">
-                  {producto.colores.map((color) => (
-                    <div key={color.nombre} className="flex flex-col items-center gap-1">
-                      <div className="w-9 h-9 rounded-full border border-[var(--color-bordo)]/20" style={{ backgroundColor: color.hex }} />
-                      <span className="text-[10px] text-[var(--color-bordo)]/70">{color.nombre}</span>
-                    </div>
-                  ))}
+                <div className="border border-[var(--color-bordo)]/25 rounded-lg py-5 px-4 mb-6">
+                  <p className="text-xs uppercase tracking-[0.15em] text-[var(--color-bordo)]/60 text-center mb-4">
+                    Paleta de colores
+                  </p>
+                  <div className="flex gap-6 justify-center">
+                    {producto.colores.map((color) => (
+                      <div key={color.nombre} className="flex flex-col items-center gap-2 max-w-[120px]">
+                        <div className="w-16 h-16 rounded-sm border border-[var(--color-bordo)]/20" style={{ backgroundColor: color.hex }} />
+                        <div className="text-center">
+                          <p className="text-xs uppercase font-semibold text-[var(--color-bordo)]">{color.nombre}</p>
+                          <p className="text-[10px] text-[var(--color-bordo)]/60">({color.uso})</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <Link
