@@ -109,12 +109,14 @@ function SeccionGenero({
   fotoFuera,
   bullets,
   colores,
+  invertido = false,
 }: {
   titulo: string;
   fotoDentro?: string;
   fotoFuera?: string;
   bullets: string[];
   colores: { nombre: string; hex: string; uso: string }[];
+  invertido?: boolean;
 }) {
   return (
     <div className="mb-8">
@@ -125,8 +127,8 @@ function SeccionGenero({
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} label="Camisa por dentro" />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} label="Camisa por fuera" />
       </div>
-      <div className="grid grid-cols-[1.4fr_1fr] gap-3 border border-[var(--color-bordo)]/20 rounded-lg p-4">
-        <div>
+      <div className={`grid gap-3 border border-[var(--color-bordo)]/20 rounded-lg p-4 ${invertido ? "grid-cols-[1fr_1.4fr]" : "grid-cols-[1.4fr_1fr]"}`}>
+        <div className={invertido ? "order-2 border-l border-[var(--color-bordo)]/15 pl-3" : ""}>
           <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5">
             <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
           </p>
@@ -139,7 +141,7 @@ function SeccionGenero({
             ))}
           </ul>
         </div>
-        <div className="border-l border-[var(--color-bordo)]/15 pl-3">
+        <div className={invertido ? "order-1" : "border-l border-[var(--color-bordo)]/15 pl-3"}>
           <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center">
             <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
           </p>
@@ -218,6 +220,7 @@ export default function CatalogoPage() {
                   fotoFuera={producto.fotoHombreFuera}
                   bullets={producto.bulletsHombre}
                   colores={producto.colores}
+                  invertido
                 />
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
