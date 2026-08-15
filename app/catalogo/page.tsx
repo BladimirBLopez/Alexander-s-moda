@@ -6,7 +6,7 @@ const WHATSAPP_NUMERO = "59177974868";
 
 function FotoOPlaceholder({ src, alt, label }: { src?: string; alt: string; label: string }) {
   return (
-    <div className="relative aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-bordo)]/15">
+    <div className="relative aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
       {src ? (
         <Image src={src} alt={alt} fill className="object-contain" />
       ) : (
