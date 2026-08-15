@@ -118,6 +118,58 @@ function SeccionGenero({
   colores: { nombre: string; hex: string; uso: string }[];
   invertido?: boolean;
 }) {
+  const descripcionBlock = (
+    <div>
+      <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+        <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
+      </p>
+      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
+        {bullets.map((b) => (
+          <li key={b} className="flex gap-1">
+            <span className="shrink-0">•</span>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  const coloresBlock = (
+    <div>
+      <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
+        <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
+      </p>
+      <div className="space-y-1 mb-3">
+        {colores.map((color) => (
+          <div key={color.nombre} className="flex items-center gap-1">
+            <span className="w-3 h-3 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
+            <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
+          </div>
+        ))}
+      </div>
+      <div className="border-t border-[var(--color-bordo)]/15 pt-2 grid grid-cols-2 gap-1.5">
+        <div>
+          <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
+            Tela
+          </p>
+          <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+            <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+          </div>
+        </div>
+        <div>
+          <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
+            Bordado
+          </p>
+          <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
+            <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const divider = <div className="w-px bg-[var(--color-bordo)]/15" />;
+
   return (
     <div className="mb-8">
       <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mt-4 mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
@@ -127,51 +179,20 @@ function SeccionGenero({
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} label="Camisa por dentro" />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} label="Camisa por fuera" />
       </div>
-      <div className={`grid gap-5 border border-[var(--color-bordo)]/20 rounded-lg p-4 ${invertido ? "grid-cols-[1fr_1.4fr]" : "grid-cols-[1.4fr_1fr]"}`}>
-        <div className={invertido ? "order-2 border-l border-[var(--color-bordo)]/15" : ""}>
-          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-            <span className="inline-block border-b border-[var(--color-bordo)]/20 pb-1">Descripción</span>
-          </p>
-          <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
-            {bullets.map((b) => (
-              <li key={b} className="flex gap-1">
-                <span className="shrink-0">•</span>
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={invertido ? "order-1" : "border-l border-[var(--color-bordo)]/15"}>
-          <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-            <span className="inline-block border-b border-[var(--color-bordo)]/15 pb-1">Colores</span>
-          </p>
-          <div className="space-y-1 mb-3">
-            {colores.map((color) => (
-              <div key={color.nombre} className="flex items-center gap-1">
-                <span className="w-3 h-3 rounded-sm border border-[var(--color-bordo)]/20 shrink-0" style={{ backgroundColor: color.hex }} />
-                <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
-              </div>
-            ))}
-          </div>
-          <div className="border-t border-[var(--color-bordo)]/15 pt-2 grid grid-cols-2 gap-1.5">
-            <div>
-              <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                Tela
-              </p>
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
-                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-              </div>
-            </div>
-            <div>
-              <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                Bordado
-              </p>
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
-                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className={`grid gap-3 border border-[var(--color-bordo)]/20 rounded-lg p-4 ${invertido ? "grid-cols-[1fr_auto_1.4fr]" : "grid-cols-[1.4fr_auto_1fr]"}`}>
+        {invertido ? (
+          <>
+            {coloresBlock}
+            {divider}
+            {descripcionBlock}
+          </>
+        ) : (
+          <>
+            {descripcionBlock}
+            {divider}
+            {coloresBlock}
+          </>
+        )}
       </div>
     </div>
   );
