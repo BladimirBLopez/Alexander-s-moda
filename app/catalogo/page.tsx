@@ -84,25 +84,6 @@ export default function CatalogoPage() {
             const mensaje = encodeURIComponent(`Hola, me interesa el ${producto.nombre}`);
             return (
               <article key={producto.id} className="pespunte-hueso pt-8 first:border-t-0 first:pt-0">
-                <div className="text-center mb-6">
-                  <h2
-                    className="text-3xl uppercase tracking-wide text-[var(--color-bordo)] leading-tight"
-                    style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}
-                  >
-                    {producto.nombre}
-                  </h2>
-                  <p className="text-sm uppercase tracking-[0.15em] text-[var(--color-bordo)]/70 mt-1">
-                    {producto.subtitulo}
-                  </p>
-                  <div className="flex items-center justify-center gap-3 mt-3">
-                    <span className="text-[9px] text-[var(--color-bronce)]">◆</span>
-                    <span className="w-10 h-px bg-[var(--color-bronce)]/60" />
-                    <span className="text-lg text-[var(--color-bronce)] leading-none">❧</span>
-                    <span className="w-10 h-px bg-[var(--color-bronce)]/60" />
-                    <span className="text-[9px] text-[var(--color-bronce)]">◆</span>
-                  </div>
-                </div>
-
                 <SeccionGenero
                   titulo="Uniforme Mujer"
                   fotoDentro={producto.fotoMujerDentro}
