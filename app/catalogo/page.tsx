@@ -225,12 +225,17 @@ export default function CatalogoPage() {
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
                 <div className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-bordo)]/25">
-                  <div className="-mx-6 px-4 py-2.5 bg-[var(--color-bordo)] border-b border-[var(--color-hueso)]/20">
-                    <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-hueso)] text-center" style={{ fontFamily: "var(--font-display)" }}>
-                      Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
+                  <div className="border border-[var(--color-bronce)]/50 rounded-lg overflow-hidden">
+                    <div className="bg-[var(--color-bordo)] px-3 py-2">
+                      <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-hueso)] text-center" style={{ fontFamily: "var(--font-display)" }}>
+                        Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
+                      </p>
+                    </div>
+                    <p className="text-[9px] text-[var(--color-bordo)]/80 text-center px-3 py-2 leading-relaxed">
+                      La tipografía utilizada en todos los bordados es {producto.tipografia}, garantizando uniformidad, elegancia y una identidad institucional sólida.
                     </p>
                   </div>
-                  <div className="grid grid-cols-2 -mx-6 bg-[var(--color-bordo)]">
+                  <div className="grid grid-cols-2 -mx-6 bg-[var(--color-bordo)] mt-3">
                     <p className="text-center text-[11px] uppercase tracking-[0.1em] text-[var(--color-hueso)] font-semibold py-2.5 border-r border-[var(--color-hueso)]/20" style={{ fontFamily: "var(--font-display)" }}>
                       Uniforme Femenino
                     </p>
