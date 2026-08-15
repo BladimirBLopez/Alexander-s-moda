@@ -1,10 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Alexander's Moda | Uniformes escolares en Bolivia",
   description:
     "Uniformes escolares, moda colegial y de promoción a medida. Catálogo, pedidos y atención directa por WhatsApp.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
