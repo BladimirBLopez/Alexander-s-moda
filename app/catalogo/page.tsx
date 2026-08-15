@@ -43,9 +43,12 @@ function SeccionGenero({
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} label="Camisa por dentro" />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} label="Camisa por fuera" />
       </div>
-      <ul className="text-sm text-[var(--color-bordo)]/80 space-y-0.5">
+      <ul className="text-sm text-[var(--color-bordo)]/80 space-y-2.5 border border-[var(--color-bordo)]/20 rounded-lg p-4">
         {bullets.map((b) => (
-          <li key={b}>• {b}</li>
+          <li key={b} className="flex gap-2">
+            <span className="shrink-0">•</span>
+            <span>{b}</span>
+          </li>
         ))}
       </ul>
     </div>

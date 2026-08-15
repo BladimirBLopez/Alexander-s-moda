@@ -25,10 +25,10 @@ export const productos: Producto[] = [
       { nombre: "Hueso / arena", hex: "#c9b896" },
     ],
     bulletsMujer: [
-      "Camisa manga corta color a elección",
-      "Corte femenino entallado",
-      "Corbata con bordado de escudo propio",
-      "Falda a juego",
+      "Camisa manga corta en telas Oxford, Fil a fil, Pic a pic, Dobi y Popelina brasilera con un bordado institucional",
+      "Corbata en tela gabardina brasilera 100% algodón con un bordado institucional",
+      "Falda en tela brasilera 100% algodón",
+      "Polera en tela Piqué peruano con derecho a dos bordados institucionales",
     ],
     bulletsHombre: [
       "Camisa manga corta color a elección",
