@@ -382,7 +382,7 @@ export default function CatalogoPage() {
                       </div>
                       <div className="border border-[var(--color-hueso)]/50 rounded-b-lg p-2">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                          Uniforme Mujer
+                          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Uniforme Mujer</span>
                         </p>
                         <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
                           {[
@@ -452,7 +452,7 @@ export default function CatalogoPage() {
                       </div>
                       <div className="border border-[var(--color-hueso)]/50 rounded-b-lg p-2">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                          Uniforme Varón
+                          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Uniforme Varón</span>
                         </p>
                         <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
                           {[
