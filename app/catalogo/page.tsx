@@ -494,15 +494,9 @@ export default function CatalogoPage() {
               Centro Comercial Norte, Pasillo 11, Local #357
             </Link>
           </div>
-          <div className="mb-4">
+          <div>
             <RedesSociales variant="dark" />
           </div>
-          <Link
-            href={`https://wa.me/${WHATSAPP_NUMERO}`}
-            className="inline-block px-5 py-2 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] text-[11px] font-medium hover:bg-[var(--color-bordo-oscuro)] transition"
-          >
-            Pedir por WhatsApp
-          </Link>
         </footer>
       </div>
 
