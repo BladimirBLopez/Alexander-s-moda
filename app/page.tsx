@@ -36,7 +36,7 @@ const enlaces = [
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center text-center">
-      <div className="relative w-full h-32 overflow-hidden">
+      <div className="relative w-full h-40 overflow-hidden">
         <Image
           src="/banner.jpg"
           alt="Alexander's Moda"
@@ -47,7 +47,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(180deg, transparent 0%, transparent 55%, var(--color-bordo) 100%)",
+            background: "linear-gradient(180deg, transparent 0%, transparent 30%, var(--color-bordo) 90%)",
           }}
         />
         <div className="absolute top-3 right-4">
