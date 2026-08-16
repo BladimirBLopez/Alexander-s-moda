@@ -45,14 +45,10 @@ export default function Home() {
           priority
         />
         <div
+        <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(180deg,
-              rgba(0,0,0,0.25) 0%,
-              transparent 25%,
-              transparent 55%,
-              var(--color-bordo) 88%,
-              var(--color-bordo-oscuro) 100%)`,
+            background: "linear-gradient(180deg, transparent 0%, transparent 55%, var(--color-bordo) 100%)",
           }}
         />
         <div className="absolute top-3 right-4">
