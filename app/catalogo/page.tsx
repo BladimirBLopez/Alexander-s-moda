@@ -481,12 +481,12 @@ export default function CatalogoPage() {
           })}
         </div>
 
-        <footer className="mt-12 pt-8 border-t border-[var(--color-hueso)]/50 text-center">
-          <p className="text-[10px] uppercase tracking-[0.15em] text-[var(--color-bronce)] mb-3" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+        <footer className="mt-8 pt-5 border-t border-[var(--color-hueso)]/50 text-center">
+          <p className="text-[9px] uppercase tracking-[0.15em] text-[var(--color-bronce)] mb-2" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Alexander&apos;s Moda
           </p>
-          <div className="flex items-center justify-center gap-1.5 text-[var(--color-bordo)]/70 text-[10px] mb-4">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0">
+          <div className="flex items-center justify-center gap-1.5 text-[var(--color-bordo)]/70 text-[9px] mb-3">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0">
               <path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z" strokeLinejoin="round" />
               <circle cx="12" cy="10" r="2.5" />
             </svg>
@@ -494,12 +494,12 @@ export default function CatalogoPage() {
               Centro Comercial Norte, Pasillo 11, Local #357
             </Link>
           </div>
-          <div className="mb-5">
-            <RedesSociales />
+          <div className="mb-4">
+            <RedesSociales variant="dark" />
           </div>
           <Link
             href={`https://wa.me/${WHATSAPP_NUMERO}`}
-            className="inline-block px-6 py-2.5 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] text-xs font-medium hover:bg-[var(--color-bordo-oscuro)] transition"
+            className="inline-block px-5 py-2 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] text-[11px] font-medium hover:bg-[var(--color-bordo-oscuro)] transition"
           >
             Pedir por WhatsApp
           </Link>
