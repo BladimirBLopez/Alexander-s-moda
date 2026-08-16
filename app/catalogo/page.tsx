@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { productos } from "@/lib/productos";
 import FotoZoom from "@/components/FotoZoom";
+import BotonCompartir from "@/components/BotonCompartir";
 
 const WHATSAPP_NUMERO = "59177974868";
 
@@ -201,13 +202,14 @@ function SeccionGenero({
 export default function CatalogoPage() {
   return (
     <main className="min-h-screen bg-[var(--color-papel)]">
-      <div className="sticky top-0 z-10 px-3 py-2">
+      <div className="sticky top-0 z-10 px-3 py-2 flex items-center justify-between">
         <Link
           href="/"
           className="text-xs font-medium text-[var(--color-hueso)] bg-[var(--color-bordo)] hover:bg-[var(--color-bordo-oscuro)] inline-flex items-center gap-1 px-3 py-1.5 rounded-full shadow-md"
         >
           ← Volver
         </Link>
+        <BotonCompartir />
       </div>
       <div className="max-w-md mx-auto px-6 pb-8 pt-1">
         <div className="text-center mb-6">
