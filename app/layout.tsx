@@ -5,6 +5,31 @@ export const metadata: Metadata = {
   title: "Alexander's Moda | Uniformes escolares en Bolivia",
   description:
     "Uniformes escolares, moda colegial y de promoción a medida. Catálogo, pedidos y atención directa por WhatsApp.",
+  metadataBase: new URL("https://alexander-s-moda.vercel.app"),
+  openGraph: {
+    title: "Alexander's Moda | Uniformes escolares en Bolivia",
+    description:
+      "Uniformes escolares, moda colegial y de promoción a medida. Catálogo, pedidos y atención directa por WhatsApp.",
+    url: "https://alexander-s-moda.vercel.app",
+    siteName: "Alexander's Moda",
+    images: [
+      {
+        url: "/banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Alexander's Moda",
+      },
+    ],
+    locale: "es_BO",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alexander's Moda | Uniformes escolares en Bolivia",
+    description:
+      "Uniformes escolares, moda colegial y de promoción a medida. Catálogo, pedidos y atención directa por WhatsApp.",
+    images: ["/banner.jpg"],
+  },
 };
 
 export const viewport: Viewport = {
