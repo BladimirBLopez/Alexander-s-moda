@@ -267,7 +267,7 @@ export default function CatalogoPage() {
 
                 {/* Seccion adicional: vista tipo ficha tecnica combinada */}
                 <div className="mt-6">
-                  <div className="relative w-full h-7 mb-6 -mx-3">
+                  <div className="relative w-3/4 h-5 mb-6 mx-auto">
                     <Image
                       src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
                       alt=""
@@ -366,7 +366,7 @@ export default function CatalogoPage() {
 
                 {/* Nueva seccion adicional: 3 columnas Mujer | centro | Varon, estilo referencia */}
                 <div className="mt-6">
-                  <div className="relative w-full h-7 mb-6 -mx-3">
+                  <div className="relative w-3/4 h-5 mb-6 mx-auto">
                     <Image
                       src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
                       alt=""
