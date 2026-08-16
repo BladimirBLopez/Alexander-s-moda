@@ -509,7 +509,7 @@ export default function CatalogoPage() {
       <Link
         href={`https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent("Hola, me interesa un uniforme de Alexander's Moda")}`}
         aria-label="Pedir por WhatsApp"
-        className="fixed bottom-5 right-5 z-20 w-14 h-14 rounded-full shadow-lg overflow-hidden hover:scale-105 transition-transform relative"
+        className="fixed bottom-5 right-5 z-20 w-14 h-14 rounded-full shadow-lg overflow-hidden hover:scale-105 transition-transform"
       >
         <Image
           src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786895093/whatsapp-icon_oxdzin.png"
