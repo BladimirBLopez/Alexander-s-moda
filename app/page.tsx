@@ -36,7 +36,7 @@ const enlaces = [
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center text-center">
-      <div className="relative w-full h-72 overflow-hidden">
+      <div className="relative w-full h-32 overflow-hidden">
         <Image
           src="/banner.jpg"
           alt="Alexander's Moda"
