@@ -431,46 +431,50 @@ export default function CatalogoPage() {
             <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
           </div>
 
-          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-4">
+          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-2">
             <div className="w-full h-full flex items-center justify-center text-center px-2">
               <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
                 Foto pendiente
               </span>
             </div>
           </div>
+          <p className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold text-center mb-1" style={{ fontFamily: "var(--font-display)" }}>
+            Diseño elegante para grandes historias
+          </p>
+          <p className="text-[8px] text-[var(--color-bordo)]/70 text-center mb-4">
+            Unidos hacia nuestro futuro
+          </p>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-3 gap-2">
             <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                Tela 1
-              </p>
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
-                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] aspect-square">
+                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
               </div>
+              <p className="text-[7px] uppercase tracking-[0.03em] text-[var(--color-bordo)] font-semibold text-center py-1 border-t border-[var(--color-hueso)]/50 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+                Nombre bordado
+                <br />
+                <span className="text-[6px] text-[var(--color-bordo)]/60 font-normal">Manga derecha</span>
+              </p>
             </div>
             <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                Tela 2
-              </p>
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
-                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] aspect-square">
+                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
               </div>
+              <p className="text-[7px] uppercase tracking-[0.03em] text-[var(--color-bordo)] font-semibold text-center py-1 border-t border-[var(--color-hueso)]/50 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+                Bordado del sello
+                <br />
+                <span className="text-[6px] text-[var(--color-bordo)]/60 font-normal">Pequeño y elegante</span>
+              </p>
             </div>
             <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                Bordado 1
-              </p>
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
-                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] aspect-square">
+                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
               </div>
-            </div>
-            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                Bordado 2
+              <p className="text-[7px] uppercase tracking-[0.03em] text-[var(--color-bordo)] font-semibold text-center py-1 border-t border-[var(--color-hueso)]/50 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+                Promo 2027
+                <br />
+                <span className="text-[6px] text-[var(--color-bordo)]/60 font-normal">Manga izquierda</span>
               </p>
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
-                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
-              </div>
             </div>
           </div>
         </section>
