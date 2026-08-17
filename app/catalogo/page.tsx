@@ -430,20 +430,6 @@ export default function CatalogoPage() {
           })}
         </div>
 
-        {/* Grupo: Obsequios Especiales */}
-        <div className="mt-12 pt-8 border-t-2 border-[var(--color-hueso)]/40 text-center">
-          <p className="text-[11px] uppercase tracking-[0.25em] text-[var(--color-bronce)] mb-2" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
-            Obsequios Especiales
-          </p>
-          <div className="flex items-center justify-center gap-1.5">
-            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
-            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-          </div>
-        </div>
-
         {/* Nueva seccion: Poleras */}
         <section className="mt-10 pt-6">
             <div className="relative w-3/4 h-5 mb-6 mx-auto">
@@ -523,6 +509,20 @@ export default function CatalogoPage() {
             </div>
           </div>
         </section>
+
+        {/* Grupo: Obsequios Especiales */}
+        <div className="mt-12 pt-8 border-t-2 border-[var(--color-hueso)]/40 text-center">
+          <p className="text-[11px] uppercase tracking-[0.25em] text-[var(--color-bronce)] mb-2" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+            Obsequios Especiales
+          </p>
+          <div className="flex items-center justify-center gap-1.5">
+            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
+            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
+            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
+          </div>
+        </div>
 
         {/* Nueva seccion: Chamarras */}
         <section className="mt-10 pt-6">
