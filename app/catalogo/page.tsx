@@ -215,17 +215,6 @@ export default function CatalogoPage() {
           </div>
         </div>
 
-        <p className="text-[11px] uppercase tracking-[0.25em] text-[var(--color-bronce)] mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
-          Uniformes de Promoción
-        </p>
-        <div className="flex items-center justify-center gap-1.5 mb-6">
-          <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-          <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-          <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
-          <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-          <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-        </div>
-
         <div className="flex flex-col gap-16">
           {productos.map((producto) => {
             const mensaje = encodeURIComponent(`Hola, me interesa el ${producto.nombre}`);
