@@ -4,6 +4,7 @@ import { productos } from "@/lib/productos";
 import FotoZoom from "@/components/FotoZoom";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
+import VerColores from "@/components/VerColores";
 
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 
@@ -146,6 +147,9 @@ function SeccionGenero({
       <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">
         Colores a elección
       </p>
+      <div className="text-center">
+        <VerColores />
+      </div>
     </div>
   );
 
@@ -325,6 +329,7 @@ export default function CatalogoPage() {
                       <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
                     </p>
                     <p className="text-[9px] text-[var(--color-bordo)]/70">Colores a elección</p>
+                    <VerColores />
                   </div>
                 </div>
 
@@ -383,6 +388,7 @@ export default function CatalogoPage() {
                           Paleta
                         </p>
                         <p className="text-[9px] text-[var(--color-bordo)]/70">Colores a elección</p>
+                        <VerColores />
                       </div>
                       <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2 text-center">
                         <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-0.5" style={{ fontFamily: "var(--font-display)" }}>
@@ -565,6 +571,9 @@ export default function CatalogoPage() {
               <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
             </p>
             <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">Colores a elección</p>
+            <div className="text-center">
+              <VerColores />
+            </div>
           </div>
         </section>
 
@@ -609,6 +618,9 @@ export default function CatalogoPage() {
               <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
             </p>
             <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">Colores a elección</p>
+            <div className="text-center">
+              <VerColores />
+            </div>
           </div>
         </section>
 
