@@ -143,32 +143,9 @@ function SeccionGenero({
       <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
         <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
       </p>
-      <div className="space-y-1 mb-3">
-        {colores.map((color) => (
-          <div key={color.nombre} className="flex items-center gap-1">
-            <span className="w-6 h-6 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: color.hex }} />
-            <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
-          </div>
-        ))}
-      </div>
-      <div className="border-t border-[var(--color-hueso)]/50 pt-2 grid grid-cols-2 gap-1.5">
-        <div>
-          <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
-            Tela
-          </p>
-          <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
-            <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-          </div>
-        </div>
-        <div>
-          <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
-            Bordado
-          </p>
-          <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-square">
-            <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-          </div>
-        </div>
-      </div>
+      <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">
+        Colores a elección
+      </p>
     </div>
   );
 
@@ -247,14 +224,11 @@ export default function CatalogoPage() {
                   colores={producto.colores}
                 />
                 <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-6">
-                  <div className="bg-[var(--color-bordo)] px-4 py-1.5">
+                  <div className="bg-[var(--color-bordo)] px-4 py-2">
                     <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
-                      Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
+                      Tipografía de los bordados a definirse según los diseños
                     </p>
                   </div>
-                  <p className="text-[8px] text-[var(--color-bordo)]/80 text-center px-1 leading-relaxed">
-                    La tipografía utilizada en todos los bordados es {producto.tipografia}, garantizando uniformidad, elegancia y una identidad institucional sólida.
-                  </p>
                 </div>
                 <SeccionGenero
                   titulo="Uniforme Varón"
@@ -276,14 +250,11 @@ export default function CatalogoPage() {
                     />
                   </div>
                   <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-3">
-                    <div className="bg-[var(--color-bordo)] px-4 py-1.5">
+                    <div className="bg-[var(--color-bordo)] px-4 py-2">
                       <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        Tipografía del bordado: <span className="text-[var(--color-hueso)] font-bold">{producto.tipografia}</span>
+                        Tipografía de los bordados a definirse según los diseños
                       </p>
                     </div>
-                    <p className="text-[8px] text-[var(--color-bordo)]/80 text-center px-1 leading-relaxed">
-                      La tipografía utilizada en todos los bordados es {producto.tipografia}, garantizando uniformidad, elegancia y una identidad institucional sólida.
-                    </p>
                   </div>
                   <div className="relative -mx-6">
                     <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
@@ -331,36 +302,11 @@ export default function CatalogoPage() {
                     <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-[var(--color-hueso)]/50 pointer-events-none" />
                   </div>
 
-                  <div className="grid grid-cols-3 divide-x divide-[var(--color-hueso)]/50 -mx-6 border-t border-b border-[var(--color-hueso)]/50">
-                    <div className="pt-0.5 px-2 pb-2">
-                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
-                      </p>
-                      <div className="space-y-1.5">
-                        {producto.colores.map((color) => (
-                          <div key={color.nombre} className="flex items-center gap-1">
-                            <span className="w-6 h-6 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: color.hex }} />
-                            <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{color.nombre}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="pt-0.5 px-2 pb-2">
-                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Tela</span>
-                      </p>
-                      <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
-                        <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-                      </div>
-                    </div>
-                    <div className="pt-0.5 px-2 pb-2">
-                      <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-                        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Bordados</span>
-                      </p>
-                      <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded aspect-[4/3]">
-                        <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
-                      </div>
-                    </div>
+                  <div className="-mx-6 border-t border-b border-[var(--color-hueso)]/50 py-2.5 text-center">
+                    <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1" style={{ fontFamily: "var(--font-display)" }}>
+                      <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
+                    </p>
+                    <p className="text-[9px] text-[var(--color-bordo)]/70">Colores a elección</p>
                   </div>
                 </div>
 
@@ -411,36 +357,21 @@ export default function CatalogoPage() {
                           <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
                         </div>
                         <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-hueso)]/50" style={{ fontFamily: "var(--font-display)" }}>
-                          Bordado
-                        </p>
-                      </div>
-                      <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-                        <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
-                          <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
-                        </div>
-                        <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-hueso)]/50" style={{ fontFamily: "var(--font-display)" }}>
                           Corbata
                         </p>
                       </div>
-                      <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2">
-                        <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                      <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2 text-center">
+                        <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-1" style={{ fontFamily: "var(--font-display)" }}>
                           Paleta
                         </p>
-                        <div className="flex gap-1.5 justify-center">
-                          {producto.colores.map((color) => (
-                            <div key={color.nombre} className="flex flex-col items-center gap-0.5">
-                              <div className="w-6 h-6 rounded-sm border border-[var(--color-hueso)]/50" style={{ backgroundColor: color.hex }} />
-                              <span className="text-[7px] text-[var(--color-bordo)]/60 text-center leading-none max-w-[36px]">{color.nombre}</span>
-                            </div>
-                          ))}
-                        </div>
+                        <p className="text-[9px] text-[var(--color-bordo)]/70">Colores a elección</p>
                       </div>
                       <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2 text-center">
                         <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 mb-0.5" style={{ fontFamily: "var(--font-display)" }}>
                           Tipografía
                         </p>
-                        <p className="text-[10px] text-[var(--color-bordo)]" style={{ fontFamily: "var(--font-display)" }}>
-                          {producto.tipografia}
+                        <p className="text-[9px] text-[var(--color-bordo)]">
+                          A definirse según los diseños
                         </p>
                       </div>
                     </div>
