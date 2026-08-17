@@ -2,7 +2,33 @@
 import { useState } from "react";
 import { telas, type Tela } from "@/data/telas";
 
-const CARACTERISTICAS_COMUNES = "Durabilidad · Suave al Tacto · Respirabilidad";
+const CARACTERISTICAS_COMUNES = [
+  {
+    label: "Durabilidad",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+        <path d="M6 3h12M6 21h12M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    label: "Suave al Tacto",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+        <path d="M7 12a5 5 0 0 1 10 0c1.5 0 3 1 3 3s-1.5 3-3 3H7c-1.5 0-3-1-3-3s1.5-3 3-3Z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 20l1-2M12 20l0-2M15 20l-1-2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    label: "Respirabilidad",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+        <path d="M8 3v4M12 3v6M16 3v4M4 11h16M4 11c0 5 2 9 8 10 6-1 8-5 8-10" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+];
 
 export default function VerColores() {
   const [abierto, setAbierto] = useState(false);
@@ -22,9 +48,16 @@ export default function VerColores() {
       >
         Ver colores
       </button>
-      <p className="text-[7px] text-[var(--color-bordo)]/60 mt-1.5 tracking-[0.02em]">
-        {CARACTERISTICAS_COMUNES}
-      </p>
+      <div className="flex items-center gap-3 mt-2">
+        {CARACTERISTICAS_COMUNES.map((c) => (
+          <div key={c.label} className="flex flex-col items-center gap-0.5">
+            <span className="w-4 h-4 text-[var(--color-bordo)]/70">{c.icon}</span>
+            <span className="text-[6px] text-[var(--color-bordo)]/60 text-center leading-tight">
+              {c.label}
+            </span>
+          </div>
+        ))}
+      </div>
 
       {abierto && (
         <div
