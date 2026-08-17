@@ -435,7 +435,7 @@ export default function CatalogoPage() {
           <div className="grid grid-cols-[1.2fr_1fr] gap-3 mb-3">
             <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50">
               <Image
-                src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png"
+                src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786939446/Dise%C3%B1o_sin_t%C3%ADtulo_5_gar2iq.png"
                 alt="Polera"
                 fill
                 className="object-cover"
