@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { telas, type Tela } from "@/data/telas";
 
 const CARACTERISTICAS_COMUNES = [
@@ -38,6 +38,17 @@ export default function VerColores() {
     setAbierto(false);
     setTelaActiva(null);
   }
+
+  useEffect(() => {
+    if (abierto) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [abierto]);
 
   return (
     <div>
