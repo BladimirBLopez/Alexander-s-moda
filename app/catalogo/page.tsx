@@ -445,7 +445,7 @@ export default function CatalogoPage() {
             Unidos hacia nuestro futuro
           </p>
 
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 gap-2 mb-4">
             <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
               <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] aspect-square">
                 <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
@@ -466,7 +466,7 @@ export default function CatalogoPage() {
                 <span className="text-[6px] text-[var(--color-bordo)]/60 font-normal">Pequeño y elegante</span>
               </p>
             </div>
-            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
+            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden col-span-2 max-w-[150px] mx-auto">
               <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] aspect-square">
                 <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
               </div>
@@ -475,6 +475,31 @@ export default function CatalogoPage() {
                 <br />
                 <span className="text-[6px] text-[var(--color-bordo)]/60 font-normal">Manga izquierda</span>
               </p>
+            </div>
+          </div>
+
+          <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3">
+            <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
+            </p>
+            <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5 mb-3">
+              <li className="flex gap-1">
+                <span className="shrink-0">•</span>
+                <span>Descripción pendiente</span>
+              </li>
+            </ul>
+            <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
+            </p>
+            <div className="flex items-center justify-center gap-4">
+              <div className="flex items-center gap-1">
+                <span className="w-4 h-4 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: "#4a5a3f" }} />
+                <span className="text-[8px] text-[var(--color-bordo)]/70">Verde musgo</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="w-4 h-4 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: "#c9b896" }} />
+                <span className="text-[8px] text-[var(--color-bordo)]/70">Hueso / arena</span>
+              </div>
             </div>
           </div>
         </section>
