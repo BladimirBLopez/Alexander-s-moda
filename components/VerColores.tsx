@@ -1,24 +1,15 @@
 "use client";
-
 import { useState } from "react";
-
-const coloresCamisa = [
-  { nombre: "19", hex: "#8ba888" },
-  { nombre: "10", hex: "#f0e9d8" },
-  { nombre: "06", hex: "#b8393f" },
-  { nombre: "04", hex: "#6b4c7a" },
-  { nombre: "16", hex: "#e3a9bb" },
-  { nombre: "03", hex: "#7fae6a" },
-  { nombre: "01", hex: "#8bb2d6" },
-  { nombre: "15", hex: "#3f5b8a" },
-  { nombre: "25", hex: "#6a7566" },
-  { nombre: "13", hex: "#1c1e1c" },
-  { nombre: "26", hex: "#8a7a5c" },
-  { nombre: "27", hex: "#6e1f2e" },
-];
+import { telas, type Tela } from "@/data/telas";
 
 export default function VerColores() {
   const [abierto, setAbierto] = useState(false);
+  const [telaActiva, setTelaActiva] = useState<Tela | null>(null);
+
+  function cerrar() {
+    setAbierto(false);
+    setTelaActiva(null);
+  }
 
   return (
     <>
@@ -33,19 +24,22 @@ export default function VerColores() {
       {abierto && (
         <div
           className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-6"
-          onClick={() => setAbierto(false)}
+          onClick={cerrar}
         >
           <div
             className="bg-[var(--color-papel)] rounded-xl w-full max-w-[320px] max-h-[80vh] overflow-y-auto p-4 border border-[var(--color-hueso)]/50"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-3">
-              <p className="text-[11px] uppercase tracking-[0.08em] text-[var(--color-bordo)] font-bold" style={{ fontFamily: "var(--font-display)" }}>
-                Colores disponibles
+              <p
+                className="text-[11px] uppercase tracking-[0.08em] text-[var(--color-bordo)] font-bold"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                {telaActiva ? telaActiva.nombre : "Elegí una tela"}
               </p>
               <button
                 type="button"
-                onClick={() => setAbierto(false)}
+                onClick={cerrar}
                 aria-label="Cerrar"
                 className="w-6 h-6 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] flex items-center justify-center text-xs shrink-0"
               >
@@ -53,17 +47,62 @@ export default function VerColores() {
               </button>
             </div>
 
-            <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold border-b border-[var(--color-hueso)]/40 pb-1 mb-2" style={{ fontFamily: "var(--font-display)" }}>
-              Camisa
-            </p>
-            <div className="grid grid-cols-4 gap-1.5">
-              {coloresCamisa.map((c) => (
-                <div key={c.nombre} className="flex flex-col items-center">
-                  <div className="w-full aspect-square rounded border border-[var(--color-hueso)]/40" style={{ backgroundColor: c.hex }} />
-                  <span className="text-[6px] text-[var(--color-bordo)]/70 text-center mt-0.5 leading-tight">{c.nombre}</span>
+            {!telaActiva && (
+              <div className="flex flex-col gap-2">
+                {telas.map((tela) => (
+                  <button
+                    key={tela.id}
+                    type="button"
+                    onClick={() => setTelaActiva(tela)}
+                    className="flex items-center gap-2.5 border border-[var(--color-hueso)]/40 rounded-lg p-2 text-left hover:bg-[var(--color-bordo)]/5 transition"
+                  >
+                    <span
+                      className="w-8 h-8 rounded shrink-0 border border-[var(--color-hueso)]/40"
+                      style={{ backgroundColor: tela.colores[0]?.hex }}
+                    />
+                    <span className="min-w-0">
+                      <span
+                        className="block text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold truncate"
+                        style={{ fontFamily: "var(--font-display)" }}
+                      >
+                        {tela.nombre}
+                      </span>
+                      <span className="block text-[7px] text-[var(--color-bordo)]/60 truncate">
+                        {tela.caracteristicas.slice(0, 2).join(" · ")}
+                      </span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {telaActiva && (
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setTelaActiva(null)}
+                  className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/70 mb-2 inline-block"
+                >
+                  ← Volver a telas
+                </button>
+                <p className="text-[7px] text-[var(--color-bordo)]/60 mb-2">
+                  {telaActiva.composicion} · {telaActiva.gramaje}
+                </p>
+                <div className="grid grid-cols-4 gap-1.5">
+                  {telaActiva.colores.map((c) => (
+                    <div key={c.codigo} className="flex flex-col items-center">
+                      <div
+                        className="w-full aspect-square rounded border border-[var(--color-hueso)]/40"
+                        style={{ backgroundColor: c.hex }}
+                      />
+                      <span className="text-[6px] text-[var(--color-bordo)]/70 text-center mt-0.5 leading-tight">
+                        {c.codigo}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       )}
