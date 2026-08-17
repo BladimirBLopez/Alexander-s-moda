@@ -431,19 +431,31 @@ export default function CatalogoPage() {
             <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
           </div>
 
-          <div className="grid grid-cols-[1.2fr_1fr] gap-3 mb-4">
+          <div className="grid grid-cols-[1.2fr_1fr] gap-3 mb-3">
             <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50">
               <div className="w-full h-full flex items-center justify-center text-center px-2">
-                <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
-                  Foto pendiente
+                <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
+                  Foto principal pendiente
                 </span>
               </div>
             </div>
-            <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3">
+            <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3 h-full flex flex-col">
               <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                 <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
               </p>
-              <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
+              <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-2 flex-1">
+                <li className="flex gap-1">
+                  <span className="shrink-0">•</span>
+                  <span>Descripción pendiente</span>
+                </li>
+                <li className="flex gap-1">
+                  <span className="shrink-0">•</span>
+                  <span>Descripción pendiente</span>
+                </li>
+                <li className="flex gap-1">
+                  <span className="shrink-0">•</span>
+                  <span>Descripción pendiente</span>
+                </li>
                 <li className="flex gap-1">
                   <span className="shrink-0">•</span>
                   <span>Descripción pendiente</span>
@@ -452,58 +464,42 @@ export default function CatalogoPage() {
             </div>
           </div>
 
-          <p className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold text-center mb-1" style={{ fontFamily: "var(--font-display)" }}>
-            Diseño elegante para grandes historias
-          </p>
-          <p className="text-[8px] text-[var(--color-bordo)]/70 text-center mb-4">
-            Unidos hacia nuestro futuro
-          </p>
-
-          <div className="grid grid-cols-2 gap-2 mb-4">
-            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] aspect-square">
-                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+          <div className="grid grid-cols-[1.2fr_1fr] gap-3">
+            <div className="flex flex-col gap-2 h-full">
+              <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2 flex-1 flex flex-col justify-center">
+                <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                  <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
+                </p>
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-center justify-center gap-1">
+                    <span className="w-3.5 h-3.5 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: "#4a5a3f" }} />
+                    <span className="text-[7px] text-[var(--color-bordo)]/70">Verde musgo</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-1">
+                    <span className="w-3.5 h-3.5 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: "#c9b896" }} />
+                    <span className="text-[7px] text-[var(--color-bordo)]/70">Hueso / arena</span>
+                  </div>
+                </div>
               </div>
-              <p className="text-[7px] uppercase tracking-[0.03em] text-[var(--color-bordo)] font-semibold text-center py-1 border-t border-[var(--color-hueso)]/50 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-                Nombre bordado
-                <br />
-                <span className="text-[6px] text-[var(--color-bordo)]/60 font-normal">Manga derecha</span>
-              </p>
+              <div className="border border-[var(--color-hueso)]/50 rounded-lg p-2 flex-1 flex flex-col justify-center">
+                <p className="text-[8px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                  <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Bordados</span>
+                </p>
+                <div className="flex gap-1">
+                  <div className="flex-1 aspect-square bg-[var(--color-bordo)]/[0.04] rounded border border-[var(--color-hueso)]/30 flex items-center justify-center">
+                    <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+                  </div>
+                  <div className="flex-1 aspect-square bg-[var(--color-bordo)]/[0.04] rounded border border-[var(--color-hueso)]/30 flex items-center justify-center">
+                    <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-0.5">Pendiente</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] aspect-square">
-                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
-              </div>
-              <p className="text-[7px] uppercase tracking-[0.03em] text-[var(--color-bordo)] font-semibold text-center py-1 border-t border-[var(--color-hueso)]/50 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-                Bordado del sello
-                <br />
-                <span className="text-[6px] text-[var(--color-bordo)]/60 font-normal">Pequeño y elegante</span>
-              </p>
-            </div>
-            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden col-span-2 max-w-[150px] mx-auto">
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] aspect-square">
-                <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
-              </div>
-              <p className="text-[7px] uppercase tracking-[0.03em] text-[var(--color-bordo)] font-semibold text-center py-1 border-t border-[var(--color-hueso)]/50 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-                Promo 2027
-                <br />
-                <span className="text-[6px] text-[var(--color-bordo)]/60 font-normal">Manga izquierda</span>
-              </p>
-            </div>
-          </div>
-
-          <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3">
-            <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
-            </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="flex items-center gap-1">
-                <span className="w-4 h-4 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: "#4a5a3f" }} />
-                <span className="text-[8px] text-[var(--color-bordo)]/70">Verde musgo</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="w-4 h-4 rounded-sm border border-[var(--color-hueso)]/50 shrink-0" style={{ backgroundColor: "#c9b896" }} />
-                <span className="text-[8px] text-[var(--color-bordo)]/70">Hueso / arena</span>
+            <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50">
+              <div className="w-full h-full flex items-center justify-center text-center px-2">
+                <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
+                  Foto 2 pendiente
+                </span>
               </div>
             </div>
           </div>
