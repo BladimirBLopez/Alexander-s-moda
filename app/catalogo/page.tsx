@@ -229,6 +229,9 @@ export default function CatalogoPage() {
                       Tipografía de los bordados a definirse según los diseños
                     </p>
                   </div>
+                  <p className="text-[8px] text-[var(--color-bordo)]/80 text-center px-1 py-2 leading-relaxed">
+                    La tipografía de los bordados se definirá según cada diseño, garantizando uniformidad, elegancia y una identidad institucional sólida.
+                  </p>
                 </div>
                 <SeccionGenero
                   titulo="Uniforme Varón"
@@ -255,6 +258,9 @@ export default function CatalogoPage() {
                         Tipografía de los bordados a definirse según los diseños
                       </p>
                     </div>
+                    <p className="text-[8px] text-[var(--color-bordo)]/80 text-center px-1 py-2 leading-relaxed">
+                      La tipografía de los bordados se definirá según cada diseño, garantizando uniformidad, elegancia y una identidad institucional sólida.
+                    </p>
                   </div>
                   <div className="relative -mx-6">
                     <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
