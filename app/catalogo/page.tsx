@@ -113,14 +113,12 @@ function SeccionGenero({
   fotoDentro,
   fotoFuera,
   bullets,
-  colores,
   invertido = false,
 }: {
   titulo: string;
   fotoDentro?: string;
   fotoFuera?: string;
   bullets: string[];
-  colores: { nombre: string; hex: string; uso: string }[];
   invertido?: boolean;
 }) {
   const descripcionBlock = (
@@ -221,7 +219,6 @@ export default function CatalogoPage() {
 
         <div className="flex flex-col gap-16">
           {productos.map((producto) => {
-            const mensaje = encodeURIComponent(`Hola, me interesa el ${producto.nombre}`);
             return (
               <article key={producto.id} className="[&:not(:first-child)]:pespunte-hueso [&:not(:first-child)]:pt-8">
                 <div className="text-center mb-4">
@@ -237,7 +234,6 @@ export default function CatalogoPage() {
                   fotoDentro={producto.fotoMujerDentro}
                   fotoFuera={producto.fotoMujerFuera}
                   bullets={producto.bulletsMujer}
-                  colores={producto.colores}
                 />
                 <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-6">
                   <div className="bg-[var(--color-bordo)] px-4 py-2">
@@ -254,7 +250,6 @@ export default function CatalogoPage() {
                   fotoDentro={producto.fotoHombreDentro}
                   fotoFuera={producto.fotoHombreFuera}
                   bullets={producto.bulletsHombre}
-                  colores={producto.colores}
                   invertido
                 />
 

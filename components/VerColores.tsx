@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { telas, type Tela } from "@/data/telas";
 
 const CARACTERISTICAS_COMUNES = [
@@ -79,12 +80,15 @@ export default function VerColores() {
             className="bg-[var(--color-papel)] rounded-xl w-full max-w-[360px] max-h-[80vh] overflow-y-auto p-4 border border-[var(--color-hueso)]/50"
             onClick={(e) => e.stopPropagation()}
           >
-            <p
-              className="text-center text-[10px] uppercase tracking-[0.15em] text-[var(--color-bordo)]/70 font-bold mb-1 pb-2 border-b border-[var(--color-hueso)]/40"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Alexander&apos;s Moda
-            </p>
+            <div className="flex justify-center mb-1 pb-2 border-b border-[var(--color-hueso)]/40">
+              <Image
+                src="/alexanders-moda-logo.png"
+                alt="Alexander's Moda"
+                width={120}
+                height={40}
+                className="h-8 w-auto object-contain"
+              />
+            </div>
 
             <div className="flex items-center justify-between mb-3 mt-2">
               <p
