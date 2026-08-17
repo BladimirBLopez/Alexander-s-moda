@@ -418,6 +418,63 @@ export default function CatalogoPage() {
           })}
         </div>
 
+        {/* Nueva seccion: Poleras */}
+        <section className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-hueso)]/60">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+            Poleras
+          </p>
+          <div className="flex items-center justify-center gap-1.5 mb-4">
+            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
+            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
+            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
+          </div>
+
+          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-4">
+            <div className="w-full h-full flex items-center justify-center text-center px-2">
+              <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
+                Foto pendiente
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
+              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                Tela 1
+              </p>
+              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
+                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+              </div>
+            </div>
+            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
+              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                Tela 2
+              </p>
+              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
+                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+              </div>
+            </div>
+            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
+              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                Bordado 1
+              </p>
+              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
+                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+              </div>
+            </div>
+            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
+              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                Bordado 2
+              </p>
+              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
+                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <footer className="mt-8 pt-5 border-t border-[var(--color-hueso)]/50 text-center">
           <p className="text-[9px] uppercase tracking-[0.15em] text-[var(--color-bronce)] mb-2" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Alexander&apos;s Moda
