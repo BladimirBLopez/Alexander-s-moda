@@ -431,13 +431,27 @@ export default function CatalogoPage() {
             <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
           </div>
 
-          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-2">
-            <div className="w-full h-full flex items-center justify-center text-center px-2">
-              <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
-                Foto pendiente
-              </span>
+          <div className="grid grid-cols-[1.2fr_1fr] gap-3 mb-4">
+            <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50">
+              <div className="w-full h-full flex items-center justify-center text-center px-2">
+                <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
+                  Foto pendiente
+                </span>
+              </div>
+            </div>
+            <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3">
+              <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+                <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
+              </p>
+              <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
+                <li className="flex gap-1">
+                  <span className="shrink-0">•</span>
+                  <span>Descripción pendiente</span>
+                </li>
+              </ul>
             </div>
           </div>
+
           <p className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold text-center mb-1" style={{ fontFamily: "var(--font-display)" }}>
             Diseño elegante para grandes historias
           </p>
@@ -479,15 +493,6 @@ export default function CatalogoPage() {
           </div>
 
           <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3">
-            <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
-            </p>
-            <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5 mb-3">
-              <li className="flex gap-1">
-                <span className="shrink-0">•</span>
-                <span>Descripción pendiente</span>
-              </li>
-            </ul>
             <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
               <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
             </p>
