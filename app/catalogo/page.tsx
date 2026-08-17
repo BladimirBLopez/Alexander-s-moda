@@ -434,11 +434,12 @@ export default function CatalogoPage() {
 
           <div className="grid grid-cols-[1.2fr_1fr] gap-3 mb-3">
             <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50">
-              <div className="w-full h-full flex items-center justify-center text-center px-2">
-                <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
-                  Foto principal pendiente
-                </span>
-              </div>
+              <Image
+                src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png"
+                alt="Polera"
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3 h-full flex flex-col">
               <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
@@ -497,11 +498,12 @@ export default function CatalogoPage() {
               </div>
             </div>
             <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50">
-              <div className="w-full h-full flex items-center justify-center text-center px-2">
-                <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
-                  Foto 2 pendiente
-                </span>
-              </div>
+              <Image
+                src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png"
+                alt="Polera"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
