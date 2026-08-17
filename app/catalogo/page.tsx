@@ -419,17 +419,18 @@ export default function CatalogoPage() {
         </div>
 
         {/* Nueva seccion: Poleras */}
-        <section className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-hueso)]/60">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+        <section className="mt-10 pt-6">
+            <div className="relative w-3/4 h-5 mb-6 mx-auto">
+            <Image
+              src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
+              alt=""
+              fill
+              className="object-contain"
+            />
+          </div>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-4 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Poleras
           </p>
-          <div className="flex items-center justify-center gap-1.5 mb-4">
-            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
-            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-          </div>
 
           <div className="grid grid-cols-[1.2fr_1fr] gap-3 mb-3">
             <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50">
@@ -506,17 +507,18 @@ export default function CatalogoPage() {
         </section>
 
         {/* Nueva seccion: Chamarras */}
-        <section className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-hueso)]/60">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+        <section className="mt-10 pt-6">
+            <div className="relative w-3/4 h-5 mb-6 mx-auto">
+            <Image
+              src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
+              alt=""
+              fill
+              className="object-contain"
+            />
+          </div>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-4 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Chamarras
           </p>
-          <div className="flex items-center justify-center gap-1.5 mb-4">
-            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
-            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-          </div>
 
           <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-4">
             <Image
@@ -554,17 +556,18 @@ export default function CatalogoPage() {
         </section>
 
         {/* Nueva seccion: Canguros */}
-        <section className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-hueso)]/60">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+        <section className="mt-10 pt-6">
+            <div className="relative w-3/4 h-5 mb-6 mx-auto">
+            <Image
+              src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
+              alt=""
+              fill
+              className="object-contain"
+            />
+          </div>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-4 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Canguros
           </p>
-          <div className="flex items-center justify-center gap-1.5 mb-4">
-            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
-            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
-            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
-          </div>
 
           <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-4">
             <Image
