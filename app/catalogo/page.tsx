@@ -433,13 +433,8 @@ export default function CatalogoPage() {
           </p>
 
           <div className="grid grid-cols-[1.2fr_1fr] gap-3 mb-3">
-            <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50">
-              <Image
-                src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786939446/Dise%C3%B1o_sin_t%C3%ADtulo_5_gar2iq.png"
-                alt="Polera"
-                fill
-                className="object-cover"
-              />
+            <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
+              <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786939446/Dise%C3%B1o_sin_t%C3%ADtulo_5_gar2iq.png" alt="Polera" />
             </div>
             <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3 h-full flex flex-col">
               <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
@@ -497,13 +492,8 @@ export default function CatalogoPage() {
                 </div>
               </div>
             </div>
-            <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50">
-              <Image
-                src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png"
-                alt="Polera"
-                fill
-                className="object-cover"
-              />
+            <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
+              <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786978172/Sin_t%C3%ADtulo_1000_x_1400_px_2_snyq8e.png" alt="Polera" />
             </div>
           </div>
         </section>
@@ -522,13 +512,8 @@ export default function CatalogoPage() {
             Chamarras
           </p>
 
-          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-4">
-            <Image
-              src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png"
-              alt="Chamarra Americana"
-              fill
-              className="object-cover"
-            />
+          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] mb-4">
+            <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png" alt="Chamarra Americana" />
           </div>
 
           <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
@@ -571,13 +556,8 @@ export default function CatalogoPage() {
             Canguros
           </p>
 
-          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-4">
-            <Image
-              src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png"
-              alt="Canguro Clásico"
-              fill
-              className="object-cover"
-            />
+          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] mb-4">
+            <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png" alt="Canguro Clásico" />
           </div>
 
           <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
