@@ -57,7 +57,7 @@ export default function VerColores() {
         onClick={() => setAbierto(true)}
         className="text-[10px] uppercase tracking-[0.08em] text-[var(--color-hueso)] bg-[var(--color-bordo)] rounded-full px-4 py-2 mt-1.5 font-semibold shadow-sm hover:opacity-90 transition"
       >
-        Ver colores
+        Ver opciones
       </button>
       <div className="flex items-center gap-3 mt-2">
         {CARACTERISTICAS_COMUNES.map((c) => (
