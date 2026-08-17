@@ -497,13 +497,29 @@ export default function CatalogoPage() {
             />
           </div>
 
-          <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
+          <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
             <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
               Chamarra Americana
             </p>
             <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
               <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
             </div>
+          </div>
+
+          <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3">
+            <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
+            </p>
+            <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5 mb-3">
+              <li className="flex gap-1">
+                <span className="shrink-0">•</span>
+                <span>Descripción pendiente</span>
+              </li>
+            </ul>
+            <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
+            </p>
+            <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">Colores a elección</p>
           </div>
         </section>
 
@@ -529,13 +545,29 @@ export default function CatalogoPage() {
             />
           </div>
 
-          <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
+          <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
             <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
               Canguro Clásico
             </p>
             <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
               <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
             </div>
+          </div>
+
+          <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3">
+            <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
+            </p>
+            <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5 mb-3">
+              <li className="flex gap-1">
+                <span className="shrink-0">•</span>
+                <span>Descripción pendiente</span>
+              </li>
+            </ul>
+            <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
+            </p>
+            <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">Colores a elección</p>
           </div>
         </section>
 
