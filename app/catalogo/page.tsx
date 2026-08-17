@@ -475,10 +475,10 @@ export default function CatalogoPage() {
           </div>
         </section>
 
-        {/* Nueva seccion: Chamarras y Canguros */}
+        {/* Nueva seccion: Chamarras */}
         <section className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-hueso)]/60">
           <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
-            Chamarras y Canguros
+            Chamarras
           </p>
           <div className="flex items-center justify-center gap-1.5 mb-4">
             <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
@@ -489,29 +489,52 @@ export default function CatalogoPage() {
           </div>
 
           <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-4">
-            <div className="w-full h-full flex items-center justify-center text-center px-2">
-              <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
-                Foto pendiente
-              </span>
-            </div>
+            <Image
+              src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png"
+              alt="Chamarra Americana"
+              fill
+              className="object-cover"
+            />
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                Chamarra Americana
-              </p>
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
-                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
-              </div>
+          <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
+            <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
+              Chamarra Americana
+            </p>
+            <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
+              <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
             </div>
-            <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-              <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                Canguro Clásico
-              </p>
-              <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
-                <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
-              </div>
+          </div>
+        </section>
+
+        {/* Nueva seccion: Canguros */}
+        <section className="mt-10 pt-8 border-t-2 border-dashed border-[var(--color-hueso)]/60">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+            Canguros
+          </p>
+          <div className="flex items-center justify-center gap-1.5 mb-4">
+            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
+            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-base text-[var(--color-bronce)] leading-none">⚜</span>
+            <span className="w-9 h-px bg-[var(--color-bronce)]/60" />
+            <span className="text-[8px] text-[var(--color-bronce)]">◆</span>
+          </div>
+
+          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] border border-[var(--color-hueso)]/50 mb-4">
+            <Image
+              src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png"
+              alt="Canguro Clásico"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
+            <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
+              Canguro Clásico
+            </p>
+            <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
+              <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
             </div>
           </div>
         </section>
