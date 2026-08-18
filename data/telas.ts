@@ -12,6 +12,7 @@ export interface Tela {
   gramaje: string;
   ancho: string;
   caracteristicas: string[]; // ej: ["Durabilidad", "Suave al Tacto", "Planchado Fácil", "Respirabilidad", "Liviano", "Protección UV 30"]
+  imagenPrincipal?: string;
   colores: ColorTela[];
 }
 
@@ -87,6 +88,7 @@ export const telas: Tela[] = [
   {
     id: "cristal-camisero",
     nombre: "Cristal Camisero",
+    imagenPrincipal: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__PRINCIPAL.jpg",
     estructura: "Drill / Sarga 2x1",
     composicion: "100% Algodón",
     gramaje: "170 grs / 5 Onz/YD²",

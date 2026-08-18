@@ -117,8 +117,15 @@ export default function VerColores() {
                     className="flex flex-col items-center gap-1.5 border border-[var(--color-hueso)]/40 rounded-lg p-1.5 text-center hover:bg-[var(--color-bordo)]/5 transition"
                   >
                     <span
-                      className="w-full aspect-square rounded-md border border-[var(--color-hueso)]/40 flex items-center justify-center"
-                      style={{ backgroundColor: tela.colores[0]?.hex ?? "#e5e0d8" }}
+                      className="w-full aspect-square rounded-md border border-[var(--color-hueso)]/40 flex items-center justify-center bg-cover bg-center"
+                      style={{
+                        backgroundColor: tela.colores[0]?.hex ?? "#e5e0d8",
+                        backgroundImage: tela.imagenPrincipal
+                          ? `url(${tela.imagenPrincipal})`
+                          : tela.colores[0]?.imagenUrl
+                          ? `url(${tela.colores[0].imagenUrl})`
+                          : undefined,
+                      }}
                     >
                       {tela.colores.length === 0 && (
                         <span className="text-[6px] text-[var(--color-bordo)]/50 text-center leading-tight px-1">
