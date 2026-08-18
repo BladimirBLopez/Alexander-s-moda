@@ -1,6 +1,7 @@
 export interface ColorTela {
   codigo: string;
   hex: string;
+  imagenUrl?: string;
 }
 
 export interface Tela {
@@ -92,24 +93,24 @@ export const telas: Tela[] = [
     ancho: "170 cm",
     caracteristicas: ["Durabilidad", "Suave al Tacto", "Respirabilidad", "Liviano", "Protección UV 30", "OEKO-TEX Standard 100"],
     colores: [
-      { codigo: "0002", hex: "#e6eaeb" },
-      { codigo: "7029", hex: "#e7e0d1" },
-      { codigo: "7271", hex: "#cfcebc" },
-      { codigo: "8011", hex: "#beb6a5" },
-      { codigo: "7263", hex: "#92816d" },
-      { codigo: "3028", hex: "#dba54a" },
-      { codigo: "1186", hex: "#ae1414" },
-      { codigo: "5366", hex: "#6184b8" },
-      { codigo: "5335", hex: "#142c64" },
-      { codigo: "4029", hex: "#125f3d" },
-      { codigo: "8120", hex: "#81837c" },
-      { codigo: "5223", hex: "#0c0c0c" },
-      { codigo: "0001", hex: "#0b0b0b" },
-      { codigo: "5225", hex: "#adbbc8" },
-      { codigo: "8087", hex: "#333726" },
-      { codigo: "5362", hex: "#1d5a6a" },
-      { codigo: "4084", hex: "#103120" },
-      { codigo: "4283", hex: "#2c4e53" }
+      { codigo: "0002", hex: "#e6eaeb", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__0002.jpg" },
+      { codigo: "7029", hex: "#e7e0d1", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__7029.jpg" },
+      { codigo: "7271", hex: "#cfcebc", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__7271.jpg" },
+      { codigo: "8011", hex: "#beb6a5", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__8011.jpg" },
+      { codigo: "7263", hex: "#92816d", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__7263.jpg" },
+      { codigo: "3028", hex: "#dba54a", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__3028.jpg" },
+      { codigo: "1186", hex: "#ae1414", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__1186.jpg" },
+      { codigo: "5366", hex: "#6184b8", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__5366.jpg" },
+      { codigo: "5335", hex: "#142c64", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__5335.jpg" },
+      { codigo: "4029", hex: "#125f3d", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__4029.jpg" },
+      { codigo: "8120", hex: "#81837c", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__8120.jpg" },
+      { codigo: "5223", hex: "#0c0c0c", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__5223.jpg" },
+      { codigo: "0001", hex: "#0b0b0b", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__0001.jpg" },
+      { codigo: "5225", hex: "#adbbc8", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__5225.jpg" },
+      { codigo: "8087", hex: "#333726", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__8087.jpg" },
+      { codigo: "5362", hex: "#1d5a6a", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__5362.jpg" },
+      { codigo: "4084", hex: "#103120", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__4084.jpg" },
+      { codigo: "4283", hex: "#2c4e53", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/cristal-camisero__4283.jpg" }
     ]
   },
   {

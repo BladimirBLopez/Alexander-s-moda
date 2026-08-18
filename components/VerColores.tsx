@@ -158,8 +158,11 @@ export default function VerColores() {
                     {telaActiva.colores.map((c) => (
                       <div key={c.codigo} className="flex flex-col items-center">
                         <div
-                          className="w-full aspect-square rounded border border-[var(--color-hueso)]/40"
-                          style={{ backgroundColor: c.hex }}
+                          className="w-full aspect-square rounded border border-[var(--color-hueso)]/40 bg-cover bg-center"
+                          style={{
+                            backgroundColor: c.hex,
+                            backgroundImage: c.imagenUrl ? `url(${c.imagenUrl})` : undefined,
+                          }}
                         />
                         <span className="text-[6px] text-[var(--color-bordo)]/70 text-center mt-0.5 leading-tight">
                           {c.codigo}
