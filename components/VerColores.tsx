@@ -117,9 +117,15 @@ export default function VerColores() {
                     className="flex flex-col items-center gap-1.5 border border-[var(--color-hueso)]/40 rounded-lg p-1.5 text-center hover:bg-[var(--color-bordo)]/5 transition"
                   >
                     <span
-                      className="w-full aspect-square rounded-md border border-[var(--color-hueso)]/40"
-                      style={{ backgroundColor: tela.colores[0]?.hex }}
-                    />
+                      className="w-full aspect-square rounded-md border border-[var(--color-hueso)]/40 flex items-center justify-center"
+                      style={{ backgroundColor: tela.colores[0]?.hex ?? "#e5e0d8" }}
+                    >
+                      {tela.colores.length === 0 && (
+                        <span className="text-[6px] text-[var(--color-bordo)]/50 text-center leading-tight px-1">
+                          Próx.
+                        </span>
+                      )}
+                    </span>
                     <span
                       className="block text-[8px] uppercase tracking-[0.03em] text-[var(--color-bordo)] font-semibold leading-tight"
                       style={{ fontFamily: "var(--font-display)" }}
@@ -143,19 +149,25 @@ export default function VerColores() {
                 <p className="text-[7px] text-[var(--color-bordo)]/60 mb-2">
                   {telaActiva.composicion} · {telaActiva.gramaje}
                 </p>
-                <div className="grid grid-cols-4 gap-1.5">
-                  {telaActiva.colores.map((c) => (
-                    <div key={c.codigo} className="flex flex-col items-center">
-                      <div
-                        className="w-full aspect-square rounded border border-[var(--color-hueso)]/40"
-                        style={{ backgroundColor: c.hex }}
-                      />
-                      <span className="text-[6px] text-[var(--color-bordo)]/70 text-center mt-0.5 leading-tight">
-                        {c.codigo}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                {telaActiva.colores.length === 0 ? (
+                  <p className="text-[9px] text-[var(--color-bordo)]/60 text-center py-6">
+                    Colores próximamente disponibles.
+                  </p>
+                ) : (
+                  <div className="grid grid-cols-4 gap-1.5">
+                    {telaActiva.colores.map((c) => (
+                      <div key={c.codigo} className="flex flex-col items-center">
+                        <div
+                          className="w-full aspect-square rounded border border-[var(--color-hueso)]/40"
+                          style={{ backgroundColor: c.hex }}
+                        />
+                        <span className="text-[6px] text-[var(--color-bordo)]/70 text-center mt-0.5 leading-tight">
+                          {c.codigo}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </div>
