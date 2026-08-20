@@ -190,8 +190,13 @@ function SeccionGenero({
   );
 }
 
-export default function CatalogoDetallePage({ params }: { params: { slug: string } }) {
-  const id = SLUG_A_ID[params.slug];
+export default async function CatalogoDetallePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const id = SLUG_A_ID[slug];
   const producto = productos.find((p) => p.id === id);
 
   if (!producto) {
