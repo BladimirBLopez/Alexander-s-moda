@@ -1,22 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { productos } from "@/lib/productos";
+import { prisma } from "@/lib/prisma";
 import FotoZoom from "@/components/FotoZoom";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
 import VerColores from "@/components/VerColores";
 
+export const revalidate = 0;
+
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 const WHATSAPP_NUMERO = "59177974868";
 
-const SLUG_A_ID: Record<string, string> = {
-  sport: "uniforme-sport",
-  casimir: "uniforme-casimir",
-};
-
-export function generateStaticParams() {
-  return Object.keys(SLUG_A_ID).map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const uniformes = await prisma.uniforme.findMany({ select: { slug: true } });
+  return uniformes.map((u) => ({ slug: u.slug }));
 }
 
 const IconoCamisa2 = () => (
@@ -196,8 +194,7 @@ export default async function CatalogoDetallePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const id = SLUG_A_ID[slug];
-  const producto = productos.find((p) => p.id === id);
+  const producto = await prisma.uniforme.findUnique({ where: { slug } });
 
   if (!producto) {
     notFound();

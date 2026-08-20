@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Uniforme {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  nombre      String
+  subtitulo   String
+  descripcion String
+  tipografia  String
+
+  bulletsMujer  String[]
+  bulletsHombre String[]
+
+  fotoMujerDentro  String?
+  fotoMujerFuera   String?
+  fotoHombreDentro String?
+  fotoHombreFuera  String?
+
+  fotoMujerSeccion2  String?
+  fotoHombreSeccion2 String?
+
+  orden     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
