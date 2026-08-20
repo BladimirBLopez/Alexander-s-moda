@@ -6,7 +6,7 @@ import VideoTikTok from "@/components/VideoTikTok";
 
 const WHATSAPP_NUMERO = "59177974868";
 const MENSAJE_PEDIDO = encodeURIComponent(
-  "Hola, quiero información sobre uniformes escolares"
+  "Hola, quiero información sobre los uniformes de promoción"
 );
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 
