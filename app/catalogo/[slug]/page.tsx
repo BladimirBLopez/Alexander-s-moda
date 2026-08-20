@@ -379,8 +379,12 @@ export default async function CatalogoDetallePage({
 
                 <div className="flex flex-col gap-2">
                   <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden">
-                    <div className="aspect-square flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
-                      <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
+                    <div className="aspect-square relative flex items-center justify-center bg-[var(--color-bordo)]/[0.04] p-1">
+                      {producto.corbataFoto ? (
+                        <FotoZoom src={producto.corbataFoto} alt="Corbata" />
+                      ) : (
+                        <span className="text-[6px] uppercase text-[var(--color-bordo)]/40 text-center">Pendiente</span>
+                      )}
                     </div>
                     <p className="text-[10px] uppercase tracking-[0.05em] text-[var(--color-bordo)]/60 text-center py-1 border-t border-[var(--color-hueso)]/50" style={{ fontFamily: "var(--font-display)" }}>
                       Corbata
@@ -452,29 +456,19 @@ export default async function CatalogoDetallePage({
 
           <div className="grid grid-cols-[1.2fr_1fr] gap-3 mb-3">
             <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
-              <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786939446/Dise%C3%B1o_sin_t%C3%ADtulo_5_gar2iq.png" alt="Polera" />
+              <FotoZoom src={producto.poleraFoto1 ?? "https://res.cloudinary.com/dkq95jus0/image/upload/v1786939446/Dise%C3%B1o_sin_t%C3%ADtulo_5_gar2iq.png"} alt="Polera" />
             </div>
             <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3 h-full flex flex-col">
               <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
                 <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
               </p>
               <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-2 flex-1">
-                <li className="flex gap-1">
-                  <span className="shrink-0">•</span>
-                  <span>Descripción pendiente</span>
-                </li>
-                <li className="flex gap-1">
-                  <span className="shrink-0">•</span>
-                  <span>Descripción pendiente</span>
-                </li>
-                <li className="flex gap-1">
-                  <span className="shrink-0">•</span>
-                  <span>Descripción pendiente</span>
-                </li>
-                <li className="flex gap-1">
-                  <span className="shrink-0">•</span>
-                  <span>Descripción pendiente</span>
-                </li>
+                {(producto.poleraBullets.length > 0 ? producto.poleraBullets : ["Descripción pendiente", "Descripción pendiente", "Descripción pendiente", "Descripción pendiente"]).map((b, i) => (
+                  <li key={i} className="flex gap-1">
+                    <span className="shrink-0">•</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -511,7 +505,7 @@ export default async function CatalogoDetallePage({
               </div>
             </div>
             <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
-              <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786978172/Sin_t%C3%ADtulo_1000_x_1400_px_2_snyq8e.png" alt="Polera" />
+              <FotoZoom src={producto.poleraFoto2 ?? "https://res.cloudinary.com/dkq95jus0/image/upload/v1786978172/Sin_t%C3%ADtulo_1000_x_1400_px_2_snyq8e.png"} alt="Polera" />
             </div>
           </div>
         </section>
@@ -543,12 +537,12 @@ export default async function CatalogoDetallePage({
           </p>
 
           <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] mb-4">
-            <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png" alt="Chamarra Americana" />
+            <FotoZoom src={producto.chamarraFoto ?? "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png"} alt={producto.chamarraNombre ?? "Chamarra Americana"} />
           </div>
 
           <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
             <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
-              Chamarra Americana
+              {producto.chamarraNombre ?? "Chamarra Americana"}
             </p>
             <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
               <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
@@ -560,10 +554,12 @@ export default async function CatalogoDetallePage({
               <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
             </p>
             <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5 mb-3">
-              <li className="flex gap-1">
-                <span className="shrink-0">•</span>
-                <span>Descripción pendiente</span>
-              </li>
+              {(producto.chamarraBullets.length > 0 ? producto.chamarraBullets : ["Descripción pendiente"]).map((b, i) => (
+                <li key={i} className="flex gap-1">
+                  <span className="shrink-0">•</span>
+                  <span>{b}</span>
+                </li>
+              ))}
             </ul>
             <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
               <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
@@ -589,12 +585,12 @@ export default async function CatalogoDetallePage({
           </p>
 
           <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] mb-4">
-            <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png" alt="Canguro Clásico" />
+            <FotoZoom src={producto.canguroFoto ?? "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png"} alt={producto.canguroNombre ?? "Canguro Clásico"} />
           </div>
 
           <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
             <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
-              Canguro Clásico
+              {producto.canguroNombre ?? "Canguro Clásico"}
             </p>
             <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
               <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
@@ -606,10 +602,12 @@ export default async function CatalogoDetallePage({
               <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
             </p>
             <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5 mb-3">
-              <li className="flex gap-1">
-                <span className="shrink-0">•</span>
-                <span>Descripción pendiente</span>
-              </li>
+              {(producto.canguroBullets.length > 0 ? producto.canguroBullets : ["Descripción pendiente"]).map((b, i) => (
+                <li key={i} className="flex gap-1">
+                  <span className="shrink-0">•</span>
+                  <span>{b}</span>
+                </li>
+              ))}
             </ul>
             <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
               <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>

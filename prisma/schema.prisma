@@ -26,6 +26,20 @@ model Uniforme {
   fotoMujerSeccion2  String?
   fotoHombreSeccion2 String?
 
+  corbataFoto String?
+
+  poleraFoto1     String?
+  poleraFoto2     String?
+  poleraBullets   String[]
+
+  chamarraNombre  String?
+  chamarraFoto    String?
+  chamarraBullets String[]
+
+  canguroNombre  String?
+  canguroFoto    String?
+  canguroBullets String[]
+
   orden     Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
