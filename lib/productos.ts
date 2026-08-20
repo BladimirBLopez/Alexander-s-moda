@@ -4,7 +4,6 @@ export type Producto = {
   subtitulo: string;
   descripcion: string;
   tipografia: string;
-  colores: { nombre: string; hex: string; uso: string }[];
   bulletsMujer: string[];
   bulletsHombre: string[];
   fotoMujerDentro?: string;
@@ -22,10 +21,6 @@ export const productos: Producto[] = [
     subtitulo: "Tela Milano Flex 100% algodón",
     descripcion: "Diseño exclusivo a medida para el curso de graduación.",
     tipografia: "A definir según diseño",
-    colores: [
-      { nombre: "Verde musgo", hex: "#4a5a3f", uso: "Camisa" },
-      { nombre: "Hueso / arena", hex: "#c9b896", uso: "Corbata, falda y pantalón" },
-    ],
     bulletsMujer: [
       "Falda en tela Milano Flex 100% algodón",
       "Camisa manga corta en tela Oxford con un bordado institucional",
@@ -52,10 +47,6 @@ export const productos: Producto[] = [
     subtitulo: "Tela Casimir Inglés",
     descripcion: "Diseño exclusivo a medida para el curso de graduación.",
     tipografia: "A definir según diseño",
-    colores: [
-      { nombre: "Verde musgo", hex: "#4a5a3f", uso: "Camisa" },
-      { nombre: "Hueso / arena", hex: "#c9b896", uso: "Corbata, falda y pantalón" },
-    ],
     bulletsMujer: [
       "Falda en tela Casimir Inglés",
       "Camisa manga corta en tela Oxford con un bordado institucional",
