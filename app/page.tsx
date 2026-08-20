@@ -12,8 +12,13 @@ const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 
 const enlaces = [
   {
-    label: "Catálogo",
-    href: "/catalogo",
+    label: "Uniforme Sport",
+    href: "/catalogo/sport",
+    externo: false,
+  },
+  {
+    label: "Uniforme Casimir",
+    href: "/catalogo/casimir",
     externo: false,
   },
   {
