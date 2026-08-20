@@ -257,12 +257,9 @@ export default async function CatalogoDetallePage({
             <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-6">
               <div className="bg-[var(--color-bordo)] px-4 py-2">
                 <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
-                  Tipografía de los bordados a definirse según los diseños
+                  Los diseños y tipografías de letras de los bordados serán elegidos por los estudiantes de la promoción.
                 </p>
               </div>
-              <p className="text-[8px] text-[var(--color-bordo)]/80 text-center px-1 py-2 leading-relaxed">
-                La tipografía de los bordados se definirá según cada diseño, garantizando uniformidad, elegancia y una identidad institucional sólida.
-              </p>
             </div>
             <SeccionGenero
               titulo="Uniforme Varón"
@@ -284,12 +281,9 @@ export default async function CatalogoDetallePage({
               <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-3">
                 <div className="bg-[var(--color-bordo)] px-4 py-2">
                   <p className="text-[10px] uppercase tracking-[0.05em] text-white text-center" style={{ fontFamily: "var(--font-display)" }}>
-                    Tipografía de los bordados a definirse según los diseños
+                    Los diseños y tipografías de letras de los bordados serán elegidos por los estudiantes de la promoción.
                   </p>
                 </div>
-                <p className="text-[8px] text-[var(--color-bordo)]/80 text-center px-1 py-2 leading-relaxed">
-                  La tipografía de los bordados se definirá según cada diseño, garantizando uniformidad, elegancia y una identidad institucional sólida.
-                </p>
               </div>
               <div className="relative -mx-6">
                 <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
@@ -407,7 +401,7 @@ export default async function CatalogoDetallePage({
                       Tipografía
                     </p>
                     <p className="text-[9px] text-[var(--color-bordo)]">
-                      A definirse según los diseños
+                      A elección de los estudiantes de la promoción
                     </p>
                   </div>
                 </div>
