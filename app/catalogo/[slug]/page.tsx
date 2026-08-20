@@ -207,7 +207,7 @@ export default async function CatalogoDetallePage({
     <main className="min-h-screen bg-[var(--color-papel)]">
       <div className="sticky top-0 z-10 px-3 py-2 flex items-center justify-between">
         <Link
-          href="/catalogo"
+          href="/"
           className="text-xs font-medium text-[var(--color-hueso)] bg-[var(--color-bordo)]/80 hover:bg-[var(--color-bordo)] inline-flex items-center gap-1 px-3 py-1.5 rounded-full shadow-md"
         >
           ← Volver
