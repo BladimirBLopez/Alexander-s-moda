@@ -42,7 +42,7 @@ function ColumnaGenero2({
   bordeDerecho,
 }: {
   titulo: string;
-  foto?: string;
+  foto?: string | null;
   bullets: string[];
   detalles: { icono: React.ReactNode; texto: string }[];
   bordeDerecho?: boolean;
@@ -94,7 +94,7 @@ function ColumnaGenero2({
   );
 }
 
-function FotoOPlaceholder({ src, alt, label }: { src?: string; alt: string; label: string }) {
+function FotoOPlaceholder({ src, alt, label }: { src?: string | null; alt: string; label: string }) {
   return (
     <div className="flex flex-col items-center">
       <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
@@ -123,8 +123,8 @@ function SeccionGenero({
   invertido = false,
 }: {
   titulo: string;
-  fotoDentro?: string;
-  fotoFuera?: string;
+  fotoDentro?: string | null;
+  fotoFuera?: string | null;
   bullets: string[];
   invertido?: boolean;
 }) {
