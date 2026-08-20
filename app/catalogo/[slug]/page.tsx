@@ -249,7 +249,7 @@ export default async function CatalogoDetallePage({
               </p>
             </div>
             <SeccionGenero
-              titulo="Uniforme Mujer"
+              titulo="Uniforme Dama"
               fotoDentro={producto.fotoMujerDentro}
               fotoFuera={producto.fotoMujerFuera}
               bullets={producto.bulletsMujer}
@@ -294,16 +294,16 @@ export default async function CatalogoDetallePage({
               <div className="relative -mx-6">
                 <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
                   <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
-                    Uniforme Femenino
+                    Uniforme Dama
                   </p>
                   <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
-                    Uniforme Masculino
+                    Uniforme Varón
                   </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
                   <ColumnaGenero2
-                    titulo={`${producto.nombre} - femenino`}
+                    titulo={`${producto.nombre} - dama`}
                     foto={producto.fotoMujerSeccion2}
                     bullets={[
                       "Camisa con bordado institucional",
@@ -318,7 +318,7 @@ export default async function CatalogoDetallePage({
                     ]}
                   />
                   <ColumnaGenero2
-                    titulo={`${producto.nombre} - masculino`}
+                    titulo={`${producto.nombre} - varón`}
                     foto={producto.fotoHombreSeccion2}
                     bullets={[
                       "Camisa con bordado institucional",
@@ -359,7 +359,7 @@ export default async function CatalogoDetallePage({
                 <div>
                   <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
                     {producto.fotoMujerFuera ? (
-                      <FotoZoom src={producto.fotoMujerFuera} alt="Uniforme mujer" />
+                      <FotoZoom src={producto.fotoMujerFuera} alt="Uniforme dama" />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-center px-2">
                         <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">Foto pendiente</span>
@@ -368,7 +368,7 @@ export default async function CatalogoDetallePage({
                   </div>
                   <div className="border border-[var(--color-hueso)]/50 rounded-b-lg p-2">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.05em] text-[var(--color-bordo)] mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-                      <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Uniforme Mujer</span>
+                      <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Uniforme Dama</span>
                     </p>
                     <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
                       {[
