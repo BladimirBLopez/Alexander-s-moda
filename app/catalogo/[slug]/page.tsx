@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { productos } from "@/lib/productos";
+import { productos, type BulletItem } from "@/lib/productos";
 import FotoZoom from "@/components/FotoZoom";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
@@ -47,7 +47,7 @@ function SeccionGenero({
   titulo: string;
   fotoDentro?: string | null;
   fotoFuera?: string | null;
-  bullets: string[];
+  bullets: BulletItem[];
   invertido?: boolean;
 }) {
   const descripcionBlock = (
@@ -55,13 +55,33 @@ function SeccionGenero({
       <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
         <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
       </p>
-      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
-        {bullets.map((b) => (
-          <li key={b} className="flex gap-1">
-            <span className="shrink-0">•</span>
-            <span>{b}</span>
-          </li>
-        ))}
+      <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5 text-left">
+        {bullets.map((b, i) =>
+          typeof b === "string" ? (
+            <li key={i} className="flex gap-1">
+              <span className="shrink-0">•</span>
+              <span>{b}</span>
+            </li>
+          ) : (
+            <li key={i}>
+              <div className="flex gap-1">
+                <span className="shrink-0">•</span>
+                <span>{b.texto}</span>
+              </div>
+              <ul className="pl-4 mt-1 space-y-1">
+                {b.sublista.map((op) => (
+                  <li key={op} className="flex gap-1">
+                    <span className="shrink-0">◦</span>
+                    <span>{op}</span>
+                  </li>
+                ))}
+              </ul>
+              {b.nota && (
+                <p className="mt-1 pl-1">{b.nota}</p>
+              )}
+            </li>
+          )
+        )}
       </ul>
     </div>
   );
@@ -178,7 +198,6 @@ export default async function CatalogoDetallePage({
               fotoDentro={producto.fotoHombreDentro}
               fotoFuera={producto.fotoHombreFuera}
               bullets={producto.bulletsHombre}
-              invertido
             />
 
             <div className="mt-6">
