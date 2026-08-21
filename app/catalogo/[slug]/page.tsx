@@ -96,7 +96,7 @@ function ColumnaGenero2({
   );
 }
 
-function FotoOPlaceholder({ src, alt, label }: { src?: string | null; alt: string; label: string }) {
+function FotoOPlaceholder({ src, alt }: { src?: string | null; alt: string }) {
   return (
     <div className="flex flex-col items-center">
       <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
@@ -110,9 +110,6 @@ function FotoOPlaceholder({ src, alt, label }: { src?: string | null; alt: strin
           </div>
         )}
       </div>
-      <span className="mt-1.5 text-center text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/60">
-        {label}
-      </span>
     </div>
   );
 }
@@ -168,8 +165,8 @@ function SeccionGenero({
         {titulo}
       </p>
       <div className="grid grid-cols-2 gap-1 mb-4 max-w-[340px] mx-auto">
-        <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} label="Camisa por dentro" />
-        <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} label="Camisa por fuera" />
+        <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} />
+        <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} />
       </div>
       <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-lg p-4 ${invertido ? "grid-cols-[1fr_auto_1.4fr]" : "grid-cols-[1.4fr_auto_1fr]"}`}>
         {invertido ? (
@@ -240,16 +237,8 @@ export default async function CatalogoDetallePage({
 
         <div className="flex flex-col gap-16">
           <article className="text-center mb-4">
-            <div className="text-center mb-4">
-              <h2 className="text-2xl uppercase tracking-wide text-[var(--color-bordo-oscuro)]" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
-                {producto.nombre}
-              </h2>
-              <p className="text-[11px] uppercase tracking-[0.1em] text-[var(--color-bronce)] mt-1">
-                {producto.subtitulo}
-              </p>
-            </div>
             <SeccionGenero
-              titulo="Uniforme Dama"
+              titulo={`Camisa Uniforme ${producto.nombre} Dama`}
               fotoDentro={producto.fotoMujerDentro}
               fotoFuera={producto.fotoMujerFuera}
               bullets={producto.bulletsMujer}
@@ -262,7 +251,7 @@ export default async function CatalogoDetallePage({
               </div>
             </div>
             <SeccionGenero
-              titulo="Uniforme Varón"
+              titulo={`Camisa Uniforme ${producto.nombre} Varón`}
               fotoDentro={producto.fotoHombreDentro}
               fotoFuera={producto.fotoHombreFuera}
               bullets={producto.bulletsHombre}
