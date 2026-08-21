@@ -67,36 +67,6 @@ function ColumnaGenero2({
           </div>
         )}
       </div>
-      <div className="grid grid-cols-2 gap-2 mt-3 px-3">
-        <div>
-          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
-        </p>
-          <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
-            {bullets.map((b) => (
-              <li key={b} className="flex gap-1">
-                <span className="shrink-0">•</span>
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
-          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Detalles</span>
-        </p>
-          <div className="space-y-1.5">
-            {detalles.map((d, i) => (
-              <div key={i} className="flex items-start gap-1">
-                <span className="w-5 h-5 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] flex items-center justify-center shrink-0">
-                  {d.icono}
-                </span>
-                <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{d.texto}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
