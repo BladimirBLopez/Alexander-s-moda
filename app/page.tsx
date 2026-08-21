@@ -3,9 +3,6 @@ import Image from "next/image";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
 import VideoTikTok from "@/components/VideoTikTok";
-import { prisma } from "@/lib/prisma";
-
-export const revalidate = 0;
 
 const WHATSAPP_NUMERO = "59177974868";
 const MENSAJE_PEDIDO = encodeURIComponent(
@@ -13,7 +10,17 @@ const MENSAJE_PEDIDO = encodeURIComponent(
 );
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 
-const enlacesFijos = [
+const enlaces = [
+  {
+    label: "Uniforme Sport",
+    href: "/catalogo/sport",
+    externo: false,
+  },
+  {
+    label: "Uniforme Casimir",
+    href: "/catalogo/casimir",
+    externo: false,
+  },
   {
     label: "Proforma",
     href: "/proforma",
@@ -31,20 +38,7 @@ const enlacesFijos = [
   },
 ];
 
-export default async function Home() {
-  const uniformes = await prisma.uniforme.findMany({
-    orderBy: { orden: "asc" },
-    select: { nombre: true, slug: true },
-  });
-
-  const enlacesUniformes = uniformes.map((u) => ({
-    label: `Uniforme ${u.nombre}`,
-    href: `/catalogo/${u.slug}`,
-    externo: false,
-  }));
-
-  const enlaces = [...enlacesUniformes, ...enlacesFijos];
-
+export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center text-center">
       <div className="relative w-full h-32 overflow-hidden">
