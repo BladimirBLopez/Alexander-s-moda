@@ -19,6 +19,88 @@ export function generateStaticParams() {
   return Object.keys(SLUG_A_ID).map((slug) => ({ slug }));
 }
 
+const IconoCamisa2 = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <path d="M8 4L4 7v3l2-1v11h12V9l2 1V7l-4-3-3 2h-2L8 4z" strokeLinejoin="round" />
+  </svg>
+);
+const IconoCorbata2 = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <path d="M9 3h6l1 4-4 2-4-2 1-4z" strokeLinejoin="round" />
+    <path d="M10 9l-2 9 4 3 4-3-2-9" strokeLinejoin="round" />
+  </svg>
+);
+const IconoFalda2 = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <path d="M9 4h6l1 6 3 10H5l3-10 1-6z" strokeLinejoin="round" />
+  </svg>
+);
+const IconoPantalon2 = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <path d="M7 4h10l1 5-1 12h-3l-1-9-1 9H8L7 9z" strokeLinejoin="round" />
+  </svg>
+);
+
+function ColumnaGenero2({
+  titulo,
+  foto,
+  bullets,
+  detalles,
+  bordeDerecho,
+}: {
+  titulo: string;
+  foto?: string | null;
+  bullets: string[];
+  detalles: { icono: React.ReactNode; texto: string }[];
+  bordeDerecho?: boolean;
+}) {
+  return (
+    <div className={bordeDerecho ? "border-r border-[var(--color-hueso)]/50" : ""}>
+      <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
+        {foto ? (
+          <FotoZoom src={foto} alt={titulo} />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-center px-2">
+            <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
+              Foto pendiente
+            </span>
+          </div>
+        )}
+      </div>
+      <div className="grid grid-cols-2 gap-2 mt-3 px-3">
+        <div>
+          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
+        </p>
+          <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5">
+            {bullets.map((b) => (
+              <li key={b} className="flex gap-1">
+                <span className="shrink-0">•</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Detalles</span>
+        </p>
+          <div className="space-y-1.5">
+            {detalles.map((d, i) => (
+              <div key={i} className="flex items-start gap-1">
+                <span className="w-5 h-5 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] flex items-center justify-center shrink-0">
+                  {d.icono}
+                </span>
+                <span className="text-[8px] text-[var(--color-bordo)]/70 leading-tight">{d.texto}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function FotoOPlaceholder({ src, alt }: { src?: string | null; alt: string }) {
   return (
     <div className="flex flex-col items-center">
@@ -200,6 +282,51 @@ export default async function CatalogoDetallePage({
               fotoFuera={producto.fotoHombreFuera}
               bullets={producto.bulletsHombre}
             />
+
+            <div className="mt-6">
+              <div className="relative -mx-6">
+                <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
+                  <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                    Uniforme Femenino
+                  </p>
+                  <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                    Uniforme Masculino
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
+                  <ColumnaGenero2
+                    titulo="Uniforme femenino"
+                    bullets={[
+                      "Camisa manga corta color verde hoja seca",
+                      "Corbata color beige con bordado DF",
+                      "Bordado \"DEIFFET'S 27\" en el pecho",
+                      "Falda color beige con abertura lateral",
+                    ]}
+                    detalles={[
+                      { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte femenino" },
+                      { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
+                      { icono: <IconoFalda2 />, texto: "Falda cómoda y elegante" },
+                    ]}
+                    bordeDerecho
+                  />
+                  <ColumnaGenero2
+                    titulo="Uniforme masculino"
+                    bullets={[
+                      "Camisa manga corta color verde hoja seca",
+                      "Corbata color beige con bordado DF",
+                      "Bordado \"DEIFFET'S 27\" en el pecho",
+                      "Pantalón color beige de corte clásico",
+                    ]}
+                    detalles={[
+                      { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte masculino" },
+                      { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
+                      { icono: <IconoPantalon2 />, texto: "Pantalón formal y cómodo" },
+                    ]}
+                  />
+                </div>
+              </div>
+            </div>
           </article>
         </div>
 
