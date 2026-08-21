@@ -419,6 +419,52 @@ export default async function CatalogoDetallePage({
           </div>
         </section>
 
+        <section className="mt-10 pt-6">
+            <div className="relative w-3/4 h-5 mb-6 mx-auto">
+            <Image
+              src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
+              alt=""
+              fill
+              className="object-contain"
+            />
+          </div>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-4 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+            Canguros
+          </p>
+
+          <div className="relative w-full max-w-[300px] mx-auto aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)] mb-4">
+            <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png" alt="Canguro Clásico" />
+          </div>
+
+          <div className="border border-[var(--color-hueso)]/50 rounded-lg overflow-hidden mb-3">
+            <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold text-center py-1.5" style={{ fontFamily: "var(--font-display)" }}>
+              Canguro Clásico
+            </p>
+            <div className="flex items-center justify-center bg-[var(--color-bordo)]/[0.04] rounded-b-lg aspect-[4/2] border-t border-[var(--color-hueso)]/50">
+              <span className="text-[7px] uppercase text-[var(--color-bordo)]/40 text-center px-1">Pendiente</span>
+            </div>
+          </div>
+
+          <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3">
+            <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
+            </p>
+            <ul className="text-[9px] text-[var(--color-bordo)]/80 space-y-1.5 mb-3">
+              <li className="flex gap-1">
+                <span className="shrink-0">•</span>
+                <span>Descripción pendiente</span>
+              </li>
+            </ul>
+            <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1 text-center" style={{ fontFamily: "var(--font-display)" }}>
+              <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
+            </p>
+            <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">Colores a elección</p>
+            <div className="text-center">
+              <VerColores />
+            </div>
+          </div>
+        </section>
+
         <footer className="mt-8 pt-5 border-t border-[var(--color-hueso)]/50 text-center">
           <p className="text-[9px] uppercase tracking-[0.15em] text-[var(--color-bronce)] mb-2" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Alexander&apos;s Moda
