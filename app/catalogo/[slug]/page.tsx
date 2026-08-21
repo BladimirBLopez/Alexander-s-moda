@@ -148,7 +148,7 @@ function SeccionGenero({
       </p>
       <div className="text-center flex flex-col items-center gap-2">
         <VerColores />
-        <VerColores label="Ver telas" />
+        <VerColores label="Ver telas" mostrarCaracteristicas={false} />
       </div>
     </div>
   );

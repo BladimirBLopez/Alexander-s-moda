@@ -30,7 +30,7 @@ const CARACTERISTICAS_COMUNES = [
   },
 ];
 
-export default function VerColores({ label = "Ver opciones" }: { label?: string }) {
+export default function VerColores({ label = "Ver opciones", mostrarCaracteristicas = true }: { label?: string; mostrarCaracteristicas?: boolean }) {
   const [abierto, setAbierto] = useState(false);
   const [telaActiva, setTelaActiva] = useState<Tela | null>(null);
 
@@ -59,6 +59,7 @@ export default function VerColores({ label = "Ver opciones" }: { label?: string 
       >
         {label}
       </button>
+      {mostrarCaracteristicas && (
       <div className="flex items-center gap-3 mt-2">
         {CARACTERISTICAS_COMUNES.map((c) => (
           <div key={c.label} className="flex flex-col items-center gap-0.5">
@@ -69,6 +70,7 @@ export default function VerColores({ label = "Ver opciones" }: { label?: string 
           </div>
         ))}
       </div>
+      )}
 
       {abierto && (
         <div
