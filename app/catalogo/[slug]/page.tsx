@@ -181,7 +181,7 @@ export default async function CatalogoDetallePage({
         <div className="flex flex-col gap-16">
           <article className="text-center mb-4">
             <SeccionGenero
-              titulo={`Camisa Uniforme ${producto.nombre} Dama`}
+              titulo={`Uniforme ${producto.nombre} Dama`}
               fotoDentro={producto.fotoMujerDentro}
               fotoFuera={producto.fotoMujerFuera}
               bullets={producto.bulletsMujer}
@@ -194,7 +194,7 @@ export default async function CatalogoDetallePage({
               </div>
             </div>
             <SeccionGenero
-              titulo={`Camisa Uniforme ${producto.nombre} Varón`}
+              titulo={`Uniforme ${producto.nombre} Varón`}
               fotoDentro={producto.fotoHombreDentro}
               fotoFuera={producto.fotoHombreFuera}
               bullets={producto.bulletsHombre}
