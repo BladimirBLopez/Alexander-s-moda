@@ -51,9 +51,8 @@ export const productos: Producto[] = [
       "Polera en tela Piqué Peruano con derecho a 2 bordados institucionales",
       "Corbata en tela Twill Flex 100% algodón con derecho a 1 bordado institucional",
     ],
-    // TODO: reemplazar por fotos reales de "por dentro" y "por fuera" cuando esten disponibles
-    fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png",
-    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_1.png",
+    // TODO: reemplazar foto de fotoMujerFuera (mujer con polera) cuando este disponible
+    fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787341634/Dise%C3%B1o_sin_t%C3%ADtulo_5_umz5ov.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_1.png",
     fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_2.png",
