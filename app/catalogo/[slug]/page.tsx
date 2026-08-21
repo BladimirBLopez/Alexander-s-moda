@@ -214,7 +214,7 @@ export default async function CatalogoDetallePage({
             style={{
               fontFamily: "var(--font-display)",
               fontWeight: 700,
-              color: "color-mix(in oklab, var(--color-bordo) 70%, white 30%)",
+              color: "var(--color-bordo)",
             }}
           >
             Alexander&apos;s Moda
