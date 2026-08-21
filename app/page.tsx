@@ -92,6 +92,7 @@ export default function Home() {
               target={enlace.externo ? "_blank" : undefined}
               rel={enlace.externo ? "noopener noreferrer" : undefined}
               className="boton-tactil w-full py-4 px-5 rounded-full bg-[var(--color-papel)] text-[var(--color-bordo-oscuro)] text-[17px] font-bold text-center shadow-lg shadow-black/25 hover:bg-white hover:shadow-xl transition-shadow"
+              style={{ fontFamily: "var(--font-display)" }}
             >
               {enlace.label}
             </Link>
