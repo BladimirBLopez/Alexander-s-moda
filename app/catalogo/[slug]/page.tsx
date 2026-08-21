@@ -182,14 +182,6 @@ export default async function CatalogoDetallePage({
             />
 
             <div className="mt-6">
-              <div className="relative w-3/4 h-5 mb-6 mx-auto">
-                <Image
-                  src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
-                  alt=""
-                  fill
-                  className="object-contain"
-                />
-              </div>
               <div className="grid grid-cols-[1.5fr_0.5fr_1.5fr] gap-2">
                 <div>
                   <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
@@ -282,14 +274,6 @@ export default async function CatalogoDetallePage({
         </div>
 
         <section className="mt-10 pt-6">
-            <div className="relative w-3/4 h-5 mb-6 mx-auto">
-            <Image
-              src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
-              alt=""
-              fill
-              className="object-contain"
-            />
-          </div>
           <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-4 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Poleras
           </p>
@@ -374,14 +358,6 @@ export default async function CatalogoDetallePage({
         </div>
 
         <section className="mt-10 pt-6">
-            <div className="relative w-3/4 h-5 mb-6 mx-auto">
-            <Image
-              src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
-              alt=""
-              fill
-              className="object-contain"
-            />
-          </div>
           <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-4 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Chamarras
           </p>
@@ -420,14 +396,6 @@ export default async function CatalogoDetallePage({
         </section>
 
         <section className="mt-10 pt-6">
-            <div className="relative w-3/4 h-5 mb-6 mx-auto">
-            <Image
-              src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786900761/flourish-header_xcqdcp.png"
-              alt=""
-              fill
-              className="object-contain"
-            />
-          </div>
           <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mb-4 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Canguros
           </p>
