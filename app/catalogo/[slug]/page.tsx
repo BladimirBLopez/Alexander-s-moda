@@ -94,8 +94,9 @@ function SeccionGenero({
       <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">
         Colores a elección
       </p>
-      <div className="text-center">
+      <div className="text-center flex flex-col items-center gap-2">
         <VerColores />
+        <VerColores label="Ver telas" />
       </div>
     </div>
   );
