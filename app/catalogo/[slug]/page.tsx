@@ -299,7 +299,7 @@ export default async function CatalogoDetallePage({
 
           <div className="grid grid-cols-[1.2fr_1fr] gap-3 mb-3">
             <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
-              <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786939446/Dise%C3%B1o_sin_t%C3%ADtulo_5_gar2iq.png" alt="Polera" />
+              <FotoZoom src="https://res.cloudinary.com/dkq95jus0/image/upload/v1787341634/Dise%C3%B1o_sin_t%C3%ADtulo_5_umz5ov.png" alt="Polera" />
             </div>
             <div className="border border-[var(--color-hueso)]/50 rounded-lg p-3 h-full flex flex-col">
               <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
