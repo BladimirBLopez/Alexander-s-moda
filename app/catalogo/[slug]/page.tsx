@@ -167,7 +167,7 @@ function SeccionGenero({
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} />
       </div>
-      <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-t-none rounded-b-lg p-4 -mx-3 ${invertido ? "grid-cols-[1fr_auto_1.4fr]" : "grid-cols-[1.4fr_auto_1fr]"}`}>
+      <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-lg p-4 -mx-3 ${invertido ? "grid-cols-[1fr_auto_1.4fr]" : "grid-cols-[1.4fr_auto_1fr]"}`}>
         {invertido ? (
           <>
             {coloresBlock}
