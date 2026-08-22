@@ -269,6 +269,7 @@ export default async function CatalogoDetallePage({
                 <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
                   <ColumnaGenero2
                     titulo="Uniforme femenino"
+                    foto="https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png"
                     bullets={[
                       "Camisa manga corta color verde hoja seca",
                       "Corbata color beige con bordado DF",
@@ -284,6 +285,7 @@ export default async function CatalogoDetallePage({
                   />
                   <ColumnaGenero2
                     titulo="Uniforme masculino"
+                    foto="https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_4_ys77im.png"
                     bullets={[
                       "Camisa manga corta color verde hoja seca",
                       "Corbata color beige con bordado DF",
