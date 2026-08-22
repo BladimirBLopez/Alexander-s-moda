@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Alexander's Moda",
     images: [
       {
-        url: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787410091/og-banner-alexanders-moda-v2_byk40o.png",
+        url: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787432031/og-banner-guindo-marca_mdwk3m.png",
         width: 1200,
         height: 630,
         alt: "Alexander's Moda",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Alexander's Moda | Uniformes escolares en Bolivia",
     description:
       "Uniformes escolares, moda colegial y de promoción a medida. Catálogo, pedidos y atención directa por WhatsApp.",
-    images: ["https://res.cloudinary.com/dkq95jus0/image/upload/v1787410091/og-banner-alexanders-moda-v2_byk40o.png"],
+    images: ["https://res.cloudinary.com/dkq95jus0/image/upload/v1787432031/og-banner-guindo-marca_mdwk3m.png"],
   },
 };
 
