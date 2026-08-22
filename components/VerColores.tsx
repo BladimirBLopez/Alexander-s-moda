@@ -79,7 +79,7 @@ export default function VerColores({
       <button
         type="button"
         onClick={() => setAbierto(true)}
-        className="text-[10px] uppercase tracking-[0.08em] text-[var(--color-hueso)] bg-[var(--color-bordo)] rounded-full px-4 py-2 mt-1.5 font-semibold shadow-sm hover:opacity-90 transition"
+        className="text-[10px] uppercase tracking-[0.08em] text-[var(--color-hueso)] bg-[var(--color-bordo)] rounded-xl px-5 py-2.5 mt-1.5 font-semibold shadow-md border border-[var(--color-bronce)]/40 hover:opacity-90 active:scale-95 transition"
       >
         {label}
       </button>
