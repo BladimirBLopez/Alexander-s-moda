@@ -140,7 +140,7 @@ function SeccionGenero({
   );
 
   const coloresBlock = (
-    <div className={`h-full flex flex-col items-center justify-center gap-10 ${invertido ? "border-r border-[var(--color-hueso)]/50 -my-4 py-4 pr-3" : ""}`}>
+    <div className={`h-full flex flex-col items-center justify-center gap-10 pb-6 ${invertido ? "border-r border-[var(--color-hueso)]/50 -my-4 py-4 pr-3" : ""}`}>
       <div className="flex flex-col items-center">
         <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
           <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Ver telas</span>
