@@ -259,16 +259,16 @@ export default async function CatalogoDetallePage({
               <div className="relative -mx-6">
                 <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
                   <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
-                    Uniforme Femenino
+                    Uniforme Dama
                   </p>
                   <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
-                    Uniforme Masculino
+                    Uniforme Varón
                   </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
                   <ColumnaGenero2
-                    titulo="Uniforme femenino"
+                    titulo="Uniforme dama"
                     foto="https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png"
                     bullets={[
                       "Camisa manga corta color verde hoja seca",
@@ -284,7 +284,7 @@ export default async function CatalogoDetallePage({
                     bordeDerecho
                   />
                   <ColumnaGenero2
-                    titulo="Uniforme masculino"
+                    titulo="Uniforme varón"
                     foto="https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_4_ys77im.png"
                     bullets={[
                       "Camisa manga corta color verde hoja seca",
