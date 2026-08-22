@@ -147,7 +147,7 @@ function SeccionGenero({
         <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">
           Colores a elección
         </p>
-        <div className="flex items-center justify-center gap-2 mt-2">
+        <div className="flex flex-col items-center gap-2 mt-2">
           <VerColores mostrarCaracteristicas={false} />
           <VerColores label="Ver telas" mostrarCaracteristicas={false} />
         </div>
