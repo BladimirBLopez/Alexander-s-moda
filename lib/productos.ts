@@ -55,8 +55,8 @@ export const productos: Producto[] = [
     fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787398877/Polera_1_rqsmxm.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
-    fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
-    fotoHombreSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_4_ys77im.png",
+    fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
+    fotoHombreSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_4_ys77im.png",
   },
   {
     id: "uniforme-casimir",
