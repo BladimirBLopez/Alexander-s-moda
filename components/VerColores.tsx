@@ -45,7 +45,16 @@ export function CaracteristicasComunes() {
   );
 }
 
-export default function VerColores({ label = "Ver opciones", mostrarCaracteristicas = true }: { label?: string; mostrarCaracteristicas?: boolean }) {
+export default function VerColores({
+  label = "Ver opciones",
+  mostrarCaracteristicas = true,
+  filtroTelas,
+}: {
+  label?: string;
+  mostrarCaracteristicas?: boolean;
+  filtroTelas?: string[];
+}) {
+  const telasVisibles = filtroTelas ? telas.filter((t) => filtroTelas.includes(t.id)) : telas;
   const [abierto, setAbierto] = useState(false);
   const [telaActiva, setTelaActiva] = useState<Tela | null>(null);
 
@@ -115,7 +124,7 @@ export default function VerColores({ label = "Ver opciones", mostrarCaracteristi
 
             {!telaActiva && (
               <div className="grid grid-cols-3 gap-2">
-                {telas.map((tela) => (
+                {telasVisibles.map((tela) => (
                   <button
                     key={tela.id}
                     type="button"
