@@ -40,9 +40,9 @@ const enlaces = [
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center text-center">
-      <div className="relative w-full h-32 overflow-hidden">
+      <div className="relative w-full h-44 overflow-hidden">
         <Image
-          src="https://res.cloudinary.com/dkq95jus0/image/upload/v1787371624/IMG-20260822-WA0002_koqrnm.jpg"
+          src="https://res.cloudinary.com/dkq95jus0/image/upload/v1787372604/Dise%C3%B1o_sin_t%C3%ADtulo_6_b2ufyx.png"
           alt="Alexander's Moda"
           fill
           className="object-cover"
