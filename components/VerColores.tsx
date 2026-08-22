@@ -30,6 +30,21 @@ const CARACTERISTICAS_COMUNES = [
   },
 ];
 
+export function CaracteristicasComunes() {
+  return (
+    <div className="flex items-center gap-3 mt-2">
+      {CARACTERISTICAS_COMUNES.map((c) => (
+        <div key={c.label} className="flex flex-col items-center gap-0.5">
+          <span className="w-4 h-4 text-[var(--color-bordo)]/70">{c.icon}</span>
+          <span className="text-[6px] text-[var(--color-bordo)]/60 text-center leading-tight">
+            {c.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function VerColores({ label = "Ver opciones", mostrarCaracteristicas = true }: { label?: string; mostrarCaracteristicas?: boolean }) {
   const [abierto, setAbierto] = useState(false);
   const [telaActiva, setTelaActiva] = useState<Tela | null>(null);
@@ -59,18 +74,7 @@ export default function VerColores({ label = "Ver opciones", mostrarCaracteristi
       >
         {label}
       </button>
-      {mostrarCaracteristicas && (
-      <div className="flex items-center gap-3 mt-2">
-        {CARACTERISTICAS_COMUNES.map((c) => (
-          <div key={c.label} className="flex flex-col items-center gap-0.5">
-            <span className="w-4 h-4 text-[var(--color-bordo)]/70">{c.icon}</span>
-            <span className="text-[6px] text-[var(--color-bordo)]/60 text-center leading-tight">
-              {c.label}
-            </span>
-          </div>
-        ))}
-      </div>
-      )}
+      {mostrarCaracteristicas && <CaracteristicasComunes />}
 
       {abierto && (
         <div

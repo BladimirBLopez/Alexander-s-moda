@@ -5,7 +5,7 @@ import { productos, type BulletItem } from "@/lib/productos";
 import FotoZoom from "@/components/FotoZoom";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
-import VerColores from "@/components/VerColores";
+import VerColores, { CaracteristicasComunes } from "@/components/VerColores";
 
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 const WHATSAPP_NUMERO = "59177974868";
@@ -147,8 +147,11 @@ function SeccionGenero({
         Colores a elección
       </p>
       <div className="text-center flex flex-col items-center gap-2">
-        <VerColores />
-        <VerColores label="Ver telas" mostrarCaracteristicas={false} />
+        <div className="flex items-center justify-center gap-2">
+          <VerColores mostrarCaracteristicas={false} />
+          <VerColores label="Ver telas" mostrarCaracteristicas={false} />
+        </div>
+        <CaracteristicasComunes />
       </div>
     </div>
   );
