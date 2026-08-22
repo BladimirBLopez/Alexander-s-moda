@@ -139,20 +139,20 @@ function SeccionGenero({
   );
 
   const coloresBlock = (
-    <div>
-      <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-        <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
-      </p>
-      <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">
-        Colores a elección
-      </p>
-      <div className="text-center flex flex-col items-center gap-2">
-        <div className="flex items-center justify-center gap-2">
+    <div className="h-full flex flex-col items-center justify-between">
+      <div className="flex flex-col items-center">
+        <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
+          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
+        </p>
+        <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">
+          Colores a elección
+        </p>
+        <div className="flex items-center justify-center gap-2 mt-2">
           <VerColores mostrarCaracteristicas={false} />
           <VerColores label="Ver telas" mostrarCaracteristicas={false} />
         </div>
-        <CaracteristicasComunes />
       </div>
+      <CaracteristicasComunes />
     </div>
   );
 
