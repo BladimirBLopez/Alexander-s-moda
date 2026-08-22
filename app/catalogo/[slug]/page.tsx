@@ -148,7 +148,7 @@ function SeccionGenero({
         </p>
         <div className="flex flex-col items-center gap-2 mt-2">
           <VerColores label="Color camisa" mostrarCaracteristicas={false} />
-          <VerColores label={titulo.includes("Dama") ? "Color falda" : "Color pantalón"} mostrarCaracteristicas={false} filtroTelas={["fill-a-fill-profesional"]} />
+          <VerColores label={titulo.includes("Dama") ? "Colores de faldas" : "Colores de pantalones"} mostrarCaracteristicas={false} filtroTelas={["fill-a-fill-profesional"]} />
         </div>
       </div>
       <CaracteristicasComunes />
