@@ -54,7 +54,7 @@ function ColumnaGenero2({
   bordeDerecho?: boolean;
 }) {
   return (
-    <div className={bordeDerecho ? "border-r border-[var(--color-hueso)]/50 -mt-4 pt-4 -mb-12 pb-12" : ""}>
+    <div>
       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
         {foto ? (
           <FotoZoom src={foto} alt={titulo} />
@@ -262,45 +262,48 @@ export default async function CatalogoDetallePage({
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
-                  <ColumnaGenero2
-                    titulo="Uniforme dama"
-                    foto="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png"
-                    bullets={[
-                      "Camisa manga corta color verde hoja seca",
-                      "Corbata color beige con bordado DF",
-                      "Bordado \"DEIFFET'S 27\" en el pecho",
-                      "Falda color beige con abertura lateral",
-                    ]}
-                    detalles={[
-                      { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte femenino" },
-                      { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
-                      { icono: <IconoFalda2 />, texto: "Falda cómoda y elegante" },
-                    ]}
-                    bordeDerecho
-                  />
-                  <ColumnaGenero2
-                    titulo="Uniforme varón"
-                    foto="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_4_ys77im.png"
-                    bullets={[
-                      "Camisa manga corta color verde hoja seca",
-                      "Corbata color beige con bordado DF",
-                      "Bordado \"DEIFFET'S 27\" en el pecho",
-                      "Pantalón color beige de corte clásico",
-                    ]}
-                    detalles={[
-                      { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte masculino" },
-                      { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
-                      { icono: <IconoPantalon2 />, texto: "Pantalón formal y cómodo" },
-                    ]}
-                  />
+                <div className="relative">
+                  <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
+                    <ColumnaGenero2
+                      titulo="Uniforme dama"
+                      foto="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png"
+                      bullets={[
+                        "Camisa manga corta color verde hoja seca",
+                        "Corbata color beige con bordado DF",
+                        "Bordado \"DEIFFET'S 27\" en el pecho",
+                        "Falda color beige con abertura lateral",
+                      ]}
+                      detalles={[
+                        { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte femenino" },
+                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
+                        { icono: <IconoFalda2 />, texto: "Falda cómoda y elegante" },
+                      ]}
+                    />
+                    <ColumnaGenero2
+                      titulo="Uniforme varón"
+                      foto="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_4_ys77im.png"
+                      bullets={[
+                        "Camisa manga corta color verde hoja seca",
+                        "Corbata color beige con bordado DF",
+                        "Bordado \"DEIFFET'S 27\" en el pecho",
+                        "Pantalón color beige de corte clásico",
+                      ]}
+                      detalles={[
+                        { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte masculino" },
+                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
+                        { icono: <IconoPantalon2 />, texto: "Pantalón formal y cómodo" },
+                      ]}
+                    />
+                  </div>
+                  <div className="mt-8 border-t border-[var(--color-hueso)]/50" />
+                  <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--color-hueso)]/50" />
                 </div>
               </div>
             </div>
           </article>
         </div>
 
-        <footer className="mt-8 pt-5 border-t border-[var(--color-hueso)]/50 text-center">
+        <footer className="pt-5 text-center">
           <p className="text-[9px] uppercase tracking-[0.15em] text-[var(--color-bronce)] mb-2" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             Alexander&apos;s Moda
           </p>
