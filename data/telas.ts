@@ -221,7 +221,7 @@ export const telas: Tela[] = [
     gramaje: "7,7 Onzas",
     ancho: "160 cm",
     caracteristicas: ["Durabilidad", "Elasticidad", "Suave al Tacto", "Respirabilidad", "Protección UV 30"],
-    imagenPrincipal: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__PRINCIPAL.jpg",
+    imagenPrincipal: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/drill-confort-dockers__PRINCIPAL.jpg",
     colores: [
       { codigo: "Beige", hex: "#8f7e6c", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__beige.jpg" },
       { codigo: "Caqui", hex: "#675845", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__caqui.jpg" },
