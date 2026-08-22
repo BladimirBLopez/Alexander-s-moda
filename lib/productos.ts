@@ -79,7 +79,7 @@ export const productos: Producto[] = [
     fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787427352/Copia_de_Sin_t%C3%ADtulo_20260822_153512_0000_uxqutp.png",
     fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787429014/Dise%C3%B1o_sin_t%C3%ADtulo_20260822_160241_0000_jg57bj.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787429496/Dise%C3%B1o_sin_t%C3%ADtulo_20260822_161104_0000_qri21h.png",
-    fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787431450/Dise%C3%B1o_sin_t%C3%ADtulo_20260822_164336_0000_deifpv.png",
+    fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787429952/Dise%C3%B1o_sin_t%C3%ADtulo_20260822_161842_0000_ti0lku.png",
     fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_2.png",
     fotoHombreSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_2.png",
   },
