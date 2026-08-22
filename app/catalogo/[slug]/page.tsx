@@ -139,7 +139,7 @@ function SeccionGenero({
   );
 
   const coloresBlock = (
-    <div className="h-full flex flex-col items-center justify-between">
+    <div className="h-full flex flex-col items-center justify-center gap-10">
       <div className="flex flex-col items-center">
         <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
           <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Colores</span>
