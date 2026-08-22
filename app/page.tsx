@@ -42,7 +42,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center text-center">
       <div className="relative w-full h-32 overflow-hidden">
         <Image
-          src="/banner.jpg"
+          src="https://res.cloudinary.com/dkq95jus0/image/upload/v1787371624/IMG-20260822-WA0002_koqrnm.jpg"
           alt="Alexander's Moda"
           fill
           className="object-cover"
