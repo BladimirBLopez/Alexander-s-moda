@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { productos, type BulletItem } from "@/lib/productos";
 import FotoZoom from "@/components/FotoZoom";
@@ -325,14 +324,11 @@ export default async function CatalogoDetallePage({
       <Link
         href={`https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent("Hola, me interesa el uniforme de promoción de Alexander's Moda")}`}
         aria-label="Pedir por WhatsApp"
-        className="fixed bottom-5 right-5 z-20 w-14 h-14 rounded-full shadow-lg overflow-hidden hover:scale-105 transition-transform"
+        className="fixed bottom-5 right-5 z-20 w-14 h-14 rounded-full shadow-lg bg-[#25D366] flex items-center justify-center hover:scale-105 transition-transform"
       >
-        <Image
-          src="https://res.cloudinary.com/dkq95jus0/image/upload/v1786895093/whatsapp-icon_oxdzin.png"
-          alt="WhatsApp"
-          fill
-          className="object-cover"
-        />
+        <svg viewBox="0 0 24 24" fill="white" className="w-8 h-8">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.03.25-3.45-.72-2.92-1.16-4.8-4.12-4.94-4.31-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.65.5.24.58.82 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.3.38-.43.51-.14.14-.29.29-.13.57.16.29.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.29.14.46.12.63-.07.17-.19.72-.83.91-1.12.19-.29.38-.24.63-.14.26.1 1.65.78 1.93.92.29.14.48.21.55.33.07.12.07.68-.17 1.36Z" />
+        </svg>
       </Link>
     </main>
   );
