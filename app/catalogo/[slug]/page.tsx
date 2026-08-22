@@ -102,7 +102,7 @@ function SeccionGenero({
   invertido?: boolean;
 }) {
   const descripcionBlock = (
-    <div>
+    <div className={!invertido ? "border-r border-[var(--color-hueso)]/50 -my-4 py-4 pr-3" : ""}>
       <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
         <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
       </p>
@@ -138,7 +138,7 @@ function SeccionGenero({
   );
 
   const coloresBlock = (
-    <div className="h-full flex flex-col items-center justify-center gap-10">
+    <div className={`h-full flex flex-col items-center justify-center gap-10 ${invertido ? "border-r border-[var(--color-hueso)]/50 -my-4 py-4 pr-3" : ""}`}>
       <div className="flex flex-col items-center">
         <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
           <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Ver telas</span>
@@ -155,8 +155,6 @@ function SeccionGenero({
     </div>
   );
 
-  const divider = <div className="self-stretch w-px h-full -my-4 bg-[var(--color-bordo)]/15" />;
-
   return (
     <div className="mb-6">
       <p className="text-[13px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mt-4 mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
@@ -166,17 +164,15 @@ function SeccionGenero({
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} />
       </div>
-      <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-lg p-4 -mx-3 ${invertido ? "grid-cols-[1fr_auto_1.4fr]" : "grid-cols-[1.4fr_auto_1fr]"}`}>
+      <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-lg p-4 -mx-3 ${invertido ? "grid-cols-[1fr_1.4fr]" : "grid-cols-[1.4fr_1fr]"}`}>
         {invertido ? (
           <>
             {coloresBlock}
-            {divider}
             {descripcionBlock}
           </>
         ) : (
           <>
             {descripcionBlock}
-            {divider}
             {coloresBlock}
           </>
         )}
