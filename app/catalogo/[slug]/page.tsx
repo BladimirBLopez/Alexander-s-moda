@@ -295,7 +295,7 @@ export default async function CatalogoDetallePage({
                       ]}
                     />
                   </div>
-                  <div className="mt-8 border-t border-[var(--color-hueso)]/50" />
+                  <div className="mt-4 border-t border-[var(--color-hueso)]/50" />
                   <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--color-hueso)]/50" />
                 </div>
               </div>
