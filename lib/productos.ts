@@ -51,9 +51,8 @@ export const productos: Producto[] = [
       "Polera en tela Piqué Peruano con derecho a 2 bordados institucionales",
       "Corbata en tela Twill Flex 100% algodón con derecho a 1 bordado institucional",
     ],
-    // TODO: placeholder temporal (imagen Femenino) mientras Bladimir termina de editar las fotos reales
-    fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
-    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
+    fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787398877/Camisa_1_e97kgv.png",
+    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787398877/Polera_1_rqsmxm.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
     fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
@@ -77,9 +76,8 @@ export const productos: Producto[] = [
       "Polera en tela Piqué Peruano con derecho a dos bordados institucionales",
       "Corbata en tela Casimir Inglés con un bordado institucional",
     ],
-    // TODO: placeholder temporal (imagen Femenino) mientras Bladimir termina de editar las fotos reales
-    fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
-    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
+    fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787398877/Camisa_1_e97kgv.png",
+    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787398877/Polera_1_rqsmxm.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
     fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_2.png",
