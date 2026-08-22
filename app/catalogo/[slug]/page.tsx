@@ -94,15 +94,17 @@ function SeccionGenero({
   fotoFuera,
   bullets,
   invertido = false,
+  mostrarColores = true,
 }: {
   titulo: string;
   fotoDentro?: string | null;
   fotoFuera?: string | null;
   bullets: BulletItem[];
   invertido?: boolean;
+  mostrarColores?: boolean;
 }) {
   const descripcionBlock = (
-    <div className={!invertido ? "border-r border-[var(--color-hueso)]/50 -my-4 py-4 pr-3" : ""}>
+    <div className={mostrarColores && !invertido ? "border-r border-[var(--color-hueso)]/50 -my-4 py-4 pr-3" : ""}>
       <p className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)] font-semibold mb-1.5" style={{ fontFamily: "var(--font-display)" }}>
         <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Descripción</span>
       </p>
@@ -164,8 +166,10 @@ function SeccionGenero({
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} />
       </div>
-      <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-lg p-4 -mx-3 ${invertido ? "grid-cols-[1fr_1.4fr]" : "grid-cols-[1.4fr_1fr]"}`}>
-        {invertido ? (
+      <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-lg p-4 -mx-3 ${!mostrarColores ? "grid-cols-1" : invertido ? "grid-cols-[1fr_1.4fr]" : "grid-cols-[1.4fr_1fr]"}`}>
+        {!mostrarColores ? (
+          descripcionBlock
+        ) : invertido ? (
           <>
             {coloresBlock}
             {descripcionBlock}
@@ -236,6 +240,7 @@ export default async function CatalogoDetallePage({
               fotoDentro={producto.fotoMujerDentro}
               fotoFuera={producto.fotoMujerFuera}
               bullets={producto.bulletsMujer}
+              mostrarColores={producto.id !== "uniforme-casimir"}
             />
             <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-6 -mx-3">
               <div className="bg-[var(--color-bordo)] px-2 py-2">
@@ -249,6 +254,7 @@ export default async function CatalogoDetallePage({
               fotoDentro={producto.fotoHombreDentro}
               fotoFuera={producto.fotoHombreFuera}
               bullets={producto.bulletsHombre}
+              mostrarColores={producto.id !== "uniforme-casimir"}
             />
 
             <div className="mt-6">
