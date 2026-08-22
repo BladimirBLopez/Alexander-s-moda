@@ -54,7 +54,7 @@ function ColumnaGenero2({
   bordeDerecho?: boolean;
 }) {
   return (
-    <div className={bordeDerecho ? "border-r border-[var(--color-hueso)]/50" : ""}>
+    <div className={bordeDerecho ? "border-r border-[var(--color-hueso)]/50 -my-4 py-4" : ""}>
       <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
         {foto ? (
           <FotoZoom src={foto} alt={titulo} />
