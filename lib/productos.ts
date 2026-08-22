@@ -77,7 +77,7 @@ export const productos: Producto[] = [
       "Corbata en tela Casimir Inglés con un bordado institucional",
     ],
     fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787427352/Copia_de_Sin_t%C3%ADtulo_20260822_153512_0000_uxqutp.png",
-    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787425699/Dise%C3%B1o_sin_t%C3%ADtulo_20260822_150700_0000_wtarnp.png",
+    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787429014/Dise%C3%B1o_sin_t%C3%ADtulo_20260822_160241_0000_jg57bj.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787400132/Camisa_varon_1_hgxr9l.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787426174/Dise%C3%B1o_sin_t%C3%ADtulo_20260822_151438_0000_ituak0.png",
     fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_2.png",
