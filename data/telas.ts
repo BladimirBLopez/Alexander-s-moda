@@ -212,5 +212,30 @@ export const telas: Tela[] = [
       { codigo: "81T0", hex: "#d58668", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/doby__81T0.jpg.jpg" },
       { codigo: "83L7", hex: "#379597", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/doby__83L7.jpg.jpg" },
     ]
+  },
+  {
+    id: "drill-confort-dockers",
+    nombre: "Drill Confort Dockers",
+    estructura: "Drill",
+    composicion: "97,5% Algodón / 2,5% Lycra",
+    gramaje: "7,7 Onzas",
+    ancho: "160 cm",
+    caracteristicas: ["Durabilidad", "Elasticidad", "Suave al Tacto", "Respirabilidad", "Protección UV 30"],
+    imagenPrincipal: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__PRINCIPAL.jpg",
+    colores: [
+      { codigo: "Beige", hex: "#8f7e6c", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__beige.jpg" },
+      { codigo: "Caqui", hex: "#675845", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__caqui.jpg" },
+      { codigo: "Arena", hex: "#aba79b", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__arena.jpg" },
+      { codigo: "Camel", hex: "#60452b", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__camel.jpg" },
+      { codigo: "Café", hex: "#271e19", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__cafe.jpg" },
+      { codigo: "Vino", hex: "#4d181e", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__vino.jpg" },
+      { codigo: "Blanco", hex: "#d7dcdf", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__blanco.jpg" },
+      { codigo: "P.P.T.", hex: "#e9e9e1", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__ppt.jpg" },
+      { codigo: "Gris Claro", hex: "#6d6e70", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__gris-claro.jpg" },
+      { codigo: "Gris Oscuro", hex: "#30322d", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__gris-oscuro.jpg" },
+      { codigo: "Negro", hex: "#111111", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__negro.jpg" },
+      { codigo: "Verde", hex: "#565749", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__verde.jpg" },
+      { codigo: "Azul Marino", hex: "#171b1e", imagenUrl: "https://res.cloudinary.com/dkq95jus0/image/upload/drill-confort-dockers__azul-marino.jpg" },
+    ]
   }
 ];
