@@ -155,7 +155,7 @@ function SeccionGenero({
     </div>
   );
 
-  const divider = <div className="self-stretch w-px h-full bg-[var(--color-bordo)]/15" />;
+  const divider = <div className="self-stretch w-px h-full -my-4 bg-[var(--color-bordo)]/15" />;
 
   return (
     <div className="mb-6">
