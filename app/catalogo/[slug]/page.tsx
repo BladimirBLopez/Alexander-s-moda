@@ -254,10 +254,10 @@ export default async function CatalogoDetallePage({
             <div className="mt-6">
               <div className="relative -mx-6">
                 <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
-                  <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                  <p className="text-center text-[9px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
                     Uniforme Dama
                   </p>
-                  <p className="text-center text-[10px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                  <p className="text-center text-[9px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
                     Uniforme Varón
                   </p>
                 </div>
