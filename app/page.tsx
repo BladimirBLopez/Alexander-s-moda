@@ -45,7 +45,7 @@ export default function Home() {
           src="https://res.cloudinary.com/dkq95jus0/image/upload/v1787372604/Dise%C3%B1o_sin_t%C3%ADtulo_6_b2ufyx.png"
           alt="Alexander's Moda"
           fill
-          className="object-cover object-top"
+          className="object-cover"
           priority
         />
         <div
@@ -60,7 +60,7 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center flex-1 px-3">
-        <div className="relative w-52 h-52 -mt-28 mb-5">
+        <div className="relative w-44 h-44 -mt-24 mb-5">
           <div
             className="absolute inset-0 bg-[var(--color-hueso)]"
             style={{
