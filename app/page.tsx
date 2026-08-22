@@ -45,7 +45,7 @@ export default function Home() {
           src="https://res.cloudinary.com/dkq95jus0/image/upload/v1787372604/Dise%C3%B1o_sin_t%C3%ADtulo_6_b2ufyx.png"
           alt="Alexander's Moda"
           fill
-          className="object-cover"
+          className="object-cover object-[center_25%]"
           priority
         />
         <div
