@@ -240,7 +240,6 @@ export default async function CatalogoDetallePage({
               fotoDentro={producto.fotoMujerDentro}
               fotoFuera={producto.fotoMujerFuera}
               bullets={producto.bulletsMujer}
-              mostrarColores={producto.id !== "uniforme-casimir"}
             />
             <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-6 -mx-3">
               <div className="bg-[var(--color-bordo)] px-2 py-2">
@@ -254,7 +253,6 @@ export default async function CatalogoDetallePage({
               fotoDentro={producto.fotoHombreDentro}
               fotoFuera={producto.fotoHombreFuera}
               bullets={producto.bulletsHombre}
-              mostrarColores={producto.id !== "uniforme-casimir"}
             />
 
             <div className="mt-6">
