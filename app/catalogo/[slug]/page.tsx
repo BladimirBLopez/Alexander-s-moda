@@ -163,11 +163,11 @@ function SeccionGenero({
       <p className="text-[13px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mt-4 mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
         {titulo}
       </p>
-      <div className="grid grid-cols-2 gap-1 mb-4 max-w-[440px] mx-auto">
+      <div className="grid grid-cols-2 gap-1 mb-0 max-w-[440px] mx-auto">
         <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} />
         <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} />
       </div>
-      <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-lg p-4 ${invertido ? "grid-cols-[1fr_auto_1.4fr]" : "grid-cols-[1.4fr_auto_1fr]"}`}>
+      <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-t-none rounded-b-lg p-4 -mx-3 ${invertido ? "grid-cols-[1fr_auto_1.4fr]" : "grid-cols-[1.4fr_auto_1fr]"}`}>
         {invertido ? (
           <>
             {coloresBlock}
