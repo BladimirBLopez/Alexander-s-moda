@@ -15,8 +15,8 @@ type IconoProps = { className?: string };
 function IconoProforma({ className }: IconoProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className}>
-      <path d="M6 7h12l-1 13H7L6 7Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-      <path d="M9 7a3 3 0 0 1 6 0" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8m4 1.5v-11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
