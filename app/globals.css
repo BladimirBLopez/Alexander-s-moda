@@ -20,7 +20,7 @@ body {
       circle at 50% 15%,
       color-mix(in oklab, var(--color-bordo) 90%, white 10%) 0%,
       var(--color-bordo) 45%,
-      var(--color-bordo-oscuro) 100%
+      color-mix(in oklab, var(--color-bordo-oscuro) 55%, var(--color-bordo) 45%) 100%
     ),
     repeating-linear-gradient(
       45deg,
