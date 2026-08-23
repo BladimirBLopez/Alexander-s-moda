@@ -60,14 +60,23 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-sm flex flex-col items-center flex-1 px-3">
-        <div className="relative w-48 h-48 -mt-24 mb-5 drop-shadow-xl">
-          <Image
-            src="/alexanders-moda-logo.png"
-            alt="Alexander's Moda"
-            fill
-            className="object-contain"
-            priority
+        <div className="relative w-44 h-44 -mt-24 mb-5">
+          <div
+            className="absolute inset-0 bg-[var(--color-hueso)]"
+            style={{
+              borderRadius: "62% 38% 35% 65% / 58% 32% 68% 42%",
+              transform: "rotate(-8deg)",
+            }}
           />
+          <div className="absolute inset-2 rounded-full overflow-hidden shadow-lg shadow-black/30">
+            <Image
+              src="/alexanders-moda-logo.png"
+              alt="Alexander's Moda"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
 
         <h1 className="sr-only">Alexander&apos;s Moda</h1>
