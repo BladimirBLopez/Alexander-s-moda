@@ -82,7 +82,7 @@ export default function Home() {
         <h1 className="sr-only">Alexander&apos;s Moda</h1>
 
         <p className="text-[13px] tracking-[0.15em] uppercase text-[var(--color-papel)] font-medium mb-3">
-          Uniformes Institucionales · Confección a Medida
+          Uniformes Institucionales · Moda Colegial
         </p>
         <div className="w-full flex flex-col gap-4 mb-10">
           {enlaces.map((enlace) => (
