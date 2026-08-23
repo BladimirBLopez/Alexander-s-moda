@@ -78,7 +78,7 @@ export const productos: Producto[] = [
     ],
     fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787467331/Camisa_casimir_mujer_20260823_024000_0000_olt2lf.png",
     fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/c_pad,w_1000,h_1400,b_auto/v1787467340/Polera_casimir_dama_skkbdi.png",
-    fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787466163/Camisa_varon_casimir_20260823_022202_0000_ne0ni5.png",
+    fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787468233/Camisa_varon_casimir_20260823_025634_0000_sr2hys.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/c_pad,w_1000,h_1400,b_auto,g_center,y_30/v1787417201/Polera_varon_fl6v4l.png",
     fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-mujer_2.png",
     fotoHombreSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_2.png",
