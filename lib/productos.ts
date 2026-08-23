@@ -76,7 +76,7 @@ export const productos: Producto[] = [
       "Polera en tela Piqué Peruano con derecho a dos bordados institucionales",
       "Corbata en tela Casimir Inglés con un bordado institucional",
     ],
-    fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787467331/Camisa_casimir_mujer_20260823_024000_0000_olt2lf.png",
+    fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787468646/Camisa_dama_casimir_20260823_030345_0000_x9fivv.png",
     fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/c_pad,w_1000,h_1400,b_auto/v1787467340/Polera_casimir_dama_skkbdi.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787468233/Camisa_varon_casimir_20260823_025634_0000_sr2hys.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/c_pad,w_1000,h_1400,b_auto,g_center,y_30/v1787417201/Polera_varon_fl6v4l.png",
