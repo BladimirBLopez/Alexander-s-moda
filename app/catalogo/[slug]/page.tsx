@@ -143,13 +143,10 @@ function SeccionGenero({
     <div className={`h-full flex flex-col items-center justify-center gap-10 pb-6 ${invertido ? "border-r border-[var(--color-hueso)]/50 -my-4 py-4 pr-3" : ""}`}>
       <div className="flex flex-col items-center">
         <p className="text-[9px] uppercase tracking-[0.05em] text-[var(--color-bordo)] font-semibold mb-1.5 text-center" style={{ fontFamily: "var(--font-display)" }}>
-          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Ver telas</span>
-        </p>
-        <p className="text-[9px] text-[var(--color-bordo)]/70 text-center">
-          Colores a elección
+          <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Ver colores</span>
         </p>
         <div className="flex flex-col items-center gap-2 mt-2">
-          <VerColores label="Color camisa" mostrarCaracteristicas={false} />
+          <VerColores label="Colores de camisa" mostrarCaracteristicas={false} />
           <VerColores label={titulo.includes("Dama") ? "Colores de faldas" : "Colores de pantalones"} mostrarCaracteristicas={false} filtroTelas={["drill-confort-dockers"]} />
         </div>
       </div>
@@ -159,7 +156,7 @@ function SeccionGenero({
 
   return (
     <div className="mb-6">
-      <p className="text-[13px] uppercase tracking-[0.2em] text-[var(--color-bronce)] mt-4 mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+      <p className="text-[15px] uppercase tracking-[0.2em] text-[var(--color-bordo)] mt-4 mb-2 text-center" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
         {titulo}
       </p>
       <div className="grid grid-cols-2 gap-1 mb-0 max-w-[440px] mx-auto">

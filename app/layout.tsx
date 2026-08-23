@@ -4,12 +4,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Alexander's Moda | Uniformes estudiantiles en Bolivia",
   description:
-    "Uniformes institucionales y moda estudiantil. Catálogo, pedidos y atención directa por WhatsApp.",
+    "Uniformes Institucionales y moda colegial. Catálogo, pedidos y atención directa por WhatsApp.",
   metadataBase: new URL("https://alexander-s-moda.vercel.app"),
   openGraph: {
     title: "Alexander's Moda | Uniformes estudiantiles en Bolivia",
     description:
-      "Uniformes institucionales y moda estudiantil. Catálogo, pedidos y atención directa por WhatsApp.",
+      "Uniformes Institucionales y moda colegial. Catálogo, pedidos y atención directa por WhatsApp.",
     url: "https://alexander-s-moda.vercel.app",
     siteName: "Alexander's Moda",
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alexander's Moda | Uniformes estudiantiles en Bolivia",
     description:
-      "Uniformes institucionales y moda estudiantil. Catálogo, pedidos y atención directa por WhatsApp.",
+      "Uniformes Institucionales y moda colegial. Catálogo, pedidos y atención directa por WhatsApp.",
     images: ["https://res.cloudinary.com/dkq95jus0/image/upload/v1787432031/og-banner-guindo-marca_mdwk3m.png"],
   },
 };
