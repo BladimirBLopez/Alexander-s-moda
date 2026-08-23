@@ -66,13 +66,21 @@ export const productos: Producto[] = [
     tipografia: "A elección de los estudiantes de la promoción",
     bulletsMujer: [
       "Falda en tela Casimir Inglés",
-      "Camisa manga corta en tela Oxford con un bordado institucional",
+      {
+        texto: "Camisa manga corta con tela a elección:",
+        sublista: OPCIONES_TELA_CAMISA,
+        nota: "Con derecho a un bordado institucional",
+      },
       "Polera en tela Piqué Peruano con derecho a dos bordados institucionales",
       "Corbata en tela Casimir Inglés con un bordado institucional",
     ],
     bulletsHombre: [
       "Pantalón en tela Casimir Inglés",
-      "Camisa manga corta en tela Oxford con un bordado institucional",
+      {
+        texto: "Camisa manga corta con tela a elección:",
+        sublista: OPCIONES_TELA_CAMISA,
+        nota: "Con derecho a un bordado institucional",
+      },
       "Polera en tela Piqué Peruano con derecho a dos bordados institucionales",
       "Corbata en tela Casimir Inglés con un bordado institucional",
     ],
