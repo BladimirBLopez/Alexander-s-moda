@@ -129,23 +129,24 @@ export default function Home() {
         </p>
         <div className="w-full flex flex-col gap-4 mb-10">
           {enlaces.map((enlace) => (
-            <div key={enlace.label} className="w-full">
-              <Link
-                href={enlace.href}
-                target={enlace.externo ? "_blank" : undefined}
-                rel={enlace.externo ? "noopener noreferrer" : undefined}
-                className="boton-tactil w-full py-4 px-5 rounded-full bg-[var(--color-papel)] text-[var(--color-bordo-oscuro)] text-[17px] font-bold text-center shadow-lg shadow-black/25 hover:bg-white hover:shadow-xl transition-shadow flex items-center justify-center gap-2"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
+            <Link
+              key={enlace.label}
+              href={enlace.href}
+              target={enlace.externo ? "_blank" : undefined}
+              rel={enlace.externo ? "noopener noreferrer" : undefined}
+              className="boton-tactil w-full py-4 px-5 rounded-full bg-[var(--color-papel)] text-[var(--color-bordo-oscuro)] shadow-lg shadow-black/25 hover:bg-white hover:shadow-xl transition-shadow flex flex-col items-center justify-center gap-1"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              <span className="flex items-center justify-center gap-2 text-[17px] font-bold">
                 {enlace.Icono && <enlace.Icono className="w-5 h-5 shrink-0" />}
                 {enlace.label}
-              </Link>
+              </span>
               {enlace.descripcion && (
-                <p className="text-[11px] text-[var(--color-hueso)]/70 text-center mt-2 px-2">
+                <span className="text-[11px] font-normal normal-case tracking-normal text-[var(--color-bordo-oscuro)]/60">
                   {enlace.descripcion}
-                </p>
+                </span>
               )}
-            </div>
+            </Link>
           ))}
         </div>
 
