@@ -146,7 +146,7 @@ function SeccionGenero({
           <span className="inline-block border-b border-[var(--color-hueso)]/50 pb-0.5">Ver colores</span>
         </p>
         <div className="flex flex-col items-center gap-2 mt-2">
-          <VerColores label="Colores de camisa" mostrarCaracteristicas={false} />
+          <VerColores label="Colores de camisa" mostrarCaracteristicas={false} filtroTelas={["fill-a-fill-profesional", "super-oxford-profesional", "cristal-camisero", "popelina-office", "pik-a-pik-office", "doby"]} />
           <VerColores label={titulo.includes("Dama") ? "Colores de falda" : "Colores de pantalón"} mostrarCaracteristicas={false} filtroTelas={["drill-confort-dockers"]} />
         </div>
       </div>
