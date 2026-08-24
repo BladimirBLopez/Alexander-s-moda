@@ -252,6 +252,7 @@ export default async function CatalogoDetallePage({
               bullets={producto.bulletsHombre}
             />
 
+            {producto.id !== "uniforme-sport" && (
             <div className="mt-6">
               <div className="relative -mx-6">
                 <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
@@ -301,6 +302,7 @@ export default async function CatalogoDetallePage({
                 </div>
               </div>
             </div>
+            )}
           </article>
         </div>
 
