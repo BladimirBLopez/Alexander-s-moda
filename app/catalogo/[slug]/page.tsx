@@ -252,6 +252,55 @@ export default async function CatalogoDetallePage({
               bullets={producto.bulletsHombre}
             />
 
+            <div className="mt-6">
+              <div className="relative -mx-6">
+                <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
+                  <p className="text-center text-[9px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                    Uniforme Dama
+                  </p>
+                  <p className="text-center text-[9px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
+                    Uniforme Varón
+                  </p>
+                </div>
+
+                <div className="relative">
+                  <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
+                    <ColumnaGenero2
+                      titulo="Uniforme dama"
+                      foto="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png"
+                      bullets={[
+                        "Camisa manga corta color verde hoja seca",
+                        "Corbata color beige con bordado DF",
+                        "Bordado \"DEIFFET'S 27\" en el pecho",
+                        "Falda color beige con abertura lateral",
+                      ]}
+                      detalles={[
+                        { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte femenino" },
+                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
+                        { icono: <IconoFalda2 />, texto: "Falda cómoda y elegante" },
+                      ]}
+                    />
+                    <ColumnaGenero2
+                      titulo="Uniforme varón"
+                      foto="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_4_ys77im.png"
+                      bullets={[
+                        "Camisa manga corta color verde hoja seca",
+                        "Corbata color beige con bordado DF",
+                        "Bordado \"DEIFFET'S 27\" en el pecho",
+                        "Pantalón color beige de corte clásico",
+                      ]}
+                      detalles={[
+                        { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte masculino" },
+                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
+                        { icono: <IconoPantalon2 />, texto: "Pantalón formal y cómodo" },
+                      ]}
+                    />
+                  </div>
+                  <div className="mt-4 border-t border-[var(--color-hueso)]/50" />
+                  <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--color-hueso)]/50" />
+                </div>
+              </div>
+            </div>
           </article>
         </div>
 
