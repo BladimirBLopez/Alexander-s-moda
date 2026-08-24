@@ -19,7 +19,7 @@ export interface Tela {
 export const telas: Tela[] = [
   {
     id: "fill-a-fill-profesional",
-    nombre: "Fill a Fill Profesional",
+    nombre: "Fill a Fill",
     estructura: "Tafeta 1x1",
     composicion: "35% Algodón Peinado / 65% Poliéster",
     gramaje: "149 grs/M²",
@@ -51,7 +51,7 @@ export const telas: Tela[] = [
   },
   {
     id: "super-oxford-profesional",
-    nombre: "Super Oxford Profesional",
+    nombre: "Oxford",
     estructura: "Esterilla 2x1",
     composicion: "57% Algodón Peinado / 43% Poliéster",
     gramaje: "160 grs/M²",
@@ -153,7 +153,7 @@ export const telas: Tela[] = [
   },
   {
     id: "pik-a-pik-office",
-    nombre: "Pik a Pik Office",
+    nombre: "Pik a Pik",
     estructura: "Tafeta 1x1",
     composicion: "48% Algodón Peinado / 52% Poliéster",
     gramaje: "105 grs/M²",
