@@ -52,7 +52,7 @@ export const productos: Producto[] = [
       "Corbata en tela Twill Flex 100% algodón con derecho a un bordado institucional",
     ],
     fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787398877/Camisa_1_e97kgv.png",
-    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787666364/Dise%C3%B1o_sin_t%C3%ADtulo_20260825_084354_0000_yac8sk.png",
+    fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787667010/Dise%C3%B1o_sin_t%C3%ADtulo_20260825_100909_0000_my9nwz.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1787400132/Camisa_varon_1_hgxr9l.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/c_pad,w_1000,h_1400,b_auto/v1787426174/Dise%C3%B1o_sin_t%C3%ADtulo_20260822_151438_0000_ituak0.png",
     fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png",
