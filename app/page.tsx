@@ -12,18 +12,6 @@ const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 
 type IconoProps = { className?: string };
 
-function IconoProforma({ className }: IconoProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className}>
-      <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M14 2v5a1 1 0 0 0 1 1h5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M10 9H8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M16 13H8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M16 17H8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 function IconoWhatsApp({ className }: IconoProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -59,12 +47,6 @@ const enlaces: Enlace[] = [
     label: "Uniforme Casimir",
     href: "/catalogo/casimir",
     externo: false,
-  },
-  {
-    label: "Proforma",
-    href: "/proforma",
-    externo: false,
-    Icono: IconoProforma,
   },
   {
     label: "WhatsApp",
