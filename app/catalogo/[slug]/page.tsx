@@ -206,7 +206,7 @@ export default async function CatalogoDetallePage({
             <div className="mt-6">
               <div className="bg-[var(--color-bordo)] px-2 py-2.5 -mx-6">
                 <p className="text-center text-[9px] uppercase tracking-[0.1em] text-white font-semibold" style={{ fontFamily: "var(--font-display)" }}>
-                  Uniforme {producto.nombre}
+                  CHAMARRA AMERICANA - CANGURO
                 </p>
               </div>
               <div className="pt-4 pb-2">
