@@ -270,7 +270,7 @@ export default async function CatalogoDetallePage({
                   <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
                     <ColumnaGenero2
                       titulo="Uniforme dama"
-                      foto="https://res.cloudinary.com/dkq95jus0/image/upload/v1788893477/20260908_144522_0000_rycwqh.png"
+                      foto="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png"
                       bullets={[
                         "Camisa manga corta color verde hoja seca",
                         "Corbata color beige con bordado DF",
