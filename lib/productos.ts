@@ -91,7 +91,7 @@ export const productos: Producto[] = [
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788899900/20260908_163401_0000_xy5dgx.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788899900/20260908_163618_0000_z7jbyg.png",
     fotoSeccion2Arriba: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788910438/20260908_193254_0000_uvkkoh.png",
-    fotoSeccion2Izquierda: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788911036/20260908_194209_0000_fc3xe0.png",
+    fotoSeccion2Izquierda: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903743/20260908_173713_0000_pjkpj8.png",
     fotoSeccion2Derecha: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788908701/New_ilzrqt.png",
   },
 ];
