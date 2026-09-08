@@ -211,20 +211,26 @@ export default async function CatalogoDetallePage({
               </div>
               <div className="pt-4 pb-2">
                 <div className="max-w-[220px] mx-auto mb-1">
-                  <FotoOPlaceholder
-                    src={producto.fotoSeccion2Arriba}
-                    alt={`Uniforme ${producto.nombre} - foto 1`}
-                  />
+                  <div className="rounded-lg overflow-hidden shadow-md">
+                    <FotoOPlaceholder
+                      src={producto.fotoSeccion2Arriba}
+                      alt={`Uniforme ${producto.nombre} - foto 1`}
+                    />
+                  </div>
                 </div>
                 <div className="grid grid-cols-2 gap-1">
-                  <FotoOPlaceholder
-                    src={producto.fotoSeccion2Izquierda}
-                    alt={`Uniforme ${producto.nombre} - foto 2`}
-                  />
-                  <FotoOPlaceholder
-                    src={producto.fotoSeccion2Derecha}
-                    alt={`Uniforme ${producto.nombre} - foto 3`}
-                  />
+                  <div className="rounded-lg overflow-hidden shadow-md">
+                    <FotoOPlaceholder
+                      src={producto.fotoSeccion2Izquierda}
+                      alt={`Uniforme ${producto.nombre} - foto 2`}
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden shadow-md">
+                    <FotoOPlaceholder
+                      src={producto.fotoSeccion2Derecha}
+                      alt={`Uniforme ${producto.nombre} - foto 3`}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
