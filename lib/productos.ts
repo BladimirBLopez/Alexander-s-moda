@@ -58,7 +58,7 @@ export const productos: Producto[] = [
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788898949/20260908_162045_0000_lzhsth.png",
     fotoSeccion2Arriba: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903170/20260908_172812_0000_sjlh5a.png",
     fotoSeccion2Izquierda: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903170/20260908_172935_0000_ubf4mh.png",
-    fotoSeccion2Derecha: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903171/20260908_173118_0000_dtjw7c.png",
+    fotoSeccion2Derecha: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788909513/20260908_191726_0000_tah9ov.png",
   },
   {
     id: "uniforme-casimir",
