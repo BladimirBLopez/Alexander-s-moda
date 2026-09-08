@@ -18,8 +18,9 @@ export type Producto = {
   fotoMujerFuera?: string;
   fotoHombreDentro?: string;
   fotoHombreFuera?: string;
-  fotoMujerSeccion2?: string;
-  fotoHombreSeccion2?: string;
+  fotoSeccion2Arriba?: string;
+  fotoSeccion2Izquierda?: string;
+  fotoSeccion2Derecha?: string;
 };
 
 const OPCIONES_TELA_CAMISA = ["Oxford Sport", "Oxford", "Fill a Fill", "Popelina Premium", "Doby", "Pik a Pik"];
@@ -55,8 +56,9 @@ export const productos: Producto[] = [
     fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788893479/20260908_145019_0000_ixf8gc.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788898948/20260908_161917_0000_p8zf8h.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788898949/20260908_162045_0000_lzhsth.png",
-    fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788893477/20260908_144522_0000_rycwqh.png",
-    fotoHombreSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_4_ys77im.png",
+    fotoSeccion2Arriba: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903170/20260908_172812_0000_sjlh5a.png",
+    fotoSeccion2Izquierda: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903170/20260908_172935_0000_ubf4mh.png",
+    fotoSeccion2Derecha: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903171/20260908_173118_0000_dtjw7c.png",
   },
   {
     id: "uniforme-casimir",
@@ -88,7 +90,8 @@ export const productos: Producto[] = [
     fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788893478/20260908_144638_0000_ovkxne.png",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788899900/20260908_163401_0000_xy5dgx.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788899900/20260908_163618_0000_z7jbyg.png",
-    fotoMujerSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788893477/20260908_144522_0000_rycwqh.png",
-    fotoHombreSeccion2: "https://res.cloudinary.com/dkq95jus0/image/upload/e_trim/v1786755139/promo-hombre_2.png",
+    fotoSeccion2Arriba: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903726/20260908_173842_0000_ukxgv5.png",
+    fotoSeccion2Izquierda: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903743/20260908_173713_0000_pjkpj8.png",
+    fotoSeccion2Derecha: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903744/20260908_174002_0000_nnxtpr.png",
   },
 ];

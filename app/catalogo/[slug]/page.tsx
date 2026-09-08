@@ -18,58 +18,6 @@ export function generateStaticParams() {
   return Object.keys(SLUG_A_ID).map((slug) => ({ slug }));
 }
 
-const IconoCamisa2 = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-    <path d="M8 4L4 7v3l2-1v11h12V9l2 1V7l-4-3-3 2h-2L8 4z" strokeLinejoin="round" />
-  </svg>
-);
-const IconoCorbata2 = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-    <path d="M9 3h6l1 4-4 2-4-2 1-4z" strokeLinejoin="round" />
-    <path d="M10 9l-2 9 4 3 4-3-2-9" strokeLinejoin="round" />
-  </svg>
-);
-const IconoFalda2 = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-    <path d="M9 4h6l1 6 3 10H5l3-10 1-6z" strokeLinejoin="round" />
-  </svg>
-);
-const IconoPantalon2 = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-    <path d="M7 4h10l1 5-1 12h-3l-1-9-1 9H8L7 9z" strokeLinejoin="round" />
-  </svg>
-);
-
-function ColumnaGenero2({
-  titulo,
-  foto,
-  bullets,
-  detalles,
-  bordeDerecho,
-}: {
-  titulo: string;
-  foto?: string | null;
-  bullets: string[];
-  detalles: { icono: React.ReactNode; texto: string }[];
-  bordeDerecho?: boolean;
-}) {
-  return (
-    <div>
-      <div className="relative w-full aspect-[5/7] overflow-hidden bg-[var(--color-papel)]">
-        {foto ? (
-          <FotoZoom src={foto} alt={titulo} />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-center px-2">
-            <span className="text-[9px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
-              Foto pendiente
-            </span>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
 function FotoOPlaceholder({ src, alt }: { src?: string | null; alt: string }) {
   return (
     <div className="flex flex-col items-center">
@@ -256,51 +204,27 @@ export default async function CatalogoDetallePage({
             />
 
             <div className="mt-6">
-              <div className="relative -mx-6">
-                <div className="grid grid-cols-2 bg-[var(--color-bordo)]">
-                  <p className="text-center text-[9px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
-                    Uniforme Dama
-                  </p>
-                  <p className="text-center text-[9px] uppercase tracking-[0.1em] text-white font-semibold py-2.5" style={{ fontFamily: "var(--font-display)" }}>
-                    Uniforme Varón
-                  </p>
+              <div className="bg-[var(--color-bordo)] px-2 py-2.5 -mx-6">
+                <p className="text-center text-[9px] uppercase tracking-[0.1em] text-white font-semibold" style={{ fontFamily: "var(--font-display)" }}>
+                  Uniforme {producto.nombre}
+                </p>
+              </div>
+              <div className="pt-4 pb-2">
+                <div className="max-w-[220px] mx-auto mb-1">
+                  <FotoOPlaceholder
+                    src={producto.fotoSeccion2Arriba}
+                    alt={`Uniforme ${producto.nombre} - foto 1`}
+                  />
                 </div>
-
-                <div className="relative">
-                  <div className="grid grid-cols-2 gap-0 pt-4 pb-4">
-                    <ColumnaGenero2
-                      titulo="Uniforme dama"
-                      foto="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_2_ywe8v4.png"
-                      bullets={[
-                        "Camisa manga corta color verde hoja seca",
-                        "Corbata color beige con bordado DF",
-                        "Bordado \"DEIFFET'S 27\" en el pecho",
-                        "Falda color beige con abertura lateral",
-                      ]}
-                      detalles={[
-                        { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte femenino" },
-                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
-                        { icono: <IconoFalda2 />, texto: "Falda cómoda y elegante" },
-                      ]}
-                    />
-                    <ColumnaGenero2
-                      titulo="Uniforme varón"
-                      foto="https://res.cloudinary.com/dkq95jus0/image/upload/e_trim:20/v1787361943/Dise%C3%B1o_sin_t%C3%ADtulo_4_ys77im.png"
-                      bullets={[
-                        "Camisa manga corta color verde hoja seca",
-                        "Corbata color beige con bordado DF",
-                        "Bordado \"DEIFFET'S 27\" en el pecho",
-                        "Pantalón color beige de corte clásico",
-                      ]}
-                      detalles={[
-                        { icono: <IconoCamisa2 />, texto: "Camisa clásica de corte masculino" },
-                        { icono: <IconoCorbata2 />, texto: "Corbata con bordado DF" },
-                        { icono: <IconoPantalon2 />, texto: "Pantalón formal y cómodo" },
-                      ]}
-                    />
-                  </div>
-                  <div className="mt-4 border-t border-[var(--color-hueso)]/50" />
-                  <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--color-hueso)]/50" />
+                <div className="grid grid-cols-2 gap-1">
+                  <FotoOPlaceholder
+                    src={producto.fotoSeccion2Izquierda}
+                    alt={`Uniforme ${producto.nombre} - foto 2`}
+                  />
+                  <FotoOPlaceholder
+                    src={producto.fotoSeccion2Derecha}
+                    alt={`Uniforme ${producto.nombre} - foto 3`}
+                  />
                 </div>
               </div>
             </div>
