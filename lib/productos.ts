@@ -70,12 +70,12 @@ export const productos: Producto[] = [
         texto: "Camisa manga corta con tela a elección:",
         sublista: OPCIONES_TELA_CAMISA,
         nota: "Con derecho a un bordado institucional",
-    fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788899900/20260908_163401_0000_xy5dgx.png",
-    fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788899900/20260908_163618_0000_z7jbyg.png",
       },
       "Polera en tela Piqué Peruano con derecho a dos bordados institucionales",
       "Corbata en tela Casimir Inglés con un bordado institucional",
     ],
+    fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788899900/20260908_163401_0000_xy5dgx.png",
+    fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788899900/20260908_163618_0000_z7jbyg.png",
     bulletsHombre: [
       "Pantalón en tela Casimir Inglés",
       {
