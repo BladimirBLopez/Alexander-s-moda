@@ -21,7 +21,7 @@ export function generateStaticParams() {
 function FotoOPlaceholder({ src, alt }: { src?: string | null; alt: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="relative w-full aspect-[5/7] rounded-md overflow-visible bg-[var(--color-papel)]">
+      <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
         {src ? (
           <FotoZoom src={src} alt={alt} />
         ) : (
@@ -219,13 +219,13 @@ export default async function CatalogoDetallePage({
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-1">
-                  <div className="rounded-lg overflow-hidden shadow-md" style={{ aspectRatio: '4/5' }}>
+                  <div className="rounded-lg overflow-hidden shadow-md">
                     <FotoOPlaceholder
                       src={producto.fotoSeccion2Izquierda}
                       alt={`Uniforme ${producto.nombre} - foto 2`}
                     />
                   </div>
-                  <div className="rounded-lg overflow-hidden shadow-md" style={{ aspectRatio: '4/5' }}>
+                  <div className="rounded-lg overflow-hidden shadow-md">
                     <FotoOPlaceholder
                       src={producto.fotoSeccion2Derecha}
                       alt={`Uniforme ${producto.nombre} - foto 3`}
