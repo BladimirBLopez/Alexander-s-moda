@@ -219,13 +219,13 @@ export default async function CatalogoDetallePage({
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-1">
-                  <div className="rounded-lg overflow-hidden shadow-md" style={{ aspectRatio: '3/4' }}>
+                  <div className="rounded-lg overflow-hidden shadow-md" style={{ aspectRatio: '4/5' }}>
                     <FotoOPlaceholder
                       src={producto.fotoSeccion2Izquierda}
                       alt={`Uniforme ${producto.nombre} - foto 2`}
                     />
                   </div>
-                  <div className="rounded-lg overflow-hidden shadow-md" style={{ aspectRatio: '3/4' }}>
+                  <div className="rounded-lg overflow-hidden shadow-md" style={{ aspectRatio: '4/5' }}>
                     <FotoOPlaceholder
                       src={producto.fotoSeccion2Derecha}
                       alt={`Uniforme ${producto.nombre} - foto 3`}
