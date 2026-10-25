@@ -21,6 +21,13 @@ export type Producto = {
   fotoSeccion2Arriba?: string;
   fotoSeccion2Izquierda?: string;
   fotoSeccion2Derecha?: string;
+  fotoMujerDentroZoom?: string;
+  fotoMujerFueraZoom?: string;
+  fotoHombreDentroZoom?: string;
+  fotoHombreFueraZoom?: string;
+  fotoSeccion2ArribaZoom?: string;
+  fotoSeccion2IzquierdaZoom?: string;
+  fotoSeccion2DerechaZoom?: string;
 };
 
 const OPCIONES_TELA_CAMISA = ["Oxford Sport", "Oxford", "Fill a Fill", "Popelina Premium", "Doby", "Pik a Pik"];
@@ -54,6 +61,7 @@ export const productos: Producto[] = [
     ],
     fotoMujerDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788893478/20260908_144832_0000_soy77a.png",
     fotoMujerFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788893479/20260908_145019_0000_ixf8gc.png",
+    fotoMujerFueraZoom: "https://res.cloudinary.com/dkq95jus0/image/upload/v1792932216/IMG-20261025-WA0018_qfouq4.jpg",
     fotoHombreDentro: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788898948/20260908_161917_0000_p8zf8h.png",
     fotoHombreFuera: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788898949/20260908_162045_0000_lzhsth.png",
     fotoSeccion2Arriba: "https://res.cloudinary.com/dkq95jus0/image/upload/v1788903170/20260908_172812_0000_sjlh5a.png",

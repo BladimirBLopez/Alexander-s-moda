@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function FotoZoom({ src, alt }: { src: string; alt: string }) {
+export default function FotoZoom({ src, zoomSrc, alt }: { src: string; zoomSrc?: string; alt: string }) {
   const [abierto, setAbierto] = useState(false);
 
   return (
@@ -37,7 +37,7 @@ export default function FotoZoom({ src, alt }: { src: string; alt: string }) {
             ✕
           </button>
           <Image
-            src={src}
+            src={zoomSrc ?? src}
             alt={alt}
             width={800}
             height={1120}

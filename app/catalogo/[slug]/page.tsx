@@ -18,12 +18,12 @@ export function generateStaticParams() {
   return Object.keys(SLUG_A_ID).map((slug) => ({ slug }));
 }
 
-function FotoOPlaceholder({ src, alt }: { src?: string | null; alt: string }) {
+function FotoOPlaceholder({ src, zoomSrc, alt }: { src?: string | null; zoomSrc?: string | null; alt: string }) {
   return (
     <div className="flex flex-col items-center">
       <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
         {src ? (
-          <FotoZoom src={src} alt={alt} />
+          <FotoZoom src={src} zoomSrc={zoomSrc ?? undefined} alt={alt} />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-center px-2">
             <span className="text-[10px] uppercase tracking-[0.1em] text-[var(--color-bordo)]/40">
@@ -40,6 +40,8 @@ function SeccionGenero({
   titulo,
   fotoDentro,
   fotoFuera,
+  fotoDentroZoom,
+  fotoFueraZoom,
   bullets,
   invertido = false,
   mostrarColores = true,
@@ -47,6 +49,8 @@ function SeccionGenero({
   titulo: string;
   fotoDentro?: string | null;
   fotoFuera?: string | null;
+  fotoDentroZoom?: string | null;
+  fotoFueraZoom?: string | null;
   bullets: BulletItem[];
   invertido?: boolean;
   mostrarColores?: boolean;
@@ -111,8 +115,8 @@ function SeccionGenero({
         {titulo}
       </p>
       <div className="grid grid-cols-2 gap-1 mb-0 max-w-[440px] mx-auto">
-        <FotoOPlaceholder src={fotoDentro} alt={`${titulo} - camisa por dentro`} />
-        <FotoOPlaceholder src={fotoFuera} alt={`${titulo} - camisa por fuera`} />
+        <FotoOPlaceholder src={fotoDentro} zoomSrc={fotoDentroZoom} alt={`${titulo} - camisa por dentro`} />
+        <FotoOPlaceholder src={fotoFuera} zoomSrc={fotoFueraZoom} alt={`${titulo} - camisa por fuera`} />
       </div>
       <div className={`grid gap-3 border border-[var(--color-hueso)]/50 rounded-lg p-4 -mx-3 ${!mostrarColores ? "grid-cols-1" : invertido ? "grid-cols-[1fr_1.4fr]" : "grid-cols-[1.4fr_1fr]"}`}>
         {!mostrarColores ? (
@@ -187,6 +191,8 @@ export default async function CatalogoDetallePage({
               titulo={`Uniforme ${producto.nombre} Dama`}
               fotoDentro={producto.fotoMujerDentro}
               fotoFuera={producto.fotoMujerFuera}
+              fotoDentroZoom={producto.fotoMujerDentroZoom}
+              fotoFueraZoom={producto.fotoMujerFueraZoom}
               bullets={producto.bulletsMujer}
             />
             <div className="border border-[var(--color-hueso)]/50 rounded-none overflow-hidden mb-6 -mx-3">
@@ -200,6 +206,8 @@ export default async function CatalogoDetallePage({
               titulo={`Uniforme ${producto.nombre} Varón`}
               fotoDentro={producto.fotoHombreDentro}
               fotoFuera={producto.fotoHombreFuera}
+              fotoDentroZoom={producto.fotoHombreDentroZoom}
+              fotoFueraZoom={producto.fotoHombreFueraZoom}
               bullets={producto.bulletsHombre}
             />
 
@@ -214,6 +222,7 @@ export default async function CatalogoDetallePage({
                   <div className="rounded-lg overflow-hidden shadow-md">
                     <FotoOPlaceholder
                       src={producto.fotoSeccion2Arriba}
+                      zoomSrc={producto.fotoSeccion2ArribaZoom}
                       alt={`Uniforme ${producto.nombre} - foto 1`}
                     />
                   </div>
@@ -222,12 +231,14 @@ export default async function CatalogoDetallePage({
                   <div className="rounded-lg overflow-hidden shadow-md">
                     <FotoOPlaceholder
                       src={producto.fotoSeccion2Izquierda}
+                      zoomSrc={producto.fotoSeccion2IzquierdaZoom}
                       alt={`Uniforme ${producto.nombre} - foto 2`}
                     />
                   </div>
                   <div className="rounded-lg overflow-hidden shadow-md">
                     <FotoOPlaceholder
                       src={producto.fotoSeccion2Derecha}
+                      zoomSrc={producto.fotoSeccion2DerechaZoom}
                       alt={`Uniforme ${producto.nombre} - foto 3`}
                     />
                   </div>
