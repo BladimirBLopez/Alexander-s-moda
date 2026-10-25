@@ -25,14 +25,14 @@ export default function FotoZoom({ src, zoomSrc, alt }: { src: string; zoomSrc?:
 
       {abierto && (
         <div
-          className="fixed inset-0 z-50 bg-white flex items-center justify-center p-6"
+          className={`fixed inset-0 z-50 flex items-center justify-center ${zoomSrc ? "bg-black" : "bg-white p-6"}`}
           onClick={() => setAbierto(false)}
         >
           <button
             type="button"
             onClick={() => setAbierto(false)}
             aria-label="Cerrar"
-            className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] flex items-center justify-center text-lg shadow-md"
+            className="absolute top-5 right-5 z-10 w-9 h-9 rounded-full bg-[var(--color-bordo)] text-[var(--color-hueso)] flex items-center justify-center text-lg shadow-md"
           >
             ✕
           </button>
@@ -41,7 +41,7 @@ export default function FotoZoom({ src, zoomSrc, alt }: { src: string; zoomSrc?:
             alt={alt}
             width={800}
             height={1120}
-            className="max-w-full max-h-full w-auto h-auto object-contain"
+            className={zoomSrc ? "w-full h-full object-contain" : "max-w-full max-h-full w-auto h-auto object-contain"}
             onClick={(e) => e.stopPropagation()}
           />
         </div>
