@@ -71,8 +71,8 @@ export const productos: Producto[] = [
     fotoSeccion2ArribaZoom: "https://res.cloudinary.com/dkq95jus0/image/upload/v1792943706/IMG-20261025-WA0014_n2tdgv.jpg",
     fotoSeccion2Izquierda: "https://res.cloudinary.com/dkq95jus0/image/upload/v1792943707/IMG-20261025-WA0010_ywcgu0.jpg",
     fotoSeccion2IzquierdaZoom: "https://res.cloudinary.com/dkq95jus0/image/upload/v1792943707/IMG-20261025-WA0010_ywcgu0.jpg",
-    fotoSeccion2Derecha: "https://res.cloudinary.com/dkq95jus0/image/upload/v1792943713/IMG-20261025-WA0016_cqtuqa.jpg",
-    fotoSeccion2DerechaZoom: "https://res.cloudinary.com/dkq95jus0/image/upload/v1792943713/IMG-20261025-WA0016_cqtuqa.jpg",
+    fotoSeccion2Derecha: "https://res.cloudinary.com/dkq95jus0/image/upload/v1792971310/file_00000000c000820eae88dc62cce8bf49_wntypf.png",
+    fotoSeccion2DerechaZoom: "https://res.cloudinary.com/dkq95jus0/image/upload/v1792971310/file_00000000c000820eae88dc62cce8bf49_wntypf.png",
   },
   {
     id: "uniforme-casimir",
