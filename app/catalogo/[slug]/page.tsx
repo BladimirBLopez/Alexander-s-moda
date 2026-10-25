@@ -171,7 +171,7 @@ export default async function CatalogoDetallePage({
               color: "var(--color-bordo)",
             }}
           >
-            Alexander&apos;s Moda
+            Alexander&apos;s<br />Moda
           </h1>
           <p className="text-sm uppercase tracking-[0.15em] text-[var(--color-bronce)] mt-1">
             Uniformes de Promoción 2027
