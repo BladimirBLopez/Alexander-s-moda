@@ -21,7 +21,7 @@ export function generateStaticParams() {
 function FotoOPlaceholder({ src, zoomSrc, alt }: { src?: string | null; zoomSrc?: string | null; alt: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="relative w-full aspect-[5/7] rounded-md overflow-hidden bg-[var(--color-papel)]">
+      <div className="relative w-full aspect-[2/3] rounded-md overflow-hidden bg-[var(--color-papel)]">
         {src ? (
           <FotoZoom src={src} zoomSrc={zoomSrc ?? undefined} alt={alt} />
         ) : (
