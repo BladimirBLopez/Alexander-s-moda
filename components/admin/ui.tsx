@@ -109,26 +109,52 @@ export function BotonIcono({
 export function BarraGuardar({
   sucio,
   onGuardar,
-  estado,
+  etiqueta = "Guardar",
 }: {
   sucio: boolean;
   onGuardar: () => void;
-  estado: "idle" | "ok";
+  etiqueta?: string;
 }) {
   return (
     <div className="fixed inset-x-0 bottom-[68px] z-30 px-4 md:bottom-4 md:left-60">
       <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 rounded-full border border-bordo/15 bg-white/95 py-2 pl-5 pr-2 shadow-lg backdrop-blur">
         <span className="text-xs text-carbon/60">
-          {estado === "ok"
-            ? "✓ Guardado (demo)"
-            : sucio
-              ? "Tenés cambios sin guardar"
-              : "Sin cambios"}
+          {sucio ? "Tenés cambios sin guardar" : "Sin cambios"}
         </span>
         <BotonPrimario disabled={!sucio} onClick={onGuardar}>
-          Guardar
+          {etiqueta}
         </BotonPrimario>
       </div>
     </div>
   );
 }
+
+export function Pestanas<T extends string>({
+  valor,
+  opciones,
+  onCambiar,
+}: {
+  valor: T;
+  opciones: { id: T; label: string }[];
+  onCambiar: (v: T) => void;
+}) {
+  return (
+    <div className="mb-4 flex rounded-full bg-bordo/10 p-1">
+      {opciones.map((o) => (
+        <button
+          key={o.id}
+          type="button"
+          onClick={() => onCambiar(o.id)}
+          className={`flex-1 rounded-full py-2 text-sm font-medium transition ${
+            valor === o.id ? "bg-bordo text-hueso shadow" : "text-bordo/70"
+          }`}
+        >
+          {o.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export const botonLinkCls =
+  "boton-tactil rounded-full bg-bordo px-4 py-2 text-sm font-semibold text-hueso shadow-md";

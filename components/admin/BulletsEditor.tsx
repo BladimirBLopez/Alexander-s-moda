@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import type { BulletItem } from "@/lib/productos";
+import Confirmar from "@/components/admin/Confirmar";
 import {
   BotonIcono,
   BotonSecundario,
@@ -15,9 +17,12 @@ export default function BulletsEditor({
   items: BulletItem[];
   onChange: (items: BulletItem[]) => void;
 }) {
+  const [porQuitar, setPorQuitar] = useState<number | null>(null);
   const poner = (i: number, v: BulletItem) =>
     onChange(items.map((x, k) => (k === i ? v : x)));
   const quitar = (i: number) => onChange(items.filter((_, k) => k !== i));
+  const tieneTexto = (it: BulletItem) =>
+    (typeof it === "string" ? it : it.texto).trim() !== "";
   const mover = (i: number, d: -1 | 1) => {
     const j = i + d;
     if (j < 0 || j >= items.length) return;
@@ -83,7 +88,10 @@ export default function BulletsEditor({
               >
                 ↓
               </BotonIcono>
-              <BotonIcono label="Quitar" onClick={() => quitar(i)}>
+              <BotonIcono
+                label="Quitar"
+                onClick={() => (tieneTexto(it) ? setPorQuitar(i) : quitar(i))}
+              >
                 ✕
               </BotonIcono>
             </div>
@@ -101,6 +109,17 @@ export default function BulletsEditor({
           + Punto con opciones
         </BotonSecundario>
       </div>
+      <Confirmar
+        abierto={porQuitar !== null}
+        titulo="¿Quitar este punto?"
+        texto="Se borra de la descripción del uniforme."
+        textoOk="Quitar"
+        onCancelar={() => setPorQuitar(null)}
+        onOk={() => {
+          if (porQuitar !== null) quitar(porQuitar);
+          setPorQuitar(null);
+        }}
+      />
     </div>
   );
 }

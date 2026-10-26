@@ -1,12 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { productos } from "@/lib/productos";
-import { Tarjeta, Titulo } from "@/components/admin/ui";
+import { Tarjeta, Titulo, botonLinkCls } from "@/components/admin/ui";
 
 export default function UniformesPage() {
   return (
     <>
-      <Titulo titulo="Uniformes" sub="Elegí cuál querés editar" />
+      <Titulo
+        titulo="Uniformes"
+        sub="Elegí cuál querés editar"
+        accion={
+          <Link href="/admin/uniformes/nuevo" className={botonLinkCls}>
+            + Nuevo
+          </Link>
+        }
+      />
       <div className="space-y-3">
         {productos.map((p) => (
           <Link key={p.id} href={`/admin/uniformes/${p.id}`} className="block">
