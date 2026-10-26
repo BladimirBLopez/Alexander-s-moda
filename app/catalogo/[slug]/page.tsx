@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { BulletItem } from "@/lib/productos";
-import { getProductoPorSlug } from "@/lib/datos";
+import { getProductoPorSlug, getTelas } from "@/lib/datos";
+import type { Tela } from "@/data/telas";
 import FotoZoom from "@/components/FotoZoom";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
 import VerColores, { CaracteristicasComunes } from "@/components/VerColores";
+
+export const dynamic = "force-dynamic";
 
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 const WHATSAPP_NUMERO = "59177974868";
@@ -30,6 +33,7 @@ function FotoOPlaceholder({ src, zoomSrc, alt }: { src?: string | null; zoomSrc?
 
 function SeccionGenero({
   titulo,
+  telasDisponibles,
   fotoDentro,
   fotoFuera,
   fotoDentroZoom,
@@ -39,6 +43,7 @@ function SeccionGenero({
   mostrarColores = true,
 }: {
   titulo: string;
+  telasDisponibles: Tela[];
   fotoDentro?: string | null;
   fotoFuera?: string | null;
   fotoDentroZoom?: string | null;
@@ -93,8 +98,8 @@ function SeccionGenero({
           Colores a elección
         </p>
         <div className="flex flex-col items-center gap-2 mt-2">
-          <VerColores label="Color camisa" mostrarCaracteristicas={false} />
-          <VerColores label={titulo.includes("Dama") ? "Colores de faldas" : "Colores de pantalones"} mostrarCaracteristicas={false} filtroTelas={["drill-confort-dockers"]} />
+          <VerColores telasDisponibles={telasDisponibles} label="Color camisa" mostrarCaracteristicas={false} />
+          <VerColores telasDisponibles={telasDisponibles} label={titulo.includes("Dama") ? "Colores de faldas" : "Colores de pantalones"} mostrarCaracteristicas={false} filtroTelas={["drill-confort-dockers"]} />
         </div>
       </div>
       <CaracteristicasComunes />
@@ -141,6 +146,8 @@ export default async function CatalogoDetallePage({
     notFound();
   }
 
+  const telasDisponibles = await getTelas();
+
   return (
     <main className="min-h-screen bg-[var(--color-papel)]">
       <div className="sticky top-0 z-10 px-3 py-2 flex items-center justify-between bg-[var(--color-papel)]/95 backdrop-blur-sm">
@@ -179,6 +186,7 @@ export default async function CatalogoDetallePage({
         <div className="flex flex-col gap-16">
           <article className="text-center mb-4">
             <SeccionGenero
+              telasDisponibles={telasDisponibles}
               titulo={`Uniforme ${producto.nombre} Dama`}
               fotoDentro={producto.fotoMujerDentro}
               fotoFuera={producto.fotoMujerFuera}
@@ -194,6 +202,7 @@ export default async function CatalogoDetallePage({
               </div>
             </div>
             <SeccionGenero
+              telasDisponibles={telasDisponibles}
               titulo={`Uniforme ${producto.nombre} Varón`}
               fotoDentro={producto.fotoHombreDentro}
               fotoFuera={producto.fotoHombreFuera}

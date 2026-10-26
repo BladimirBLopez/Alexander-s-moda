@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { ColorTela, Tela } from "@/data/telas";
 import { Aviso, useAviso } from "@/components/admin/aviso";
 import Confirmar from "@/components/admin/Confirmar";
@@ -31,6 +31,8 @@ export default function EditorTela({
   const [nuevaCar, setNuevaCar] = useState("");
   const [quitarColorIdx, setQuitarColorIdx] = useState<number | null>(null);
   const [borrar, setBorrar] = useState(false);
+  const [guardando, setGuardando] = useState(false);
+  const guardandoRef = useRef(false);
   const { aviso, mostrar } = useAviso();
 
   const sucio = JSON.stringify(t) !== JSON.stringify(guardado);
@@ -70,18 +72,76 @@ export default function EditorTela({
     setNuevaCar("");
   }
 
-  function guardar() {
+  async function guardar() {
+    if (guardandoRef.current) return;
+
     if (!t.nombre.trim()) {
       mostrar("Escribí el nombre de la tela", "error");
       return;
     }
-    // Diseño: aún sin conexión a la base de datos
-    setGuardado(t);
-    if (nueva) {
-      mostrar("Tela creada (demo)");
-      setTimeout(() => router.push("/admin/telas"), 1000);
-    } else {
-      mostrar("Cambios guardados (demo)");
+
+    if (!nueva) {
+      mostrar(
+        "La edición completa de telas todavía no está conectada a Neon",
+        "error"
+      );
+      return;
+    }
+
+    guardandoRef.current = true;
+    setGuardando(true);
+
+    try {
+      const respuesta = await fetch("/api/admin/telas", {
+        method: "POST",
+        credentials: "same-origin",
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nombre: t.nombre,
+          estructura: t.estructura,
+          composicion: t.composicion,
+          gramaje: t.gramaje,
+          ancho: t.ancho,
+          caracteristicas: t.caracteristicas,
+          imagenPrincipal: t.imagenPrincipal ?? null,
+          colores: t.colores,
+        }),
+      });
+
+      const resultado: {
+        ok?: boolean;
+        error?: string;
+        tela?: { id: string };
+      } = await respuesta.json().catch(() => ({}));
+
+      if (
+        respuesta.status !== 201 ||
+        resultado.ok !== true ||
+        !resultado.tela?.id
+      ) {
+        throw new Error(
+          resultado.error || "No se pudo registrar la tela"
+        );
+      }
+
+      setGuardado(t);
+      mostrar("Tela creada correctamente en Neon");
+      router.replace("/admin/telas");
+      router.refresh();
+
+    } catch (error) {
+      mostrar(
+        error instanceof Error
+          ? error.message
+          : "Error de conexión al crear la tela",
+        "error"
+      );
+    } finally {
+      guardandoRef.current = false;
+      setGuardando(false);
     }
   }
 
@@ -307,9 +367,9 @@ export default function EditorTela({
       )}
 
       <BarraGuardar
-        sucio={sucio}
+        sucio={sucio && !guardando}
         onGuardar={guardar}
-        etiqueta={nueva ? "Crear tela" : "Guardar"}
+        etiqueta={guardando ? "Guardando..." : nueva ? "Crear tela" : "Guardar"}
       />
 
       <Confirmar

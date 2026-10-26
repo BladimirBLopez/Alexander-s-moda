@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { adminAutenticado } from "@/lib/admin-auth";
 import {
   json,
   limpiarBullets,
@@ -9,6 +10,12 @@ import {
 } from "@/lib/uniformes-db";
 
 export async function POST(req: Request) {
+  if (!(await adminAutenticado())) {
+    return NextResponse.json(
+      { error: "no autorizado" },
+      { status: 401 }
+    );
+  }
   const b = await req.json().catch(() => null);
   if (!b || typeof b !== "object") {
     return NextResponse.json({ error: "Datos inválidos" }, { status: 400 });

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { adminAutenticado } from "@/lib/admin-auth";
 import {
   json,
   limpiarBullets,
@@ -10,6 +11,12 @@ import {
 type Ctx = { params: Promise<{ id: string }> };
 
 export async function PUT(req: Request, { params }: Ctx) {
+  if (!(await adminAutenticado())) {
+    return NextResponse.json(
+      { error: "no autorizado" },
+      { status: 401 }
+    );
+  }
   const { id } = await params;
   const b = await req.json().catch(() => null);
   if (!b || typeof b !== "object") {
@@ -42,6 +49,12 @@ export async function PUT(req: Request, { params }: Ctx) {
 }
 
 export async function DELETE(_req: Request, { params }: Ctx) {
+  if (!(await adminAutenticado())) {
+    return NextResponse.json(
+      { error: "no autorizado" },
+      { status: 401 }
+    );
+  }
   const { id } = await params;
   const { prisma } = await import("@/lib/prisma");
   const actual = await prisma.producto.findUnique({ where: { id } });

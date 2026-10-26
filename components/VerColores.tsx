@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { telas, type Tela } from "@/data/telas";
+import type { Tela } from "@/data/telas";
 
 const CARACTERISTICAS_COMUNES = [
   {
@@ -49,12 +49,14 @@ export default function VerColores({
   label = "Ver opciones",
   mostrarCaracteristicas = true,
   filtroTelas,
+  telasDisponibles,
 }: {
   label?: string;
   mostrarCaracteristicas?: boolean;
   filtroTelas?: string[];
+  telasDisponibles: Tela[];
 }) {
-  const telasVisibles = filtroTelas ? telas.filter((t) => filtroTelas.includes(t.id)) : telas;
+  const telasVisibles = filtroTelas ? telasDisponibles.filter((t) => filtroTelas.includes(t.id)) : telasDisponibles;
   const [abierto, setAbierto] = useState(false);
   const [telaActiva, setTelaActiva] = useState<Tela | null>(null);
 

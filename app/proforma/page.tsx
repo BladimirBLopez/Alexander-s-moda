@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getProformaActual } from "@/lib/proforma";
 
-export default function ProformaPage() {
+export const dynamic = "force-dynamic";
+
+export default async function ProformaPage() {
+  const proforma = await getProformaActual();
   return (
     <main className="min-h-screen flex flex-col bg-[var(--color-papel)]">
       <div className="w-full flex items-center justify-between px-4 py-3 bg-[var(--color-bordo)] shrink-0 sticky top-0 z-10">
@@ -15,7 +19,7 @@ export default function ProformaPage() {
           Volver
         </Link>
         <a
-          href="/proforma.pdf"
+          href={proforma.pdfUrl}
           download="proforma-alexanders-moda.pdf"
           className="text-sm text-[var(--color-bordo-oscuro)] bg-[var(--color-hueso)] px-4 py-1.5 rounded-full font-medium flex items-center gap-1.5"
         >
@@ -27,7 +31,7 @@ export default function ProformaPage() {
       </div>
       <div className="flex justify-center py-3 px-2">
         <Image
-          src="/proforma-preview.png"
+          src={proforma.previewUrl}
           alt="Proforma Alexander's Moda"
           width={1700}
           height={2200}

@@ -16,6 +16,7 @@ export default function FotoSlot({
   onMover,
   bloqueada = false,
   onBloqueada,
+  onSubidaCambiar,
 }: {
   etiqueta: string;
   src?: string;
@@ -27,17 +28,20 @@ export default function FotoSlot({
   onMover: (d: -1 | 1) => void;
   bloqueada?: boolean;
   onBloqueada?: () => void;
+  onSubidaCambiar?: (activa: boolean) => void;
 }) {
   const input = useRef<HTMLInputElement>(null);
   const [estado, setEstado] = useState<"" | "subiendo" | "error">("");
   const [msg, setMsg] = useState("");
 
   async function subir(f: File) {
+    if (bloqueada || estado === "subiendo") return;
     if (f.size > MAX_MB * 1024 * 1024) {
       setEstado("error");
       setMsg("La foto pesa más de 10 MB");
       return;
     }
+    onSubidaCambiar?.(true);
     setEstado("subiendo");
     setMsg("");
     try {
@@ -62,6 +66,8 @@ export default function FotoSlot({
     } catch (e) {
       setEstado("error");
       setMsg(e instanceof Error ? e.message : "Error de conexión");
+    } finally {
+      onSubidaCambiar?.(false);
     }
   }
 
@@ -100,19 +106,20 @@ export default function FotoSlot({
         <p className="text-center text-[10px] leading-tight text-red-700">{msg}</p>
       ) : null}
       <div className="flex justify-center gap-1">
-        <BotonIcono label="Mover antes" onClick={() => onMover(-1)} disabled={!puedeIzq}>
+        <BotonIcono label="Mover antes" onClick={() => onMover(-1)} disabled={bloqueada || estado === "subiendo" || !puedeIzq}>
           ◀
         </BotonIcono>
-        <BotonIcono label="Quitar foto" onClick={onQuitar} disabled={!src}>
+        <BotonIcono label="Quitar foto" onClick={onQuitar} disabled={bloqueada || estado === "subiendo" || !src}>
           ✕
         </BotonIcono>
-        <BotonIcono label="Mover después" onClick={() => onMover(1)} disabled={!puedeDer}>
+        <BotonIcono label="Mover después" onClick={() => onMover(1)} disabled={bloqueada || estado === "subiendo" || !puedeDer}>
           ▶
         </BotonIcono>
       </div>
       <input
         ref={input}
         type="file"
+        disabled={bloqueada || estado === "subiendo"}
         accept="image/*"
         className="hidden"
         onChange={(e) => {

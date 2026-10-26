@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { telas } from "@/data/telas";
-import EditorTela from "@/components/admin/EditorTela";
+
+import EditorTelaBasico from "@/components/admin/EditorTelaBasico";
+
+export const dynamic = "force-dynamic";
 
 export default async function EditarTelaPage({
   params,
@@ -9,7 +11,15 @@ export default async function EditarTelaPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const tela = telas.find((t) => t.id === id);
+  const { prisma } = await import("@/lib/prisma");
+  const tela = await prisma.tela.findUnique({
+    where: { id },
+    select: {
+      id: true,
+      nombre: true,
+      imagenPrincipal: true,
+    },
+  });
   if (!tela) notFound();
 
   return (
@@ -17,7 +27,7 @@ export default async function EditarTelaPage({
       <Link href="/admin/telas" className="mb-3 inline-block text-sm text-bordo">
         ← Telas
       </Link>
-      <EditorTela inicial={tela} />
+      <EditorTelaBasico inicial={tela} />
     </>
   );
 }

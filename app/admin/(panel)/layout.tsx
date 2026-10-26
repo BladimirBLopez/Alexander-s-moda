@@ -2,33 +2,56 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import AdminNav from "@/components/admin/AdminNav";
 import BotonSalir from "@/components/admin/BotonSalir";
+import IconoAdmin from "@/components/admin/IconoAdmin";
 
-export const metadata = { title: "Panel | Alexander's Moda" };
+export const metadata = {
+  title: "Administración | Alexander's Moda",
+};
 
-export default function PanelLayout({ children }: { children: ReactNode }) {
+export default function PanelLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <div className="min-h-screen bg-papel text-carbon md:flex">
       <AdminNav />
-      <div className="min-w-0 flex-1 pb-36 md:pb-24">
-        <header className="sticky top-0 z-20 flex items-center justify-between bg-bordo px-4 py-3 md:justify-end">
-          <span
-            className="text-lg text-hueso md:hidden"
-            style={{ fontFamily: "var(--font-script)" }}
-          >
-            Alexander&apos;s Moda
-          </span>
-          <div className="flex items-center gap-2">
+
+      <div className="min-w-0 flex-1 pb-32 md:pb-12">
+        <header className="sticky top-0 z-30 flex min-h-16 items-center justify-between gap-3 border-b border-white/10 bg-bordo px-4 sm:px-6 md:justify-end">
+          <div className="min-w-0 md:hidden">
+            <p
+              className="truncate text-lg text-hueso"
+              style={{ fontFamily: "var(--font-script)" }}
+            >
+              Alexander&apos;s Moda
+            </p>
+            <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-hueso/60">
+              Administración
+            </p>
+          </div>
+
+          <div className="flex shrink-0 items-center gap-2">
             <Link
               href="/"
               target="_blank"
-              className="rounded-full bg-hueso px-3.5 py-1.5 text-xs font-semibold text-bordo-oscuro"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-xl bg-hueso px-3 text-xs font-semibold text-bordo-oscuro transition hover:bg-white"
             >
-              Ver sitio ↗
+              Ver sitio
+              <IconoAdmin
+                nombre="externo"
+                className="h-3.5 w-3.5"
+              />
             </Link>
+
             <BotonSalir />
           </div>
         </header>
-        <main className="mx-auto max-w-3xl p-4 md:p-8">{children}</main>
+
+        <main className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 md:px-8 md:py-9">
+          {children}
+        </main>
       </div>
     </div>
   );
