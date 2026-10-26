@@ -237,6 +237,9 @@ export default function EditorUniforme({
             mf: fotos.fotoMujerFuera,
             hd: fotos.fotoHombreDentro,
             hf: fotos.fotoHombreFuera,
+            sa: fotos.fotoSeccion2Arriba,
+            si: fotos.fotoSeccion2Izquierda,
+            sd: fotos.fotoSeccion2Derecha,
           }}
         />
       ) : (
