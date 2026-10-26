@@ -18,6 +18,8 @@ model Producto {
   bulletsMujer  Json
   bulletsHombre Json
   fotos         Json   @default("{}")
+  slug          String? @unique
+  orden         Int    @default(0)
 }
 
 model Tela {
