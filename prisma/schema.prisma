@@ -1,0 +1,39 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+  engineType      = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Producto {
+  id            String @id
+  nombre        String
+  subtitulo     String
+  descripcion   String
+  tipografia    String
+  bulletsMujer  Json
+  bulletsHombre Json
+  fotos         Json   @default("{}")
+}
+
+model Tela {
+  id              String  @id
+  orden           Int     @default(0)
+  nombre          String
+  estructura      String
+  composicion     String
+  gramaje         String
+  ancho           String
+  caracteristicas Json
+  imagenPrincipal String?
+  colores         Json
+}
+
+model Ajuste {
+  clave String @id
+  valor String
+}
