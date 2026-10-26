@@ -36,14 +36,24 @@ export function limpiarBullets(v: unknown): BulletItem[] {
   return out;
 }
 
-export function limpiarFotos(v: unknown): Record<string, string> {
+export function limpiarFotos(v: unknown, actuales?: unknown): Record<string, string> {
   const out: Record<string, string> = {};
   if (!v || typeof v !== "object") return out;
+  const zoomDe = new Map<string, string>();
+  if (actuales && typeof actuales === "object") {
+    const a = actuales as Record<string, unknown>;
+    for (const [k, u] of Object.entries(a)) {
+      const z = a[k + "Zoom"];
+      if (k.startsWith("foto") && !k.endsWith("Zoom") && typeof u === "string" && typeof z === "string") {
+        zoomDe.set(u, z);
+      }
+    }
+  }
   for (const [k, u] of Object.entries(v as Record<string, unknown>)) {
     if (!k.startsWith("foto") || k.endsWith("Zoom")) continue;
     if (typeof u !== "string" || !/^(https:\/\/|\/(?!\/))/.test(u)) continue;
     out[k] = u;
-    out[k + "Zoom"] = u;
+    out[k + "Zoom"] = zoomDe.get(u) ?? u;
   }
   return out;
 }

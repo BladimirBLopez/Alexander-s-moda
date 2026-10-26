@@ -33,7 +33,7 @@ export async function PUT(req: Request, { params }: Ctx) {
       tipografia: txt(b.tipografia),
       bulletsMujer: json(limpiarBullets(b.bulletsMujer)),
       bulletsHombre: json(limpiarBullets(b.bulletsHombre)),
-      fotos: json(limpiarFotos(b.fotos)),
+      fotos: json(limpiarFotos(b.fotos, actual.fotos)),
       ...(Number.isInteger(b.orden) ? { orden: b.orden as number } : {}),
     },
   });

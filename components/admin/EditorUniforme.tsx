@@ -48,14 +48,14 @@ function GrupoFotos({
   base,
   onMover,
   onQuitar,
-  onBloqueada,
+  onElegir,
 }: {
   slots: Slot[];
   fotos: Fotos;
   base: Fotos;
   onMover: (slots: Slot[], i: number, d: -1 | 1) => void;
   onQuitar: (k: string) => void;
-  onBloqueada: () => void;
+  onElegir: (k: string, url: string) => void;
 }) {
   return (
     <div
@@ -71,9 +71,7 @@ function GrupoFotos({
           pendiente={fotos[s.k] !== base[s.k]}
           puedeIzq={i > 0}
           puedeDer={i < slots.length - 1}
-          bloqueada
-          onBloqueada={onBloqueada}
-          onElegir={() => {}}
+          onElegir={(u) => onElegir(s.k, u)}
           onQuitar={() => onQuitar(s.k)}
           onMover={(d) => onMover(slots, i, d)}
         />
@@ -132,11 +130,8 @@ export default function EditorUniforme({
     });
   }
 
-  const bloqueada = () =>
-    mostrar(
-      "Subir fotos nuevas se activa en el Paso 6 (Cloudinary). Por ahora podés mover y quitar.",
-      "error",
-    );
+  const elegir = (k: string, url: string) =>
+    setFotos((f) => ({ ...f, [k]: url }));
 
   async function guardar() {
     if (ocupado) return;
@@ -299,7 +294,7 @@ export default function EditorUniforme({
               base={fotosGuardadas}
               onMover={mover}
               onQuitar={setQuitar}
-              onBloqueada={bloqueada}
+              onElegir={elegir}
             />
             <p className="mb-2 mt-5 text-xs font-medium text-carbon/60">
               Qué incluye
@@ -319,7 +314,7 @@ export default function EditorUniforme({
               base={fotosGuardadas}
               onMover={mover}
               onQuitar={setQuitar}
-              onBloqueada={bloqueada}
+              onElegir={elegir}
             />
             <p className="mb-2 mt-5 text-xs font-medium text-carbon/60">
               Qué incluye
@@ -338,7 +333,7 @@ export default function EditorUniforme({
               base={fotosGuardadas}
               onMover={mover}
               onQuitar={setQuitar}
-              onBloqueada={bloqueada}
+              onElegir={elegir}
             />
           </Tarjeta>
 

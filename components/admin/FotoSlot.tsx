@@ -1,7 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { BotonIcono } from "@/components/admin/ui";
+
+const MAX_MB = 10;
 
 export default function FotoSlot({
   etiqueta,
@@ -27,11 +29,47 @@ export default function FotoSlot({
   onBloqueada?: () => void;
 }) {
   const input = useRef<HTMLInputElement>(null);
+  const [estado, setEstado] = useState<"" | "subiendo" | "error">("");
+  const [msg, setMsg] = useState("");
+
+  async function subir(f: File) {
+    if (f.size > MAX_MB * 1024 * 1024) {
+      setEstado("error");
+      setMsg("La foto pesa más de 10 MB");
+      return;
+    }
+    setEstado("subiendo");
+    setMsg("");
+    try {
+      const r = await fetch("/api/admin/firma", { cache: "no-store" });
+      const fi = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(fi.error || "No se pudo firmar");
+      const fd = new FormData();
+      fd.append("file", f);
+      fd.append("api_key", fi.apiKey);
+      fd.append("timestamp", String(fi.timestamp));
+      fd.append("signature", fi.signature);
+      const up = await fetch(
+        "https://api.cloudinary.com/v1_1/" + fi.cloudName + "/image/upload",
+        { method: "POST", body: fd },
+      );
+      const d = await up.json().catch(() => ({}));
+      if (!up.ok || !d.secure_url) {
+        throw new Error((d && d.error && d.error.message) || "Falló la subida");
+      }
+      onElegir(d.secure_url);
+      setEstado("");
+    } catch (e) {
+      setEstado("error");
+      setMsg(e instanceof Error ? e.message : "Error de conexión");
+    }
+  }
 
   return (
     <div className="flex flex-col gap-1.5">
       <button
         type="button"
+        disabled={estado === "subiendo"}
         onClick={() => (bloqueada ? onBloqueada?.() : input.current?.click())}
         className="boton-tactil relative aspect-[2/3] w-full overflow-hidden rounded-xl border border-bordo/15 bg-papel"
       >
@@ -44,12 +82,23 @@ export default function FotoSlot({
           </span>
         )}
         <span className="absolute inset-x-0 bottom-0 bg-bordo/80 py-1.5 text-center text-[11px] font-medium text-hueso">
-          {pendiente ? "Cambio pendiente" : src ? "Cambiar foto" : "Subir foto"}
+          {estado === "subiendo"
+            ? "Subiendo..."
+            : estado === "error"
+              ? "Error, reintentar"
+              : pendiente
+                ? "Cambio pendiente"
+                : src
+                  ? "Cambiar foto"
+                  : "Subir foto"}
         </span>
       </button>
       <p className="text-center text-[11px] leading-tight text-carbon/70">
         {etiqueta}
       </p>
+      {estado === "error" && msg ? (
+        <p className="text-center text-[10px] leading-tight text-red-700">{msg}</p>
+      ) : null}
       <div className="flex justify-center gap-1">
         <BotonIcono label="Mover antes" onClick={() => onMover(-1)} disabled={!puedeIzq}>
           ◀
@@ -68,7 +117,7 @@ export default function FotoSlot({
         className="hidden"
         onChange={(e) => {
           const f = e.target.files?.[0];
-          if (f) onElegir(URL.createObjectURL(f));
+          if (f) subir(f);
           e.target.value = "";
         }}
       />
