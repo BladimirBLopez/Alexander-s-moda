@@ -8,11 +8,30 @@ export default function LoginPage() {
   const router = useRouter();
   const [clave, setClave] = useState("");
   const [ver, setVer] = useState(false);
+  const [error, setError] = useState("");
+  const [cargando, setCargando] = useState(false);
 
-  function entrar(e: React.FormEvent) {
+  async function entrar(e: React.FormEvent) {
     e.preventDefault();
-    // Diseño: aún sin validación real (se conecta en el paso del login)
-    router.push("/admin");
+    setError("");
+    setCargando(true);
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ clave }),
+      });
+      if (res.ok) {
+        router.replace("/admin");
+        router.refresh();
+        return;
+      }
+      const data = await res.json().catch(() => ({}));
+      setError(data.error ?? "No se pudo ingresar");
+    } catch {
+      setError("Sin conexión. Probá de nuevo.");
+    }
+    setCargando(false);
   }
 
   return (
@@ -64,11 +83,18 @@ export default function LoginPage() {
           </div>
         </label>
 
+        {error && (
+          <p role="alert" className="mt-3 text-center text-sm text-red-700">
+            {error}
+          </p>
+        )}
+
         <button
           type="submit"
-          className="boton-tactil mt-5 w-full rounded-full bg-bordo py-3 text-sm font-semibold text-hueso shadow-md"
+          disabled={cargando || clave.length === 0}
+          className="boton-tactil mt-5 w-full rounded-full bg-bordo py-3 text-sm font-semibold text-hueso shadow-md disabled:opacity-60"
         >
-          Ingresar
+          {cargando ? "Ingresando…" : "Ingresar"}
         </button>
       </form>
     </main>

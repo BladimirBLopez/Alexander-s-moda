@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import AdminNav from "@/components/admin/AdminNav";
+import BotonSalir from "@/components/admin/BotonSalir";
 
 export const metadata = { title: "Panel | Alexander's Moda" };
 
@@ -24,12 +25,7 @@ export default function PanelLayout({ children }: { children: ReactNode }) {
             >
               Ver sitio ↗
             </Link>
-            <Link
-              href="/admin/login"
-              className="rounded-full border border-hueso/40 px-3.5 py-1.5 text-xs text-hueso md:hidden"
-            >
-              Salir
-            </Link>
+            <BotonSalir />
           </div>
         </header>
         <main className="mx-auto max-w-3xl p-4 md:p-8">{children}</main>
