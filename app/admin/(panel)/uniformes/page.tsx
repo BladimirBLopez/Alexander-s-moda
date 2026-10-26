@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { productos } from "@/lib/productos";
+import { getProductos } from "@/lib/datos";
 import { Tarjeta, Titulo, botonLinkCls } from "@/components/admin/ui";
 
-export default function UniformesPage() {
+export const dynamic = "force-dynamic";
+
+export default async function UniformesPage() {
+  const productos = await getProductos();
   return (
     <>
       <Titulo

@@ -22,7 +22,12 @@ export async function getProductos(): Promise<ProductoDato[]> {
   try {
     const { prisma } = await import("@/lib/prisma");
     const filas = await prisma.producto.findMany({ orderBy: { orden: "asc" } });
-    if (filas.length === 0) return productosDeArchivo();
+    if (filas.length === 0) {
+      const hecho = await prisma.ajuste.findFirst({
+        where: { clave: "seed_hecho" },
+      });
+      return hecho ? [] : productosDeArchivo();
+    }
     return filas.map((f) => {
       const base: ProductoDato = {
         id: f.id,

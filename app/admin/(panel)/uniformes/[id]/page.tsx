@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { productos } from "@/lib/productos";
+import { getProductos } from "@/lib/datos";
 import EditorUniforme from "@/components/admin/EditorUniforme";
+
+export const dynamic = "force-dynamic";
 
 export default async function EditarUniformePage({
   params,
@@ -9,7 +11,7 @@ export default async function EditarUniformePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const producto = productos.find((p) => p.id === id);
+  const producto = (await getProductos()).find((p) => p.id === id);
   if (!producto) notFound();
 
   return (
