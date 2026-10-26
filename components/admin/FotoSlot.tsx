@@ -12,6 +12,8 @@ export default function FotoSlot({
   onElegir,
   onQuitar,
   onMover,
+  bloqueada = false,
+  onBloqueada,
 }: {
   etiqueta: string;
   src?: string;
@@ -21,6 +23,8 @@ export default function FotoSlot({
   onElegir: (url: string) => void;
   onQuitar: () => void;
   onMover: (d: -1 | 1) => void;
+  bloqueada?: boolean;
+  onBloqueada?: () => void;
 }) {
   const input = useRef<HTMLInputElement>(null);
 
@@ -28,7 +32,7 @@ export default function FotoSlot({
     <div className="flex flex-col gap-1.5">
       <button
         type="button"
-        onClick={() => input.current?.click()}
+        onClick={() => (bloqueada ? onBloqueada?.() : input.current?.click())}
         className="boton-tactil relative aspect-[2/3] w-full overflow-hidden rounded-xl border border-bordo/15 bg-papel"
       >
         {src ? (
