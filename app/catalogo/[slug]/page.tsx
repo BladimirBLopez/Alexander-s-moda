@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { productos, type BulletItem } from "@/lib/productos";
+import type { BulletItem } from "@/lib/productos";
+import { getProductoPorSlug } from "@/lib/datos";
 import FotoZoom from "@/components/FotoZoom";
 import BotonCompartir from "@/components/BotonCompartir";
 import RedesSociales from "@/components/RedesSociales";
@@ -8,15 +9,6 @@ import VerColores, { CaracteristicasComunes } from "@/components/VerColores";
 
 const UBICACION_URL = "https://maps.app.goo.gl/xfW7UDupWaDn3kgi8?g_st=aw";
 const WHATSAPP_NUMERO = "59177974868";
-
-const SLUG_A_ID: Record<string, string> = {
-  sport: "uniforme-sport",
-  casimir: "uniforme-casimir",
-};
-
-export function generateStaticParams() {
-  return Object.keys(SLUG_A_ID).map((slug) => ({ slug }));
-}
 
 function FotoOPlaceholder({ src, zoomSrc, alt }: { src?: string | null; zoomSrc?: string | null; alt: string }) {
   return (
@@ -143,8 +135,7 @@ export default async function CatalogoDetallePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const id = SLUG_A_ID[slug];
-  const producto = productos.find((p) => p.id === id);
+  const producto = await getProductoPorSlug(slug);
 
   if (!producto) {
     notFound();
