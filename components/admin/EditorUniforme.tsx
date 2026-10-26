@@ -28,12 +28,12 @@ type Fotos = Record<string, string | undefined>;
 type Slot = { k: string; l: string };
 
 const MUJER: Slot[] = [
-  { k: "fotoMujerDentro", l: "Dentro" },
-  { k: "fotoMujerFuera", l: "Fuera" },
+  { k: "fotoMujerDentro", l: "Camisa" },
+  { k: "fotoMujerFuera", l: "Polera" },
 ];
 const HOMBRE: Slot[] = [
-  { k: "fotoHombreDentro", l: "Dentro" },
-  { k: "fotoHombreFuera", l: "Fuera" },
+  { k: "fotoHombreDentro", l: "Camisa" },
+  { k: "fotoHombreFuera", l: "Polera" },
 ];
 const SECCION2: Slot[] = [
   { k: "fotoSeccion2Arriba", l: "Arriba" },
