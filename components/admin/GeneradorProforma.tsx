@@ -58,6 +58,31 @@ async function esperarFuentes() {
   }
 }
 
+const MESES = [
+  "enero", "febrero", "marzo", "abril", "mayo", "junio",
+  "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+];
+
+function mesAnio(t: string) {
+  const txt = t.toLowerCase();
+  const m = MESES.findIndex((x) => txt.includes(x));
+  const a = txt.match(/20[0-9][0-9]/);
+  const hoy = new Date();
+  return {
+    mes: m >= 0 ? m : hoy.getMonth(),
+    anio: a ? Number(a[0]) : hoy.getFullYear(),
+  };
+}
+
+function opcionesAnio(actual: number) {
+  const y = new Date().getFullYear();
+  return Array.from(new Set([y, y + 1, actual])).sort((a, b) => a - b);
+}
+
+function armarFecha(mes: number, anio: number) {
+  return "Santa Cruz, " + MESES[mes] + " de " + anio;
+}
+
 function slug(t: string) {
   return (
     t
@@ -439,13 +464,57 @@ export default function GeneradorProforma() {
           <Tarjeta>
             <SeccionTitulo>Encabezado de la carta</SeccionTitulo>
             <div className="space-y-3">
-              <Campo label="Ciudad y fecha">
-                <input
-                  value={datos.ciudadFecha}
-                  onChange={(e) => set("ciudadFecha", e.target.value)}
-                  className={inputCls}
-                />
-              </Campo>
+              <div>
+                <div className="grid grid-cols-2 gap-3">
+                  <Campo label="Mes">
+                    <select
+                      value={mesAnio(datos.ciudadFecha).mes}
+                      onChange={(e) =>
+                        set(
+                          "ciudadFecha",
+                          armarFecha(
+                            Number(e.target.value),
+                            mesAnio(datos.ciudadFecha).anio,
+                          ),
+                        )
+                      }
+                      className={inputCls}
+                    >
+                      {MESES.map((m, k) => (
+                        <option key={m} value={k}>
+                          {m}
+                        </option>
+                      ))}
+                    </select>
+                  </Campo>
+                  <Campo label="Año">
+                    <select
+                      value={mesAnio(datos.ciudadFecha).anio}
+                      onChange={(e) =>
+                        set(
+                          "ciudadFecha",
+                          armarFecha(
+                            mesAnio(datos.ciudadFecha).mes,
+                            Number(e.target.value),
+                          ),
+                        )
+                      }
+                      className={inputCls}
+                    >
+                      {opcionesAnio(mesAnio(datos.ciudadFecha).anio).map(
+                        (a) => (
+                          <option key={a} value={a}>
+                            {a}
+                          </option>
+                        ),
+                      )}
+                    </select>
+                  </Campo>
+                </div>
+                <p className="mt-1 text-xs text-carbon/60">
+                  Sale así: {datos.ciudadFecha}
+                </p>
+              </div>
               <Campo label="Destinatario (un renglón por línea)">
                 <textarea
                   rows={3}
