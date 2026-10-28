@@ -189,16 +189,89 @@ export default function GeneradorProforma() {
     }
   }
 
+  async function publicarEnSitio(pdf: File) {
+    type Firma = {
+      ok?: boolean;
+      error?: string;
+      cloudName?: string;
+      apiKey?: string;
+      timestamp?: number;
+      signature?: string;
+      publicId?: string;
+      maxBytes?: number;
+    };
+    setFase("Publicando en el sitio...");
+    const rf = await fetch("/api/admin/proforma", { cache: "no-store" });
+    const f: Firma = await rf.json().catch(() => ({}));
+    if (
+      !rf.ok ||
+      f.ok !== true ||
+      f.cloudName !== "dkq95jus0" ||
+      !f.apiKey ||
+      !f.signature ||
+      !f.timestamp ||
+      !f.publicId
+    ) {
+      throw new Error(f.error || "No se pudo autorizar la publicación");
+    }
+    if (f.maxBytes && pdf.size > f.maxBytes) {
+      throw new Error("El PDF supera el límite de 10 MB");
+    }
+    const fd = new FormData();
+    fd.append("file", pdf);
+    fd.append("api_key", f.apiKey);
+    fd.append("timestamp", String(f.timestamp));
+    fd.append("signature", f.signature);
+    fd.append("public_id", f.publicId);
+    const rc = await fetch(
+      "https://api.cloudinary.com/v1_1/" + f.cloudName + "/image/upload",
+      { method: "POST", body: fd },
+    );
+    const sub: { secure_url?: string; error?: { message?: string } } =
+      await rc.json().catch(() => ({}));
+    if (!rc.ok || !sub.secure_url) {
+      throw new Error(sub.error?.message || "Cloudinary no pudo recibir el PDF");
+    }
+    const rp = await fetch("/api/admin/proforma", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ publicId: f.publicId }),
+    });
+    const r: { ok?: boolean; error?: string } = await rp
+      .json()
+      .catch(() => ({}));
+    if (!rp.ok || r.ok !== true) {
+      throw new Error(r.error || "No se pudo confirmar la publicación");
+    }
+  }
+
+  async function publicarYAvisar(pdf: File, texto: string) {
+    try {
+      await publicarEnSitio(pdf);
+      mostrar(texto + " y publicado en el sitio");
+    } catch (e) {
+      mostrar(
+        texto +
+          ", pero no se pudo publicar: " +
+          (e instanceof Error ? e.message : "error desconocido"),
+        "error",
+      );
+    }
+  }
+
   const bajarPdf = () =>
     accion(async () => {
-      descargar(await crearPdf(), nombreBase() + ".pdf");
-      mostrar("PDF descargado");
+      const pdf = await crearPdf();
+      descargar(pdf, nombreBase() + ".pdf");
+      await publicarYAvisar(pdf, "PDF descargado");
     });
 
   const bajarPng = () =>
     accion(async () => {
-      descargar(await blobCanvas("image/png"), nombreBase() + ".png");
-      mostrar("PNG descargado");
+      const png = await blobCanvas("image/png");
+      const pdf = await crearPdf();
+      descargar(png, nombreBase() + ".png");
+      await publicarYAvisar(pdf, "PNG descargado");
     });
 
   const compartir = () =>
@@ -212,6 +285,7 @@ export default function GeneradorProforma() {
         throw new Error("Este navegador no permite compartir archivos. Usá Descargar.");
       }
       await navigator.share(payload);
+      await publicarYAvisar(pdf, "Compartido");
     });
 
   // Ofertas
