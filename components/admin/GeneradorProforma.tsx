@@ -248,6 +248,65 @@ export default function GeneradorProforma() {
     <>
       <Aviso aviso={aviso} />
 
+      <div className="fixed inset-x-0 bottom-[calc(4.75rem+env(safe-area-inset-bottom))] z-30 px-3 md:bottom-4">
+        <div className="mx-auto flex max-w-[540px] items-center gap-2 rounded-2xl border border-bordo/15 bg-white/95 p-2 shadow-lg backdrop-blur">
+          {vista === "editar" ? (
+            <>
+              <p className="flex-1 pl-2 text-xs text-carbon/60">
+                ✓ Guardado automático
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setVista("previa");
+                  window.scrollTo({ top: 0 });
+                }}
+                className="boton-tactil rounded-full bg-bordo px-5 py-2.5 text-sm font-semibold text-hueso"
+              >
+                Vista previa
+              </button>
+            </>
+          ) : (
+            <div className="grid flex-1 grid-cols-4 gap-1.5">
+              <button
+                type="button"
+                onClick={() => {
+                  setVista("editar");
+                  window.scrollTo({ top: 0 });
+                }}
+                className="boton-tactil rounded-full border border-bordo/25 bg-white py-2.5 text-xs font-semibold text-bordo"
+              >
+                Editar
+              </button>
+              <button
+                type="button"
+                disabled={!listo || ocupado}
+                onClick={bajarPdf}
+                className="boton-tactil rounded-full bg-bordo py-2.5 text-xs font-semibold text-hueso disabled:opacity-40"
+              >
+                PDF
+              </button>
+              <button
+                type="button"
+                disabled={!listo || ocupado}
+                onClick={bajarPng}
+                className="boton-tactil rounded-full border border-bordo/25 bg-white py-2.5 text-xs font-semibold text-bordo disabled:opacity-40"
+              >
+                PNG
+              </button>
+              <button
+                type="button"
+                disabled={!listo || ocupado}
+                onClick={compartir}
+                className="boton-tactil rounded-full border border-bordo/25 bg-white py-2.5 text-xs font-semibold text-bordo disabled:opacity-40"
+              >
+                Compartir
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
       <Pestanas
         valor={vista}
         onCambiar={setVista}
@@ -279,21 +338,6 @@ export default function GeneradorProforma() {
           />
         </div>
 
-        <div className="mx-auto mt-4 grid max-w-[540px] grid-cols-2 gap-2">
-          <BotonPrimario disabled={!listo || ocupado} onClick={bajarPdf}>
-            Descargar PDF
-          </BotonPrimario>
-          <BotonSecundario disabled={!listo || ocupado} onClick={bajarPng}>
-            Descargar PNG
-          </BotonSecundario>
-          <BotonSecundario
-            className="col-span-2"
-            disabled={!listo || ocupado}
-            onClick={compartir}
-          >
-            Compartir…
-          </BotonSecundario>
-        </div>
 
         <p className="mt-3 text-center text-xs text-carbon/55" aria-live="polite">
           {fase ||
