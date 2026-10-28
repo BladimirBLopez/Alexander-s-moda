@@ -414,6 +414,10 @@ export default function GeneradorProforma() {
             Preparando la hoja…
           </p>
         )}
+        <p className="mx-auto mb-3 max-w-[540px] rounded-xl border border-bordo/15 bg-bordo/5 p-3 text-center text-xs text-bordo">
+          Al tocar PDF, PNG o Compartir, esta hoja también se publica en el
+          sitio (página Proforma).
+        </p>
         <div className="mx-auto max-w-[540px] overflow-hidden rounded-sm border border-bordo/15 bg-white shadow-lg">
           <canvas
             ref={canvasRef}
