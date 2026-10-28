@@ -1,0 +1,64 @@
+/* Exclusivo del editor de Sport y Casimir. */
+
+.contenedor :global(button[aria-label="Mover antes"]),
+.contenedor :global(button[aria-label="Mover después"]) {
+  display: none;
+}
+
+/* Botón dorado en la parte inferior de cada foto. */
+.contenedor :global(button.boton-tactil > span.absolute) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 6px;
+  background-color: #e5bf83;
+  color: #50121b;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* Icono de cámara. */
+.contenedor :global(button.boton-tactil > span.absolute)::before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2350121B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 4h-4L8 7H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2-3Z'/%3E%3Ccircle cx='12' cy='13' r='3'/%3E%3C/svg%3E");
+}
+
+/* Botón Quitar foto más claro y discreto. */
+.contenedor :global(button[aria-label="Quitar foto"]) {
+  width: auto;
+  min-width: 110px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(80, 18, 27, 0.18);
+  border-radius: 999px;
+  background-color: white;
+  color: #50121b;
+  font-size: 0;
+  transition: background-color 150ms ease;
+}
+
+.contenedor :global(button[aria-label="Quitar foto"])::after {
+  content: "Quitar foto";
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.contenedor :global(button[aria-label="Quitar foto"]:not(:disabled):hover) {
+  background-color: #fff0f0;
+}
+
+.contenedor :global(button[aria-label="Quitar foto"]:disabled) {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

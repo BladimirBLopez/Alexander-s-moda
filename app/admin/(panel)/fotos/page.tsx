@@ -1,10 +1,5 @@
-import { getProductos } from "@/lib/datos";
-import PanelFotos from "@/components/admin/PanelFotos";
+import { redirect } from "next/navigation";
 
-export const dynamic = "force-dynamic";
-
-export default async function FotosPage() {
-  const productos = await getProductos();
-
-  return <PanelFotos productos={productos} />;
+export default function FotosPage() {
+  redirect("/admin/uniformes");
 }

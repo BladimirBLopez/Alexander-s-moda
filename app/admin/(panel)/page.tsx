@@ -76,12 +76,6 @@ export default async function InicioPanel() {
     icono: IconoAdminNombre;
   }[] = [
     {
-      titulo: "Fotografías",
-      descripcion: "Gestionar imágenes del catálogo",
-      href: "/admin/fotos",
-      icono: "fotos",
-    },
-    {
       titulo: "Proforma",
       descripcion: "Consultar o actualizar el PDF de precios",
       href: "/admin/proforma",

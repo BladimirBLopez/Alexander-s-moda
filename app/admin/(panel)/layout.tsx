@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import AdminNav from "@/components/admin/AdminNav";
 import BotonSalir from "@/components/admin/BotonSalir";
 import IconoAdmin from "@/components/admin/IconoAdmin";
+import AyudaFlotante from "@/components/admin/AyudaFlotante";
 
 export const metadata = {
   title: "Administración | Alexander's Moda",
@@ -17,7 +18,7 @@ export default function PanelLayout({
     <div className="min-h-screen bg-papel text-carbon md:flex">
       <AdminNav />
 
-      <div className="min-w-0 flex-1 pb-32 md:pb-12">
+      <div className="min-w-0 flex-1 pb-60 md:pb-24">
         <header className="sticky top-0 z-30 flex min-h-16 items-center justify-between gap-3 border-b border-white/10 bg-bordo px-4 sm:px-6 md:justify-end">
           <div className="min-w-0 md:hidden">
             <p
@@ -50,6 +51,9 @@ export default function PanelLayout({
         </header>
 
         <main className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 md:px-8 md:py-9">
+          <div className="mb-4 flex justify-end">
+            <AyudaFlotante />
+          </div>
           {children}
         </main>
       </div>

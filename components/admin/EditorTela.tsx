@@ -1,8 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ColorTela, Tela } from "@/data/telas";
+import ImagenTelaCampo from "@/components/admin/ImagenTelaCampo";
 import { Aviso, useAviso } from "@/components/admin/aviso";
 import Confirmar from "@/components/admin/Confirmar";
 import {
@@ -28,8 +29,66 @@ export default function EditorTela({
   const [guardado, setGuardado] = useState<Tela>(inicial);
   const [vista, setVista] = useState<"editar" | "previa">("editar");
   const [sel, setSel] = useState<number | null>(null);
+
+  useEffect(() => {
+    const valor = new URLSearchParams(
+      window.location.search
+    ).get("color");
+
+    if (valor === null || !/^[0-9]+$/.test(valor)) {
+      return;
+    }
+
+    const indice = Number(valor);
+
+    if (
+      !Number.isSafeInteger(indice) ||
+      indice < 0 ||
+      indice >= inicial.colores.length
+    ) {
+      return;
+    }
+
+    const fotograma = window.requestAnimationFrame(() => {
+      setSel(indice);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(fotograma);
+    };
+  }, [inicial.colores.length]);
+
+  useEffect(() => {
+    if (sel === null) return;
+
+    const valor = new URLSearchParams(
+      window.location.search
+    ).get("color");
+
+    if (valor === null || Number(valor) !== sel) {
+      return;
+    }
+
+    const fotograma = window.requestAnimationFrame(() => {
+      document
+        .getElementById("editor-color-seleccionado")
+        ?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(fotograma);
+    };
+  }, [sel]);
+
   const [nuevaCar, setNuevaCar] = useState("");
   const [quitarColorIdx, setQuitarColorIdx] = useState<number | null>(null);
+  const [subiendoImagen, setSubiendoImagen] = useState(0);
+
+  const registrarSubida = (activa: boolean) =>
+    setSubiendoImagen((n) => Math.max(0, n + (activa ? 1 : -1)));
   const [borrar, setBorrar] = useState(false);
   const [guardando, setGuardando] = useState(false);
   const guardandoRef = useRef(false);
@@ -73,6 +132,10 @@ export default function EditorTela({
   }
 
   async function guardar() {
+    if (subiendoImagen > 0) {
+      mostrar("Terminá de subir las imágenes antes de guardar", "error");
+      return;
+    }
     if (guardandoRef.current) return;
 
     if (!t.nombre.trim()) {
@@ -216,6 +279,17 @@ export default function EditorTela({
       ) : (
         <div className="space-y-4">
           <Tarjeta>
+            <SeccionTitulo>Fotografía principal</SeccionTitulo>
+            <ImagenTelaCampo
+              titulo="Imagen general de la tela"
+              url={t.imagenPrincipal}
+              deshabilitado={guardando}
+              onCambiar={(url) => setCampo("imagenPrincipal", url)}
+              onSubidaCambiar={registrarSubida}
+            />
+          </Tarjeta>
+
+          <Tarjeta>
             <SeccionTitulo>Datos técnicos</SeccionTitulo>
             <div className="grid gap-3 sm:grid-cols-2">
               <Campo label="Nombre">
@@ -306,7 +380,7 @@ export default function EditorTela({
             )}
 
             {colorSel && sel !== null && (
-              <div className="mt-4 rounded-xl border border-bronce/30 bg-papel/70 p-3">
+              <div id="editor-color-seleccionado" className="mt-4 rounded-xl border border-bronce/30 bg-papel/70 p-3">
                 <p className="mb-2 text-xs font-semibold text-bordo">
                   Editando color {colorSel.codigo || "nuevo"}
                 </p>
@@ -327,6 +401,20 @@ export default function EditorTela({
                     />
                   </Campo>
                 </div>
+                <div className="mt-4">
+                  <ImagenTelaCampo
+                    titulo="Fotografía de este color"
+                    url={colorSel.imagenUrl}
+                    deshabilitado={guardando}
+                    onCambiar={(url) => {
+                      if (sel !== null) {
+                        setColor(sel, { imagenUrl: url || undefined });
+                      }
+                    }}
+                    onSubidaCambiar={registrarSubida}
+                  />
+                </div>
+
                 <div className="mt-3 flex flex-wrap gap-2">
                   <BotonSecundario onClick={() => moverColor(sel, -1)} disabled={sel === 0}>
                     ◀ Antes
@@ -367,9 +455,9 @@ export default function EditorTela({
       )}
 
       <BarraGuardar
-        sucio={sucio && !guardando}
+        sucio={sucio && !guardando && subiendoImagen === 0}
         onGuardar={guardar}
-        etiqueta={guardando ? "Guardando..." : nueva ? "Crear tela" : "Guardar"}
+        etiqueta={subiendoImagen > 0 ? "Subiendo imagen..." : guardando ? "Guardando..." : nueva ? "Crear tela" : "Guardar"}
       />
 
       <Confirmar

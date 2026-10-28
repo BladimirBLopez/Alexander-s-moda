@@ -116,7 +116,7 @@ export function BarraGuardar({
   etiqueta?: string;
 }) {
   return (
-    <div className="fixed inset-x-0 bottom-[68px] z-30 px-4 md:bottom-4 md:left-60">
+    <div className="fixed inset-x-0 bottom-[68px] z-30 px-4 md:bottom-4 md:left-60 -translate-y-4 md:translate-y-0">
       <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 rounded-full border border-bordo/15 bg-white/95 py-2 pl-5 pr-2 shadow-lg backdrop-blur">
         <span className="text-xs text-carbon/60">
           {sucio ? "Tenés cambios sin guardar" : "Sin cambios"}

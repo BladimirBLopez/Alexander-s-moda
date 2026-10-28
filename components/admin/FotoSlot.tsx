@@ -12,7 +12,6 @@ export default function FotoSlot({
   puedeIzq,
   puedeDer,
   onElegir,
-  onQuitar,
   onMover,
   bloqueada = false,
   onBloqueada,
@@ -108,9 +107,6 @@ export default function FotoSlot({
       <div className="flex justify-center gap-1">
         <BotonIcono label="Mover antes" onClick={() => onMover(-1)} disabled={bloqueada || estado === "subiendo" || !puedeIzq}>
           ◀
-        </BotonIcono>
-        <BotonIcono label="Quitar foto" onClick={onQuitar} disabled={bloqueada || estado === "subiendo" || !src}>
-          ✕
         </BotonIcono>
         <BotonIcono label="Mover después" onClick={() => onMover(1)} disabled={bloqueada || estado === "subiendo" || !puedeDer}>
           ▶

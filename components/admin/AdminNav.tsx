@@ -19,7 +19,6 @@ const SECCIONES: {
     icono: "uniformes",
   },
   { href: "/admin/telas", label: "Telas", icono: "telas" },
-  { href: "/admin/fotos", label: "Fotos", icono: "fotos" },
   {
     href: "/admin/proforma",
     label: "Proforma",
@@ -92,7 +91,7 @@ export default function AdminNav() {
         aria-label="Menú principal"
         className="fixed inset-x-0 bottom-0 z-40 border-t border-bordo/10 bg-white/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-8px_30px_rgba(40,16,20,0.07)] backdrop-blur-xl md:hidden"
       >
-        <div className="mx-auto grid max-w-xl grid-cols-5 gap-0.5 px-2 py-2">
+        <div className="mx-auto grid max-w-xl grid-cols-4 gap-0.5 px-2 py-2">
           {SECCIONES.map((item) => {
             const seleccionado = activo(item.href);
 

@@ -8,6 +8,7 @@ import {
   textoADescripcion,
 } from "@/lib/descripciones-editor";
 import FotoSlot from "@/components/admin/FotoSlot";
+import estilosFotos from "@/components/admin/fotos-uniforme.module.css";
 import Confirmar from "@/components/admin/Confirmar";
 import { Aviso, useAviso } from "@/components/admin/aviso";
 import {
@@ -323,7 +324,7 @@ export default function EditorContenidoUniforme({
             Usá las flechas para ordenar las imágenes.
           </p>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          <div className={`grid grid-cols-2 gap-3 sm:grid-cols-3 ${estilosFotos.contenedor}`}>
             {indices.map((i) => {
               const limiteInferior = indices[0];
               const limiteSuperior = indices[indices.length - 1];
