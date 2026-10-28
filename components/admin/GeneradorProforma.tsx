@@ -261,7 +261,7 @@ export default function GeneradorProforma() {
     } catch (e) {
       mostrar(
         texto +
-          ", pero no se pudo publicar: " +
+          ", pero no se pudo publicar (el sitio sigue con la proforma anterior): " +
           (e instanceof Error ? e.message : "error desconocido"),
         "error",
       );
