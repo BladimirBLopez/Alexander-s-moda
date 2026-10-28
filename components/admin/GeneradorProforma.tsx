@@ -92,6 +92,7 @@ export default function GeneradorProforma() {
   const [fase, setFase] = useState("");
   const [ocupado, setOcupado] = useState(false);
   const [confReset, setConfReset] = useState(false);
+  const [modeloOcupado, setModeloOcupado] = useState(false);
   const [quitarOferta, setQuitarOferta] = useState<number | null>(null);
   const [guardado, setGuardado] = useState<"guardando" | "ok" | "error">("ok");
   const { aviso, mostrar } = useAviso();
@@ -638,18 +639,30 @@ export default function GeneradorProforma() {
           <div className="flex flex-wrap items-center justify-between gap-3 pb-2">
             <BotonSecundario
               onClick={async () => {
+                if (modeloOcupado) return;
+                setModeloOcupado(true);
                 try {
-                  await navigator.clipboard.writeText(JSON.stringify(datos));
-                  mostrar("Datos copiados");
+                  const r = await fetch("/api/admin/proforma-modelo", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ modelo: datos }),
+                  });
+                  const j = await r.json().catch(() => null);
+                  mostrar(
+                    r.ok && j?.ok
+                      ? "Modelo guardado"
+                      : "No se pudo guardar el modelo",
+                  );
                 } catch {
-                  mostrar("No se pudo copiar");
+                  mostrar("No se pudo guardar el modelo");
                 }
+                setModeloOcupado(false);
               }}
             >
-              Copiar datos
+              {modeloOcupado ? "Guardando..." : "Guardar como modelo"}
             </BotonSecundario>
             <BotonSecundario onClick={() => setConfReset(true)}>
-              Volver a la proforma original
+              Volver al modelo
             </BotonSecundario>
           </div>
         </div>
@@ -676,14 +689,34 @@ export default function GeneradorProforma() {
       />
       <Confirmar
         abierto={confReset}
-        titulo="¿Volver a la proforma original?"
-        texto="Se pierden los cambios que hiciste en este borrador."
-        textoOk="Restablecer"
+        titulo="¿Volver al modelo?"
+        texto="Se pierden los cambios de este borrador y vuelve tu modelo guardado."
+        textoOk="Volver"
         onCancelar={() => setConfReset(false)}
-        onOk={() => {
-          setDatos(PROFORMA_INICIAL);
+        onOk={async () => {
           setConfReset(false);
-          mostrar("Proforma restablecida");
+          let leido = false;
+          let m: DatosProforma | null = null;
+          try {
+            const r = await fetch("/api/admin/proforma-modelo", {
+              cache: "no-store",
+            });
+            const j = await r.json();
+            leido = j?.ok === true;
+            m = leido ? datosValidos(j.modelo) : null;
+          } catch {
+            leido = false;
+          }
+          if (!leido) {
+            mostrar("No se pudo leer el modelo");
+            return;
+          }
+          setDatos(m ?? PROFORMA_INICIAL);
+          mostrar(
+            m
+              ? "Modelo restaurado"
+              : "Aun no hay modelo guardado: se uso la proforma inicial",
+          );
         }}
       />
     </>
