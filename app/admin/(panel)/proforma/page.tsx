@@ -1,15 +1,12 @@
 import Link from "next/link";
 import PanelProforma from "@/components/admin/PanelProforma";
 import { Titulo } from "@/components/admin/ui";
-import InterruptorProforma from "@/components/admin/InterruptorProforma";
 import { getProformaActual } from "@/lib/proforma";
-import { getProformaBoton } from "@/lib/proforma-boton";
 
 export const dynamic = "force-dynamic";
 
 export default async function ProformaAdminPage() {
   const proforma = await getProformaActual();
-  const botonActivo = await getProformaBoton();
 
   return (
     <>
@@ -28,9 +25,6 @@ export default async function ProformaAdminPage() {
           <span className="text-xl">›</span>
         </div>
       </Link>
-      <div className="mb-4">
-        <InterruptorProforma inicial={botonActivo} />
-      </div>
       <PanelProforma proforma={proforma} />
     </>
   );
