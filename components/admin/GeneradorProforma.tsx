@@ -93,6 +93,7 @@ export default function GeneradorProforma() {
   const [ocupado, setOcupado] = useState(false);
   const [confReset, setConfReset] = useState(false);
   const [quitarOferta, setQuitarOferta] = useState<number | null>(null);
+  const [guardado, setGuardado] = useState<"guardando" | "ok" | "error">("ok");
   const { aviso, mostrar } = useAviso();
   const bloqueo = useRef(false);
 
@@ -114,11 +115,19 @@ export default function GeneradorProforma() {
 
   useEffect(() => {
     if (!cargado) return;
+    let t: ReturnType<typeof setTimeout> | undefined;
     try {
       localStorage.setItem(CLAVE, JSON.stringify(datos));
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setGuardado("guardando");
+      t = setTimeout(() => setGuardado("ok"), 600);
     } catch {
-      /* almacenamiento no disponible */
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setGuardado("error");
     }
+    return () => {
+      if (t) clearTimeout(t);
+    };
   }, [datos, cargado]);
 
   // Fuentes e imágenes
@@ -323,8 +332,19 @@ export default function GeneradorProforma() {
 
       <div className="pointer-events-none sticky top-[4.5rem] z-20 mb-3 flex items-center justify-between gap-2">
         {vista === "editar" ? (
-          <p className="pointer-events-auto rounded-full bg-white/95 px-3 py-2 text-xs text-carbon/60 shadow-md backdrop-blur">
-            ✓ Guardado
+          <p
+            className={
+              "pointer-events-auto rounded-full bg-white/95 px-3 py-2 text-xs shadow-md backdrop-blur " +
+              (guardado === "error"
+                ? "font-semibold text-red-700"
+                : "text-carbon/60")
+            }
+          >
+            {guardado === "guardando"
+              ? "Guardando..."
+              : guardado === "error"
+                ? "⚠ No se pudo guardar"
+                : "✓ Guardado automático"}
           </p>
         ) : (
           <span />
