@@ -286,7 +286,11 @@ export default function GeneradorProforma() {
           <BotonSecundario disabled={!listo || ocupado} onClick={bajarPng}>
             Descargar PNG
           </BotonSecundario>
-          <BotonSecundario disabled={!listo || ocupado} onClick={compartir}>
+          <BotonSecundario
+            className="col-span-2"
+            disabled={!listo || ocupado}
+            onClick={compartir}
+          >
             Compartir…
           </BotonSecundario>
         </div>
