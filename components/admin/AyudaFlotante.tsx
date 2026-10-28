@@ -169,6 +169,12 @@ function obtenerTutorial(ruta: string): {
 
 export default function AyudaFlotante() {
   const pathname = usePathname();
+  if (pathname.startsWith("/admin/proforma")) return null;
+  return <AyudaFlotanteInterna />;
+}
+
+function AyudaFlotanteInterna() {
+  const pathname = usePathname();
 
   const [abierto, setAbierto] = useState(false);
   const [indice, setIndice] = useState(0);
