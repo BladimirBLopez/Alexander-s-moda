@@ -8,7 +8,6 @@ import {
   BotonPrimario,
   BotonSecundario,
   Campo,
-  Pestanas,
   SeccionTitulo,
   Tarjeta,
   inputCls,
@@ -327,7 +326,7 @@ export default function GeneradorProforma() {
           {vista === "editar" ? (
             <>
               <p className="flex-1 pl-2 text-xs text-carbon/60">
-                ✓ Guardado automático
+                ✓ Guardado
               </p>
               <button
                 type="button"
@@ -381,14 +380,7 @@ export default function GeneradorProforma() {
         </div>
       </div>
 
-      <Pestanas
-        valor={vista}
-        onCambiar={setVista}
-        opciones={[
-          { id: "editar", label: "Editar" },
-          { id: "previa", label: "Vista previa" },
-        ]}
-      />
+
 
       {/* Vista previa: el canvas queda montado siempre para poder exportar */}
       <div className={vista === "previa" ? "" : "hidden"}>
@@ -641,13 +633,7 @@ export default function GeneradorProforma() {
             <BotonSecundario onClick={() => setConfReset(true)}>
               Volver a la proforma original
             </BotonSecundario>
-            <BotonPrimario onClick={() => setVista("previa")}>
-              Ver vista previa
-            </BotonPrimario>
           </div>
-          <p className="text-center text-[11px] text-carbon/45">
-            Tus cambios se guardan solos en este navegador.
-          </p>
         </div>
       )}
 
