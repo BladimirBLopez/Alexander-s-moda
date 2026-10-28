@@ -152,8 +152,8 @@ function tabla(ctx: CanvasRenderingContext2D, o: Oferta, yTop: number): number {
 
   const lineas = o.lineas
     .filter((l) => l.trim() !== "")
-    .flatMap((l) => envolver(ctx, ITEM_F, l, xc - X0 - 12));
-  const hItems = Math.max(lineas.length, 1) * hFila + 4;
+    .flatMap((l) => envolver(ctx, ITEM_F, l, xc - X0 - 18));
+  const hItems = Math.max(lineas.length, 1) * hFila + 8;
   const yBase = yTop + hTitulo + hItems;
 
   ctx.strokeStyle = "#000";
@@ -172,7 +172,7 @@ function tabla(ctx: CanvasRenderingContext2D, o: Oferta, yTop: number): number {
   dibujarLinea(ctx, tit, tokenizar("COSTO"), xc, yTop + 14.5, X1 - xc, "centro");
 
   lineas.forEach((l, i) => {
-    dibujarLinea(ctx, ITEM_F, l, X0 + 5, yTop + hTitulo + 14 + i * hFila, xc - X0, "izq");
+    dibujarLinea(ctx, ITEM_F, l, X0 + 8, yTop + hTitulo + 15 + i * hFila, xc - X0, "izq");
   });
 
   if (o.costo.trim()) {
@@ -196,8 +196,8 @@ export function dibujarProforma(
 
   // Encabezado
   ctx.fillStyle = BORDO;
-  ctx.fillRect(0, 0, ANCHO, 92);
-  if (im.logo) ctx.drawImage(im.logo, 34, 12, 325, 75);
+  ctx.fillRect(0, 0, ANCHO, 96);
+  if (im.logo) ctx.drawImage(im.logo, X0, 12, 312, 72);
 
   // Fecha
   let y = 131;
@@ -259,7 +259,7 @@ export function dibujarProforma(
   // Firma y sello
   const yNombre = yCierre + 153;
   ctx.globalCompositeOperation = "multiply";
-  if (d.mostrarFirma && im.firma) ctx.drawImage(im.firma, 340, yCierre - 11, 213, 146);
+  if (d.mostrarFirma && im.firma) ctx.drawImage(im.firma, 344, yCierre - 14, 204, 140);
   if (d.mostrarSello && im.sello) ctx.drawImage(im.sello, 560, yCierre + 72, 151, 69);
   ctx.globalCompositeOperation = "source-over";
 
