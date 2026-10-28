@@ -568,6 +568,18 @@ export default function GeneradorProforma() {
           </Tarjeta>
 
           <div className="flex flex-wrap items-center justify-between gap-3 pb-2">
+            <BotonSecundario
+              onClick={async () => {
+                try {
+                  await navigator.clipboard.writeText(JSON.stringify(datos));
+                  mostrar("Datos copiados");
+                } catch {
+                  mostrar("No se pudo copiar");
+                }
+              }}
+            >
+              Copiar datos
+            </BotonSecundario>
             <BotonSecundario onClick={() => setConfReset(true)}>
               Volver a la proforma original
             </BotonSecundario>
