@@ -64,7 +64,7 @@ export const PROFORMA_INICIAL: DatosProforma = {
   empresa: "ALEXANDERS MODA",
   mostrarFirma: true,
   mostrarSello: true,
-  pie: "**Santa Cruz:** Centro Comercial Norte Pasillo 11 Local 625\n**Cochabamba:** Calle 23 de Marzo casi Dorbigni #424 - **Cels.:** 77974868 - 77373235",
+  pie: "**Santa Cruz:** Centro Comercial Norte Pasillo 11 Local #357\n**Cochabamba:** Calle 23 de Marzo casi Dorbigni #424 - **Cels.:** 77974868 - 77373235",
 };
 
 /** Valida datos leídos de localStorage: devuelve null si no tienen la forma esperada. */
