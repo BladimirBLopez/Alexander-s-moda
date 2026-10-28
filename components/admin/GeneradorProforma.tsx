@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Aviso, useAviso } from "@/components/admin/aviso";
 import Confirmar from "@/components/admin/Confirmar";
@@ -21,7 +20,6 @@ import {
   type Oferta,
 } from "@/lib/proforma-datos";
 import { crearPdfDeJpeg } from "@/lib/proforma-pdf";
-import { publicarPdf } from "@/lib/proforma-publicar";
 import {
   ALTO,
   ANCHO,
@@ -94,8 +92,6 @@ export default function GeneradorProforma() {
   const [vista, setVista] = useState<"editar" | "previa">("editar");
   const [fase, setFase] = useState("");
   const [ocupado, setOcupado] = useState(false);
-  const [publicada, setPublicada] = useState(false);
-  const [confPublicar, setConfPublicar] = useState(false);
   const [confReset, setConfReset] = useState(false);
   const [quitarOferta, setQuitarOferta] = useState<number | null>(null);
   const { aviso, mostrar } = useAviso();
@@ -218,16 +214,6 @@ export default function GeneradorProforma() {
       await navigator.share(payload);
     });
 
-  const publicar = () =>
-    accion(async () => {
-      setConfPublicar(false);
-      setPublicada(false);
-      const pdf = await crearPdf();
-      await publicarPdf(pdf, setFase);
-      setPublicada(true);
-      mostrar("Proforma publicada en el sitio");
-    });
-
   // Ofertas
   const setOferta = (i: number, parche: Partial<Oferta>) =>
     set(
@@ -303,26 +289,11 @@ export default function GeneradorProforma() {
           <BotonSecundario disabled={!listo || ocupado} onClick={compartir}>
             Compartir…
           </BotonSecundario>
-          <BotonSecundario
-            disabled={!listo || ocupado || desborda}
-            onClick={() => setConfPublicar(true)}
-          >
-            Publicar en el sitio
-          </BotonSecundario>
         </div>
 
         <p className="mt-3 text-center text-xs text-carbon/55" aria-live="polite">
           {fase ||
-            (publicada ? (
-              <>
-                ✓ Publicada.{" "}
-                <Link href="/proforma" target="_blank" className="underline">
-                  Ver como cliente
-                </Link>
-              </>
-            ) : (
-              "El PDF es una imagen de la hoja, igual que la proforma actual."
-            ))}
+            "El PDF es una imagen de la hoja, igual que la proforma actual."}
         </p>
       </div>
 
@@ -640,15 +611,6 @@ export default function GeneradorProforma() {
           setConfReset(false);
           mostrar("Proforma restablecida");
         }}
-      />
-      <Confirmar
-        abierto={confPublicar}
-        titulo="¿Publicar esta proforma?"
-        texto="Reemplaza la proforma que ven tus clientes en el sitio ahora mismo."
-        textoOk="Publicar"
-        tono="normal"
-        onCancelar={() => setConfPublicar(false)}
-        onOk={publicar}
       />
     </>
   );
