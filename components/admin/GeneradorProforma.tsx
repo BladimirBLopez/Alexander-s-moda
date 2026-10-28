@@ -321,36 +321,34 @@ export default function GeneradorProforma() {
     <>
       <Aviso aviso={aviso} />
 
-      <div className="fixed inset-x-0 bottom-[calc(4.75rem+env(safe-area-inset-bottom))] z-30 px-3 md:bottom-4">
-        <div className="mx-auto flex max-w-[540px] items-center gap-2 rounded-2xl border border-bordo/15 bg-white/95 p-2 shadow-lg backdrop-blur">
-          {vista === "editar" ? (
-            <>
-              <p className="flex-1 pl-2 text-xs text-carbon/60">
-                ✓ Guardado
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setVista("previa");
-                  window.scrollTo({ top: 0 });
-                }}
-                className="boton-tactil rounded-full bg-bordo px-5 py-2.5 text-sm font-semibold text-hueso"
-              >
-                Vista previa
-              </button>
-            </>
-          ) : (
-            <div className="grid flex-1 grid-cols-4 gap-1.5">
-              <button
-                type="button"
-                onClick={() => {
-                  setVista("editar");
-                  window.scrollTo({ top: 0 });
-                }}
-                className="boton-tactil rounded-full border border-bordo/25 bg-white py-2.5 text-xs font-semibold text-bordo"
-              >
-                Editar
-              </button>
+      <div className="pointer-events-none sticky top-2 z-30 mb-3 flex items-center justify-between gap-2">
+        {vista === "editar" ? (
+          <p className="pointer-events-auto rounded-full bg-white/95 px-3 py-2 text-xs text-carbon/60 shadow-md backdrop-blur">
+            ✓ Guardado
+          </p>
+        ) : (
+          <span />
+        )}
+        <button
+          type="button"
+          onClick={() => {
+            setVista(vista === "editar" ? "previa" : "editar");
+            window.scrollTo({ top: 0 });
+          }}
+          className={
+            vista === "editar"
+              ? "pointer-events-auto boton-tactil rounded-full bg-bordo px-5 py-2.5 text-sm font-semibold text-hueso shadow-lg"
+              : "pointer-events-auto boton-tactil rounded-full border border-bordo/25 bg-white px-5 py-2.5 text-sm font-semibold text-bordo shadow-lg"
+          }
+        >
+          {vista === "editar" ? "Vista previa" : "Editar"}
+        </button>
+      </div>
+
+      {vista === "previa" && (
+        <div className="fixed inset-x-0 bottom-[calc(4.75rem+env(safe-area-inset-bottom))] z-30 px-3 md:bottom-4">
+          <div className="mx-auto flex max-w-[540px] items-center gap-2 rounded-2xl border border-bordo/15 bg-white/95 p-2 shadow-lg backdrop-blur">
+            <div className="grid flex-1 grid-cols-3 gap-1.5">
               <button
                 type="button"
                 disabled={!listo || ocupado}
@@ -376,9 +374,9 @@ export default function GeneradorProforma() {
                 Compartir
               </button>
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
 
 
 
