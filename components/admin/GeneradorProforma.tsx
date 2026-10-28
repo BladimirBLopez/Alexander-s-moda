@@ -321,7 +321,7 @@ export default function GeneradorProforma() {
     <>
       <Aviso aviso={aviso} />
 
-      <div className="pointer-events-none sticky top-2 z-30 mb-3 flex items-center justify-between gap-2">
+      <div className="pointer-events-none sticky top-[4.5rem] z-20 mb-3 flex items-center justify-between gap-2">
         {vista === "editar" ? (
           <p className="pointer-events-auto rounded-full bg-white/95 px-3 py-2 text-xs text-carbon/60 shadow-md backdrop-blur">
             ✓ Guardado
