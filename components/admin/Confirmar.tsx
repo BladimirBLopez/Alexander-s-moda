@@ -7,6 +7,7 @@ export default function Confirmar({
   titulo,
   texto,
   textoOk = "Eliminar",
+  tono = "peligro",
   onOk,
   onCancelar,
 }: {
@@ -14,6 +15,7 @@ export default function Confirmar({
   titulo: string;
   texto?: string;
   textoOk?: string;
+  tono?: "peligro" | "normal";
   onOk: () => void;
   onCancelar: () => void;
 }) {
@@ -58,7 +60,9 @@ export default function Confirmar({
           <button
             type="button"
             onClick={onOk}
-            className="boton-tactil flex-1 rounded-full bg-red-700 py-2.5 text-sm font-semibold text-white"
+            className={`boton-tactil flex-1 rounded-full py-2.5 text-sm font-semibold ${
+              tono === "peligro" ? "bg-red-700 text-white" : "bg-bordo text-hueso"
+            }`}
           >
             {textoOk}
           </button>
