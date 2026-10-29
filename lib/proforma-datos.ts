@@ -70,6 +70,46 @@ export const PROFORMA_INICIAL: DatosProforma = {
   pie: "**Santa Cruz:** Centro Comercial Norte Pasillo 11 Local #357\n**Cochabamba:** Calle 23 de Marzo casi Dorbigni #424 - **Cels.:** 77974868 - 77373235",
 };
 
+export const PROFORMA_OCTUBRE: DatosProforma = {
+  ...PROFORMA_INICIAL,
+  ciudadFecha: "Santa Cruz octubre 2026",
+  ref: "REF: OFERTA PAQUETE UNIFORME DE PROMOCION",
+  saludo: "",
+  intro: "",
+  ofertas: [
+    {
+      titulo: "UNIFORME SPORT",
+      lineas: [
+        "Varones Pantalón en tela GABARDINA BRASILERA.",
+        "Mujeres Falda en tela GABARDINA BRASILERA.",
+        "Ambos camisa manga corta en tela OXFOR (Incluye un bordado).",
+        "Ambos polera en tela PIQUE PERUANO (Incluye dos bordados).",
+        "Ambos corbata en tela GABARDINA BRASILERA (Incluye un bordado).",
+      ],
+      costo: "Bs 580.-",
+    },
+    {
+      titulo: "UNIFORME CASIMIR",
+      lineas: [
+        "Varones Pantalón en tela CASIMIR INGLES.",
+        "Mujeres Falda en tela CASIMIR INGLES.",
+        "Ambos camisa manga corta en tela OXFOR (Incluye un bordado).",
+        "Ambos polera en tela PIQUE PERUANO (Incluye dos bordados).",
+        "Ambos corbata en tela CASIMIR INGLES (Incluye un bordado).",
+      ],
+      costo: "Bs 625.-",
+    },
+  ],
+  nota: "NOTA. - Si las damas quieren Falda Short se aumenta Bs 70.-",
+  tituloNotas: "OBSEQUIOS PARA LA PROMOCION",
+  notas: [
+    "POLERA PARA LOS TUTORES DE LA PROMOCION.",
+    "CANGURO O CHAMARRA TIPO AMERICANO PARA CADA ALUMNO DE LA PROMOCION SI RESERVAN SU PAQUETE HASTA EL 30 DE OCTUBRE.",
+  ],
+  condiciones: ["FORMA DE PAGO. - 60% de anticipo 40% contra entrega."],
+  despedida: "",
+};
+
 /** Valida datos leídos de localStorage: devuelve null si no tienen la forma esperada. */
 export function datosValidos(x: unknown): DatosProforma | null {
   if (!x || typeof x !== "object" || Array.isArray(x)) return null;

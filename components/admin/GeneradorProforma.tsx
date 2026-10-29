@@ -15,6 +15,7 @@ import {
 } from "@/components/admin/ui";
 import {
   PROFORMA_INICIAL,
+  PROFORMA_OCTUBRE,
   datosValidos,
   type DatosProforma,
   type Oferta,
@@ -123,6 +124,7 @@ export default function GeneradorProforma() {
   const [fase, setFase] = useState("");
   const [ocupado, setOcupado] = useState(false);
   const [confReset, setConfReset] = useState(false);
+  const [confOctubre, setConfOctubre] = useState(false);
   const [modeloOcupado, setModeloOcupado] = useState(false);
   const [quitarOferta, setQuitarOferta] = useState<number | null>(null);
   const [guardado, setGuardado] = useState<"guardando" | "ok" | "error">("ok");
@@ -759,6 +761,9 @@ export default function GeneradorProforma() {
             <BotonSecundario onClick={() => setConfReset(true)}>
               Volver al modelo
             </BotonSecundario>
+            <BotonSecundario onClick={() => setConfOctubre(true)}>
+              Cargar hoja de octubre
+            </BotonSecundario>
           </div>
         </div>
       )}
@@ -780,6 +785,18 @@ export default function GeneradorProforma() {
               datos.ofertas.filter((_, k) => k !== quitarOferta),
             );
           setQuitarOferta(null);
+        }}
+      />
+      <Confirmar
+        abierto={confOctubre}
+        titulo="¿Cargar la hoja de octubre?"
+        texto="Se reemplaza este borrador por la hoja de octubre. Tu modelo guardado no cambia hasta que toques Guardar como modelo."
+        textoOk="Cargar"
+        onCancelar={() => setConfOctubre(false)}
+        onOk={() => {
+          setConfOctubre(false);
+          setDatos(PROFORMA_OCTUBRE);
+          mostrar("Hoja de octubre cargada");
         }}
       />
       <Confirmar
