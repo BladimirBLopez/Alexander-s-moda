@@ -16,7 +16,7 @@ export default function PanelProforma({
           src={proforma.previewUrl}
           alt="Proforma actual"
           width={1700}
-          height={2200}
+          height={2550}
           className="h-auto w-full"
         />
       </div>

@@ -34,7 +34,7 @@ export default async function ProformaPage() {
           src={proforma.previewUrl}
           alt="Proforma Alexander's Moda"
           width={1700}
-          height={2200}
+          height={2550}
           className="w-full max-w-xl h-auto rounded-sm shadow-md"
           priority
         />

@@ -21,14 +21,15 @@ export function crearPdfDeJpeg(
     poner("\nendobj\n");
   };
 
-  const contenido = "q 612 0 0 792 0 0 cm /Im0 Do Q";
+  const hp = Math.round((612 * alto) / ancho);
+  const contenido = `q 612 0 0 ${hp} 0 0 cm /Im0 Do Q`;
 
   poner("%PDF-1.4\n%\xE2\xE3\xCF\xD3\n");
   objeto(1, () => poner("<< /Type /Catalog /Pages 2 0 R >>"));
   objeto(2, () => poner("<< /Type /Pages /Kids [3 0 R] /Count 1 >>"));
   objeto(3, () =>
     poner(
-      "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] " +
+      `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 ${hp}] ` +
         "/Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>",
     ),
   );

@@ -1,8 +1,8 @@
 import type { DatosProforma, Oferta } from "@/lib/proforma-datos";
 
 export const ANCHO = 850;
-export const ALTO = 1100;
-export const ESCALA = 2; // 1700 x 2200 px (carta a 200 dpi)
+export const ALTO = 1275;
+export const ESCALA = 2; // 1700 x 2550 px
 
 const SERIF = 'Tinos, "Times New Roman", Times, serif';
 const SANS = "Arimo, Arial, Helvetica, sans-serif";
@@ -275,10 +275,10 @@ export function dibujarProforma(
   ctx.strokeStyle = "#333";
   ctx.lineWidth = 1;
   ctx.beginPath();
-  ctx.moveTo(6, 1020);
-  ctx.lineTo(ANCHO - 6, 1020);
+  ctx.moveTo(6, ALTO - 80);
+  ctx.lineTo(ANCHO - 6, ALTO - 80);
   ctx.stroke();
-  let yp = 1043;
+  let yp = ALTO - 57;
   for (const l of d.pie.split("\n")) {
     const linea = envolver(ctx, SANS_PIE, l, ANCHO - 40)[0] ?? [];
     dibujarLinea(ctx, SANS_PIE, linea, 20, yp, ANCHO - 40, "centro", "#1a1a1a");
@@ -286,5 +286,5 @@ export function dibujarProforma(
   }
 
   ctx.restore();
-  return { desborda: yFinal > 1012, yFinal };
+  return { desborda: yFinal > ALTO - 88, yFinal };
 }
