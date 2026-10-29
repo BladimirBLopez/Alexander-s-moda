@@ -81,7 +81,7 @@ function opcionesAnio(actual: number) {
 }
 
 function armarFecha(mes: number, anio: number) {
-  return "Santa Cruz, " + MESES[mes] + " de " + anio;
+  return "Santa Cruz " + MESES[mes] + " " + anio;
 }
 
 function slug(t: string) {
@@ -639,11 +639,32 @@ export default function GeneradorProforma() {
           </Tarjeta>
 
           <Tarjeta>
+            <SeccionTitulo>Nota bajo las tablas</SeccionTitulo>
+            <Campo label="Texto suelto, sin viñeta (opcional)">
+              <textarea
+                rows={2}
+                value={datos.nota ?? ""}
+                onChange={(e) => set("nota", e.target.value)}
+                className={inputCls}
+              />
+            </Campo>
+          </Tarjeta>
+
+          <Tarjeta>
             <div className="mb-3 flex items-center justify-between">
               <SeccionTitulo>Obsequios y notas</SeccionTitulo>
               <BotonSecundario onClick={() => set("notas", [...datos.notas, ""])}>
                 + Nota
               </BotonSecundario>
+            </div>
+            <div className="mb-3">
+              <Campo label="Título de los obsequios (opcional)">
+                <input
+                  value={datos.tituloNotas ?? ""}
+                  onChange={(e) => set("tituloNotas", e.target.value)}
+                  className={inputCls}
+                />
+              </Campo>
             </div>
             <div className="space-y-2.5">
               {datos.notas.map((n, i) => (
@@ -684,6 +705,18 @@ export default function GeneradorProforma() {
                 </div>
               ))}
             </div>
+          </Tarjeta>
+
+          <Tarjeta>
+            <SeccionTitulo>Condiciones</SeccionTitulo>
+            <Campo label="Un renglón por línea, sin viñeta (opcional)">
+              <textarea
+                rows={3}
+                value={(datos.condiciones ?? []).join("\n")}
+                onChange={(e) => set("condiciones", e.target.value.split("\n"))}
+                className={inputCls}
+              />
+            </Campo>
           </Tarjeta>
 
           <Tarjeta>
