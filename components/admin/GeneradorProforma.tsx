@@ -115,6 +115,11 @@ export default function GeneradorProforma() {
   const [listo, setListo] = useState(false);
   const [desborda, setDesborda] = useState(false);
   const [vista, setVista] = useState<"editar" | "previa">("editar");
+  const hojaRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (vista !== "previa") return;
+    hojaRef.current?.scrollIntoView({ block: "start" });
+  }, [vista]);
   const [fase, setFase] = useState("");
   const [ocupado, setOcupado] = useState(false);
   const [confReset, setConfReset] = useState(false);
@@ -380,7 +385,7 @@ export default function GeneradorProforma() {
           type="button"
           onClick={() => {
             setVista(vista === "editar" ? "previa" : "editar");
-            window.scrollTo({ top: 0 });
+            if (vista === "previa") window.scrollTo({ top: 0 });
           }}
           className={
             vista === "editar"
@@ -428,7 +433,10 @@ export default function GeneradorProforma() {
 
 
       {/* Vista previa: el canvas queda montado siempre para poder exportar */}
-      <div className={vista === "previa" ? "" : "hidden"}>
+      <div
+        ref={hojaRef}
+        className={vista === "previa" ? "scroll-mt-32" : "hidden"}
+      >
         {desborda && (
           <p className="mb-3 rounded-xl border border-red-200 bg-red-50 p-3 text-xs text-red-800">
             ⚠ El contenido no entra en la hoja y se pisa con el pie de página.
@@ -440,9 +448,9 @@ export default function GeneradorProforma() {
             Preparando la hoja…
           </p>
         )}
-        <p className="mx-auto mb-3 max-w-[540px] rounded-xl border border-bordo/15 bg-bordo/5 p-3 text-center text-xs text-bordo">
-          Al tocar PDF, PNG o Compartir, esta hoja también se publica en el
-          sitio (página Proforma).
+        <p className="mx-auto mb-2 max-w-[540px] text-center text-[11px] leading-tight text-bordo/70">
+          PDF, PNG y Compartir también publican esta hoja en el
+          sitio.
         </p>
         <div className="mx-auto max-w-[540px] overflow-hidden rounded-sm border border-bordo/15 bg-white shadow-lg">
           <canvas
