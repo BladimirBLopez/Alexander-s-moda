@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Aviso, useAviso } from "@/components/admin/aviso";
 import Confirmar from "@/components/admin/Confirmar";
+import Selector from "@/components/admin/Selector";
 import {
   BotonIcono,
   BotonPrimario,
@@ -466,50 +467,30 @@ export default function GeneradorProforma() {
             <div className="space-y-3">
               <div>
                 <div className="grid grid-cols-2 gap-3">
-                  <Campo label="Mes">
-                    <select
-                      value={mesAnio(datos.ciudadFecha).mes}
-                      onChange={(e) =>
-                        set(
-                          "ciudadFecha",
-                          armarFecha(
-                            Number(e.target.value),
-                            mesAnio(datos.ciudadFecha).anio,
-                          ),
-                        )
-                      }
-                      className={inputCls}
-                    >
-                      {MESES.map((m, k) => (
-                        <option key={m} value={k}>
-                          {m}
-                        </option>
-                      ))}
-                    </select>
-                  </Campo>
-                  <Campo label="Año">
-                    <select
-                      value={mesAnio(datos.ciudadFecha).anio}
-                      onChange={(e) =>
-                        set(
-                          "ciudadFecha",
-                          armarFecha(
-                            mesAnio(datos.ciudadFecha).mes,
-                            Number(e.target.value),
-                          ),
-                        )
-                      }
-                      className={inputCls}
-                    >
-                      {opcionesAnio(mesAnio(datos.ciudadFecha).anio).map(
-                        (a) => (
-                          <option key={a} value={a}>
-                            {a}
-                          </option>
-                        ),
-                      )}
-                    </select>
-                  </Campo>
+                  <Selector
+                    label="Mes"
+                    valor={mesAnio(datos.ciudadFecha).mes}
+                    opciones={MESES.map((m, k) => ({ valor: k, texto: m }))}
+                    onChange={(v) =>
+                      set(
+                        "ciudadFecha",
+                        armarFecha(v, mesAnio(datos.ciudadFecha).anio),
+                      )
+                    }
+                  />
+                  <Selector
+                    label="Año"
+                    valor={mesAnio(datos.ciudadFecha).anio}
+                    opciones={opcionesAnio(
+                      mesAnio(datos.ciudadFecha).anio,
+                    ).map((a) => ({ valor: a, texto: String(a) }))}
+                    onChange={(v) =>
+                      set(
+                        "ciudadFecha",
+                        armarFecha(mesAnio(datos.ciudadFecha).mes, v),
+                      )
+                    }
+                  />
                 </div>
                 <p className="mt-1 text-xs text-carbon/60">
                   Sale así: {datos.ciudadFecha}
