@@ -13,6 +13,9 @@ export type DatosProforma = {
   intro: string;
   ofertas: Oferta[];
   notas: string[];
+  nota?: string;
+  tituloNotas?: string;
+  condiciones?: string[];
   despedida: string;
   cierre: string;
   firmante: string;
@@ -95,6 +98,15 @@ export function datosValidos(x: unknown): DatosProforma | null {
         r.lineas.every((l) => typeof l === "string")
       );
     })
+  )
+    return null;
+  if (d.nota !== undefined && typeof d.nota !== "string") return null;
+  if (d.tituloNotas !== undefined && typeof d.tituloNotas !== "string")
+    return null;
+  if (
+    d.condiciones !== undefined &&
+    (!Array.isArray(d.condiciones) ||
+      !d.condiciones.every((c) => typeof c === "string"))
   )
     return null;
   return d as unknown as DatosProforma;

@@ -226,12 +226,12 @@ export function dibujarProforma(
 
   // Saludo y cuerpo
   y += 30;
-  y = bloque(ctx, SERIF_F, d.saludo, X0, y, COL, "izq");
+  if (d.saludo.trim()) y = bloque(ctx, SERIF_F, d.saludo, X0, y, COL, "izq");
   y = bloque(ctx, SERIF_F, d.cuerpo, X0, y, COL, "just");
 
   // Introducción de la oferta
   y += 16;
-  y = bloque(ctx, SERIF_F, d.intro, X0, y, COL, "izq");
+  if (d.intro.trim()) y = bloque(ctx, SERIF_F, d.intro, X0, y, COL, "izq");
 
   // Tablas
   y += 3;
@@ -241,6 +241,28 @@ export function dibujarProforma(
 
   // Notas
   y += 8;
+  if (d.nota?.trim()) {
+    y = bloque(ctx, SERIF_BI, d.nota, X0, y, COL, "izq") + 14;
+  }
+  if (d.tituloNotas?.trim()) {
+    const tl = envolver(ctx, SERIF_BI, d.tituloNotas, COL)[0] ?? [];
+    dibujarLinea(ctx, SERIF_BI, tl, X0, y, COL, "izq");
+    ctx.font = SERIF_BI.n;
+    const wt = tl.reduce(
+      (a, p, i) =>
+        a +
+        medir(ctx, SERIF_BI, p) +
+        (i > 0 && p.sp ? ctx.measureText(" ").width : 0),
+      0,
+    );
+    ctx.strokeStyle = TINTA;
+    ctx.lineWidth = 0.9;
+    ctx.beginPath();
+    ctx.moveTo(X0, y + 2.5);
+    ctx.lineTo(X0 + wt, y + 2.5);
+    ctx.stroke();
+    y += LH + 8;
+  }
   for (const n of d.notas) {
     if (!n.trim()) continue;
     ctx.font = SERIF_BI.n;
@@ -250,9 +272,19 @@ export function dibujarProforma(
     y = bloque(ctx, SERIF_BI, n, 180, y, X1 - 180, "izq") + 12;
   }
 
+  // Condiciones (sin viñeta)
+  const conds = (d.condiciones ?? []).filter((c) => c.trim());
+  if (conds.length) {
+    y += 6;
+    for (const c of conds) {
+      y = bloque(ctx, SERIF_BI, c, X0, y, COL, "izq");
+    }
+  }
+
   // Despedida
   y += 14;
-  y = bloque(ctx, SERIF_F, d.despedida, X0, y, COL, "izq");
+  if (d.despedida.trim())
+    y = bloque(ctx, SERIF_F, d.despedida, X0, y, COL, "izq");
   const yCierre = y;
   y = bloque(ctx, SERIF_F, d.cierre, X0, y, COL, "izq");
 
