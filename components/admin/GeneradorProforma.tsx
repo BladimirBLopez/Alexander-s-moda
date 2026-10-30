@@ -129,7 +129,6 @@ export default function GeneradorProforma() {
   const [quitarOferta, setQuitarOferta] = useState<number | null>(null);
   const [guardado, setGuardado] = useState<"guardando" | "ok" | "error">("ok");
   const [conflicto, setConflicto] = useState(false);
-  const [hora, setHora] = useState("");
   const versionRef = useRef(0);
   const nubeOk = useRef(false);
   const ultimo = useRef("");
@@ -190,12 +189,6 @@ export default function GeneradorProforma() {
         versionRef.current = j.version;
         ultimo.current = txt;
       } while (pendiente.current);
-      setHora(
-        new Date().toLocaleTimeString("es-BO", {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-      );
       setGuardado("ok");
     } catch {
       setGuardado("error");
@@ -568,9 +561,7 @@ export default function GeneradorProforma() {
             </>
           ) : (
             <span className="truncate font-medium text-green-700">
-              {hora
-                ? "✓ Guardado en la nube " + hora
-                : "✓ Sin cambios por guardar"}
+              ✓ Guardado automático
             </span>
           )}
         </div>
