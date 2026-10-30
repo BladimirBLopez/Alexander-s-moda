@@ -128,41 +128,200 @@ export default function GeneradorProforma() {
   const [modeloOcupado, setModeloOcupado] = useState(false);
   const [quitarOferta, setQuitarOferta] = useState<number | null>(null);
   const [guardado, setGuardado] = useState<"guardando" | "ok" | "error">("ok");
+  const [conflicto, setConflicto] = useState(false);
+  const versionRef = useRef(0);
+  const nubeOk = useRef(false);
+  const ultimo = useRef("");
+  const subiendo = useRef(false);
+  const pendiente = useRef(false);
+  const datosRef = useRef<DatosProforma | null>(null);
   const { aviso, mostrar } = useAviso();
   const bloqueo = useRef(false);
 
   const set = <K extends keyof DatosProforma>(k: K, v: DatosProforma[K]) =>
     setDatos((d) => ({ ...d, [k]: v }));
 
-  // Borrador guardado en este navegador
+  // Borrador compartido en la nube; el celular es respaldo
+  const URL_BORRADOR = "/api/admin/proforma-borrador";
+
+  async function subir() {
+    if (subiendo.current) {
+      pendiente.current = true;
+      return;
+    }
+    subiendo.current = true;
+    try {
+      do {
+        pendiente.current = false;
+        const snap = datosRef.current;
+        if (!snap) break;
+        const txt = JSON.stringify(snap);
+        if (!nubeOk.current) {
+          const r0 = await fetch(URL_BORRADOR, { cache: "no-store" });
+          const j0 = await r0.json();
+          if (!(j0?.ok === true && typeof j0.version === "number")) {
+            throw new Error("lectura");
+          }
+          versionRef.current = j0.version;
+          nubeOk.current = true;
+          const n0 = j0.datos ? datosValidos(j0.datos) : null;
+          if (n0 && JSON.stringify(n0) !== txt) {
+            setConflicto(true);
+            setGuardado("error");
+            return;
+          }
+        }
+        if (txt === ultimo.current) continue;
+        const r = await fetch(URL_BORRADOR, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ datos: snap, base: versionRef.current }),
+        });
+        const j = await r.json().catch(() => null);
+        if (r.status === 409 && j?.conflicto) {
+          setConflicto(true);
+          setGuardado("error");
+          return;
+        }
+        if (!r.ok || j?.ok !== true || typeof j.version !== "number") {
+          throw new Error("guardar");
+        }
+        versionRef.current = j.version;
+        ultimo.current = txt;
+      } while (pendiente.current);
+      setGuardado("ok");
+    } catch {
+      setGuardado("error");
+    } finally {
+      subiendo.current = false;
+    }
+  }
+
+  async function cargarNube() {
+    setConflicto(false);
+    try {
+      const r = await fetch(URL_BORRADOR, { cache: "no-store" });
+      const j = await r.json();
+      if (j?.ok === true && typeof j.version === "number") {
+        versionRef.current = j.version;
+        nubeOk.current = true;
+        const n = j.datos ? datosValidos(j.datos) : null;
+        if (n) {
+          ultimo.current = JSON.stringify(n);
+          setDatos(n);
+        }
+        setGuardado("ok");
+        mostrar("Versión de la nube cargada");
+      } else {
+        setGuardado("error");
+      }
+    } catch {
+      setGuardado("error");
+    }
+  }
+
+  async function mantenerMia() {
+    setConflicto(false);
+    try {
+      const r = await fetch(URL_BORRADOR, { cache: "no-store" });
+      const j = await r.json();
+      if (j?.ok === true && typeof j.version === "number") {
+        versionRef.current = j.version;
+        nubeOk.current = true;
+        await subir();
+      } else {
+        setGuardado("error");
+      }
+    } catch {
+      setGuardado("error");
+    }
+  }
+
   useEffect(() => {
+    let vivo = true;
+    let local: DatosProforma | null = null;
     try {
       const raw = localStorage.getItem(CLAVE);
-      const v = raw ? datosValidos(JSON.parse(raw)) : null;
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      if (v) setDatos(v);
+      local = raw ? datosValidos(JSON.parse(raw)) : null;
     } catch {
-      /* sin borrador */
+      local = null;
     }
-    setCargado(true);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (local) setDatos(local);
+    (async () => {
+      try {
+        const r = await fetch(URL_BORRADOR, { cache: "no-store" });
+        const j = await r.json();
+        if (!vivo) return;
+        if (j?.ok === true && typeof j.version === "number") {
+          versionRef.current = j.version;
+          nubeOk.current = true;
+          const n = j.datos ? datosValidos(j.datos) : null;
+          if (n) {
+            ultimo.current = JSON.stringify(n);
+            setDatos(n);
+          }
+        }
+      } catch {
+        /* sin internet: se usa el borrador del celular */
+      }
+      if (vivo) setCargado(true);
+    })();
+    return () => {
+      vivo = false;
+    };
   }, []);
 
   useEffect(() => {
     if (!cargado) return;
-    let t: ReturnType<typeof setTimeout> | undefined;
+    datosRef.current = datos;
     try {
       localStorage.setItem(CLAVE, JSON.stringify(datos));
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setGuardado("guardando");
-      t = setTimeout(() => setGuardado("ok"), 600);
     } catch {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setGuardado("error");
+      /* almacenamiento no disponible */
     }
-    return () => {
-      if (t) clearTimeout(t);
-    };
+    if (JSON.stringify(datos) === ultimo.current) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setGuardado("guardando");
+    const t = setTimeout(() => {
+      void subir();
+    }, 1500);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [datos, cargado]);
+
+  // Al salir o cerrar: enviar lo pendiente
+  useEffect(() => {
+    const enviar = () => {
+      const snap = datosRef.current;
+      if (!snap || !nubeOk.current || subiendo.current) return;
+      const txt = JSON.stringify(snap);
+      if (txt === ultimo.current) return;
+      try {
+        fetch(URL_BORRADOR, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ datos: snap, base: versionRef.current }),
+          keepalive: true,
+        }).catch(() => {});
+        versionRef.current += 1;
+        ultimo.current = txt;
+      } catch {
+        /* sin envio */
+      }
+    };
+    const oculta = () => {
+      if (document.visibilityState === "hidden") enviar();
+    };
+    document.addEventListener("visibilitychange", oculta);
+    window.addEventListener("pagehide", enviar);
+    return () => {
+      document.removeEventListener("visibilitychange", oculta);
+      window.removeEventListener("pagehide", enviar);
+      enviar();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Fuentes e imágenes
   useEffect(() => {
@@ -786,6 +945,14 @@ export default function GeneradorProforma() {
             );
           setQuitarOferta(null);
         }}
+      />
+      <Confirmar
+        abierto={conflicto}
+        titulo="Otra persona modificó esta proforma"
+        texto="Cargar su versión reemplaza la tuya. Si cancelás, se guarda la tuya encima."
+        textoOk="Cargar su versión"
+        onCancelar={mantenerMia}
+        onOk={cargarNube}
       />
       <Confirmar
         abierto={confOctubre}
