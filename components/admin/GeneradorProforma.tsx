@@ -129,6 +129,7 @@ export default function GeneradorProforma() {
   const [quitarOferta, setQuitarOferta] = useState<number | null>(null);
   const [guardado, setGuardado] = useState<"guardando" | "ok" | "error">("ok");
   const [conflicto, setConflicto] = useState(false);
+  const [hora, setHora] = useState("");
   const versionRef = useRef(0);
   const nubeOk = useRef(false);
   const ultimo = useRef("");
@@ -189,6 +190,12 @@ export default function GeneradorProforma() {
         versionRef.current = j.version;
         ultimo.current = txt;
       } while (pendiente.current);
+      setHora(
+        new Date().toLocaleTimeString("es-BO", {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      );
       setGuardado("ok");
     } catch {
       setGuardado("error");
@@ -322,6 +329,16 @@ export default function GeneradorProforma() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Si falla (sin conflicto), reintenta solo cada 15 s
+  useEffect(() => {
+    if (guardado !== "error" || conflicto) return;
+    const id = setInterval(() => {
+      void subir();
+    }, 15000);
+    return () => clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [guardado, conflicto]);
 
   // Fuentes e imágenes
   useEffect(() => {
@@ -523,25 +540,40 @@ export default function GeneradorProforma() {
     <>
       <Aviso aviso={aviso} />
 
-      <div className="pointer-events-none sticky top-[4.5rem] z-20 mb-3 flex items-center justify-between gap-2">
-        {vista === "editar" ? (
-          <p
-            className={
-              "pointer-events-auto rounded-full bg-white/95 px-3 py-2 text-xs shadow-md backdrop-blur " +
-              (guardado === "error"
-                ? "font-semibold text-red-700"
-                : "text-carbon/60")
-            }
-          >
-            {guardado === "guardando"
-              ? "Guardando..."
-              : guardado === "error"
-                ? "⚠ No se pudo guardar"
-                : "✓ Guardado automático"}
-          </p>
-        ) : (
-          <span />
-        )}
+      <div className="sticky top-16 z-20 -mx-4 mb-4 flex items-center justify-between gap-2 border-b border-bordo/15 bg-white px-4 py-2 shadow-sm sm:-mx-6 sm:px-6 md:-mx-8 md:px-8">
+        <div
+          className="flex min-w-0 items-center gap-2 text-xs"
+          aria-live="polite"
+        >
+          {guardado === "guardando" ? (
+            <>
+              <span className="h-3.5 w-3.5 shrink-0 animate-spin rounded-full border-2 border-carbon/20 border-t-carbon/60" />
+              <span className="text-carbon/60">Guardando...</span>
+            </>
+          ) : guardado === "error" ? (
+            <>
+              <span className="font-semibold text-red-700">
+                ⚠ No se pudo guardar
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  setGuardado("guardando");
+                  void subir();
+                }}
+                className="boton-tactil shrink-0 rounded-full border border-red-300 bg-white px-3 py-1.5 text-xs font-semibold text-red-700"
+              >
+                Reintentar
+              </button>
+            </>
+          ) : (
+            <span className="truncate font-medium text-green-700">
+              {hora
+                ? "✓ Guardado en la nube " + hora
+                : "✓ Sin cambios por guardar"}
+            </span>
+          )}
+        </div>
         <button
           type="button"
           onClick={() => {
@@ -550,8 +582,8 @@ export default function GeneradorProforma() {
           }}
           className={
             vista === "editar"
-              ? "pointer-events-auto boton-tactil rounded-full bg-bordo px-5 py-2.5 text-sm font-semibold text-hueso shadow-lg"
-              : "pointer-events-auto boton-tactil rounded-full border border-bordo/25 bg-white px-5 py-2.5 text-sm font-semibold text-bordo shadow-lg"
+              ? "boton-tactil shrink-0 rounded-full bg-bordo px-5 py-2.5 text-sm font-semibold text-hueso"
+              : "boton-tactil shrink-0 rounded-full border border-bordo/25 bg-white px-5 py-2.5 text-sm font-semibold text-bordo"
           }
         >
           {vista === "editar" ? "Vista previa" : "Editar"}
